@@ -1,0 +1,9 @@
+:root{
+    --primary-color: #FFC69B;
+    --secondary-color: #F1E7DB;
+    --highlight-color: #B87444;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
