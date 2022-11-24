@@ -2,8 +2,20 @@
     --primary-color: #FFC69B;
     --secondary-color: #F1E7DB;
     --highlight-color: #B87444;
+    --black: #0e0e0e;
+    --white: #e5e5e5;
 }
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body{
+    background-color: var(--secondary-color);
+}
+nav{
+    background-color: var(--black);
+}
+.nav-link{
+    color: var(--white)!important;
 }
