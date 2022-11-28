@@ -13,6 +13,14 @@
 body{
     background-color: var(--secondary-color);
 }
+article{
+    background-image: url(/Imagenes/headerbanner.jpg);
+    background-size: cover;
+    background-position:top;
+    height: 45vh;
+    color: var(--white);
+}
+
 nav{
     background-color: var(--black);
 }
