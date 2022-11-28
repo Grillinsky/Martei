@@ -27,3 +27,10 @@ nav{
 .nav-link{
     color: var(--white)!important;
 }
+.carousel-item{
+    height: 22rem;
+}
+.carousel-item img{
+    padding: 1rem;
+    object-fit: cover!important;
+}
