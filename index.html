@@ -10,220 +10,458 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/Css/styles.css">
-    <link rel="shortcut icon" href="/Imagenes Martei/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/Css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="/Imagenes Martei/favicon.ico"
+      type="image/x-icon"
+    />
     <title>Martei Uy</title>
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg px-5">
-            <div class="w-25 mx-2">
-              <a class="navbar-brand float-start" href="#">
-                <img src="/Imagenes/logo.png" alt="Logo" class="d-inline-block align-text-top w-25">
-              </a>
-            </div>
-            <div class="navbar-expand w-75 d-flex justify-content-end me-3">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Productos</a>
+      <nav class="navbar navbar-expand-lg navbar-dark px-5 fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="/Imagenes/logo.png"
+              alt="Logo"
+              class="d-inline-block align-text-top w-25"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">Contacto</a>
+          <div
+            id="navbarToggler"
+            class="collapse navbar-collapse w-75 justify-content-end me-3"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-                    </li>
-
-                </ul>
-
-            </div>
-          </nav>
-          <article class="container-fluid px-5">
-            <h1>Martei</h1>
-            <p>
-                Piezas en materiales nobles y fibras naturales <br> 
-                LOCAL Y ARTESANAL🇺🇾❤️
-            </p>
-          </article>
-
+      <article class="container-fluid py-5 my-5">
+        <h1 class="">Martei</h1>
+        <p>
+          Piezas en materiales nobles y fibras naturales <br />
+          LOCAL Y ARTESANAL🇺🇾❤️
+        </p>
+      </article>
     </header>
     <main class="container">
-      <section class="container-fluid" id="productos">
-        <div class="row">
-            <div class="col-lg-8  border rounded">
-                <h2>Muebles</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos fugit officia, sed excepturi necessitatibus quisquam!</p>
-            </div>
-            <div class="col-lg-4  border rounded">
-                <div id="mueblesCarrouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Imagenes/Mueble1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Mueble2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Mueble3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Mueble4.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Mueble5.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#mueblesCarrouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#mueblesCarrouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 border rounded">
-                <div id="cuadrosCarrouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Imagenes/Cuadro1.png" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Cuadro2.png" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Cuadro3.png" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Cuadro4.png" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#cuadrosCarrouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#cuadrosCarrouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-            </div>
+      <section class="container-fluid d-grid gap-5" id="productos">
+        <div class="container row-container">
+          <div class="row">
             <div class="col-lg-8 border rounded">
-                <h2>Cuadros</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos fugit officia, sed excepturi necessitatibus quisquam!</p>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-8 border rounded">
-                <h2>Espejos</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos fugit officia, sed excepturi necessitatibus quisquam!</p>
+              <h2>Muebles</h2>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+                fugit officia, sed excepturi necessitatibus quisquam!
+              </p>
             </div>
             <div class="col-lg-4 border rounded">
-                <div id="espejosCarrouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Imagenes/Espejo1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Espejo2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Espejo4.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Espejo3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Espejo5.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#espejosCarrouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#espejosCarrouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+              <div
+                id="mueblesCarrouselFade"
+                class="carousel slide carousel-fade"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      src="/Imagenes/Mueble1.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
                   </div>
+                  <div class="carousel-item">
+                    <img
+                      src="/Imagenes/Mueble2.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="/Imagenes/Mueble3.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="/Imagenes/Mueble4.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src="/Imagenes/Mueble5.jpg"
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#mueblesCarrouselFade"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#mueblesCarrouselFade"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+        <div class="container row-container">
         <div class="row">
-            <div class="col-lg-4 border rounded">
-                <div id="luminariasCarrouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Imagenes/Luminaria1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Luminaria2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Luminaria3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Luminaria4.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Luminaria5.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#luminariasCarrouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#luminariasCarrouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
+          <div class="col-lg-4 border rounded">
+            <div
+              id="cuadrosCarrouselFade"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/Imagenes/Cuadro1.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Cuadro2.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Cuadro3.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Cuadro4.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#cuadrosCarrouselFade"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#cuadrosCarrouselFade"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="col-lg-8 border rounded">
-                <h2>Luminarias</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos fugit officia, sed excepturi necessitatibus quisquam!</p>
-            </div>
-
+          </div>
+          <div class="col-lg-8 border rounded">
+            <h2>Cuadros</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+              fugit officia, sed excepturi necessitatibus quisquam!
+            </p>
+          </div>
         </div>
+    </div>
+    <div class="container row-container">
         <div class="row">
-            <div class="col-lg-8 border rounded">
-                <h2>Tapices</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos fugit officia, sed excepturi necessitatibus quisquam!</p>
+          <div class="col-lg-8 border rounded">
+            <h2>Espejos</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+              fugit officia, sed excepturi necessitatibus quisquam!
+            </p>
+          </div>
+          <div class="col-lg-4 border rounded">
+            <div
+              id="espejosCarrouselFade"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/Imagenes/Espejo1.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Espejo2.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Espejo4.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Espejo3.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Espejo5.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#espejosCarrouselFade"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#espejosCarrouselFade"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="col-lg-4 border rounded">
-                <div id="tapizCarrouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="/Imagenes/Tapiz1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Tapiz2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Tapiz3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Tapiz4.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="/Imagenes/Tapiz5.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#tapizCarrouselFade" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#tapizCarrouselFade" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
+          </div>
+        </div>
+        </div>
+        <div class="container row-container">
+        <div class="row">
+          <div class="col-lg-4 border rounded">
+            <div
+              id="luminariasCarrouselFade"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/Imagenes/Luminaria1.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Luminaria2.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Luminaria3.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Luminaria4.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Luminaria5.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#luminariasCarrouselFade"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#luminariasCarrouselFade"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
+          </div>
+          <div class="col-lg-8 border rounded">
+            <h2>Luminarias</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+              fugit officia, sed excepturi necessitatibus quisquam!
+            </p>
+          </div>
+        </div>
+        </div>
+        <div class="container row-container">
+        <div class="row">
+          <div class="col-lg-8 border rounded">
+            <h2>Tapices</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+              fugit officia, sed excepturi necessitatibus quisquam!
+            </p>
+          </div>
+          <div class="col-lg-4 border rounded">
+            <div
+              id="tapizCarrouselFade"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/Imagenes/Tapiz1.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Tapiz2.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Tapiz3.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Tapiz4.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/Imagenes/Tapiz5.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#tapizCarrouselFade"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#tapizCarrouselFade"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
         </div>
       </section>
       <section id="presentacion">
@@ -232,6 +470,10 @@
       <section id="Contacto"></section>
     </main>
     <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
