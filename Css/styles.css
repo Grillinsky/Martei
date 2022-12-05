@@ -12,16 +12,27 @@
 }
 body{
     background-color: var(--secondary-color);
+    /* font-family: 'Bebas Neue', cursive; */
+font-family: 'Pridi', serif;
 background-image: url("https://www.transparenttextures.com/patterns/fabric-1-light.png");
 }
 header{
-    background-image: url(/Imagenes/headerbanner.jpg);
-    background-size: cover;
-    background-position:top;
+    background-image: url(/Imagenes/header-banner4.jpg);
+    background-size:cover;
+    /* background-repeat:space; */
+    background-position:center;
+}
+.hero-title{
+    align-self: flex-start;
+    text-align:start;
+    font-size: 10rem;
+}
+.hero-title::first-letter{
+    font-size: 12rem;
+    font-weight: 100;
 }
 article{
-
-    height: 45vh;
+    height: 65vh;
     color: var(--white);
 }
 
@@ -32,7 +43,7 @@ nav{
     color: var(--white)!important;
 }
 .carousel-item{
-    height: 22rem;
+    height: 18rem;
 }
 .carousel-item img{
     padding: 1rem;
