@@ -17,10 +17,11 @@
       href="/Imagenes Martei/favicon.ico"
       type="image/x-icon"
     />
+    <script src="https://kit.fontawesome.com/37b6b13bc4.js" crossorigin="anonymous"></script>
     <title>Martei Uy</title>
   </head>
   <body>
-    <header>
+    <header id="header">
       <nav class="navbar navbar-expand-lg navbar-dark px-5 fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -48,21 +49,21 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="" class="nav-link">Home</a>
+                <a href="#header" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item ">
+                <a href="#" class="nav-link">Productos</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">Contacto</a>
+                <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link">Contacto</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <article class="container-fluid p-5 my-5">
-        <h1 class="hero-title">martei.</h1>
+      <article class="container-fluid mt-5">
+        <h1 class="hero-title fade-in-top">martei.</h1>
         <p class="hero-paragraph">
           Piezas en materiales nobles y fibras naturales <br />
           LOCAL Y ARTESANAL🇺🇾❤️
@@ -75,15 +76,14 @@
           <div class="row">
             <div class="col-lg-8 border rounded p-5">
               <h2>Muebles</h2>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
-                fugit officia, sed excepturi necessitatibus quisquam!
+              <p class="fade-in-left">
+                Un interior práctico y espacioso fue lo que nos pidieron🤎 Nuestros muebles se adaptan a tus necesidades, contanos qué precisas y diseñamos juntos el mueble indicado para vos 😊 en las medidas y características que más te convengan.
               </p>
             </div>
             <div class="col-lg-4 border rounded">
               <div
                 id="mueblesCarrouselFade"
-                class="carousel slide carousel-fade"
+                class="carousel slide carousel-fade py-5"
                 data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
@@ -91,35 +91,35 @@
                     <img
                       src="/Imagenes/Mueble1.jpg"
                       class="d-block w-100"
-                      alt="..."
+                      alt="Colgante de techo, en hilo y madera"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       src="/Imagenes/Mueble2.jpg"
                       class="d-block w-100"
-                      alt="..."
+                      alt="Banquetas altas, de mimbre e hilo"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
                       src="/Imagenes/Mueble3.jpg"
                       class="d-block w-100"
-                      alt="..."
+                      alt="Coleccion de tapiceria en mueble de madera"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
-                      src="/Imagenes/Mueble4.jpg"
+                      src="/Imagenes/Mueble6.jpg"
                       class="d-block w-100"
-                      alt="..."
+                      alt="Sillas circulares 'hongo' de mimbre y metal"
                     />
                   </div>
                   <div class="carousel-item">
                     <img
-                      src="/Imagenes/Mueble5.jpg"
+                      src="/Imagenes/Mueble7.png"
                       class="d-block w-100"
-                      alt="..."
+                      alt="Hamaca colgante de mimbre"
                     />
                   </div>
                 </div>
@@ -156,7 +156,7 @@
           <div class="col-lg-4 border rounded ">
             <div
               id="cuadrosCarrouselFade"
-              class="carousel slide carousel-fade"
+              class="carousel slide carousel-fade py-5"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
@@ -164,28 +164,28 @@
                   <img
                     src="/Imagenes/Cuadro1.png"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Coleccion de cuadros de madera"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Cuadro2.png"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Cuadro de madera con acentos en blanco"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Cuadro3.png"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Coleccion de cuadros en proceso"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Cuadro4.png"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Al frente en la imagen: cuadro de madera con acentos en negro. Al fondo de la imagen, cuadro de madera con acentos en blanco"
                   />
                 </div>
               </div>
@@ -217,24 +217,24 @@
           </div>
           <div class="col-lg-8 border rounded  p-5">
             <h2>Cuadros</h2>
-            <p>
+            <p class="fade-in-right">
               Nuestros cuadros son piezas que transforman y embellecen cualquier espacio. Son esos elementos distintivos de cada hogar, que los vuelve únicos y llena de personalidad 
             </p>
           </div>
         </div>
-    </div>
-    <div class="container row-container">
+        </div>
+        <div class="container row-container">
         <div class="row">
           <div class="col-lg-8 border rounded  p-5">
             <h2>Espejos</h2>
-            <p>
-              ¿Sabías que todos nuestros espejos son únicos? No existe uno igual a otro, y en lo personal creo que es uno de los atributos más valiosos que sólo lo artesanal nos da❤ 
+            <p>🤎 
+              ¿Sabías que todos nuestros espejos son únicos? No existe uno igual a otro, y en lo personal creo que es uno de los atributos más valiosos que sólo lo artesanal nos da  
             </p>
           </div>
           <div class="col-lg-4 border rounded">
             <div
               id="espejosCarrouselFade"
-              class="carousel slide carousel-fade"
+              class="carousel slide carousel-fade py-5"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
@@ -242,35 +242,35 @@
                   <img
                     src="/Imagenes/Espejo1.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Espejo cuadrado con detalle metalico en las esquinas"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Espejo2.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Espejo circular con decoracion en mimbre en forma de aros"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Espejo4.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Espejo circular de gran tamaño, con un borde cobrizo"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Espejo3.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Espejo cuadrado grande compuesto por 9 espejos en filas de 3"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Espejo5.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Espejo circular con decoracion de mimbre en forma de rayos"
                   />
                 </div>
               </div>
@@ -307,7 +307,7 @@
           <div class="col-lg-4 border rounded">
             <div
               id="luminariasCarrouselFade"
-              class="carousel slide carousel-fade"
+              class="carousel slide carousel-fade py-5"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
@@ -315,35 +315,35 @@
                   <img
                     src="/Imagenes/Luminaria1.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Luminaria2.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Lampara circular decorada con hilo "
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Luminaria3.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Tres lamparas en hierro e hilo"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Luminaria4.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Lampara circular en hierro e hilo"
                   />
                 </div>
                 <div class="carousel-item">
                   <img
                     src="/Imagenes/Luminaria5.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Dos campanas de mimbre"
                   />
                 </div>
               </div>
@@ -375,7 +375,7 @@
           </div>
           <div class="col-lg-8 border rounded  p-5">
             <h2>Luminarias</h2>
-            <p>
+            <p class="fade-in-left">
               Con nuestras luminarias las fibras naturales vinieron para quedarse 😍 
 
               La deco hoy más que nunca reivindica lo acogedor y la sencillez. En ese sentido, estos materiales llevados en su estado más puro aportan la nobleza y calidez que sólo la naturaleza tiene 🤎✨
@@ -388,14 +388,13 @@
           <div class="col-lg-8 border rounded  p-5">
             <h2>Tapices</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
-              fugit officia, sed excepturi necessitatibus quisquam!
+              Nuestra tapiceria demuestra que la combinación entre elementos nobles y naturales nunca puede resultar mal, en este caso, madera y algodón 🤎 
             </p>
           </div>
           <div class="col-lg-4 border rounded">
             <div
               id="tapizCarrouselFade"
-              class="carousel slide carousel-fade"
+              class="carousel slide carousel-fade py-5"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
@@ -403,7 +402,7 @@
                   <img
                     src="/Imagenes/Tapiz1.jpg"
                     class="d-block w-100"
-                    alt="..."
+                    alt="Tapiz blanco patron de rombos"
                   />
                 </div>
                 <div class="carousel-item">
@@ -468,8 +467,56 @@
         <!-- Foto de Cami + pequeña historia -->
       </section>
       <section id="Contacto"></section>
+      <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Contactanos!
+</button> -->
+
+
     </main>
-    <footer></footer>
+    <footer id="footer" class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="container-fluid"> 
+            <h5 class="text-center my-4">Desarrollo Web <a href="https://martingrillo.netlify.app">Martin Grillo</a>:</h5>
+            <ul class="d-flex justify-content-center gap-4">
+              <li><a aria-label="LinkedIn link" href="#"><i class="fab fa-linkedin"></i></a></li>
+              <li><a aria-label="Instagram link"href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a aria-label="Github link"href="#"><i class="fab fa-github"></i></a></li>
+              <li><a aria-label="Portafolio link"href="#"><i class="fas fa-portrait"></i></a></li>
+              <li><a aria-label="Twitter link"href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h5></h5>
+
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
