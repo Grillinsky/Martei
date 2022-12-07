@@ -84,9 +84,9 @@
         </p>
       </article>
     </header>
-    <main class="container">
+    <main class="container-fluid p-0">
       <section class="container-fluid d-grid gap-5" id="productos">
-        <div class="container row-container">
+        <div class="container row-container w-75">
           <div class="row">
             <div class="col-lg-8 border rounded p-5">
               <h2>Muebles</h2>
@@ -168,7 +168,7 @@
             </div>
           </div>
         </div>
-        <div class="container row-container">
+        <div class="container row-container w-75">
           <div class="row">
             <div class="col-lg-4 border rounded">
               <div
@@ -242,7 +242,7 @@
             </div>
           </div>
         </div>
-        <div class="container row-container">
+        <div class="container row-container w-75">
           <div class="row">
             <div class="col-lg-8 border rounded p-5">
               <h2>Espejos</h2>
@@ -323,7 +323,7 @@
             </div>
           </div>
         </div>
-        <div class="container row-container">
+        <div class="container row-container w-75">
           <div class="row">
             <div class="col-lg-4 border rounded">
               <div
@@ -406,7 +406,7 @@
             </div>
           </div>
         </div>
-        <div class="container row-container">
+        <div class="container w-75 row-container">
           <div class="row">
             <div class="col-lg-8 border rounded p-5">
               <h2>Tapices</h2>
@@ -488,27 +488,42 @@
           </div>
         </div>
       </section>
-      <section class="row-container container w-75 my-5" id="presentacion">
+      <section class="my-5 py-2 container-fluid rounded" id="presentacion">
         <!-- Foto de Cami + pequeña historia -->
-        <div class="row">
-          <div class="col-lg-6 text-center">
-            <img src="/Imagenes/header-banner-3.jpg" alt="Foto de la dueña del local, Camila, junto a una coleccion de cuadros" />
-          </div>
-          <div class="col-lg-6">
-            <div class="align-self-center p-5">
-            <h5 class="mb-5">Hola, soy Camila!</h5>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui
-              necessitatibus doloribus commodi amet officiis. Similique possimus
-              sequi illo sint, ipsum consectetur dolor nemo molestiae officiis.
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nulla nesciunt ut voluptatibus aperiam laudantium, dignissimos suscipit quasi.</p>
-          </div>
+        <div class="row-container container w-50">
+          <div class="row">
+            <div
+              class="col-lg-6 align-self-center justify-content-center d-flex"
+            >
+              <img
+                class="fade-in-right"
+                src="/Imagenes/header-banner-3.jpg"
+                alt="Foto de la dueña del local, Camila, junto a una coleccion de cuadros"
+              />
+            </div>
+            <div class="col-lg-6">
+              <div class="align-self-center p-3">
+                <h5 class="mb-5">Hola, soy Camila!</h5>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui
+                  necessitatibus doloribus commodi amet officiis. Similique
+                  possimus sequi illo sint, ipsum consectetur dolor nemo
+                  molestiae officiis.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Perspiciatis nulla nesciunt ut voluptatibus aperiam
+                  laudantium, dignissimos suscipit quasi.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <section id="Contacto"></section>
-      <!-- Button trigger modal --> 
+      <section id="Contacto">
+        <div class="container"></div>
+      </section>
+      <!-- Button trigger modal -->
       <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Contactanos!
         </button> -->
@@ -519,31 +534,48 @@
           <div class="container-fluid">
             <h5 class="text-center my-4">
               Desarrollo Web
-              <a href="https://martingrillo.netlify.app">Martin Grillo</a>:
+              <a target="_blank" href="https://martingrillo.netlify.app"
+                >Martin Grillo</a
+              >:
             </h5>
             <ul class="d-flex justify-content-center gap-4">
               <li>
-                <a aria-label="LinkedIn link" href="#"
+                <a
+                  target="_blank"
+                  aria-label="LinkedIn link"
+                  href="https://www.linkedin.com/in/martinegrillo/"
                   ><i class="fab fa-linkedin"></i
                 ></a>
               </li>
               <li>
-                <a aria-label="Instagram link" href="#"
+                <a
+                  target="_blank"
+                  aria-label="Instagram link"
+                  href="https://www.instagram.com/grillinski/"
                   ><i class="fab fa-instagram"></i
                 ></a>
               </li>
               <li>
-                <a aria-label="Github link" href="#"
+                <a
+                  target="_blank"
+                  aria-label="Github link"
+                  href="https://github.com/Grillinsky?tab=repositories"
                   ><i class="fab fa-github"></i
                 ></a>
               </li>
               <li>
-                <a aria-label="Portafolio link" href="#"
+                <a
+                  target="_blank"
+                  aria-label="Portafolio link"
+                  href="http://martingrillo.netlify.app/"
                   ><i class="fas fa-portrait"></i
                 ></a>
               </li>
               <li>
-                <a aria-label="Twitter link" href="#"
+                <a
+                  target="_blank"
+                  aria-label="Twitter link"
+                  href="https://twitter.com/martingrillo22?s=21&t=TC-o_w-mv5uCaXEqybTBfw"
                   ><i class="fab fa-twitter"></i
                 ></a>
               </li>
