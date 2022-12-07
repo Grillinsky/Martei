@@ -25,7 +25,9 @@ header{
 main{
     padding: 3rem 0;
 }
-
+#presentacion img{
+    max-width: 25rem;
+    }
 .hero-title{
     align-self: flex-start;
     text-align:center;
