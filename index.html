@@ -66,7 +66,7 @@
                 <a
                   href="#"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                  data-bs-target="#contactModal"
                   class="nav-link"
                   >Contacto</a
                 >
@@ -520,11 +520,17 @@
           </div>
         </div>
       </section>
-      <section id="Contacto">
-        <div class="container"></div>
+      <section class="container-fluid text-center" id="Contacto">
+        <div
+          data-bs-toggle="modal"
+          data-bs-target="#contactModal"
+          class="btn btn-lg btn-warning my-4"
+        >
+          <h6 class="fw-bold mb-0">Coordina tu visita!</h6>
+        </div>
       </section>
       <!-- Button trigger modal -->
-      <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contactModal">
           Contactanos!
         </button> -->
     </main>
@@ -583,7 +589,13 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <h5></h5>
+          <h5>martei.deco</h5>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
       </div>
     </footer>
@@ -591,15 +603,16 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="contactModal"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="contactModalLabel"
       aria-hidden="true"
     >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="contactModalLabel">Contactanos</h1>
+
             <button
               type="button"
               class="btn-close"
@@ -607,7 +620,34 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <div class="form-container">
+              <form netlify method="post">
+                <label class="form-label" for="name">Nombre</label>
+                <input
+                  class="form-control mb-3"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Escribi tu nombre :"
+                />
+                <label class="form-label" for="email">Email</label>
+                <input
+                  placeholder="Escribi tu correo electronico"
+                  class="form-control mb-3"
+                  type="email"
+                  name="email"
+                  id="email"
+                />
+                <div class="d-grid my-3">
+                  <button class="btn btn-outline-success" type="submit">
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="contact-container"></div>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
@@ -616,7 +656,6 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
