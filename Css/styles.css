@@ -35,10 +35,10 @@ main{
 .hero-title{
     align-self: flex-start;
     text-align:center;
-    font-size: 10rem;
+    font-size: calc(10rem - 5vw);
 }
 .hero-title::first-letter{
-    font-size: 12rem;
+    font-size: calc(12rem - 3vw);
     font-weight: 100;
 }
 .hero-paragraph{
@@ -70,6 +70,11 @@ nav{
     filter: opacity(.8);
     border-radius: .8rem;
 }
+#copy::first-letter{
+  font-size: 250%;
+  color: rgb(88, 85, 85);
+  padding: .3rem;
+} 
 footer{
     min-height: 15vh;
     background-color: var(--black);
@@ -240,8 +245,22 @@ a:hover{
 
   /*            MEDIA MEDIA              */
   @media screen and (max-width: 600px) {
+    #presentacion,
+    .row-container{
+      padding: 0 2rem;
+      width: 100% !important;
+    }
+    #presentacion{
+      padding: 1rem;
+    }
+
     #presentacion img{
-        width: 12rem;
+        width: 50vw;
         }
-    
+    .hero-title{
+      font-size: calc(5rem - 2vw);
+    }
+    .hero-title::first-letter{
+      font-size: 6rem;
+    }
   }
