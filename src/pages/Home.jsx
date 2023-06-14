@@ -6,7 +6,10 @@ function Home() {
     <div>
       <Navbar />
       <article className="container-fluid mt-5">
-        <h1 className="hero-title fade-in-top">martei.</h1>
+        <h1 className="hero-title fade-in-top">
+          m <span> artei.</span>
+        </h1>{" "}
+        {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
           Piezas en materiales nobles y fibras naturales <br />
           LOCAL Y ARTESANAL🇺🇾❤️
@@ -34,35 +37,35 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Imagenes/Mueble1.jpg"
+                        src="/Mueble1.jpg"
                         className="d-block w-100"
                         alt="Colgante de techo, en hilo y madera"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Mueble2.jpg"
+                        src="/Mueble2.jpg"
                         className="d-block w-100"
                         alt="Banquetas altas, de mimbre e hilo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Mueble3.jpg"
+                        src="/Mueble3.jpg"
                         className="d-block w-100"
                         alt="Coleccion de tapiceria en mueble de madera"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Mueble6.jpg"
+                        src="/Mueble6.jpg"
                         className="d-block w-100"
                         alt="Sillas circulares 'hongo' de mimbre y metal"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Mueble7.png"
+                        src="/Mueble7.png"
                         className="d-block w-100"
                         alt="Hamaca colgante de mimbre"
                       />
@@ -107,28 +110,28 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Imagenes/Cuadro1.png"
+                        src="/Cuadro1.png"
                         className="d-block w-100"
                         alt="Coleccion de cuadros de madera"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Cuadro2.png"
+                        src="/Cuadro2.png"
                         className="d-block w-100"
                         alt="Cuadro de madera con acentos en blanco"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Cuadro3.png"
+                        src="/Cuadro3.png"
                         className="d-block w-100"
                         alt="Coleccion de cuadros en proceso"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Cuadro4.png"
+                        src="/Cuadro4.png"
                         className="d-block w-100"
                         alt="Al frente en la imagen: cuadro de madera con acentos en negro. Al fondo de la imagen, cuadro de madera con acentos en blanco"
                       />
@@ -189,35 +192,35 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Imagenes/Espejo1.jpg"
+                        src="/Espejo1.jpg"
                         className="d-block w-100"
                         alt="Espejo cuadrado con detalle metalico en las esquinas"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Espejo2.jpg"
+                        src="/Espejo2.jpg"
                         className="d-block w-100"
                         alt="Espejo circular con decoracion en mimbre en forma de aros"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Espejo4.jpg"
+                        src="/Espejo4.jpg"
                         className="d-block w-100"
                         alt="Espejo circular de gran tamaño, con un borde cobrizo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Espejo3.jpg"
+                        src="/Espejo3.jpg"
                         className="d-block w-100"
                         alt="Espejo cuadrado grande compuesto por 9 espejos en filas de 3"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Espejo5.jpg"
+                        src="/Espejo5.jpg"
                         className="d-block w-100"
                         alt="Espejo circular con decoracion de mimbre en forma de rayos"
                       />
@@ -262,35 +265,35 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Imagenes/Luminaria1.jpg"
+                        src="/Luminaria1.jpg"
                         className="d-block w-100"
                         alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Luminaria2.jpg"
+                        src="/Luminaria2.jpg"
                         className="d-block w-100"
                         alt="Lampara circular decorada con hilo "
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Luminaria3.jpg"
+                        src="/Luminaria3.jpg"
                         className="d-block w-100"
                         alt="Tres lamparas en hierro e hilo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Luminaria4.jpg"
+                        src="/Luminaria4.jpg"
                         className="d-block w-100"
                         alt="Lampara circular en hierro e hilo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Luminaria5.jpg"
+                        src="/Luminaria5.jpg"
                         className="d-block w-100"
                         alt="Dos campanas de mimbre"
                       />
@@ -353,35 +356,35 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Imagenes/Tapiz1.jpg"
+                        src="/Tapiz1.jpg"
                         className="d-block w-100"
                         alt="Tapiz blanco patron de rombos"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Tapiz2.jpg"
+                        src="/Tapiz2.jpg"
                         className="d-block w-100"
                         alt="Tapiz blanco, con madera y patron semi-circular"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Tapiz3.jpg"
+                        src="/Tapiz3.jpg"
                         className="d-block w-100"
                         alt="Tapiz largo horizontal, con patrones en rombos"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Tapiz4.jpg"
+                        src="/Tapiz4.jpg"
                         className="d-block w-100"
                         alt="Tapiz largo vertical, con patron en semi-circulo"
                       />
                     </div>
                     <div className="carousel-item">
                       <img
-                        src="/Imagenes/Tapiz5.jpg"
+                        src="/Tapiz5.jpg"
                         className="d-block w-100"
                         alt="Tapiz en madera e hilo, compuesto de 3 tapices verticales angostos"
                       />
@@ -415,6 +418,9 @@ function Home() {
               </div>
             </div>
           </div>
+          <button className="btn bg-dark rounded-pill">
+            Todos los productos
+          </button>
         </section>
         <section
           className="my-5 py-2 container-fluid rounded"
@@ -426,7 +432,7 @@ function Home() {
               <div className="col-lg-6 align-self-center justify-content-center d-flex px-0">
                 <img
                   className="fade-in-right"
-                  src="/Imagenes/header-banner-3.jpg"
+                  src="/header-banner-3.jpg"
                   alt="Foto de la dueña del local, Camila, junto a una coleccion de cuadros"
                 />
               </div>

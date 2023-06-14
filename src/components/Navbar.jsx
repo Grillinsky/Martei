@@ -9,7 +9,7 @@ function Navbar() {
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               <img
-                src="./assets/img/logo.png"
+                src="/logo.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
@@ -31,6 +31,25 @@ function Navbar() {
               className="collapse navbar-collapse w-75 justify-content-end me-3"
             >
               <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a
+                    href="#header"
+                    className="nav-link"
+                    aria-label="shopping cart"
+                  >
+                    <i class="fas fa-shopping-cart"></i>
+                  </a>
+                </li>
+                <li className="nav-item me-3">
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#contactModal"
+                    className="nav-link"
+                  >
+                    <i class="fas fa-user"></i>{" "}
+                  </a>
+                </li>
                 <li className="nav-item">
                   <a href="#header" className="nav-link">
                     Home
