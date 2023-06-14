@@ -1,5 +1,5 @@
-header {
-  background-image: url(/Imagenes/header-banner4.jpg);
+article {
+  background-image: url(../../public/header-banner4.jpg); /*TO DO cambiar por video ? */
   background-size: cover;
   /* background-repeat:space; */
   background-position: center;
