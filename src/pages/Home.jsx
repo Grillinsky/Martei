@@ -7,7 +7,7 @@ function Home() {
       <Navbar />
       <article className="container-fluid mt-5">
         <h1 className="hero-title fade-in-top">
-          m <span> artei.</span>
+          m<span>artei.</span>
         </h1>{" "}
         {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
@@ -418,9 +418,14 @@ function Home() {
               </div>
             </div>
           </div>
-          <button className="btn bg-dark rounded-pill">
-            Todos los productos
-          </button>
+          <div className="container d-flex justify-content-center">
+            <button
+              id="productsButton"
+              className="btn btn-warning p-3 fw-bold rounded-pill"
+            >
+              Todos los productos
+            </button>
+          </div>
         </section>
         <section
           className="my-5 py-2 container-fluid rounded"

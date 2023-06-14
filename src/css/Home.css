@@ -57,7 +57,9 @@ nav {
   filter: opacity(0.8);
   border-radius: 0.8rem;
 }
-
+/* #productsButton {
+  background-color: var(--primary-color);
+} */
 #copy::first-letter {
   font-size: 250%;
   color: rgb(88, 85, 85);
