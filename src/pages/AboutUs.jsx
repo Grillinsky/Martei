@@ -1,10 +1,13 @@
 import React from "react";
 import '../css/About-Us.css'
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer";
 
 function AboutUs() {
- return (    
- <div className="container-about-us">
+ return (  
+     <div className="container-about-us">
+     <Navbar/> 
     <div class="card-group">
     <div class="flip-card">
   <div class="flip-card-inner">
@@ -165,6 +168,7 @@ function AboutUs() {
   </div>
 </div>
     </div>
+    <Footer/>
   </div>
  )
 };
