@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -7,13 +8,13 @@ function Navbar() {
       <header id="header">
         <nav className="navbar navbar-expand-lg navbar-dark px-lg-5 fixed-top">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <Link className="navbar-brand" to={"/"}>
               <img
                 src="/logo.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -51,24 +52,24 @@ function Navbar() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#header" className="nav-link">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a href="#" className="nav-link">
+                  <Link to={"/product"} className="nav-link">
                     Productos
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="#"
+                  <Link to={"/category"} className="nav-link">
+                    Categorias
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    to={"/aboutUs"}
                     data-bs-toggle="modal"
                     data-bs-target="#contactModal"
                     className="nav-link"
                   >
-                    Contacto
-                  </a>
+                    Nosotros
+                  </Link>
                 </li>
               </ul>
             </div>

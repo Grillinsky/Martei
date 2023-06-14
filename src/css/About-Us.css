@@ -1,17 +1,23 @@
-/* .container-about-us {
-   height: 100vw;
-  }
- */
+.text-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 6em;
+    margin-bottom: 2.5em;
+    
+}
+
 .card-group {
     justify-content: center;
     display: flex;
-    margin-top: 10%;
+    margin-top: 0%;
 }
 
 .flip-card {
     background-color: transparent;
     display: flex;
-    margin: 5px;
+    margin-left: 50px;
     width: 245px;
     height: 280px;
     perspective: 1000px;
@@ -76,8 +82,8 @@
   }
   
   .flip-card-back {
-    background-color: #f1e7db;
-    border: 3px solid #000;
+    background-color: #000000;
+    border: 3px solid #ffffff;
     transform: rotateY(180deg);
     padding: 11px;
   }
@@ -86,7 +92,7 @@
     margin-top: 10px;
     font-size: 14px;
     letter-spacing: 1px;
-    color: #000;
+    color: #ffffff;
   }
   
   .socialbar {
@@ -98,7 +104,7 @@
     margin-left: 10px;
     word-spacing: 44px;
     margin: 5px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
   
   .socialbar svg {
@@ -106,11 +112,11 @@
     width: 20px;
     height: 20px;
     margin-left: 10px;
-    color: #000
+    color: #ffffff
   }
   
   .socialbar svg:hover {
-    color: #ffc69b
+    color: rgb(218, 127, 127);
   }
   
   .flip-card:hover .flip-card-inner {

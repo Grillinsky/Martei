@@ -13,7 +13,11 @@
 body {
   background-color: var(--secondary-color);
   /* font-family: 'Bebas Neue', cursive; */
-  min-height: 100%;
+  min-height: 100% !important;
   font-family: "Pridi", serif;
   background-image: url("https://www.transparenttextures.com/patterns/fabric-1-light.png");
+}
+
+html {
+  min-height: 100% !important;
 }

@@ -2,16 +2,15 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer id="footer" className="container-fluid mt-2">
+    <footer id="footer-about" className="container-fluid mt-2">
       <div className="row">
         <div className="col-lg-6">
           <div className="container-fluid">
-            <h5 className="text-center my-4">
+            <h5 className="text-center my-4 mt-5">
               Desarrollo Web
-              <a target="_blank" href="https://martingrillo.netlify.app">
+              {/* <a target="_blank" href="https://martingrillo.netlify.app">
                 Martin Grillo
-              </a>
-              :
+              </a> */}
             </h5>
             <ul className="d-flex justify-content-center gap-4">
               <li>
@@ -63,9 +62,9 @@ function Footer() {
           </div>
         </div>
         <div className="col-lg-6 text-center">
-          <h5>martei.deco</h5>
+          {/* <h5>martei.deco</h5> */}
           <ul>
-            <li>
+            <li className="mt-5">
               <a href="https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"> Ciudad Vieja</a>
             </li>
             <li>Montevideo</li>
