@@ -15,7 +15,7 @@ function Home() {
           LOCAL Y ARTESANAL🇺🇾❤️
         </p>
       </article>
-      <main className="container-fluid p-0">
+      <main className="container-fluid p-0 mt-4">
         <section className="container-fluid d-grid gap-5" id="productos">
           <div className="container row-container w-75">
             <div className="row">
