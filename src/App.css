@@ -43,7 +43,7 @@ header {
   }
   
   nav {
-    background-color: var(--black);
+    background-color: black !important;
   }
   .nav-link {
     color: var(--white) !important;
