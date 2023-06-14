@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #ffc69b;
-  --secondary-color: #f1e7db;
-  --highlight-color: #b87444;
-  --black: #0e0e0e;
-  --white: #e5e5e5;
+  --primary-color: #ffc69b !important;
+  --secondary-color: #f1e7db !important;
+  --highlight-color: #b87444 !important;
+  --black: #0e0e0e !important;
+  --white: #e5e5e5 !important;
 }
 * {
   box-sizing: border-box;
@@ -13,6 +13,7 @@
 body {
   background-color: var(--secondary-color);
   /* font-family: 'Bebas Neue', cursive; */
+  min-height: 100%;
   font-family: "Pridi", serif;
   background-image: url("https://www.transparenttextures.com/patterns/fabric-1-light.png");
 }
