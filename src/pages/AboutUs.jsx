@@ -6,9 +6,13 @@ import Footer from "../components/Footer";
 
 function AboutUs() {
  return (  
-     <div className="container-about-us">
+    <div>
+     <div className="container-about-us col-12 row">
      <Navbar/> 
-    <div class="card-group">
+        <div className="text-main">
+            <h1>Sobre Nosotros</h1>
+        </div>
+    <div class="card-group mb-5">
     <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
@@ -167,6 +171,7 @@ function AboutUs() {
     </div>
   </div>
 </div>
+    </div>
     </div>
     <Footer/>
   </div>

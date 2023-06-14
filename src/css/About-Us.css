@@ -1,17 +1,23 @@
-/* .container-about-us {
-   height: 100vw;
-  }
- */
+.text-main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 6em;
+    margin-bottom: 2.5em;
+    
+}
+
 .card-group {
     justify-content: center;
     display: flex;
-    margin-top: 10%;
+    margin-top: 0%;
 }
 
 .flip-card {
     background-color: transparent;
     display: flex;
-    margin: 5px;
+    margin-left: 50px;
     width: 245px;
     height: 280px;
     perspective: 1000px;

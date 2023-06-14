@@ -1,3 +1,6 @@
+html {
+    min-height: 100% !important;
+}
 header {
     background-image: url(/header-banner4.jpg);
     background-size: cover;
@@ -64,10 +67,17 @@ header {
     padding: 0.3rem;
   }
   footer {
-    min-height: 15vh;
+    min-height: 25vh !important;
     background-color: var(--black);
     color: var(--white);
   }
+
+  #footer-about {
+    min-height: 33vh !important;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
   footer i {
     font-size: 2rem;
   }
