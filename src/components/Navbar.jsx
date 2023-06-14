@@ -9,7 +9,7 @@ function Navbar() {
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               <img
-                src="/Imagenes/logo.png"
+                src="./assets/img/logo.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
@@ -55,14 +55,6 @@ function Navbar() {
             </div>
           </div>
         </nav>
-
-        <article className="container-fluid mt-5">
-          <h1 className="hero-title fade-in-top">martei.</h1>
-          <p className="hero-paragraph">
-            Piezas en materiales nobles y fibras naturales <br />
-            LOCAL Y ARTESANAL🇺🇾❤️
-          </p>
-        </article>
       </header>
     </div>
   );
