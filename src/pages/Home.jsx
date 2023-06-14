@@ -7,7 +7,7 @@ function Home() {
       <Navbar />
       <article className="container-fluid mt-5">
         <h1 className="hero-title fade-in-top">
-          m <span> artei.</span>
+          m<span>artei.</span>
         </h1>{" "}
         {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
