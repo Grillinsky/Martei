@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 /* import Register from "./pages/Register"; */
 
 function App() {
-      /*  const store = useSelector((state) => state);
+  /*  const store = useSelector((state) => state);
           const user = store.user;
       */
   return (
@@ -15,9 +15,9 @@ function App() {
       <Routes>
         {/* <Route element={<ProtectedRoute user={user} redirectTo="/login" />}> */}
         {/* </Route> */}
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-       {/*  <Route path="/register" element={<Register />} /> */}
+        {/*  <Route path="/register" element={<Register />} /> */}
       </Routes>
     </>
   );
