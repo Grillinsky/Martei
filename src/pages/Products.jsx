@@ -9,7 +9,7 @@ function Product() {
       <Navbar/>
     <div className="container-product">
         <div className="shadow-lg mt-5 ms-5 d-flex" style={{ height: "80vh", width:"55vw" }}>
-          <div className="col-12 col-lg-12 col-md-8 bg-white text-dark d-flex align-items-center justify-content-center" style={{ width: "35vw" }} >
+          <div className="col-12 col-lg-12 col-md-8 bg-white text-dark d-flex align-items-center justify-content-center" style={{ width: "33vw" }} >
             <img className="Item" src="Mueble4.jpg" alt="Items"/>
           </div>
           <div className="container-product-two col-lg-6 col-md-4 d-none text-white d-md-flex flex-column" style={{ backgroundColor: "#000"}}> 

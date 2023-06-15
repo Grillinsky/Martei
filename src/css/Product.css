@@ -1,19 +1,19 @@
 .Item {
-    width: 28.7em !important;
-    height: 31.9em !important;
+    width: 38.9em !important;
+    height: 39.9em !important;
   } 
 
 .container-product {
   justify-content: center;
   display: flex;
-  width: 91vw !important;
+  width: 93vw !important;
   min-height: 50vh !important;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
 .container-product-two {
-    width: 22em !important; 
+    width: 24em !important; 
 }
 
 .img-product {
@@ -37,7 +37,7 @@ hr {
 }
 
 .div-text-description {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .text-description {
@@ -45,7 +45,7 @@ hr {
     text-align: center;
     padding: 4px;
     margin: 7px;
-    font-size: 13px;
+    font-size: 17px;
 }
 
 .div-text-caracterics {
@@ -56,6 +56,8 @@ hr {
 .li-caracterics-product {
     list-style: georgian;
     letter-spacing: 0.6px;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .ul-caracterics{
