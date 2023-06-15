@@ -44,7 +44,7 @@ export const data = {
   datasets: [
     {
       label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: -10, max: 1000 })),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 255, 132, 0.9)",
     },
@@ -69,7 +69,7 @@ function Dashboard() {
         </div>
         <div className="col-6">
           {" "}
-          <dd className="py-2">Dasboard</dd>
+          <dd className="py-4">Dasboard</dd>
         </div>
       </section>
       <section className="row p-0">
@@ -103,16 +103,16 @@ function Dashboard() {
           <div id="glanceableInfo" className="row">
             <div className="col-md-3 my-2">
               <div className="container">
-                <i class="fas fa-wallet"></i>
+                <i class="fas fa-wallet px-2"></i>
                 <small className="mx-3">Flujo de Capital</small>
                 <dd>Uy$ 28.030</dd>
               </div>
             </div>
             <div className="col-md-3 my-2">
               <div className="container">
-                <i class="fas fa-clipboard-list"></i>
+                <i class="fas fa-clipboard-list px-2"></i>
                 <small className="mx-3">Pedidos</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-danger mx-2">20</span>/
                   <span className="text-success mx-2">50</span>
@@ -122,9 +122,9 @@ function Dashboard() {
             <div className="col-md-3 my-2">
               {" "}
               <div className="container">
-                <i class="far fa-envelope"></i>
+                <i class="far fa-envelope px-2"></i>
                 <small className="mx-3">Mensajes</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-danger mx-2">2</span>/
                   <span className="text-success mx-2">25</span>
@@ -134,9 +134,9 @@ function Dashboard() {
             <div className="col-md-3 my-2">
               {" "}
               <div className="container">
-                <i class="fas fa-exclamation"></i>{" "}
+                <i class="fas fa-exclamation px-2"></i>{" "}
                 <small className="mx-3">Notificaciones</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-success mx-2">5</span>
                 </div>
