@@ -80,14 +80,14 @@ function Navbar() {
                 </li>
           </div>
                 <li className="nav-item me-3">
-                  <a
-                    href="#"
+                  <Link
+                    to={"/profile"}
                     data-bs-toggle="modal"
                     data-bs-target="#contactModal"
                     className="nav-link ms-2|"
                   >
                     <i class="fas fa-user"></i>{" "}
-                  </a>
+                  </Link>
                 </li>
                 
         </nav>
@@ -112,10 +112,10 @@ function Navbar() {
           <Button className="btn-tacho" onClick={vaciarCarrito}>
           <i class="fa fa-trash-o" aria-hidden="true"></i>
           </Button>
-          <Button className="secondary" onClick={() => setMostrarCarrito(false)}>
+          <Button variant="outline-secondary" onClick={() => setMostrarCarrito(false)}>
             Cerrar
           </Button>
-          <Button className="success" onClick={vaciarCarrito}>
+          <Button variant="success" onClick={vaciarCarrito}>
             Comprar
           </Button>
         </Modal.Footer>
