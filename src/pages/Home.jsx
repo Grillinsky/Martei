@@ -471,15 +471,6 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="container-fluid text-center" id="Contacto">
-          <div
-            data-bs-toggle="modal"
-            data-bs-target="#contactModal"
-            className="btn btn-lg btn-warning my-4"
-          >
-            <h6 className="fw-bold mb-0">Coordina tu visita!</h6>
-          </div>
-        </section>
         {/* <!-- Button trigger modal --> */}
         {/* <!-- <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contactModal"> */}
         {/* Contactanos! */}
