@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import AboutUs from "./pages/AboutUs"
 import Product from "./pages/Products";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 /* import Register from "./pages/Register"; */
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/aboutUs" element={<AboutUs/>} />
         <Route path="/product" element={<Product/>} />
        {/*  <Route path="/register" element={<Register />} /> */}
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/admin" element={<Dashboard />} />
       </Routes>
     </>

@@ -1,8 +1,9 @@
 .form-container {
     width: 500px;
-    background: linear-gradient(2339.7deg, #0b0b0b 73%, #b87444 100%);
+    background: black;
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
+    box-shadow: #b87444;
   }
   
   .title {
