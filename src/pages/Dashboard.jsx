@@ -1,29 +1,64 @@
 import "../css/Home.css";
 import "../css/Dashboard.css";
+
+//      CHARTJS
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import faker from "faker";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top",
+    },
+    title: {
+      display: true,
+      text: "Ventas y Pedidos",
+    },
+  },
+};
+
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: "Dataset 1",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 255, 132, 0.9)",
+    },
+    // {
+    //   label: "Dataset 2",
+    //   data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+    //   borderColor: "rgb(53, 162, 235)",
+    //   backgroundColor: "rgba(53, 162, 235, 0.5)",
+    // },
+  ],
+};
+//        CHARTJS
+
 function Dashboard() {
-  //   const ctx = document.getElementById("myChart");
-
-  //   new Chart(ctx, {
-  //     type: "line",
-  //     data: {
-  //       labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-  //       datasets: [
-  //         {
-  //           label: "# of Votes",
-  //           data: [12, 19, 3, 5, 2, 3],
-  //           borderWidth: 1,
-  //         },
-  //       ],
-  //     },
-  //     options: {
-  //       scales: {
-  //         y: {
-  //           beginAtZero: true,
-  //         },
-  //       },
-  //     },
-  //   });
-
   return (
     <main className="p-0">
       {/* Sidebar */}
@@ -40,19 +75,25 @@ function Dashboard() {
       <section className="row p-0">
         <nav id="sidebar" class="col-md-2 col-sm-1">
           <ul className="list-group list-group-flush p-3">
-            <li className="list-group-item-dark">
+            <li className="list-group-item-dark ">
               <a href="#">
                 <i class="fas fa-chart-line px-2"></i>Dashboard
               </a>
             </li>
             <li className="list-group-item-dark">
-              <a href="#">Productos</a>
+              <a href="#">
+                <i class="fas fa-chair px-2"></i>Productos
+              </a>
             </li>
             <li className="list-group-item-dark">
-              <a href="#">Pedidos</a>
+              <a href="#">
+                <i class="fas fa-shopping-bag px-2"></i>Pedidos
+              </a>
             </li>
             <li className="list-group-item-dark">
-              <a href="#">Ajustes</a>
+              <a href="#">
+                <i class="fas fa-cogs px-2"></i>Ajustes
+              </a>
             </li>
           </ul>
         </nav>
@@ -60,17 +101,17 @@ function Dashboard() {
         <div id="contentArea" class="col-md-10 col-sm-9">
           {" "}
           <div id="glanceableInfo" className="row">
-            <div className="col-md-4 my-2">
+            <div className="col-md-3 my-2">
               <div className="container">
                 <i class="fas fa-wallet"></i>
-                <small>Flujo de Capital</small>
+                <small className="mx-3">Flujo de Capital</small>
                 <dd>Uy$ 28.030</dd>
               </div>
             </div>
-            <div className="col-md-4 my-2">
+            <div className="col-md-3 my-2">
               <div className="container">
                 <i class="fas fa-clipboard-list"></i>
-                <small>Pedidos</small>
+                <small className="mx-3">Pedidos</small>
                 <div>
                   {" "}
                   <span className="text-danger mx-2">20</span>/
@@ -78,11 +119,11 @@ function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="col-md-4 my-2">
+            <div className="col-md-3 my-2">
               {" "}
               <div className="container">
                 <i class="far fa-envelope"></i>
-                <small>Mensajes</small>
+                <small className="mx-3">Mensajes</small>
                 <div>
                   {" "}
                   <span className="text-danger mx-2">2</span>/
@@ -90,11 +131,21 @@ function Dashboard() {
                 </div>
               </div>{" "}
             </div>
+            <div className="col-md-3 my-2">
+              {" "}
+              <div className="container">
+                <i class="fas fa-exclamation"></i>{" "}
+                <small className="mx-3">Notificaciones</small>
+                <div>
+                  {" "}
+                  <span className="text-success mx-2">5</span>
+                </div>
+              </div>{" "}
+            </div>
           </div>
           <div id="chart" class="container-fluid">
             <h2>Aca va un chart.js ¡Cuando pueda implementarlo! 😠</h2>
-            <img src="ImprovedChart1.png" alt="" />
-            <canvas id="myChart"></canvas>{" "}
+            <Line options={options} data={data} />{" "}
           </div>
         </div>
       </section>
