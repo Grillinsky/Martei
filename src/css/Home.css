@@ -1,5 +1,5 @@
 article {
-  background-image: url(../../public/header-banner4.jpg); /*TO DO cambiar por video ? */
+  background-image: url(/header-banner4.jpg); /*TO DO cambiar por video ? */
   background-size: cover;
   /* background-repeat:space; */
   background-position: center;
