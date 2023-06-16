@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Product.css";
+import { Button, ButtonGroup } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -54,7 +55,22 @@ function Product() {
                 <li className="ul-caracterics">· Precio: 9.99 $USD</li>
               </ul>
             </div>
-            <hr className="mt-4" style={{ backgroundColor: "lightgrey" }} />
+            <hr className="mt-1" style={{ backgroundColor: "lightgrey" }} />
+            <ButtonGroup className="d-flex justify-content-around">
+              <Button className="me-2" variant="success">
+                Comprar
+              </Button>
+              <Button
+                style={{
+                  backgroundColor: "var(--primary-color)",
+                  border: "0",
+                  color: "var(--black)",
+                }}
+                className="ms-2"
+              >
+                Al Carrito
+              </Button>
+            </ButtonGroup>
           </div>
         </div>
       </div>

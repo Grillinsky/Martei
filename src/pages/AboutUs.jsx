@@ -41,11 +41,10 @@ function AboutUs() {
                 <div className="Description">
                   <p className="description">
                     Soy Martin Grillo, tengo 31 años y originalmente de El
-                    Calafate, Argentina, actualmente vivo en Montevideo. Estoy
-                    en Hack Academy y me encanta el desarrollo Front-end y todo
-                    lo relacionado con el diseño: desde arquitectura hasta
-                    diseño web y textil. ¡Crearemos cosas increíbles juntos y
-                    con un toque elegante!
+                    Calafate, Argentina, actualmente vivo en Montevideo.Me
+                    encanta el desarrollo Front-end y todo lo relacionado con el
+                    diseño: desde arquitectura hasta diseño web y textil.
+                    ¡Crearemos cosas increíbles juntos y con un toque elegante!
                   </p>
                   <div className="socialbar">
                     <a href="#" id="github">
@@ -222,7 +221,7 @@ function AboutUs() {
               <div className="flip-card-back">
                 <div className="Description">
                   <p className="description">
-                    Ey, ¿qué onda? Soy Martin Pintos, tengo 36 años y soy de
+                    Ey, ¿qué onda? Soy Martin Pintos, tengo 33 años y soy de
                     Rivera, Uruguay. Estoy en Hack Academy y, ¿sabes qué? Me
                     fascinan los datos y el manejo de información. Además, tengo
                     cinco gatos locos que me acompañan en mi aventura de
@@ -318,7 +317,7 @@ function AboutUs() {
               <div className="flip-card-back">
                 <div className="Description">
                   <p className="description">
-                    Hey, qué tal, soy Joaquin Brasesco, tengo 35 años y soy
+                    Hey, qué tal, soy Joaquin Brasesco, tengo 36 años y soy
                     profesor de matemáticas en Florida, Uruguay. También estoy
                     en Hack Academy, ¡porque nunca es tarde para aprender cosas
                     nuevas! Me gusta el deporte y tengo una habilidad especial

@@ -13,6 +13,16 @@ function ProductCard() {
             Con su diseño divertido y comodidad, será el lugar perfecto para
             relajarte mientras disfrutas de tu tiempo libre
           </Card.Text>
+          <Card.Link
+            style={{
+              color: "var(--black)",
+              fontSize: "1rem",
+              fontWeight: "600",
+            }}
+            href="/product"
+          >
+            Ver producto
+          </Card.Link>
           <ButtonGroup className="d-flex justify-content-around">
             <Button className="me-2" variant="success">
               Comprar
