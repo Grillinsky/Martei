@@ -25,13 +25,13 @@ function Profile() {
                   <image
                     className="img-profile"
                     href="PruebaFoto.jpg"
-                    x="-3"
+                    x="-2"
                     y="-45"
                     width="205%"
                     height="225%"
                   />
                 </svg>
-                <div className="text-container">
+                <div className="text-container row">
                   <h1 className="text-profile">Alex Garcia</h1>
                   <h2 className="text-username-profile">@Alex Garcia</h2>
                 </div>
