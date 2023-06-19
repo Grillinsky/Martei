@@ -31,7 +31,7 @@ function Profile() {
                     height="225%"
                   />
                 </svg>
-                <div className="text-container row">
+                <div className="text-container">
                   <h1 className="text-profile">Alex Garcia</h1>
                   <h2 className="text-username-profile">@Alex Garcia</h2>
                 </div>
@@ -56,7 +56,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <div className="Text-Imagen-Edit-Profile">
+             {/* <div className="Text-Imagen-Edit-Profile">
               <h1>Avatar</h1>
             </div>
             <div className="flip-card-profile">
@@ -78,7 +78,7 @@ function Profile() {
             <div className="btn-profile-edit-img">
               <Button className="btn-success-img">Editar Imagen</Button>
             </div>
-            <hr className="dividor-camp-edit" />
+             */}
             <div className="text-camp-profile">
               <h1 className="text-edit-name-profile">Editar</h1>
             </div>
