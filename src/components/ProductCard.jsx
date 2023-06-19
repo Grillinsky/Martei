@@ -7,15 +7,17 @@ function ProductCard() {
     <div className="m-3">
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src="/Mueble4.jpg" />
-        <Card.Body style={{ backgroundColor: "var(--white)" }}>
-          <Card.Title>Butaca Honguito</Card.Title>
-          <Card.Text>
+        <Card.Body style={{ backgroundColor: "var(--black)" }}>
+          <Card.Title style={{ color: "var(--white)" }}>
+            Butaca Honguito
+          </Card.Title>
+          <Card.Text style={{ color: "var(--white)" }}>
             Con su diseño divertido y comodidad, será el lugar perfecto para
             relajarte mientras disfrutas de tu tiempo libre
           </Card.Text>
           <Card.Link
             style={{
-              color: "var(--black)",
+              color: "var(--white)",
               fontSize: "1rem",
               fontWeight: "600",
             }}

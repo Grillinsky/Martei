@@ -8,23 +8,23 @@ function Product() {
   return (
     <div>
       <Navbar />
-      <div className="container d-flex justify-content-center align-items-center p-5">
-        <div className="row" style={{ marginTop: "3rem" }}>
-          <div className="col-12 col-md-6 col-lg-8 text-dark d-flex align-items-center justify-content-center">
+      <div className="container-fluid d-flex justify-content-center align-items-center py-5">
+        <div id="ItemContainer" className="row" style={{ marginTop: "3rem" }}>
+          <div
+            className="col-12 col-md-6 col-lg-8 text-dark d-flex p-0 align-items-center justify-content-center"
+            style={{ backgroundColor: "var(--black)" }}
+          >
             <img className="Item img-fluid" src="Mueble4.jpg" alt="Items" />
           </div>
           <div
-            className="col-lg-4 col-md-6 text-white d-md-flex flex-column"
+            className="col-12 col-lg-4 col-md-6 text-white d-flex flex-column"
             style={{ backgroundColor: "var(--black)" }}
           >
-            {/* <div className="d-flex justify-content-end align-items-end mx-3 div-text-product">
+            <div className="d-flex justify-content-between align-items-end">
+              <img src="/logo.png" alt="Logo de Martei" className="logo" />{" "}
               <h1 className="fs-6 text-product">Martei - Ecommerce</h1>
             </div>
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="d-inline-block align-text-top img-product"
-            /> */}
+
             <hr style={{ backgroundColor: "lightgrey", margin: "0" }} />
             <div className="div-text-description">
               <p className="text-description">
@@ -48,7 +48,7 @@ function Product() {
               </ul>
             </div>
             <hr style={{ backgroundColor: "lightgrey", margin: "0" }} />
-            <ButtonGroup className="d-flex justify-content-around">
+            <ButtonGroup className="d-flex justify-content-around my-3">
               <Button className="me-2" variant="success">
                 Comprar
               </Button>

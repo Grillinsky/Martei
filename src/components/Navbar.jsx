@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "../css/Cart-Modal.css";
-
-function Navbar() {
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
 
@@ -20,76 +21,85 @@ function Navbar() {
     <div>
       {" "}
       <header id="header">
-        <nav className="navbar navbar-expand-lg navbar-dark px-lg-5 fixed-top">
-          <div className="container-fluid">
-            <Link className="navbar-brand" to={"/"}>
+        <Navbar
+          style={{ backgroundColor: "var(--black)" }}
+          expand="lg"
+          fixed="top"
+        >
+          <Container fluid>
+            <Navbar.Brand href="/" className="p-2">
               <img
                 src="/logo.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
-            </Link>
-
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarToggler"
+            </Navbar.Brand>
+            <Navbar.Toggle
+              style={{ color: "white !important" }}
               aria-controls="navbarToggler"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
-              id="navbarToggler"
-              className="collapse navbar-collapse w-75 justify-content-end me-3"
-            >
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link to={"/productsPage"} className="nav-link">
-                    Productos
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/category"} className="nav-link">
-                    Categorias
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to={"/aboutUs"}
-                    data-bs-toggle="modal"
-                    data-bs-target="#contactModal"
-                    className="nav-link"
+              <FontAwesomeIcon
+                icon={faBars}
+                style={{ color: "white", fontSize: "2rem" }}
+              />
+            </Navbar.Toggle>
+            <Navbar.Collapse id="navbarToggler">
+              <Nav className="ms-auto">
+                <Nav.Link href="/productsPage">Productos</Nav.Link>
+                {/* DROPDOWN MENU */}
+                <NavDropdown
+                  title="Catgorias"
+                  id="navDropdown"
+                  className="custom-dropdown"
+                >
+                  <NavDropdown.Item
+                    style={{
+                      fontSize: "1rem",
+                    }}
+                    href="#action/3.1"
                   >
-                    Nosotros
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <li className="nav-item">
-              <a
-                href="#header"
-                className="nav-link"
-                aria-label="shopping cart"
-                onClick={() => setMostrarCarrito(true)}
-              >
-                <i className="fas fa-shopping-cart"></i>
-              </a>
-            </li>
-          </div>
-          <li className="nav-item me-3">
-            <Link
-              to={"/profile"}
-              data-bs-toggle="modal"
-              data-bs-target="#contactModal"
-              className="nav-link ms-2|"
-            >
-              <i className="fas fa-user"></i>{" "}
-            </Link>
-          </li>
-        </nav>
+                    Muebles
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    style={{ fontSize: "1rem" }}
+                    href="#action/3.2"
+                  >
+                    Cuadros
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    style={{ fontSize: "1rem" }}
+                    href="#action/3.3"
+                  >
+                    Espejos
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    style={{ fontSize: "1rem" }}
+                    href="#action/3.4"
+                  >
+                    Luminarias
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    style={{ fontSize: "1rem" }}
+                    href="#action/3.4"
+                  >
+                    Tapices
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <Nav.Link href="/aboutUs">Nosotros</Nav.Link>
+                <Nav.Link
+                  href="#header"
+                  aria-label="shopping cart"
+                  onClick={() => setMostrarCarrito(true)}
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                </Nav.Link>
+                <Nav.Link href="/profile" className="me-3">
+                  <i className="fas fa-user"></i>
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </header>
       <Modal
         className="modal-cart"
@@ -116,7 +126,7 @@ function Navbar() {
           )}
         </Modal.Body>
         <Modal.Footer className="mi-modal-footer">
-          <Button className="btn-tacho" onClick={vaciarCarrito}>
+          <Button className="btn-tacho" onClick={clearCart}>
             <i className="fa fa-trash-o" aria-hidden="true"></i>
           </Button>
           <Button
@@ -134,4 +144,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;

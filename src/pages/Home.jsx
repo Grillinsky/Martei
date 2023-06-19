@@ -419,12 +419,13 @@ function Home() {
             </div>
           </div>
           <div className="container d-flex justify-content-center">
-            <button
+            <a
+              href="/productsPage"
               id="productsButton"
               className="btn btn-warning p-3 fw-bold rounded-pill"
             >
               Todos los productos
-            </button>
+            </a>
           </div>
         </section>
         <section
