@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import "../css/Cart-Modal.css"
+import "../css/Cart-Modal.css";
 
 function Navbar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
@@ -47,7 +47,7 @@ function Navbar() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link to={"/product"} className="nav-link">
+                  <Link to={"/productsPage"} className="nav-link">
                     Productos
                   </Link>
                 </li>
@@ -68,34 +68,41 @@ function Navbar() {
                 </li>
               </ul>
             </div>
-                <li className="nav-item">
-                  <a
-                    href="#header"
-                    className="nav-link"
-                    aria-label="shopping cart"
-                    onClick={() => setMostrarCarrito(true)}
-                  >
-                    <i class="fas fa-shopping-cart"></i>
-                  </a>
-                </li>
+            <li className="nav-item">
+              <a
+                href="#header"
+                className="nav-link"
+                aria-label="shopping cart"
+                onClick={() => setMostrarCarrito(true)}
+              >
+                <i className="fas fa-shopping-cart"></i>
+              </a>
+            </li>
           </div>
-                <li className="nav-item me-3">
-                  <Link
-                    to={"/profile"}
-                    data-bs-toggle="modal"
-                    data-bs-target="#contactModal"
-                    className="nav-link ms-2|"
-                  >
-                    <i class="fas fa-user"></i>{" "}
-                  </Link>
-                </li>
-                
+          <li className="nav-item me-3">
+            <Link
+              to={"/profile"}
+              data-bs-toggle="modal"
+              data-bs-target="#contactModal"
+              className="nav-link ms-2|"
+            >
+              <i className="fas fa-user"></i>{" "}
+            </Link>
+          </li>
         </nav>
       </header>
-      <Modal className="modal-cart" show={mostrarCarrito} onHide={() => setMostrarCarrito(false)}>
+      <Modal
+        className="modal-cart"
+        show={mostrarCarrito}
+        onHide={() => setMostrarCarrito(false)}
+      >
         <Modal.Header className="mi-modal-header">
           <Modal.Title>Carrito de compras</Modal.Title>
-        <i class="fa fa-window-close" aria-hidden="true" onClick={()=> setMostrarCarrito(false)}></i>
+          <i
+            className="fa fa-window-close"
+            aria-hidden="true"
+            onClick={() => setMostrarCarrito(false)}
+          ></i>
         </Modal.Header>
         <Modal.Body className="mi-modal-body">
           {itemsCarrito.length > 0 ? (
@@ -110,9 +117,12 @@ function Navbar() {
         </Modal.Body>
         <Modal.Footer className="mi-modal-footer">
           <Button className="btn-tacho" onClick={vaciarCarrito}>
-          <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <i className="fa fa-trash-o" aria-hidden="true"></i>
           </Button>
-          <Button variant="outline-secondary" onClick={() => setMostrarCarrito(false)}>
+          <Button
+            variant="outline-secondary"
+            onClick={() => setMostrarCarrito(false)}
+          >
             Cerrar
           </Button>
           <Button variant="success" onClick={vaciarCarrito}>
@@ -122,6 +132,6 @@ function Navbar() {
       </Modal>
     </div>
   );
-};
+}
 
 export default Navbar;

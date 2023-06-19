@@ -44,7 +44,7 @@ export const data = {
   datasets: [
     {
       label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: -10, max: 1000 })),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 255, 132, 0.9)",
     },
@@ -69,50 +69,50 @@ function Dashboard() {
         </div>
         <div className="col-6">
           {" "}
-          <dd className="py-2">Dasboard</dd>
+          <dd className="py-4">Dasboard</dd>
         </div>
       </section>
       <section className="row p-0">
-        <nav id="sidebar" class="col-md-2 col-sm-1">
+        <nav id="sidebar" className="col-md-2 col-sm-1">
           <ul className="list-group list-group-flush p-3">
             <li className="list-group-item-dark ">
               <a href="#">
-                <i class="fas fa-chart-line px-2"></i>Dashboard
+                <i className="fas fa-chart-line px-4"></i>Dashboard
               </a>
             </li>
             <li className="list-group-item-dark">
               <a href="#">
-                <i class="fas fa-chair px-2"></i>Productos
+                <i className="fas fa-chair px-4"></i>Productos
               </a>
             </li>
             <li className="list-group-item-dark">
               <a href="#">
-                <i class="fas fa-shopping-bag px-2"></i>Pedidos
+                <i className="fas fa-shopping-bag px-4"></i>Pedidos
               </a>
             </li>
             <li className="list-group-item-dark">
               <a href="#">
-                <i class="fas fa-cogs px-2"></i>Ajustes
+                <i className="fas fa-cogs px-4"></i>Ajustes
               </a>
             </li>
           </ul>
         </nav>
         {/* Content Area */}
-        <div id="contentArea" class="col-md-10 col-sm-9">
+        <div id="contentArea" className="col-md-10 col-sm-9">
           {" "}
           <div id="glanceableInfo" className="row">
             <div className="col-md-3 my-2">
               <div className="container">
-                <i class="fas fa-wallet"></i>
+                <i className="fas fa-wallet px-2"></i>
                 <small className="mx-3">Flujo de Capital</small>
                 <dd>Uy$ 28.030</dd>
               </div>
             </div>
             <div className="col-md-3 my-2">
               <div className="container">
-                <i class="fas fa-clipboard-list"></i>
+                <i className="fas fa-clipboard-list px-2"></i>
                 <small className="mx-3">Pedidos</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-danger mx-2">20</span>/
                   <span className="text-success mx-2">50</span>
@@ -122,9 +122,9 @@ function Dashboard() {
             <div className="col-md-3 my-2">
               {" "}
               <div className="container">
-                <i class="far fa-envelope"></i>
+                <i className="far fa-envelope px-2"></i>
                 <small className="mx-3">Mensajes</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-danger mx-2">2</span>/
                   <span className="text-success mx-2">25</span>
@@ -134,16 +134,16 @@ function Dashboard() {
             <div className="col-md-3 my-2">
               {" "}
               <div className="container">
-                <i class="fas fa-exclamation"></i>{" "}
+                <i className="fas fa-exclamation px-2"></i>{" "}
                 <small className="mx-3">Notificaciones</small>
-                <div>
+                <div className="text-center">
                   {" "}
                   <span className="text-success mx-2">5</span>
                 </div>
               </div>{" "}
             </div>
           </div>
-          <div id="chart" class="container-fluid">
+          <div id="chart" className="container-fluid">
             <h2>Aca va un chart.js ¡Cuando pueda implementarlo! 😠</h2>
             <Line options={options} data={data} />{" "}
           </div>

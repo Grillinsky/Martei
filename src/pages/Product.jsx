@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Product.css";
+import { Button, ButtonGroup } from "react-bootstrap";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -7,20 +8,20 @@ function Product() {
   return (
     <div>
       <Navbar />
-      <div className="container-product">
+      <div className="container d-flex justify-content-center aligng-items-center p-5">
         <div
-          className="shadow-lg mt-5 ms-5 d-flex"
-          style={{ height: "80vh", width: "55vw" }}
+          className="row"
+          style={{ height: "80vh", width: "60vw", marginTop: "3rem" }}
         >
           <div
-            className="col-12 col-lg-12 col-md-8 bg-white text-dark d-flex align-items-center justify-content-center"
+            className="col-12 col-md-6 col-lg-8 bg-white text-dark d-flex align-items-center justify-content-center"
             style={{ width: "33vw" }}
           >
             <img className="Item" src="Mueble4.jpg" alt="Items" />
           </div>
           <div
-            className="container-product-two col-lg-6 col-md-4 d-none text-white d-md-flex flex-column"
-            style={{ backgroundColor: "#000" }}
+            className="container-product-two col-lg-4 col-md-6 d-none text-white d-md-flex flex-column"
+            style={{ backgroundColor: "var(--black)" }}
           >
             <div className="d-flex justify-content-end align-items-end text-align-center mx-3 div-text-product">
               {" "}
@@ -54,7 +55,22 @@ function Product() {
                 <li className="ul-caracterics">· Precio: 9.99 $USD</li>
               </ul>
             </div>
-            <hr className="mt-4" style={{ backgroundColor: "lightgrey" }} />
+            <hr className="mt-1" style={{ backgroundColor: "lightgrey" }} />
+            <ButtonGroup className="d-flex justify-content-around">
+              <Button className="me-2" variant="success">
+                Comprar
+              </Button>
+              <Button
+                style={{
+                  backgroundColor: "var(--primary-color)",
+                  border: "0",
+                  color: "var(--black)",
+                }}
+                className="ms-2"
+              >
+                Al Carrito
+              </Button>
+            </ButtonGroup>
           </div>
         </div>
       </div>
