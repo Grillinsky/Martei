@@ -2,7 +2,7 @@
   max-width: 75%;
 }
 .Item {
-  background-color: var(--black);
+  background-color: black !important;
   max-width: 100%;
 }
 
@@ -28,11 +28,14 @@
 }
 
 .div-text-caracterics {
-  margin-top: 0.5rem;
+  margin-top: 0.4rem;
+  margin-left: 0.2rem;
+  list-style-type: disc !important;
 }
 
+
 .li-caracterics-product {
-  list-style: disc;
+  list-style: square !important;
   letter-spacing: 0.6px;
   font-size: 1rem;
   font-weight: 700;
@@ -41,9 +44,21 @@
 
 .ul-caracterics {
   text-align: start;
-  margin-bottom: 0;
   font-size: 0.875rem;
 }
+
 .logo {
   max-width: 20%;
+}
+
+.price-product{
+  text-align: start !important;
+  font-size: 0.875rem !important;
+  color: #369f19 !important;
+  letter-spacing: 2px !important;
+  font-weight: bolder !important;
+  margin-top: 3px;
+  margin-left: 16%;
+  margin-bottom: 0% !important;
+  margin-right: 0% !important;
 }

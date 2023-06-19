@@ -48,7 +48,7 @@ function NavBar() {
                 <Nav.Link href="/productsPage">Productos</Nav.Link>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
-                  title="Catgorias"
+                  title="Categorias"
                   id="navDropdown"
                   className="custom-dropdown"
                 >
