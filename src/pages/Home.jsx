@@ -469,7 +469,7 @@ function Home() {
                 </p> --> */}
                 </div>
               </div>
-            </div>
+            </div>|
           </div>
         </section>
         {/* <!-- Button trigger modal --> */}

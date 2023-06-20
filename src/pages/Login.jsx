@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "../css/Login.css";
-/* import { useDispatch } from "react-redux";
+ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setUser } from "../redux/userSlice";
+import { setUser } from "../../redux/userSlice";
 import axios from "axios";
- */
+
 
 function Login() {
-  /* const [emailValue, setEmailValue] = useState("");
+   const [emailValue, setEmailValue] = useState("");
+   console.log(emailValue)
   const [passwordValue, setPasswordValue] = useState("");
+  console.log(passwordValue)
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ function Login() {
     try {
       const response = await axios({
         method: "POST",
-        url: `${import.meta.env.VITE_API_URL}/tokens`,
+        url: "http://localhost:3000/login",
         data: {
           email: emailValue,
           password: passwordValue,
@@ -30,17 +32,17 @@ function Login() {
     } catch (error) {
       console.error(error);
     }
-  } */
+  } 
 
   return (
     <div className="container-login">
       <div className="d-flex justify-content-center align-items-center div-login">
         <div className="form-container">
           <p className="title">Login</p>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit} autoComplete="off">
             <div className="input-group">
-              <label for="username">Username</label>
-              <input type="text" name="username" id="username" placeholder="" />
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" placeholder="" value={emailValue} onChange={(event) => setEmailValue(event.target.value)} />
             </div>
             <div className="input-group">
               <label for="password">Password</label>
@@ -49,6 +51,8 @@ function Login() {
                 name="password"
                 id="password"
                 placeholder=""
+                value={passwordValue}
+                onChange={(event) => setPasswordValue(event.target.value)}
               />
               <div className="forgot">
                 <a rel="noopener noreferrer" href="#">
@@ -56,7 +60,7 @@ function Login() {
                 </a>
               </div>
             </div>
-            <button className="sign">Sign in</button>
+            <button className="sign" type="submit">Sign in</button>
           </form>
           <div className="social-message">
             <div className="line"></div>
