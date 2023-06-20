@@ -1,57 +1,74 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ProductCard() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    listProducts();
+  }, []);
+
+  async function listProducts() {
+    try {
+      const response = await axios.get('http://localhost:3000/product');
+      const productList = Array.isArray(response.data.products) ? response.data.products : [];
+      setProducts(productList);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
-    <div className="m-3">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="/Mueble4.jpg" />
-        <Card.Body style={{ backgroundColor: "var(--black)" }}>
-          <Card.Title style={{ color: "var(--white)" }}>
-            Butaca Honguito
-          </Card.Title>
-          <Card.Text style={{ color: "var(--white)" }}>
-            Con su diseño divertido y comodidad, será el lugar perfecto para
-            relajarte mientras disfrutas de tu tiempo libre
-          </Card.Text>
-          <Card.Link
-            style={{
-              color: "var(--white)",
-              fontSize: "1rem",
-              fontWeight: "600",
-            }}
-            href="/product"
-          >
-            Ver producto
-          </Card.Link>
-          <ButtonGroup className="d-flex justify-content-around">
-            <Button className="me-2" variant="success">
-              Comprar
-            </Button>
-            <Button
-              style={{
-                backgroundColor: "var(--primary-color)",
-                border: "0",
-                color: "var(--black)",
-              }}
-              className="ms-2"
-            >
-              Al Carrito
-            </Button>
-          </ButtonGroup>
-        </Card.Body>
-      </Card>
-      {/* 
-        img
-        name
-        price
-        description
-        buy button
-        add to cart button
-        
-    
-    */}
+    <div className="m-2 mt-3">
+      <div className="row">
+        {Array.isArray(products) ? (
+          products.map(product => (
+            <div key={product.id} className="col-sm-3">
+              <Card style={{ width: "23.5rem", marginBottom:"30px" }}>
+                <Card.Img variant="top" src={product.image} />
+                <Card.Body style={{ backgroundColor: "white" }}>
+                  <Card.Title style={{ color: "black", fontWeight: "900" }}>
+                    {product.name}
+                  </Card.Title>
+                  <Card.Text style={{ color: "black" }}>
+                    {product.description}
+                  </Card.Text>
+                  <Card.Link
+                    style={{
+                      color: "black",
+                      fontSize: "1rem",
+                      fontWeight: "600",
+                    }}
+                    href="/product"
+                  >
+                    → Ver producto ←
+                  </Card.Link>
+                  <ButtonGroup className="d-flex justify-content-around mt-2">
+                    <Button className="me-2 rounded" variant="success">
+                      Comprar
+                    </Button>
+                    <Button
+                      style={{
+                        backgroundColor: "var(--primary-color)",
+                        border: "0",
+                        color: "var(--black)",
+                      }}
+                      className="ms-2 rounded"
+                    >
+                      Al Carrito
+                    </Button>
+                  </ButtonGroup>
+                </Card.Body>
+              </Card>
+            </div>
+          ))
+        ) : (
+          <h1>No hay stock</h1>
+        )}
+      </div>
     </div>
   );
 }
