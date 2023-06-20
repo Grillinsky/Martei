@@ -1,17 +1,19 @@
 .rectangle-5 {
+  margin-left: 9em;
     border-radius: 46px;
     margin-top: 100px;
     margin-bottom: 55px;
-    height: 530px;
+    height: 455px;
     width: 266px;
-    background-color: #ffaa43;
+    background-color: #000000ec;
+     background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
 }
 
 .frame-16 {
     position: absolute;
-    width: 1000px;
-    height: 480px;
-    left: 130px;
+    width: 800px;
+    height: 400px;
+    left: 270px;
     top: 126px;
     background-color: #ffffff;
     border-radius: 30px;
@@ -21,8 +23,8 @@
 .frame-15 {
     position: absolute;
     width: 280px;
-    height: 480px;
-    background-color: #f8f8ff;
+    height: 400px;
+    background-color: #f1f1fd;
     border-radius: 30px;
     border-top-right-radius: 0%;
     border-bottom-right-radius: 0%;
@@ -35,7 +37,7 @@
     border: none;   
     margin-top: 10px;
     height: 30px !important;
-    width: 150px;
+    width: 120px !important;
     margin-top: 30px;
     margin-left: 25px;
     margin-bottom: 0px;
@@ -79,38 +81,38 @@ top: 33px;
 
 .icons-profile {
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px !important;
 }
 
  .fa-user-circle {
     margin-top: 1px;
     margin-bottom: 10px;
     margin-left: 38px;
-    font-size: 45px;
-    color: #fba234;
+    font-size: 35px;
+    color: #36884f;
  }
 
  .fa-unlock-alt {
     margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 38px;
-    font-size: 45px;
-    color: #fba234;
+    font-size: 35px;
+    color: #1900ff;
  }
 
  .fa-cart-plus{ 
     margin-top: 25px;
     margin-bottom: 25px;
     margin-left: 28px;
-    font-size: 45px;
-    color: #fba234;
+    font-size: 35px;
+    color: #ff0000;
  }
 
  .fa-history {
     margin-top: 10px;
     margin-left: 35px;
-    font-size: 45px;
-    color: #fba234;
+    font-size: 35px;
+    color: #ffae00;
     
  } 
 
@@ -126,41 +128,41 @@ top: 33px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 8px;
+    margin-top: 5px;
   }
   
   .icon-container {
     display: flex;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   
   .icon-container i {
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   .text-icons-profile-1 {
     position: relative;
-    top: 6px;
+    top: 3px;
     margin-left: 5px !important;
   }
 
   .text-icons-profile-2 {
     position: relative;
-    top: 15px;
+    top: 12px;
     margin-left: 5px !important;
   }
 
   .text-icons-profile-3 {
     position: relative;
-    top: 12px;
+    top: 7px;
     margin-left: 5px !important;
   }
 
   .text-icons-profile-4 {
     position: relative;
-    top: 15px;
-    margin-left: 5px !important;
+    top: 12px;
+    margin-left:1px !important;
   }
 
   .dividor-profile {
@@ -169,223 +171,8 @@ top: 33px;
     margin-top: 15px !important;
     margin-left: -25px;
     width: 17.5em !important;
-    color: #a15900;
+    color: #000000;
   }
-
-
-  .flip-card-profile {
-    background-color: transparent;
-    display: flex;
-    margin-top: 1px !important;
-    margin-left: 40em;
-    width: 200px;
-    height: 200px;
-    perspective: 1000px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
-    border: 1px solid #1010102a;
-    border-width: 2px;
-  }
-
-  .Text-Imagen-Edit-Profile {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder !important;
-    margin-top: 0.9em; 
-    margin-bottom: 0% !important;
-    margin-left: 42.7em;
-  }
-
-  .btn-profile-edit-img {
-    margin-top: 9px;
-    margin-left: 40em;
-  }
-
-  .btn-success-img {
-    background-color: #ffa537;
-    border: none;
-    width: 200px;
-    border-radius: 0%;
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #ffa537;
-    --bs-btn-border-color: trasparent;
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #ffa537;
-    --bs-btn-hover-border-color: #ffffff;
-    --bs-btn-focus-shadow-rgb: 49,132,253;
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #ffa537;
-    --bs-btn-active-border-color: #ffffff;
-    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #ffa537;
-    --bs-btn-disabled-border-color: #ffa537;
-
-  }
-
-  .edit-inputs-profile {
-    position: relative;
-    display: inline-block !important;
-    flex-direction: column;
-    gap: 10px;
-    width: 20%;
-    margin-left: 43%;
-    top: 53px;
-    border: 1px solid #ffa537 !important;
-  }
-
-  .edit-input-profile {
-    position: relative;
-    display: inline-block !important;
-    flex-direction: column;
-    gap: 10px;
-    width: 20%;
-    margin-left: 67%;
-    border: 1px solid #ffa537 !important;
-  }
-  
-  #inputField {
-    border: 2px solid white;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 12px 15px;
-    color: black;
-    font-weight: 500;
-    outline: none;
-    caret-color: rgb(155, 78, 255);
-    transition-duration: .3s;
-    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  }
-  
-  .userIcon {
-    position: absolute;
-    fill: rgb(252, 154, 48);
-    width: 12px;
-    top: -23px;
-    left: -15px;
-    opacity: 0;
-    transition: .2s linear;
-  }
-  
-  .nameLabel {
-    position: absolute;
-    top: 55px !important;
-    left: 5px;
-    color: black !important;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    overflow: hidden;
-    transition: .2s linear;
-    opacity: 0;
-  }
-
-
-  .usernameLabel {
-    position: absolute;
-    top: -25px;
-    left: 5px;
-    color: black;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    overflow: hidden;
-    transition: .2s linear;
-    opacity: 0;
-  }
-  
-  #inputField:focus ~ .usernameLabel,
-  #inputField:valid ~ .usernameLabel {
-    transform: translateX(20px);
-    opacity: 1;
-  }
-  
-  #inputField:focus ~ .userIcon,
-  #inputField:valid ~ .userIcon {
-    transform: translateX(20px);
-    opacity: 1;
-  }
-  
-  #inputField:focus,
-  #inputField:valid {
-    background-color: transparent;
-    transition-duration: .3s;
-  }
-
- 
-  .btn-input-profile {
-    color: black;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #ffa537;
-    padding: 7px 12px;
-    font-size: 17px;
-    font-weight: bold;
-    background: transparent;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-left: 45%;
-  }
-  
-  .btn-input-profile:hover {
-    color: white;
-  }
-  
-  .btn-input-profile::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: #ffa537;
-    z-index: -1;
-    transition: all 0.8s;
-  }
-  
-  .btn-input-profile:hover::before {
-    width: 160%;
-  }
-
-
-  .btn-input-profile-two {
-    color: black;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #ffa537;
-    padding: 7px 12px;
-    font-size: 17px;
-    font-weight: bold;
-    background: transparent;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
-    margin-left: 145px;
-  }
-  
-  .btn-input-profile-two:hover {
-    color: white;
-  }
-  
-  .btn-input-profile-two::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: #ffa537;
-    z-index: -1;
-    transition: all 0.8s;
-  }
-  
-  .btn-input-profile-two:hover::before {
-    width: 160%;
-  }
-
 
   .text-camp-profile {
     margin-left: 30%;

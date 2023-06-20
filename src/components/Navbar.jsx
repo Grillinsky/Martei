@@ -1,5 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logoutUser } from "../../redux/userSlice";
+
 import { Navbar, Nav, Container, NavDropdown, Modal, Button, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +14,9 @@ import "../css/Cart-Modal.css";
 function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
+  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const vaciarCarrito = () => {
     setItemsCarrito([]);
@@ -17,6 +24,11 @@ function NavBar() {
 
   const clearCart = () => {
     setCartItems([]);
+  };
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
   };
 
   return (
@@ -96,9 +108,11 @@ function NavBar() {
                   <i className="fas fa-shopping-cart"></i>
                 </Nav.Link>
                 <NavDropdown title={<FontAwesomeIcon icon={faUser} />} id="profile-dropdown"className="custom-dropdown"  menuClassName="custom-dropdown-menu">
-                  <Dropdown.Item href="/profile" className="fs-5">Profile</Dropdown.Item>
+                  <Dropdown.Item className="fs-6">
+                    <Link to="/profile" className="fs-6">Profile</Link>
+                  </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item href="/logout" className="fs-5">Logout</Dropdown.Item>
+                  <Dropdown.Item onClick={handleLogout} className="fs-6">Logout</Dropdown.Item>
                  </NavDropdown>
               </Nav>
             </Navbar.Collapse>
