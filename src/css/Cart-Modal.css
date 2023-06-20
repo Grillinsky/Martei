@@ -67,3 +67,12 @@
     background-color: #f1e7db;
     padding: 10px 20px;
   }
+
+  .custom-dropdown .dropdown-menu {
+    left: -6.4em !important;
+    right: 0;
+  }
+  
+  .custom-dropdown-menu {
+    margin-right: 0 !important;
+  }
