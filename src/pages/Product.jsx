@@ -38,13 +38,13 @@ function Product() {
             </div>
             <hr style={{ backgroundColor: "lightgrey", margin: "0" }} />
             <div className="div-text-caracterics">
-              <dd>Caracteristicas:</dd>
+              <dd className="dd-caracterics-style">Caracteristicas:</dd>
               <ul className="li-caracterics-product">
                 <li className="ul-caracterics">· Estructura: Metal Pintado</li>
                 <li className="ul-caracterics">· Asiento: Cuero Natural</li>
                 <li className="ul-caracterics">· Uso: Residencial</li>
                 <li className="ul-caracterics">· Medidas: 70x70cm</li>
-                <li className="ul-caracterics">· Precio: 9.99 $USD</li>
+                <li className="price-product"> Precio: 9.99 $USD</li>
               </ul>
             </div>
             <hr style={{ backgroundColor: "lightgrey", margin: "0" }} />

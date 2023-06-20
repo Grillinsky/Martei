@@ -3,6 +3,7 @@ import "../css/About-Us.css";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Tecnologies from "../components/Tecnologies";
 
 function AboutUs() {
   return (
@@ -383,6 +384,10 @@ function AboutUs() {
           </div>
         </div>
       </div>
+      <div className="text-tecnology">
+          <h1>Tecnologias</h1>
+        </div>
+        <Tecnologies/>
       <Footer />
     </div>
   );
