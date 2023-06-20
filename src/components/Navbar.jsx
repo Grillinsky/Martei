@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import "../css/Cart-Modal.css";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Modal, Button, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import "../css/Cart-Modal.css";
+
 function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
@@ -93,9 +95,11 @@ function NavBar() {
                 >
                   <i className="fas fa-shopping-cart"></i>
                 </Nav.Link>
-                <Nav.Link href="/profile" className="me-3">
-                  <i className="fas fa-user"></i>
-                </Nav.Link>
+                <NavDropdown title={<FontAwesomeIcon icon={faUser} />} id="profile-dropdown"className="custom-dropdown"  menuClassName="custom-dropdown-menu">
+                  <Dropdown.Item href="/profile" className="fs-5">Profile</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item href="/logout" className="fs-5">Logout</Dropdown.Item>
+                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>
