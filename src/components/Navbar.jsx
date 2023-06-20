@@ -45,7 +45,9 @@ function NavBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
               <Nav className="ms-auto">
-                <Nav.Link href="/productsPage">Productos</Nav.Link>
+                <Nav.Link className="nav-item" href="/productsPage">
+                  Productos
+                </Nav.Link>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
                   title="Categorias"
@@ -73,27 +75,39 @@ function NavBar() {
                     Espejos
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.4"
                   >
                     Luminarias
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.4"
                   >
                     Tapices
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/aboutUs">Nosotros</Nav.Link>
+                <Nav.Link href="/aboutUs" className="nav-item">
+                  Nosotros
+                </Nav.Link>
                 <Nav.Link
+                  className="nav-item"
                   href="#header"
                   aria-label="shopping cart"
                   onClick={() => setMostrarCarrito(true)}
                 >
-                  <i className="fas fa-shopping-cart"></i>
+                  <i className="fas fa-shopping-cart fa-lg position-relative">
+                    <span
+                      id="badge"
+                      class="position-absolute start-100 translate-middle  bg-danger rounded-circle"
+                    >
+                      <span>0</span>
+                    </span>
+                  </i>
                 </Nav.Link>
-                <Nav.Link href="/profile" className="me-3">
+                <Nav.Link href="/profile" className="me-3 nav-item">
                   <i className="fas fa-user"></i>
                 </Nav.Link>
               </Nav>

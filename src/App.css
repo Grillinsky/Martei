@@ -54,7 +54,13 @@ nav {
   background-color: var(--white); /* Background color on hover */
   color: var(--black); /* Text color on hover */
 }
-
+#badge {
+  font-size: small;
+  height: 1rem;
+  width: 1rem;
+  text-align: center;
+  color: var(--white);
+}
 .carousel-item {
   height: 18rem;
 }
@@ -241,7 +247,17 @@ a:hover {
 }
 
 /*            MEDIA MEDIA              */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+  nav {
+    font-size: larger;
+  }
+  nav .nav-item {
+    text-align: right;
+  }
+  #badge {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
   .hero-title {
     font-size: calc(5rem - 2vw);
   }
