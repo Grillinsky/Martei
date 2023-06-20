@@ -4,6 +4,8 @@
   --highlight-color: #b87444 !important;
   --black: #070707 !important;
   --white: #d5d3d3 !important;
+  --focus-color: #916647 !important;
+  --highlight-color: #c0906d !important;
 }
 * {
   box-sizing: border-box;
