@@ -38,27 +38,27 @@ function Register() {
           <p className="title">Register</p>
           <form className="form" onSubmit={handleSubmitRegister} autoComplete="off">
             <div className="input-group">
-              <label for="firstname">Firstname</label>
+              <label htmlFor="firstname">Firstname</label>
               <input type="text" name="firstname" id="firstname" placeholder="" value={firstNameValue} onChange={(event) => setFirstNameValue(event.target.value)} />
             </div>
             <div className="input-group">
-              <label for="lastname">Lastname</label>
+              <label htmlFor="lastname">Lastname</label>
               <input type="text" name="lastname" id="lastname" placeholder="" value={lastNameValue} onChange={(event) => setLastNameValue(event.target.value)} />
             </div>
             <div className="input-group">
-              <label for="address">Address</label>
+              <label htmlFor="address">Address</label>
               <input type="text" name="address" id="address" placeholder="" value={addressValue} onChange={(event) => setAddressValue(event.target.value)} />
             </div>
             <div className="input-group">
-              <label for="phone">Phone</label>
+              <label htmlFor="phone">Phone</label>
               <input type="number" name="phone" id="phone" placeholder="" value={phoneValue} onChange={(event) => setPhoneValue(event.target.value)} />
             </div>
             <div className="input-group">
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input type="text" name="email" id="email" placeholder="" value={emailValue} onChange={(event) => setEmailValue(event.target.value)} />
             </div>
             <div className="input-group">
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 name="password"

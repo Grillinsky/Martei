@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="container-fluid py-4">
+    <footer className="container-fluid py-4 mt-5">
       <div className="row">
         <div className="col-lg-6">
           <div className="row">
@@ -10,7 +10,7 @@ function Footer() {
               <img src="/logoFinal.png" alt="Logo Martei" />
             </div>
             <div className="col-4">
-              <dd>Catalogo</dd>
+              <dd className="ms-4">Catalogo</dd>
               <ul>
                 <li>
                   <a href="/#muebles">Muebles</a>
@@ -30,7 +30,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-4">
-              <dd>Sobre Martei</dd>
+              <dd className="ms-4">Sobre Martei</dd>
               <ul>
                 <li>Legales</li>
                 <li>Terminos y condiciones</li>
