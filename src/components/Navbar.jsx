@@ -26,9 +26,6 @@ function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
   const vaciarCarrito = () => {
     setItemsCarrito([]);
   };
