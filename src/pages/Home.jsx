@@ -27,6 +27,9 @@ function Home() {
                   precisas y diseñamos juntos el mueble indicado para vos 😊 en
                   las medidas y características que más te convengan.
                 </p>
+                <a className="text-dark category-link" href="/#cuadros">
+                  Ver todo en mueble <i class="fas fa-chevron-right"></i>
+                </a>
               </div>
               <div className="col-lg-4 border rounded">
                 <div
@@ -170,6 +173,9 @@ function Home() {
                   cualquier espacio. Son esos elementos distintivos de cada
                   hogar, que los vuelve únicos y llena de personalidad
                 </p>
+                <a className="text-dark category-link" href="/#cuadros">
+                  Ver todos los cuadros <i class="fas fa-chevron-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -182,6 +188,9 @@ function Home() {
                   uno igual a otro, y en lo personal creo que es uno de los
                   atributos más valiosos que sólo lo artesanal nos da
                 </p>
+                <a className="text-dark category-link" href="/#cuadros">
+                  Ver todos los espejos <i class="fas fa-chevron-right"></i>
+                </a>
               </div>
               <div className="col-lg-4 border rounded">
                 <div
@@ -334,6 +343,9 @@ function Home() {
                   estado más puro aportan la nobleza y calidez que sólo la
                   naturaleza tiene 🤎✨
                 </p>
+                <a className="text-dark category-link" href="/#cuadros">
+                  Ver todo en luminarias <i class="fas fa-chevron-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -346,6 +358,9 @@ function Home() {
                   nobles y naturales nunca puede resultar mal, en este caso,
                   madera y algodón 🤎
                 </p>
+                <a className="text-dark category-link" href="/#cuadros">
+                  Ver todo en tapiceria <i class="fas fa-chevron-right"></i>
+                </a>
               </div>
               <div className="col-lg-4 border rounded">
                 <div
@@ -418,7 +433,7 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="container d-flex justify-content-center">
+          <div className="container d-flex justify-content-center my-4">
             <a
               href="/productsPage"
               id="productsButton"
@@ -428,10 +443,7 @@ function Home() {
             </a>
           </div>
         </section>
-        <section
-          className="my-5 py-2 container-fluid rounded"
-          id="presentacion"
-        >
+        <section className="py-2 container-fluid rounded" id="presentacion">
           {/* <!-- Foto de Cami + pequeña historia --> */}
           <div className="row-container container w-50">
             <div className="row">

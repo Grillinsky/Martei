@@ -12,8 +12,15 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
 }
+.category-link {
+  font-size: 1.2rem;
+}
+.category-link:hover {
+  transform: translateX(10px);
+  transition-duration: 0.5s;
+}
 #presentacion {
-  background-color: #000a06;
+  background-color: var(--black);
   background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
@@ -70,8 +77,14 @@ footer {
   background-color: var(--black);
   color: var(--white);
 }
+footer img {
+  max-width: 50%;
+}
 footer i {
   font-size: 2rem;
+}
+footer a {
+  font-size: 1rem;
 }
 li {
   list-style: none;
@@ -242,6 +255,9 @@ a:hover {
     padding: 1rem;
   }
   .product-category p {
+    text-align: center;
+  }
+  .category-link {
     text-align: center;
   }
   #presentacion img {

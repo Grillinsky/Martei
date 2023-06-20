@@ -21,7 +21,7 @@ function Product() {
             style={{ backgroundColor: "var(--black)" }}
           >
             <div className="d-flex justify-content-between align-items-end">
-              <img src="/logo.png" alt="Logo de Martei" className="logo" />{" "}
+              <img src="/logoFinal.png" alt="Logo de Martei" className="logo" />{" "}
               <h1 className="fs-6 text-product">Martei - Ecommerce</h1>
             </div>
 
