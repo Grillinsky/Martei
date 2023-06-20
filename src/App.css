@@ -15,14 +15,6 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#presentacion {
-  background-color: #000a06;
-  background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-}
-#presentacion img {
-  width: 18rem;
-}
 .hero-title {
   align-self: flex-start;
   text-align: center;
@@ -81,19 +73,14 @@ nav {
   padding: 0.3rem;
 }
 footer {
-  min-height: 25vh !important;
+  /* min-height: 25vh !important; */
   background-color: var(--black);
-  color: var(--white);
-}
-
-#footer-about {
-  min-height: 33vh !important;
-  background-color: var(--black);
+  background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
   color: var(--white);
 }
 
 footer i {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 li {
   list-style: none;
@@ -255,20 +242,6 @@ a:hover {
 
 /*            MEDIA MEDIA              */
 @media screen and (max-width: 600px) {
-  #presentacion,
-  .row-container {
-    padding: 0 2rem;
-    width: 100% !important;
-  }
-  #presentacion {
-    padding: 1rem;
-  }
-  .product-category p {
-    text-align: center;
-  }
-  #presentacion img {
-    width: 50vw;
-  }
   .hero-title {
     font-size: calc(5rem - 2vw);
   }

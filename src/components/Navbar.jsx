@@ -29,7 +29,7 @@ function NavBar() {
           <Container fluid>
             <Navbar.Brand href="/" className="p-2">
               <img
-                src="/logo.png"
+                src="/logoFinal.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
@@ -48,7 +48,7 @@ function NavBar() {
                 <Nav.Link href="/productsPage">Productos</Nav.Link>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
-                  title="Catgorias"
+                  title="Categorias"
                   id="navDropdown"
                   className="custom-dropdown"
                 >
