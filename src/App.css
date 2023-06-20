@@ -81,7 +81,7 @@ nav {
 footer {
   /* min-height: 25vh !important; */
   background-color: var(--black);
-  background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+ /*  background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png"); */
   color: var(--white);
 }
 

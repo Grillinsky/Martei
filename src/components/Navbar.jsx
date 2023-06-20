@@ -1,13 +1,33 @@
 import React from "react";
 import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import "../css/Cart-Modal.css";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logoutUser } from "../../redux/userSlice";
+
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Modal,
+  Button,
+  Dropdown,
+} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import "../css/Cart-Modal.css";
+
 function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const vaciarCarrito = () => {
     setItemsCarrito([]);
@@ -15,6 +35,11 @@ function NavBar() {
 
   const clearCart = () => {
     setCartItems([]);
+  };
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
   };
 
   return (
@@ -107,9 +132,22 @@ function NavBar() {
                     </span>
                   </i>
                 </Nav.Link>
-                <Nav.Link href="/profile" className="me-3 nav-item">
-                  <i className="fas fa-user"></i>
-                </Nav.Link>
+                <NavDropdown
+                  title={<FontAwesomeIcon icon={faUser} />}
+                  id="profile-dropdown"
+                  className="custom-dropdown"
+                  menuClassName="custom-dropdown-menu"
+                >
+                  <Dropdown.Item className="fs-6">
+                    <Link to="/profile" className="fs-6">
+                      Profile
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={handleLogout} className="fs-6">
+                    Logout
+                  </Dropdown.Item>
+                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>
