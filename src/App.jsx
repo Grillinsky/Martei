@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"; 
 import { Routes, Route } from "react-router-dom";
-import { ProtectedRoute } from "./ProtectedRoutes";
+import { ProtectedRoute } from "./ProtectedRoutes"
 import "./App.css";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AboutUs from "./pages/AboutUs";
@@ -9,7 +10,7 @@ import Product from "./pages/Product";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import ProductsPage from "./pages/ProductsPage";
-/* import Register from "./pages/Register"; */
+ import Register from "./pages/Register"; 
 
 function App() {
   const store = useSelector((state) => state);
@@ -26,7 +27,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/productsPage" element={<ProductsPage />} />
         <Route path="/aboutUs" element={<AboutUs />} />
-        {/*  <Route path="/register" element={<Register />} /> */}
+        <Route path="/register" element={<Register />} /> 
       </Routes>
     </>
   );
