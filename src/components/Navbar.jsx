@@ -4,9 +4,17 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/userSlice";
 
-import { Navbar, Nav, Container, NavDropdown, Modal, Button, Dropdown } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Modal,
+  Button,
+  Dropdown,
+} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "../css/Cart-Modal.css";
@@ -14,7 +22,7 @@ import "../css/Cart-Modal.css";
 function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
-  
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -59,7 +67,9 @@ function NavBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
               <Nav className="ms-auto">
-                <Nav.Link href="/productsPage">Productos</Nav.Link>
+                <Nav.Link className="nav-item" href="/productsPage">
+                  Productos
+                </Nav.Link>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
                   title="Categorias"
@@ -87,33 +97,54 @@ function NavBar() {
                     Espejos
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.4"
                   >
                     Luminarias
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.4"
                   >
                     Tapices
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="/aboutUs">Nosotros</Nav.Link>
+                <Nav.Link href="/aboutUs" className="nav-item">
+                  Nosotros
+                </Nav.Link>
                 <Nav.Link
+                  className="nav-item"
                   href="#header"
                   aria-label="shopping cart"
                   onClick={() => setMostrarCarrito(true)}
                 >
-                  <i className="fas fa-shopping-cart"></i>
+                  <i className="fas fa-shopping-cart fa-lg position-relative">
+                    <span
+                      id="badge"
+                      class="position-absolute start-100 translate-middle  bg-danger rounded-circle"
+                    >
+                      <span>0</span>
+                    </span>
+                  </i>
                 </Nav.Link>
-                <NavDropdown title={<FontAwesomeIcon icon={faUser} />} id="profile-dropdown"className="custom-dropdown"  menuClassName="custom-dropdown-menu">
+                <NavDropdown
+                  title={<FontAwesomeIcon icon={faUser} />}
+                  id="profile-dropdown"
+                  className="custom-dropdown"
+                  menuClassName="custom-dropdown-menu"
+                >
                   <Dropdown.Item className="fs-6">
-                    <Link to="/profile" className="fs-6">Profile</Link>
+                    <Link to="/profile" className="fs-6">
+                      Profile
+                    </Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item onClick={handleLogout} className="fs-6">Logout</Dropdown.Item>
-                 </NavDropdown>
+                  <Dropdown.Item onClick={handleLogout} className="fs-6">
+                    Logout
+                  </Dropdown.Item>
+                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>
