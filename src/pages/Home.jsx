@@ -28,7 +28,7 @@ function Home() {
                   las medidas y características que más te convengan.
                 </p>
                 <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en mueble <i class="fas fa-chevron-right"></i>
+                  Ver todo en mueble <i className="fas fa-chevron-right"></i>
                 </a>
               </div>
               <div className="col-lg-4 border rounded">
@@ -174,7 +174,7 @@ function Home() {
                   hogar, que los vuelve únicos y llena de personalidad
                 </p>
                 <a className="text-dark category-link" href="/#cuadros">
-                  Ver todos los cuadros <i class="fas fa-chevron-right"></i>
+                  Ver todos los cuadros <i className="fas fa-chevron-right"></i>
                 </a>
               </div>
             </div>
@@ -189,7 +189,7 @@ function Home() {
                   atributos más valiosos que sólo lo artesanal nos da
                 </p>
                 <a className="text-dark category-link" href="/#cuadros">
-                  Ver todos los espejos <i class="fas fa-chevron-right"></i>
+                  Ver todos los espejos <i className="fas fa-chevron-right"></i>
                 </a>
               </div>
               <div className="col-lg-4 border rounded">
@@ -344,7 +344,8 @@ function Home() {
                   naturaleza tiene 🤎✨
                 </p>
                 <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en luminarias <i class="fas fa-chevron-right"></i>
+                  Ver todo en luminarias{" "}
+                  <i className="fas fa-chevron-right"></i>
                 </a>
               </div>
             </div>
@@ -359,7 +360,7 @@ function Home() {
                   madera y algodón 🤎
                 </p>
                 <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en tapiceria <i class="fas fa-chevron-right"></i>
+                  Ver todo en tapiceria <i className="fas fa-chevron-right"></i>
                 </a>
               </div>
               <div className="col-lg-4 border rounded">
@@ -437,7 +438,7 @@ function Home() {
             <a
               href="/productsPage"
               id="productsButton"
-              className="btn btn-warning p-3 fw-bold rounded-pill"
+              className="btn btn-warning p-3 fw-bold rounded-pill ripple"
             >
               Todos los productos
             </a>

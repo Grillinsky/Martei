@@ -123,7 +123,7 @@ function NavBar() {
                   <i className="fas fa-shopping-cart fa-lg position-relative">
                     <span
                       id="badge"
-                      class="position-absolute start-100 translate-middle  bg-danger rounded-circle"
+                      className="position-absolute start-100 translate-middle  bg-danger rounded-circle"
                     >
                       <span>0</span>
                     </span>
