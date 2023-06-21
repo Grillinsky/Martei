@@ -12,32 +12,8 @@ function Profile() {
         <div className="d-flex my-5">
           <div className="dark-bg-frame"></div>
           <div id="main-frame" className="row">
-            <div className="menu-frame col-6 col-md-4">
-              {/* <div className="profile-images d-flex align-items-center">
-                <svg
-                  className="pfps"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  viewBox="0 0 122.88 122.88"
-                >
-                  <image
-                    className="img-profile"
-                    href="PruebaFoto.jpg"
-                    x="-2"
-                    y="-45"
-                    width="205%"
-                    height="225%"
-                  />
-                </svg>
-                <div className="text-container">
-                  <h1 className="text-profile">Alex Garcia</h1>
-                  <h2 className="text-username-profile">@Alex Garcia</h2>
-                </div>
-                <hr className="dividor-profile" />
-              </div> */}
-              <div className="icons-profile d-flex row">
+            <div id="menu-frame" className=" col-12 col-md-4">
+              <div className="icons-profile">
                 <div className="icon-container">
                   <i className="fa fa-user-circle" aria-hidden="true"></i>
                   <p className="text-icons-profile-1">General</p>
@@ -47,8 +23,8 @@ function Profile() {
                   <p className="text-icons-profile-2">Seguridad</p>
                 </div>
                 <div className="icon-container">
-                  <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                  <p className="text-icons-profile-3">Compras</p>
+                  <i className="fas fa-envelope"></i>{" "}
+                  <p className="text-icons-profile-3">Mensajes</p>
                 </div>
                 <div className="icon-container">
                   <i className="fa fa-history" aria-hidden="true"></i>
@@ -56,8 +32,28 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <div className="text-camp-profile">
-              <h1 className="text-edit-name-profile">Editar</h1>
+            <div id="show-frame" className="col-12 col-md-8">
+              {" "}
+              {/* <h1 className="">Alex Garcia</h1> */}
+              <div className="d-flex flex-column align-items-center">
+                <img
+                  className="profile-image"
+                  alt="profile picture"
+                  src="./Profilephoto.png"
+                />
+                <div className="text-container">
+                  <dd className="">Alex Garcia</dd>
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div></div>
+                <hr className="" />
+              </div>
             </div>
           </div>
         </div>
