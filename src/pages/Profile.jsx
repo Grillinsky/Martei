@@ -8,11 +8,11 @@ function Profile() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <div className="col-6 d-flex">
-          <div className="rectangle-5"></div>
-          <div className="frame-16">
-            <div className="frame-15">
+      <div className="container-fluid py-5 p-md-5">
+        <div className="d-flex my-5">
+          <div className="dark-bg-frame"></div>
+          <div id="main-frame" className="row">
+            <div className="menu-frame col-6 col-md-4">
               <div className="profile-images d-flex align-items-center">
                 <svg
                   className="pfps"
@@ -56,7 +56,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-             {/* <div className="Text-Imagen-Edit-Profile">
+            {/* <div className="Text-Imagen-Edit-Profile">
               <h1>Avatar</h1>
             </div>
             <div className="flip-card-profile">
@@ -79,10 +79,10 @@ function Profile() {
               <Button className="btn-success-img">Editar Imagen</Button>
             </div>
              */}
-            <div className="text-camp-profile">
+            <div id="text-camp-profile" className="col-6 col-md-8">
               <h1 className="text-edit-name-profile">Editar</h1>
-            </div>    
-         </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
