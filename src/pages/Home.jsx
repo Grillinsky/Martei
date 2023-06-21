@@ -444,7 +444,7 @@ function Home() {
             </a>
           </div>
         </section>
-        <section className="py-2 container-fluid rounded" id="presentacion">
+        <section className="py-2 container-fluid pt-2" id="presentacion">
           {/* <!-- Foto de Cami + pequeña historia --> */}
           <div className="row-container container w-50">
             <div className="row">
@@ -456,7 +456,7 @@ function Home() {
                 />
               </div>
               <div className="col-lg-6 px-0">
-                <div className="align-self-center p-lg-3">
+                <div className="align-self-center p-lg-3 ">
                   {/* <!-- <h5 className="mb-5">Hola!</h5> --> */}
                   <p id="copy">
                     Soy Camila, una joven apasionada por el diseño y la
@@ -483,7 +483,6 @@ function Home() {
                 </div>
               </div>
             </div>
-            |
           </div>
         </section>
         {/* <!-- Button trigger modal --> */}
