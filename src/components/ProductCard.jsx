@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ function ProductCard() {
 
   async function listProducts() {
     try {
-      const response = await axios.get('http://localhost:3000/product');
+      const response = await axios.get('http://localhost:3000/product/');
       const productList = Array.isArray(response.data.products) ? response.data.products : [];
       setProducts(productList);
     } catch (error) {
@@ -36,16 +37,18 @@ function ProductCard() {
                   <Card.Text style={{ color: "black" }}>
                     {product.description}
                   </Card.Text>
+                  <Link to={`/product/${product.id}`}>
                   <Card.Link
                     style={{
                       color: "black",
                       fontSize: "1rem",
                       fontWeight: "600",
                     }}
-                    href="/product"
+                    
                   >
                     → Ver producto ←
                   </Card.Link>
+                  </Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
                     <Button className="me-2 rounded" variant="success">
                       Comprar
