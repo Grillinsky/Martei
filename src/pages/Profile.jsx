@@ -13,7 +13,7 @@ function Profile() {
           <div className="dark-bg-frame"></div>
           <div id="main-frame" className="row">
             <div className="menu-frame col-6 col-md-4">
-              <div className="profile-images d-flex align-items-center">
+              {/* <div className="profile-images d-flex align-items-center">
                 <svg
                   className="pfps"
                   version="1.1"
@@ -36,7 +36,7 @@ function Profile() {
                   <h2 className="text-username-profile">@Alex Garcia</h2>
                 </div>
                 <hr className="dividor-profile" />
-              </div>
+              </div> */}
               <div className="icons-profile d-flex row">
                 <div className="icon-container">
                   <i className="fa fa-user-circle" aria-hidden="true"></i>

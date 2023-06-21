@@ -133,7 +133,7 @@ function NavBar() {
                   title={<FontAwesomeIcon icon={faUser} />}
                   id="profile-dropdown"
                   className="custom-dropdown"
-                  menuClassName="custom-dropdown-menu"
+                  menuclassname="custom-dropdown-menu"
                 >
                   <Dropdown.Item className="fs-6">
                     <Link to="/profile" className="fs-6">
