@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
-import { Button } from "react-bootstrap";
 
 function Profile() {
   return (
@@ -16,19 +15,18 @@ function Profile() {
               <div className="icons-profile">
                 <div className="icon-container">
                   <i className="fa fa-user-circle" aria-hidden="true"></i>
-                  <p className="text-icons-profile-1">General</p>
+                  <p>General</p>
                 </div>
                 <div className="icon-container">
                   <i className="fa fa-unlock-alt" aria-hidden="true"></i>
-                  <p className="text-icons-profile-2">Seguridad</p>
+                  <p>Seguridad</p>
                 </div>
                 <div className="icon-container">
-                  <i className="fas fa-envelope"></i>{" "}
-                  <p className="text-icons-profile-3">Mensajes</p>
+                  <i className="fas fa-envelope"></i> <p>Mensajes</p>
                 </div>
                 <div className="icon-container">
                   <i className="fa fa-history" aria-hidden="true"></i>
-                  <p className="text-icons-profile-4">Historial De Compras</p>
+                  <p>Historial De Compras</p>
                 </div>
               </div>
             </div>
@@ -36,19 +34,19 @@ function Profile() {
               {" "}
               {/* <h1 className="">Alex Garcia</h1> */}
               <div className="d-flex flex-column align-items-center">
-                <img
+                {/* <img
                   className="profile-image"
                   alt="profile picture"
                   src="./Profilephoto.png"
-                />
+                />  POR FUERA DEL MVP*/}
                 <div className="text-container">
-                  <dd className="">Alex Garcia</dd>
-                  <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                  <h2>
+                    Hola <span>Alex Garcia</span>!
+                  </h2>
+                  <ul className="p-0">
+                    <li>Av Independencia 1825</li>
+                    <li>Alexgarcia@gmail.com</li>
+                    <li>099299099</li>
                   </ul>
                 </div>
                 <div></div>

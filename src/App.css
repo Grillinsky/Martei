@@ -54,6 +54,9 @@ nav {
   background-color: var(--white); /* Background color on hover */
   color: var(--black); /* Text color on hover */
 }
+.nav-item .fs-6:hover {
+  color: var(--black);
+}
 #badge {
   font-size: small;
   height: 1rem;
@@ -264,9 +267,10 @@ a:hover {
   nav {
     font-size: larger;
   }
-  nav .nav-item {
+  .nav-item {
     text-align: right;
   }
+
   #badge {
     width: 1.1rem;
     height: 1.1rem;

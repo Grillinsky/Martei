@@ -77,6 +77,7 @@ function NavBar() {
                   className="custom-dropdown"
                 >
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{
                       fontSize: "1rem",
                     }}
@@ -85,12 +86,14 @@ function NavBar() {
                     Muebles
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.2"
                   >
                     Cuadros
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    className="nav-item"
                     style={{ fontSize: "1rem" }}
                     href="#action/3.3"
                   >
@@ -135,15 +138,31 @@ function NavBar() {
                   className="custom-dropdown"
                   menuclassname="custom-dropdown-menu"
                 >
-                  <Dropdown.Item className="fs-6">
+                  <NavDropdown.Item className="nav-item">
                     <Link to="/profile" className="fs-6">
                       Profile
                     </Link>
-                  </Dropdown.Item>
+                  </NavDropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item onClick={handleLogout} className="fs-6">
+                  <NavDropdown.Item className="nav-item">
+                    <Link to="#/profile/mensjaes" className="fs-6">
+                      Mis Mensajes
+                    </Link>
+                  </NavDropdown.Item>
+                  <Dropdown.Divider />
+                  <NavDropdown.Item className="nav-item">
+                    {" "}
+                    <Link to="#/profile/pedidos" className="fs-6">
+                      Mis Pedidos
+                    </Link>
+                  </NavDropdown.Item>
+                  <Dropdown.Divider />
+                  <NavDropdown.Item
+                    onClick={handleLogout}
+                    className="fs-6 nav-item"
+                  >
                     Logout
-                  </Dropdown.Item>
+                  </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
