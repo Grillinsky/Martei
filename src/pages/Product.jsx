@@ -20,13 +20,11 @@ function Product() {
       const response = await axios.get(`http://localhost:3000/product/${id}`);
       const productIndividualData = response.data;
       setProductIndividualData(productIndividualData);
-      console.log(productIndividualData);
     } catch (error) {
       console.error(error);
     }
   }
  
-
   return (
     <div>
       <Navbar />
