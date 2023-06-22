@@ -43,7 +43,6 @@
   list-style-type: disc !important;
 }
 
-
 .li-caracterics-product {
   list-style: square !important;
   letter-spacing: 0.6px;
@@ -58,17 +57,17 @@
   font-size: 0.875rem;
 }
 
-.dd-caracterics-style{
+.dd-caracterics-style {
   color: black !important;
   font-weight: bolder;
 }
 
 .logo {
   max-width: 20%;
-  background-color: black;
+  filter: invert(1);
 }
 
-.price-product{
+.price-product {
   text-align: start !important;
   font-size: 0.875rem !important;
   color: #03357c !important;

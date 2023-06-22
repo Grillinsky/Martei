@@ -7,11 +7,10 @@ function ProductsPage() {
     <div>
       <Navbar />
 
-      <div
-        className="container-fluid my-5 py-5 d-flex flex-wrap justify-content-around"
-         style={{ display: "flex", flexWrap: "wrap" }}
-      >
-        <ProductCard/>
+      <div className="container-fluid my-5 p-5" style={{ flexWrap: "wrap" }}>
+        <div className="row">
+          <ProductCard />
+        </div>
       </div>
       <Footer />
     </div>

@@ -14,8 +14,12 @@ function ProductCard() {
 
   async function listProducts() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
-      const productList = Array.isArray(response.data.products) ? response.data.products : [];
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/product`
+      );
+      const productList = Array.isArray(response.data.products)
+        ? response.data.products
+        : [];
       setProducts(productList);
     } catch (error) {
       console.error(error);
@@ -26,10 +30,14 @@ function ProductCard() {
     <div className="m-2 mt-3">
       <div className="row">
         {Array.isArray(products) ? (
-          products.map(product => (
-            <div key={product.id} className="col-sm-3">
-              <Card style={{ width: "23.5rem", marginBottom:"30px" }}>
-                <Card.Img variant="top" src={product.image} />
+          products.map((product) => (
+            <div key={product.id} className="col-12 col-md-4 col-lg-3 my-3">
+              <Card>
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  style={{ maxHeight: "50%" }}
+                />
                 <Card.Body style={{ backgroundColor: "white" }}>
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
@@ -38,16 +46,15 @@ function ProductCard() {
                     {product.description}
                   </Card.Text>
                   <Link to={`/product/${product.id}`}>
-                  <Card.Link
-                    style={{
-                      color: "black",
-                      fontSize: "1rem",
-                      fontWeight: "600",
-                    }}
-                    
-                  >
-                    → Ver producto ←
-                  </Card.Link>
+                    <Card.Link
+                      style={{
+                        color: "black",
+                        fontSize: "1rem",
+                        fontWeight: "600",
+                      }}
+                    >
+                      → Ver producto ←
+                    </Card.Link>
                   </Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
                     <Button className="me-2 rounded" variant="success">

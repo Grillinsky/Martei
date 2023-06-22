@@ -1,5 +1,4 @@
 import "../css/Home.css";
-import "../css/Dashboard.css";
 
 //      CHARTJS
 import {
