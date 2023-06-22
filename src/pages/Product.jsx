@@ -19,6 +19,7 @@ function Product() {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/product/${id}`);
       const productIndividualData = response.data;
+      console.log(productIndividualData)
       setProductIndividualData(productIndividualData);
     } catch (error) {
       console.error(error);
@@ -58,9 +59,10 @@ function Product() {
               <ul className="li-caracterics-product">
                 <li className="ul-caracterics">· Estructura: Metal Pintado</li>
                 <li className="ul-caracterics">· Asiento: Cuero Natural</li>
-                <li className="ul-caracterics">· Uso: Residencial</li>
                 <li className="ul-caracterics">· Medidas: 70x70cm</li>
-                <li className="price-product"> Precio: 9.99 $USD</li>
+                <li className="ul-caracterics">· Stock: {productIndividualData.stock}</li>
+                <li className="ul-caracterics">· Product Destacado:{productIndividualData.salient}</li>
+                <li className="price-product">· Price: $USD{productIndividualData.price}</li>
               </ul>
             </div>
             <hr className="dividor-black" style={{ margin: "0" }} />
