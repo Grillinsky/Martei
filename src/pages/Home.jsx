@@ -1,11 +1,44 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import "../css/Home.css";
-import { Link } from "react-router-dom";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 
 function Home() {
+
+  const [categoryData, setCategories] = useState([]);
+  const [productData, setProducts] = useState([]);
+
+
+  useEffect(() => {
+    categoryList();
+    productList();
+  }, []);
+
+  async function categoryList() {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/category`);
+      const categoryListData = response.data;
+      setCategories(categoryListData.categories);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  async function productList() {
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
+      const products = Array.isArray(response.data.products) ? response.data.products : [];
+      setProducts(products);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
       <Navbar />
@@ -29,7 +62,7 @@ function Home() {
                   Un interior práctico y espacioso fue lo que nos pidieron🤎
                   Nuestros muebles se adaptan a tus necesidades, contanos qué
                   precisas y diseñamos juntos el mueble indicado para vos 😊 en
- |                 las medidas y características que más te convengan.
+                  las medidas y características que más te convengan.
                 </p>
                 <Link className="text-dark category-link" to={"/category/list/1"}>
                   Ver todo en Mueble <i className="fas fa-chevron-right"></i>
@@ -49,7 +82,7 @@ function Home() {
                         alt="Colgante de techo, en hilo y madera"
                       />
                     </div>
-                    <div className="carousel-item">
+                   {/*  <div className="carousel-item">
                       <img
                         src="/Mueble2.jpg"
                         className="d-block w-100"
@@ -76,7 +109,7 @@ function Home() {
                         className="d-block w-100"
                         alt="Hamaca colgante de mimbre"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     className="carousel-control-prev"
@@ -122,7 +155,7 @@ function Home() {
                         alt="Coleccion de cuadros de madera"
                       />
                     </div>
-                    <div className="carousel-item">
+                    {/* <div className="carousel-item">
                       <img
                         src="/Cuadro2.png"
                         className="d-block w-100"
@@ -142,7 +175,7 @@ function Home() {
                         className="d-block w-100"
                         alt="Al frente en la imagen: cuadro de madera con acentos en negro. Al fondo de la imagen, cuadro de madera con acentos en blanco"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     className="carousel-control-prev"
@@ -210,7 +243,7 @@ function Home() {
                         alt="Espejo cuadrado con detalle metalico en las esquinas"
                       />
                     </div>
-                    <div className="carousel-item">
+                    {/* <div className="carousel-item">
                       <img
                         src="/Espejo2.jpg"
                         className="d-block w-100"
@@ -237,7 +270,7 @@ function Home() {
                         className="d-block w-100"
                         alt="Espejo circular con decoracion de mimbre en forma de rayos"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     className="carousel-control-prev"
@@ -283,7 +316,7 @@ function Home() {
                         alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                       />
                     </div>
-                    <div className="carousel-item">
+                    {/* <div className="carousel-item">
                       <img
                         src="/Luminaria2.jpg"
                         className="d-block w-100"
@@ -310,7 +343,7 @@ function Home() {
                         className="d-block w-100"
                         alt="Dos campanas de mimbre"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     className="carousel-control-prev"
@@ -380,7 +413,7 @@ function Home() {
                         alt="Tapiz blanco patron de rombos"
                       />
                     </div>
-                    <div className="carousel-item">
+                    {/* <div className="carousel-item">
                       <img
                         src="/Tapiz2.jpg"
                         className="d-block w-100"
@@ -407,7 +440,7 @@ function Home() {
                         className="d-block w-100"
                         alt="Tapiz en madera e hilo, compuesto de 3 tapices verticales angostos"
                       />
-                    </div>
+                    </div> */}
                   </div>
                   <button
                     className="carousel-control-prev"
@@ -437,63 +470,49 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="container d-flex justify-content-center my-4">
-            <a
-              href="/productsPage"
-              id="productsButton"
-              className="btn btn-warning p-3 fw-bold rounded-pill ripple"
-            >
-              Todos los productos
-            </a>
-          </div>
         </section>
-        <section className="py-2 container-fluid pt-2" id="presentacion">
-          {/* <!-- Foto de Cami + pequeña historia --> */}
-          <div className="row-container container w-50">
-            <div className="row">
-              <div className="col-lg-6 align-self-center justify-content-center d-flex px-0">
-                <img
-                  className="fade-in-right"
-                  src="/header-banner-3.jpg"
-                  alt="Foto de la dueña del local, Camila, junto a una coleccion de cuadros"
-                />
-              </div>
-              <div className="col-lg-6 px-0">
-                <div className="align-self-center p-lg-3 ">
-                  {/* <!-- <h5 className="mb-5">Hola!</h5> --> */}
-                  <p id="copy">
-                    Soy Camila, una joven apasionada por el diseño y la
-                    creatividad. Acabo de inaugurar mi propio emprendimiento de
-                    artículos de diseño, donde puedo plasmar mi talento y mi
-                    visión en cada detalle. Me caracterizo por ser una persona
-                    segura de mí misma y siempre dispuesta a tomar riesgos para
-                    alcanzar mis metas. Me encanta rodearme de cosas hermosas y
-                    cuidadosamente diseñadas, y eso es precisamente lo que busco
-                    ofrecer a través de mi emprendimiento. Me inspira la belleza
-                    que me rodea en mi día a día, desde un paisaje natural hasta
-                    una pieza de arte exquisitamente elaborada.
-                  </p>
-                  {/* <!-- <p>
-                  En mi tiempo libre, me gusta escuchar música y bailar, ya que
-                  me permite liberar mi creatividad y disfrutar del momento
-                  presente. También me gusta leer y ver películas, especialmente
-                  aquellas que me inspiran a seguir adelante en mi camino como
-                  emprendedora. En resumen, mi emprendimiento es mi pasión y mi
-                  proyecto de vida. Espero poder compartir mi visión y mi
-                  creatividad con todos aquellos que buscan llevar un pedacito
-                  de arte y belleza a sus hogares.
-                </p> --> */}
-                </div>
-              </div>
-            </div>
-          </div>
+        <section className="py-2 container-fluid pt-2" id="exclusiveProduct">
+        <hr className="my-3 mt-5"/>
+        <div className="d-flex justify-content-between align-items-center mt-2 mb-3">
+          <h2 className="ms-5 mt-3 title-exclusive-product">Exclusive Products</h2>
+          <Link to={"/productsPage"}>
+          <button className="btn-dark-product-exclusive me-5">
+           Todos Los Productos 🡢
+          </button>
+          </Link>
+        </div>
+        <div className="ExclusiveProductColumn card">
+              <img src="Mueble1.jpg" alt="Nombre del producto" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[4].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData[12].name}</h3>
+            <p className="price-exclusive-product">Price: $7.99🔥</p>
+        </div>
+        <div className="ExclusiveProductColumn card">
+              <img src="Mueble1.jpg" alt="Nombre del producto" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[2].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData[6].name}</h3>
+            <p className="price-exclusive-product">Price: $6.99🔥</p>
+        </div>
+        <div className="ExclusiveProductColumn card">
+              <img src="Mueble1.jpg" alt="Nombre del producto" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[3].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData[9].name}</h3>
+            <p className="price-exclusive-product">Price: $4.99🔥</p>
+        </div>
+        <div className="ExclusiveProductColumn card">
+              <img src="Mueble1.jpg" alt="Nombre del producto" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[1].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData[3].name}</h3>
+            <p className="price-exclusive-product">Price: $3.99🔥</p>
+        </div>
+        <div className="ExclusiveProductColumn card">
+              <img src="Mueble1.jpg" alt="Nombre del producto" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[0].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData[0].name}</h3>
+            <p className="price-exclusive-product">Price: |$2.99🔥</p>
+        </div>
         </section>
-        {/* <!-- Button trigger modal --> */}
-        {/* <!-- <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#contactModal"> */}
-        {/* Contactanos! */}
-        {/* </button> --> */}
       </main>
-      {/** MODAL DE CONTACTO */}
       <Footer />
     </div>
   );
