@@ -32,11 +32,11 @@ function ProductCard() {
         {Array.isArray(products) ? (
           products.map((product) => (
             <div key={product.id} className="col-12 col-md-4 col-lg-3 my-3">
-              <Card style={{ width: "23.5rem", marginBottom: "30px" }}>
+              <Card>
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
-                  style={{ maxHeight: "50%" }}
+                  style={{ height: "18rem", objectFit: "cover" }}
                 />
                 <Card.Body style={{ backgroundColor: "white" }}>
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
