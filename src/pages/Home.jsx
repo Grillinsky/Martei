@@ -32,7 +32,7 @@ function Home() {
   async function productList() {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
-      const products = Array.isArray(response.data.products) ? response.data.products : [];
+      const products = response.data.products;
       setProducts(products);
     } catch (error) {
       console.error(error);
@@ -482,34 +482,34 @@ function Home() {
           </Link>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Tapiz1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[4].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData[12].name}</h3>
+            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[14].name : 'Titulo De Tapices '}</h3>
             <p className="price-exclusive-product">Price: $7.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Cuadro1.png" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[2].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData[6].name}</h3>
+            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[8].name : 'Titulo De Cuadros '}</h3>
             <p className="price-exclusive-product">Price: $6.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Luminaria1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[3].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData[9].name}</h3>
+            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[11].name : 'Titulo De Luminarias'}</h3>
             <p className="price-exclusive-product">Price: $4.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Espejo1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[1].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData[3].name}</h3>
+            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[3].name : 'Titulo De Espejos '}</h3>
             <p className="price-exclusive-product">Price: $3.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
               <img src="Mueble1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[0].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData[0].name}</h3>
-            <p className="price-exclusive-product">Price: |$2.99🔥</p>
+            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[2].name : 'Titulo De Muebles'}</h3>
+            <p className="price-exclusive-product">Price: $2.99🔥</p>
         </div>
         </section>
       </main>

@@ -21,6 +21,7 @@ function Product() {
         `${import.meta.env.VITE_API_URL}/product/${id}`
       );
       const productIndividualData = response.data;
+
       setProductIndividualData(productIndividualData);
     } catch (error) {
       console.error(error);
@@ -71,7 +72,6 @@ function Product() {
                   <li className="ul-caracterics">
                     · Estructura: Metal Pintado
                   </li>
-
                   <li className="ul-caracterics">· Asiento: Cuero Natural</li>
                   <li className="ul-caracterics">· Uso: Residencial</li>
                   <li className="ul-caracterics">· Medidas: 70x70cm</li>
@@ -95,6 +95,40 @@ function Product() {
                 </Button>
               </ButtonGroup>
             </div>
+            <hr className="dividor-black" style={{ margin: "0" }} />
+            <div className="div-text-caracterics">
+              <dd className="dd-caracterics-style">Caracteristicas:</dd>
+              <ul className="li-caracterics-product">
+                <li className="ul-caracterics">· Estructura: Metal Pintado</li>
+                <li className="ul-caracterics">· Asiento: Cuero Natural</li>
+                <li className="ul-caracterics">· Medidas: 70x70cm</li>
+                <li className="ul-caracterics">
+                  · Stock: {productIndividualData.stock}
+                </li>
+                <li className="ul-caracterics">
+                  · Product Destacado:{productIndividualData.salient}
+                </li>
+                <li className="price-product">
+                  · Price: $USD{productIndividualData.price}
+                </li>
+              </ul>
+            </div>
+            <hr className="dividor-black" style={{ margin: "0" }} />
+            <ButtonGroup className="d-flex justify-content-around my-3">
+              <Button className="me-2" variant="success">
+                Comprar
+              </Button>
+              <Button
+                style={{
+                  backgroundColor: "var(--primary-color)",
+                  border: "0",
+                  color: "var(--black)",
+                }}
+                className="ms-2"
+              >
+                Al Carrito
+              </Button>
+            </ButtonGroup>
           </div>
         </div>
       )}
