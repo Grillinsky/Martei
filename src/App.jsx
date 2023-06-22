@@ -10,7 +10,8 @@ import Product from "./pages/Product";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import ProductsPage from "./pages/ProductsPage";
- import Register from "./pages/Register"; 
+import Register from "./pages/Register"; 
+import CategoryList from "./pages/CategoryList";
 
 function App() {
   const store = useSelector((state) => state);
@@ -28,6 +29,7 @@ function App() {
         <Route path="/productsPage" element={<ProductsPage />} />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/register" element={<Register />} /> 
+        <Route path="/category/list/:categoryId" element={<CategoryList/>} />
       </Routes>
     </>
   );

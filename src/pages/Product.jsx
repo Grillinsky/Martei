@@ -17,7 +17,7 @@ function Product() {
   
   async function getProductIndividual() {
     try {
-      const response = await axios.get(`http://localhost:3000/product/${id}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product/${id}`);
       const productIndividualData = response.data;
       setProductIndividualData(productIndividualData);
     } catch (error) {

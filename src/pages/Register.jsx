@@ -18,7 +18,7 @@ function Register() {
       event.preventDefault();
       await axios({
         method: "POST",
-        url: "http://localhost:3000/register",
+        url: `${import.meta.env.VITE_API_URL}/register`,
         data: {
             email: emailValue,
             firstname :firstNameValue,

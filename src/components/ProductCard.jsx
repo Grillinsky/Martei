@@ -14,7 +14,7 @@ function ProductCard() {
 
   async function listProducts() {
     try {
-      const response = await axios.get('http://localhost:3000/product/');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
       const productList = Array.isArray(response.data.products) ? response.data.products : [];
       setProducts(productList);
     } catch (error) {

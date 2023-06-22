@@ -1,6 +1,10 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import React from "react";
+
 import "../css/Home.css";
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <div>
@@ -25,11 +29,11 @@ function Home() {
                   Un interior práctico y espacioso fue lo que nos pidieron🤎
                   Nuestros muebles se adaptan a tus necesidades, contanos qué
                   precisas y diseñamos juntos el mueble indicado para vos 😊 en
-                  las medidas y características que más te convengan.
+ |                 las medidas y características que más te convengan.
                 </p>
-                <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en mueble <i className="fas fa-chevron-right"></i>
-                </a>
+                <Link className="text-dark category-link" to={"/category/list/1"}>
+                  Ver todo en Mueble <i className="fas fa-chevron-right"></i>
+                </Link>
               </div>
               <div className="col-lg-4 border rounded">
                 <div
@@ -173,9 +177,9 @@ function Home() {
                   cualquier espacio. Son esos elementos distintivos de cada
                   hogar, que los vuelve únicos y llena de personalidad
                 </p>
-                <a className="text-dark category-link" href="/#cuadros">
-                  Ver todos los cuadros <i className="fas fa-chevron-right"></i>
-                </a>
+                <Link className="text-dark category-link" to={"/category/list/3"}>
+                  Ver todo en Cuadros <i className="fas fa-chevron-right"></i>
+                </Link>
               </div>
             </div>
           </div>
@@ -188,9 +192,9 @@ function Home() {
                   uno igual a otro, y en lo personal creo que es uno de los
                   atributos más valiosos que sólo lo artesanal nos da
                 </p>
-                <a className="text-dark category-link" href="/#cuadros">
-                  Ver todos los espejos <i className="fas fa-chevron-right"></i>
-                </a>
+                <Link className="text-dark category-link" to={"/category/list/2"}>
+                  Ver todo en Espejos <i className="fas fa-chevron-right"></i>
+                </Link>
               </div>
               <div className="col-lg-4 border rounded">
                 <div
@@ -343,10 +347,9 @@ function Home() {
                   estado más puro aportan la nobleza y calidez que sólo la
                   naturaleza tiene 🤎✨
                 </p>
-                <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en luminarias{" "}
-                  <i className="fas fa-chevron-right"></i>
-                </a>
+                <Link className="text-dark category-link" to={"/category/list/4"}>
+                     Ver todo en Luminarias{" "} <i className="fas fa-chevron-right"></i>
+                </Link>
               </div>
             </div>
           </div>
@@ -359,9 +362,9 @@ function Home() {
                   nobles y naturales nunca puede resultar mal, en este caso,
                   madera y algodón 🤎
                 </p>
-                <a className="text-dark category-link" href="/#cuadros">
-                  Ver todo en tapiceria <i className="fas fa-chevron-right"></i>
-                </a>
+                <Link className="text-dark category-link" to={"/category/list/4"}>
+                     Ver todo en Tapiceria{" "} <i className="fas fa-chevron-right"></i>
+                </Link>
               </div>
               <div className="col-lg-4 border rounded">
                 <div

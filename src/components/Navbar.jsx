@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { logoutUser } from "../../redux/userSlice";
 
 import {
@@ -20,6 +20,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../css/Cart-Modal.css";
 
 function NavBar() {
+
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [itemsCarrito, setItemsCarrito] = useState([]);
 
@@ -77,39 +78,42 @@ function NavBar() {
                   className="custom-dropdown"
                 >
                   <NavDropdown.Item
+                    href="/category/list/1"
                     className="nav-item"
-                    style={{
-                      fontSize: "1rem",
-                    }}
-                    href="#action/3.1"
+                    style={{ fontSize: "1rem" }}
+                    
                   >
                     Muebles
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    href="/category/list/3"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    href="#action/3.2"
+                    
                   >
                     Cuadros
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    href="/category/list/2"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    href="#action/3.3"
+                    
                   >
-                    Espejos
+                   Espejos
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    href="/category/list/4"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    href="#action/3.4"
+                    
                   >
-                    Luminarias
+                    Luminaria
                   </NavDropdown.Item>
                   <NavDropdown.Item
+                    href="/category/list/5"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    href="#action/3.4"
+                    
                   >
                     Tapices
                   </NavDropdown.Item>
