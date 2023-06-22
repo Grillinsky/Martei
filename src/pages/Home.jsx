@@ -482,25 +482,25 @@ function Home() {
           </Link>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Tapiz1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[4].name : ''}</h5>
             <h3 className="name-exclusive-product">{productData[12].name}</h3>
             <p className="price-exclusive-product">Price: $7.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Cuadro1.png" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[2].name : ''}</h5>
             <h3 className="name-exclusive-product">{productData[6].name}</h3>
             <p className="price-exclusive-product">Price: $6.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Luminaria1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[3].name : ''}</h5>
             <h3 className="name-exclusive-product">{productData[9].name}</h3>
             <p className="price-exclusive-product">Price: $4.99🔥</p>
         </div>
         <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
+              <img src="Espejo1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[1].name : ''}</h5>
             <h3 className="name-exclusive-product">{productData[3].name}</h3>
             <p className="price-exclusive-product">Price: $3.99🔥</p>
@@ -509,7 +509,7 @@ function Home() {
               <img src="Mueble1.jpg" alt="Nombre del producto" />
             <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[0].name : ''}</h5>
             <h3 className="name-exclusive-product">{productData[0].name}</h3>
-            <p className="price-exclusive-product">Price: |$2.99🔥</p>
+            <p className="price-exclusive-product">Price: $2.99🔥</p>
         </div>
         </section>
       </main>
