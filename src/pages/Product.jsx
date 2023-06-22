@@ -35,7 +35,7 @@ function Product() {
             className="col-12 col-md-6 col-lg-8 text-dark d-flex p-0 align-items-center justify-content-center"
             style={{ backgroundColor: "transparent" }}
           >
-            <img className="Item img-fluid" src={`http://localhost:3000/img/${productIndividualData.image}`} alt="Items" />
+            <img className="Item img-fluid" src={`${import.meta.env.VITE_API_URL}/img/${productIndividualData.image}`} alt="Items" />
           </div>
           <div
             className="col-12 col-lg-4 col-md-6 text-white d-flex flex-column"

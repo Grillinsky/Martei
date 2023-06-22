@@ -29,7 +29,7 @@ function ProductCard() {
           products.map(product => (
             <div key={product.id} className="col-sm-3">
               <Card style={{ width: "23.5rem", marginBottom:"30px" }}>
-                <Card.Img variant="top" src={product.image} />
+                <Card.Img variant="top" src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} />
                 <Card.Body style={{ backgroundColor: "white" }}>
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
