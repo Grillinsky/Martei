@@ -47,20 +47,19 @@ function ProductCard() {
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text style={{ color: "black" }}>
+                  <Card.Text style={{ color: "black", height: "16.5rem" }}>
                     {product.description}
                   </Card.Text>
-                  <Link to={`/product/${product.id}`}>
-                    <Card.Link
-                      style={{
-                        color: "black",
-                        fontSize: "1rem",
-                        fontWeight: "600",
-                      }}
-                    >
-                      → Ver producto ←
-                    </Card.Link>
-                  </Link>
+                  <Card.Link
+                    href={`/product/${product.id}`}
+                    style={{
+                      color: "black",
+                      fontSize: "1rem",
+                      fontWeight: "600",
+                    }}
+                  >
+                    → Ver producto ←
+                  </Card.Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
                     <Button className="me-2 rounded" variant="success">
                       Comprar

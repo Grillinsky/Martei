@@ -123,9 +123,9 @@ function NavBar() {
                   menuclassname="custom-dropdown-menu"
                 >
                   <NavDropdown.Item className="nav-item">
-                    <Link to="/profile" className="fs-6">
+                    <a href="/profile" className="fs-6">
                       Profile
-                    </Link>
+                    </a>
                   </NavDropdown.Item>
                   <Dropdown.Divider />
                   <NavDropdown.Item className="nav-item">

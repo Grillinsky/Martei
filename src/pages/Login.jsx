@@ -1,34 +1,37 @@
-import React, { useState } from "react";
-import "../css/Login.css";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { setUser } from "../../redux/userSlice";
-import axios from "axios";
+import React, { useState } from 'react'
+import '../css/Login.css'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { setUser } from '../../redux/userSlice'
+import axios from 'axios'
 
 function Login() {
-  const [emailValue, setEmailValue] = useState("");
-  const [passwordValue, setPasswordValue] = useState("");
+  const [emailValue, setEmailValue] = useState('')
+  const [passwordValue, setPasswordValue] = useState('')
 
-  const dispatch = useDispatch();
+  const [loginError, setLoginError] = useState(false)
 
-  const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     try {
       const response = await axios({
-        method: "POST",
+        method: 'POST',
         url: `${import.meta.env.VITE_API_URL}/login`,
         data: {
           email: emailValue,
-          password: passwordValue,
-        },
-      });
-      console.log(response.data);
-      dispatch(setUser(response.data));
-      navigate("/");
+          password: passwordValue
+        }
+      })
+      console.log(response.data)
+      dispatch(setUser(response.data))
+      navigate('/')
     } catch (error) {
-      console.error(error);
+      console.error(error)
+      setLoginError(true)
     }
   }
 
@@ -37,6 +40,9 @@ function Login() {
       <div className="d-flex justify-content-center align-items-center div-login">
         <div className="form-container">
           <p className="title">Login</p>
+          {loginError && (
+            <div className="alert alert-danger">Credenciales incorrectas.</div>
+          )}
           <form className="form" onSubmit={handleSubmit} autoComplete="off">
             <div className="input-group">
               <label htmlFor="email">Email</label>
@@ -46,7 +52,7 @@ function Login() {
                 id="email"
                 placeholder=""
                 value={emailValue}
-                onChange={(event) => setEmailValue(event.target.value)}
+                onChange={event => setEmailValue(event.target.value)}
               />
             </div>
             <div className="input-group">
@@ -57,7 +63,7 @@ function Login() {
                 id="password"
                 placeholder=""
                 value={passwordValue}
-                onChange={(event) => setPasswordValue(event.target.value)}
+                onChange={event => setPasswordValue(event.target.value)}
               />
               <div className="forgot">
                 <a rel="noopener noreferrer" href="#">
@@ -105,15 +111,19 @@ function Login() {
           </div>
           <p className="signup">
             Don't have an account?
-            <a rel="noopener noreferrer" href="#" className="Sign-Up">
-              {" "}
+            <Link
+              rel="noopener noreferrer"
+              to={'/register'}
+              className="Sign-Up"
+            >
+              {' '}
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login

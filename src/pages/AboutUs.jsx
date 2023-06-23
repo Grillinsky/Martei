@@ -117,9 +117,9 @@ function AboutUs() {
                     viewBox="0 0 122.88 122.88"
                   >
                     <image
-                      href="PruebaFoto.jpg"
-                      x="-2"
-                      y="0"
+                      href="fondazo.jpg"
+                      x="-67"
+                      y="-27"
                       width="205%"
                       height="155%"
                     />

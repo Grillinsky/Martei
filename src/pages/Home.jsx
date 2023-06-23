@@ -72,7 +72,7 @@ function Home() {
                   Ver todo en Mueble <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
-              <div className="col-lg-4 border rounded">
+              <div className="col-lg-4 border rounded productCarrousel">
                 <div
                   id="mueblesCarrouselFade"
                   className="carousel slide carousel-fade py-lg-5"
@@ -145,7 +145,7 @@ function Home() {
           </div>
           <div className="container row-container w-75">
             <div className="row">
-              <div className="col-lg-4 border rounded">
+              <div className="col-lg-4 border rounded productCarrousel-two">
                 <div
                   id="cuadrosCarrouselFade"
                   className="carousel slide carousel-fade py-lg-5"
@@ -207,7 +207,7 @@ function Home() {
                   </button>
                 </div>
               </div>
-              <div className="col-lg-8 border rounded p-5 product-category">
+              <div className="col-lg-8 border rounded p-5 product-category-two">
                 <h2>Cuadros</h2>
                 <p className="fade-in-right">
                   Nuestros cuadros son piezas que transforman y embellecen
@@ -239,7 +239,7 @@ function Home() {
                   Ver todo en Espejos <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
-              <div className="col-lg-4 border rounded">
+              <div className="col-lg-4 border rounded productCarrousel">
                 <div
                   id="espejosCarrouselFade"
                   className="carousel slide carousel-fade py-lg-5"
@@ -312,7 +312,7 @@ function Home() {
           </div>
           <div className="container row-container w-75">
             <div className="row">
-              <div className="col-lg-4 border rounded">
+              <div className="col-lg-4 border rounded productCarrousel-two">
                 <div
                   id="luminariasCarrouselFade"
                   className="carousel slide carousel-fade py-lg-5"
@@ -381,7 +381,7 @@ function Home() {
                   </button>
                 </div>
               </div>
-              <div className="col-lg-8 border rounded p-5 product-category">
+              <div className="col-lg-8 border rounded p-5 product-category-two">
                 <h2>Luminarias</h2>
                 <p className="fade-in-right">
                   Con nuestras luminarias las fibras naturales vinieron para
@@ -416,7 +416,7 @@ function Home() {
                   Ver todo en Tapiceria <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
-              <div className="col-lg-4 border rounded">
+              <div className="col-lg-4 border rounded productCarrousel">
                 <div
                   id="tapizCarrouselFade"
                   className="carousel slide carousel-fade py-lg-5"
