@@ -121,6 +121,11 @@ a:hover {
   color: var(--primary-color);
 }
 
+.footer-name {
+  font-weight: bolder;
+  margin-left: 30px;
+}
+
 #exclusiveProduct {
   background-color: transparent !important;
 }

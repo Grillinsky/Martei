@@ -31,12 +31,12 @@ function CategoryCard() {
           products.map(product => (
             <div key={product.id} className="col-sm-3 m-3">
               <Card style={{ width: "23.5rem", marginBottom:"30px", marginRight:"10px", marginLeft:"10em" }}>
-                <Card.Img variant="top" src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} />
+                <Card.Img variant="top" src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} style={{ height: "18rem", objectFit: "cover" }}/>
                 <Card.Body style={{ backgroundColor: "white" }}>
-                  <Card.Title style={{ color: "black", fontWeight: "900" }}>
+                  <Card.Title style={{ color: "black", fontWeight: "900", }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text style={{ color: "black" }}>
+                  <Card.Text style={{ color: "black", height:"16.5rem" }}>
                     {product.description}
                   </Card.Text>
                   <Link to={`/product/${product.id}`}>

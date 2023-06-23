@@ -1,5 +1,5 @@
 .dark-bg-frame {
-  margin-left: 1em;
+  margin-left: 7em;
   border-radius: 46px;
   transform: translateX(8rem);
   height: 60vh;
@@ -22,6 +22,7 @@
   background-color: var(--white);
   border-radius: 30px 0px 0px 30px;
   border-right: 1px var(--black) dotted;
+  margin-left: -60px;
 }
 #show-frame {
   display: flex;
@@ -53,6 +54,7 @@
 .text-container {
   text-align: center;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 .text-container h2 {
@@ -66,6 +68,7 @@
 }
 .icons-profile {
   height: 100%;
+  margin: 0px 0px 0px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,6 +82,7 @@
 
 .icon-container i {
   font-size: 2.2rem;
+  margin-top: -3px;
   margin-right: 20px;
 }
 
