@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import '../css/Register.css'
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import "../css/Register.css";
 
 function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [emailValue, setEmailValue] = useState('')
-  const [firstNameValue, setFirstNameValue] = useState('')
-  const [lastNameValue, setLastNameValue] = useState('')
-  const [addressValue, setAddressValue] = useState('')
-  const [phoneValue, setPhoneValue] = useState('')
-  const [passwordValue, setPasswordValue] = useState('')
+  const [emailValue, setEmailValue] = useState("");
+  const [firstNameValue, setFirstNameValue] = useState("");
+  const [lastNameValue, setLastNameValue] = useState("");
+  const [addressValue, setAddressValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
+  const [passwordValue, setPasswordValue] = useState("");
 
-  const [registrationError, setRegistrationError] = useState(false)
+  const [registrationError, setRegistrationError] = useState(false);
 
   async function handleSubmitRegister(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     try {
       await axios({
-        method: 'POST',
+        method: "POST",
         url: `${import.meta.env.VITE_API_URL}/register`,
         data: {
           email: emailValue,
@@ -28,13 +28,13 @@ function Register() {
           lastname: lastNameValue,
           address: addressValue,
           phone: phoneValue,
-          password: passwordValue
-        }
-      })
-      navigate('/login')
+          password: passwordValue,
+        },
+      });
+      navigate("/login");
     } catch (error) {
-      console.error(error)
-      setRegistrationError(true)
+      console.error(error);
+      setRegistrationError(true);
     }
   }
 
@@ -45,7 +45,7 @@ function Register() {
           <p className="title">Register</p>
           {registrationError && (
             <div className="alert alert-danger">
-              Ya existe administrador con el email indicado.
+              Ya existe usuario con el email indicado.
             </div>
           )}
           <form
@@ -61,7 +61,7 @@ function Register() {
                 id="firstname"
                 placeholder=""
                 value={firstNameValue}
-                onChange={event => setFirstNameValue(event.target.value)}
+                onChange={(event) => setFirstNameValue(event.target.value)}
                 required
               />
             </div>
@@ -73,7 +73,7 @@ function Register() {
                 id="lastname"
                 placeholder=""
                 value={lastNameValue}
-                onChange={event => setLastNameValue(event.target.value)}
+                onChange={(event) => setLastNameValue(event.target.value)}
                 required
               />
             </div>
@@ -85,7 +85,7 @@ function Register() {
                 id="address"
                 placeholder=""
                 value={addressValue}
-                onChange={event => setAddressValue(event.target.value)}
+                onChange={(event) => setAddressValue(event.target.value)}
                 required
               />
             </div>
@@ -97,7 +97,7 @@ function Register() {
                 id="phone"
                 placeholder=""
                 value={phoneValue}
-                onChange={event => setPhoneValue(event.target.value)}
+                onChange={(event) => setPhoneValue(event.target.value)}
                 required
               />
             </div>
@@ -109,7 +109,7 @@ function Register() {
                 id="email"
                 placeholder=""
                 value={emailValue}
-                onChange={event => setEmailValue(event.target.value)}
+                onChange={(event) => setEmailValue(event.target.value)}
                 required
               />
             </div>
@@ -121,7 +121,7 @@ function Register() {
                 id="password"
                 placeholder=""
                 value={passwordValue}
-                onChange={event => setPasswordValue(event.target.value)}
+                onChange={(event) => setPasswordValue(event.target.value)}
                 required
               />
               <div className="forgot">
@@ -139,15 +139,15 @@ function Register() {
           </div>
           <p className="signup">
             Don't have an account?
-            <Link rel="noopener noreferrer" to={'/login'} className="Sign-Up">
-              {' '}
+            <Link rel="noopener noreferrer" to={"/login"} className="Sign-Up">
+              {" "}
               Sign In
             </Link>
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

@@ -48,7 +48,7 @@ function ProductCard() {
                     {product.name}
                   </Card.Title>
                   <Card.Text style={{ color: "black", height: "16.5rem" }}>
-                    {product.description}
+                    {product.description.slice(0, 300)}...
                   </Card.Text>
                   <Card.Link
                     href={`/product/${product.id}`}
