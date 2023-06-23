@@ -1,116 +1,114 @@
 .container-login {
-    height: 1em !important;
+  height: 1em !important;
 }
 
 .form-container-register {
-    width: 500px;
-    background: black;
-    padding: 2rem;
-    color: rgba(243, 244, 246, 1);
-    box-shadow: #b87444;
-    height: 38.6em;
-    display: inline-block !important;
-  }
-  
-  .title {
-    text-align: center;
-    margin-top: -20px;
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-    line-height: 2rem;
-    font-weight: 700;
-    color: white;
-  }
-  
-  .form {
-    margin-top: 0.1em;
-  }
-  
-  .input-group {
-    margin-bottom: 1px;
-    margin-top: 2px;
-    font-size: 15px;
-    line-height: 1rem;
-  }
-  
-  .input-group label {
-    display: block;
-    color: rgb(255, 255, 255);
-    margin-bottom: 3px;
-  }
-  
-  .input-group input {
-    width: 100% !important;;
-    border: 1px solid #ffffff;
-    outline: 0;
-    background-color: rgb(0, 0, 0);
-    padding: 0.82rem 1rem;
-    margin: 3px 0 3px 0;
-    color: rgba(243, 244, 246, 1);
-  }
-  
-  .input-group input:focus {
-    border-color: #b87444 
-  }
-  
-  .forgot {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 2rem !important;
-    line-height: 1rem;
-    color: rgb(255, 255, 255);
-    margin: 5px 0 9px 0 !important;
-  }
-  
-  .forgot a,.signup a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .forgot a:hover {
-    text-decoration: underline #ffc69b;
-  }
-  
-  .sign {
-    display: block;
-    width: 100%;
-    background-color: #ffc69b;
-    padding: 0.66rem;
-    text-align: center;
-    color: rgba(17, 24, 39, 1);
-    border: none;
-    border-radius: 0.375rem;
-    font-weight: 600;
-  }
+  width: 500px;
+  background: black;
+  padding: 2rem;
+  color: rgba(243, 244, 246, 1);
+  box-shadow: #b87444;
+  min-height: 38.6em;
+  display: inline-block !important;
+}
 
-  
-  .line {
-    margin-top: -3px;
-    margin-bottom: 2px;
-    height: 1px;
-    flex: 1 1 0%;
-    background-color: rgba(55, 65, 81, 1);
-  }
-  
+.title {
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: white;
+}
 
-  .Sign-Up {
-    font-size: 20px !important;
-    font-weight: bolder;
-    color: #ffc69b !important
-  }
-  
-  .signup {
-    margin-top: 12px;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1rem;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-  }
-  
+.form {
+  margin-top: 0.1em;
+}
 
-  .div-register {
-    margin-top: 10px;
-    margin-bottom: 1% !important;
+.input-group {
+  margin-bottom: 1px;
+  margin-top: 2px;
+  font-size: 15px;
+  line-height: 1rem;
+}
+
+.input-group label {
+  display: block;
+  color: rgb(255, 255, 255);
+  margin-bottom: 3px;
+}
+
+.input-group input {
+  width: 100% !important;
+  border: 1px solid #ffffff;
+  outline: 0;
+  background-color: rgb(0, 0, 0);
+  padding: 0.82rem 1rem;
+  margin: 3px 0 3px 0;
+  color: rgba(243, 244, 246, 1);
+}
+
+.input-group input:focus {
+  border-color: #b87444;
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem !important;
+  line-height: 1rem;
+  color: rgb(255, 255, 255);
+  margin: 5px 0 9px 0 !important;
+}
+
+.forgot a,
+.signup a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.forgot a:hover {
+  text-decoration: underline #ffc69b;
+}
+
+.sign {
+  display: block;
+  width: 100%;
+  background-color: #ffc69b;
+  padding: 0.66rem;
+  text-align: center;
+  color: rgba(17, 24, 39, 1);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+.line {
+  margin-top: -3px;
+  margin-bottom: 2px;
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: rgba(55, 65, 81, 1);
+}
+
+.Sign-Up {
+  font-size: 20px !important;
+  font-weight: bolder;
+  color: #ffc69b !important;
+}
+
+.signup {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.div-register {
+  margin-top: 10px;
+  margin-bottom: 1% !important;
 }
