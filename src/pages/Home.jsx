@@ -13,7 +13,6 @@ function Home() {
   const [categoryData, setCategories] = useState([]);
   const [productData, setProducts] = useState([]);
 
-
   useEffect(() => {
     categoryList();
     productList();
@@ -481,36 +480,36 @@ function Home() {
           </button>
           </Link>
         </div>
-            <div className="ExclusiveProductColumn card">
-              <img src={productData[14]?.image || "Tapiz1.jpg"} alt="Tapiz De Roble Nordico Usado Por Tyr" />
+        <div className="ExclusiveProductColumn card">
+              <img src={productData.length > 0 && productData[0].length > 14 ? productData[0][14].image : "Tapiz1.jpg"} alt="Tapiz De Roble Nordico Usado Por Tyr" />
               <h5 className="category-exclusive-product">{categoryData[4]?.name || ''}</h5>
               <h3 className="name-exclusive-product">{productData[14]?.name || 'Titulo De Tapices'}</h3>
               <p className="price-exclusive-product">Price: ${productData[14]?.price || '7.99'}🔥</p>
-            </div>
-            <div className="ExclusiveProductColumn card">
-              <img src={productData[8]?.image || "Cuadro1.png"} alt="Cuadro Usado Por Cleopatra" />
+          </div>
+          <div className="ExclusiveProductColumn card">
+              <img src={productData.length > 0 && productData[0].length > 8 ? productData[0][8].image : "Cuadro1.png"}  alt="Cuadro Usado Por Cleopatra" />
               <h5 className="category-exclusive-product">{categoryData[2]?.name || ''}</h5>
               <h3 className="name-exclusive-product">{productData[8]?.name || 'Titulo De Cuadros'}</h3>
               <p className="price-exclusive-product">Price: ${productData[8]?.price || '6.99'}🔥</p>
-            </div>
-           <div className="ExclusiveProductColumn card">
-              <img src={productData[11]?.image || "Luminaria1.jpg"} alt="Luminaria Traida De La Epoca Nomada" />
-              <h5 className="category-exclusive-product">{categoryData[3]?.name || ''}</h5>
-              <h3 className="name-exclusive-product">{productData[11]?.name || 'Titulo De Luminarias'}</h3>
-              <p className="price-exclusive-product">Price: ${productData[11]?.price || '4.99'}🔥</p>
-           </div>
-           <div className="ExclusiveProductColumn card">
-              <img src={productData[4]?.image || "Espejo1.jpg"} alt="Espejo Revelador De Islas Palaos" />
-              <h5 className="category-exclusive-product">{categoryData[1]?.name || ''}</h5>
-              <h3 className="name-exclusive-product">{productData[3]?.name || 'Titulo De Espejos'}</h3>
-              <p className="price-exclusive-product">Price: ${productData[3]?.price || '3.99'}🔥</p>
-            </div>
-            <div className="ExclusiveProductColumn card">
-              <img src={productData[3]?.image || "Mueble1.jpg"} alt="Mueble De La Antigua Mesopotamia" />
-              <h5 className="category-exclusive-product">{categoryData[0]?.name || ''}</h5>
-              <h3 className="name-exclusive-product">{productData[2]?.name || 'Titulo De Muebles'}</h3>
-              <p className="price-exclusive-product">Price: ${productData[2]?.price || '2.99'}🔥</p>
-            </div>
+          </div>
+          <div className="ExclusiveProductColumn card">
+            <img src={productData.length > 11 && productData[0].length > 11 ? productData[0][11].image : "Luminaria1.jpg"} alt="Luminaria Traida De La Epoca Nomada" />
+            <h5 className="category-exclusive-product">{categoryData.length > 3 ? categoryData[3].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData.length > 11 && productData[0].length > 11 ? productData[0][11].name : 'Titulo De Luminarias'}</h3>
+            <p className="price-exclusive-product">Price: ${productData.length > 11 && productData[0].length > 11 ? productData[0][11].price : '4.99'}🔥</p>
+          </div>
+          <div className="ExclusiveProductColumn card">
+            <img src={productData.length > 8 && productData[0].length > 3 ? productData[0][3].image : "Espejo1.jpg"} alt="Espejo Revelador De Islas Palaos" />
+            <h5 className="category-exclusive-product">{categoryData.length > 1 ? categoryData[1].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData.length > 3 && productData[0].length > 3 ? productData[0][3].name : 'Titulo De Espejos'}</h3>
+            <p className="price-exclusive-product">Price: ${productData.length > 3 && productData[0].length > 3 ? productData[0][3].price : '3.99'}🔥</p>
+          </div>
+          <div className="ExclusiveProductColumn card">
+            <img src={productData.length > 2 && productData[0].length > 2 ? productData[0][2].image : "Mueble1.jpg"} alt="Mueble De La Antigua Mesopotamia" />
+            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[0].name : ''}</h5>
+            <h3 className="name-exclusive-product">{productData.length > 2 && productData[0].length > 2 ? productData[0][2].name : 'Titulo De Muebles'}</h3>
+            <p className="price-exclusive-product">Price: ${productData.length > 2 && productData[0].length > 2 ? productData[0][2].price : '2.99'}🔥</p>
+          </div>
         </section>
       </main>
       <Footer />
