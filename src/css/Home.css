@@ -121,17 +121,15 @@ a:hover {
 }
 
 .ExclusiveProductColumn {
-  display: inline-block !important;
-  margin-top: 5px;
-  margin-left: 75px;
-  flex-direction: column;
+  width: 232px;
+  /*margin-left: 75px; */
   align-items: center;
   background-color: #ffffff !important;
 }
 
 .ExclusiveProductColumn img {
   width: 230px;
-  height: 265px; 
+  height: 265px;
 }
 
 .ExclusiveProductColumn h3 {
@@ -146,8 +144,8 @@ a:hover {
   font-size: 16px;
 }
 
-.category-exclusive-product{
-  font-weight: bolder ;
+.category-exclusive-product {
+  font-weight: bolder;
   color: rgb(126, 126, 126);
   margin: 15px 0px 0px 10px;
   margin-left: 15px !important;

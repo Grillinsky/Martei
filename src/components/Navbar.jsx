@@ -1,39 +1,22 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logoutUser } from "../../redux/userSlice";
 
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Modal,
-  Button,
-  Dropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "../css/Cart-Modal.css";
+import CartModal from "./CartModal";
 
 function NavBar() {
-
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const [itemsCarrito, setItemsCarrito] = useState([]);
-
+  const [cartItemsCount, setCartItemsCount] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const vaciarCarrito = () => {
-    setItemsCarrito([]);
-  };
-
-  const clearCart = () => {
-    setCartItems([]);
-  };
 
   const handleLogout = () => {
     dispatch(logoutUser());
@@ -81,7 +64,6 @@ function NavBar() {
                     href="/category/list/1"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    
                   >
                     Muebles
                   </NavDropdown.Item>
@@ -89,7 +71,6 @@ function NavBar() {
                     href="/category/list/3"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    
                   >
                     Cuadros
                   </NavDropdown.Item>
@@ -97,15 +78,13 @@ function NavBar() {
                     href="/category/list/2"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    
                   >
-                   Espejos
+                    Espejos
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="/category/list/4"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    
                   >
                     Luminaria
                   </NavDropdown.Item>
@@ -113,7 +92,6 @@ function NavBar() {
                     href="/category/list/5"
                     className="nav-item"
                     style={{ fontSize: "1rem" }}
-                    
                   >
                     Tapices
                   </NavDropdown.Item>
@@ -130,9 +108,11 @@ function NavBar() {
                   <i className="fas fa-shopping-cart fa-lg position-relative">
                     <span
                       id="badge"
-                      className="position-absolute start-100 translate-middle  bg-danger rounded-circle"
+                      className={`position-absolute start-100 translate-middle bg-danger rounded-circle ${
+                        cartItemsCount === 0 ? "d-none" : ""
+                      }`}
                     >
-                      <span>0</span>
+                      <span>{cartItemsCount}</span>
                     </span>
                   </i>
                 </Nav.Link>
@@ -173,45 +153,10 @@ function NavBar() {
           </Container>
         </Navbar>
       </header>
-      <Modal
-        className="modal-cart"
-        show={mostrarCarrito}
-        onHide={() => setMostrarCarrito(false)}
-      >
-        <Modal.Header className="mi-modal-header">
-          <Modal.Title>Carrito de compras</Modal.Title>
-          <i
-            className="fa fa-window-close"
-            aria-hidden="true"
-            onClick={() => setMostrarCarrito(false)}
-          ></i>
-        </Modal.Header>
-        <Modal.Body className="mi-modal-body">
-          {itemsCarrito.length > 0 ? (
-            <ul>
-              {itemsCarrito.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          ) : (
-            <p>No hay productos en el carrito...</p>
-          )}
-        </Modal.Body>
-        <Modal.Footer className="mi-modal-footer">
-          <Button className="btn-tacho" onClick={clearCart}>
-            <i className="fa fa-trash-o" aria-hidden="true"></i>
-          </Button>
-          <Button
-            variant="outline-secondary"
-            onClick={() => setMostrarCarrito(false)}
-          >
-            Cerrar
-          </Button>
-          <Button variant="success" onClick={vaciarCarrito}>
-            Comprar
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <CartModal
+        mostrarCarrito={mostrarCarrito}
+        setMostrarCarrito={setMostrarCarrito}
+      />
     </div>
   );
 }

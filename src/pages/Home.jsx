@@ -7,12 +7,9 @@ import "../css/Home.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
 function Home() {
-
   const [categoryData, setCategories] = useState([]);
   const [productData, setProducts] = useState([]);
-
 
   useEffect(() => {
     categoryList();
@@ -21,7 +18,9 @@ function Home() {
 
   async function categoryList() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/category`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/category`
+      );
       const categoryListData = response.data;
       setCategories(categoryListData.categories);
     } catch (error) {
@@ -31,7 +30,9 @@ function Home() {
 
   async function productList() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/product`
+      );
       const products = response.data.products;
       setProducts(products);
     } catch (error) {
@@ -64,7 +65,10 @@ function Home() {
                   precisas y diseñamos juntos el mueble indicado para vos 😊 en
                   las medidas y características que más te convengan.
                 </p>
-                <Link className="text-dark category-link" to={"/category/list/1"}>
+                <Link
+                  className="text-dark category-link"
+                  to={"/category/list/1"}
+                >
                   Ver todo en Mueble <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
@@ -82,7 +86,7 @@ function Home() {
                         alt="Colgante de techo, en hilo y madera"
                       />
                     </div>
-                   {/*  <div className="carousel-item">
+                    {/*  <div className="carousel-item">
                       <img
                         src="/Mueble2.jpg"
                         className="d-block w-100"
@@ -210,7 +214,10 @@ function Home() {
                   cualquier espacio. Son esos elementos distintivos de cada
                   hogar, que los vuelve únicos y llena de personalidad
                 </p>
-                <Link className="text-dark category-link" to={"/category/list/3"}>
+                <Link
+                  className="text-dark category-link"
+                  to={"/category/list/3"}
+                >
                   Ver todo en Cuadros <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
@@ -225,7 +232,10 @@ function Home() {
                   uno igual a otro, y en lo personal creo que es uno de los
                   atributos más valiosos que sólo lo artesanal nos da
                 </p>
-                <Link className="text-dark category-link" to={"/category/list/2"}>
+                <Link
+                  className="text-dark category-link"
+                  to={"/category/list/2"}
+                >
                   Ver todo en Espejos <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
@@ -380,8 +390,12 @@ function Home() {
                   estado más puro aportan la nobleza y calidez que sólo la
                   naturaleza tiene 🤎✨
                 </p>
-                <Link className="text-dark category-link" to={"/category/list/4"}>
-                     Ver todo en Luminarias{" "} <i className="fas fa-chevron-right"></i>
+                <Link
+                  className="text-dark category-link"
+                  to={"/category/list/4"}
+                >
+                  Ver todo en Luminarias{" "}
+                  <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
             </div>
@@ -395,8 +409,11 @@ function Home() {
                   nobles y naturales nunca puede resultar mal, en este caso,
                   madera y algodón 🤎
                 </p>
-                <Link className="text-dark category-link" to={"/category/list/4"}>
-                     Ver todo en Tapiceria{" "} <i className="fas fa-chevron-right"></i>
+                <Link
+                  className="text-dark category-link"
+                  to={"/category/list/4"}
+                >
+                  Ver todo en Tapiceria <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded">
@@ -472,45 +489,81 @@ function Home() {
           </div>
         </section>
         <section className="py-2 container-fluid pt-2" id="exclusiveProduct">
-        <hr className="my-3 mt-5"/>
-        <div className="d-flex justify-content-between align-items-center mt-2 mb-3">
-          <h2 className="ms-5 mt-3 title-exclusive-product">Exclusive Products</h2>
-          <Link to={"/productsPage"}>
-          <button className="btn-dark-product-exclusive me-5">
-           Todos Los Productos 🡢
-          </button>
-          </Link>
-        </div>
-        <div className="ExclusiveProductColumn card">
-              <img src="Tapiz1.jpg" alt="Nombre del producto" />
-            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[4].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[14].name : 'Titulo De Tapices '}</h3>
-            <p className="price-exclusive-product">Price: $7.99🔥</p>
-        </div>
-        <div className="ExclusiveProductColumn card">
-              <img src="Cuadro1.png" alt="Nombre del producto" />
-            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[2].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[8].name : 'Titulo De Cuadros '}</h3>
-            <p className="price-exclusive-product">Price: $6.99🔥</p>
-        </div>
-        <div className="ExclusiveProductColumn card">
-              <img src="Luminaria1.jpg" alt="Nombre del producto" />
-            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[3].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[11].name : 'Titulo De Luminarias'}</h3>
-            <p className="price-exclusive-product">Price: $4.99🔥</p>
-        </div>
-        <div className="ExclusiveProductColumn card">
-              <img src="Espejo1.jpg" alt="Nombre del producto" />
-            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[1].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[3].name : 'Titulo De Espejos '}</h3>
-            <p className="price-exclusive-product">Price: $3.99🔥</p>
-        </div>
-        <div className="ExclusiveProductColumn card">
-              <img src="Mueble1.jpg" alt="Nombre del producto" />
-            <h5 className="category-exclusive-product">{categoryData.length > 0 ? categoryData[0].name : ''}</h5>
-            <h3 className="name-exclusive-product">{productData.length > 0 ? productData[2].name : 'Titulo De Muebles'}</h3>
-            <p className="price-exclusive-product">Price: $2.99🔥</p>
-        </div>
+          <hr className="my-3 mt-5" />
+          <div className="d-flex justify-content-between align-items-center mt-2 mb-3">
+            <h2 className="ms-5 mt-3 title-exclusive-product">
+              Exclusive Products
+            </h2>
+            <Link to={"/productsPage"}>
+              <button className="btn-dark-product-exclusive me-5">
+                Todos Los Productos <i className="fas fa-chevron-right"></i>
+              </button>
+            </Link>
+          </div>
+          <div className="container">
+            <div className="row p-3 gap-3">
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img src="Tapiz1.jpg" alt="Nombre del producto" />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[4].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 0
+                    ? productData[14].name
+                    : "Titulo De Tapices "}
+                </h3>
+                <p className="price-exclusive-product">Price: $7.99🔥</p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img src="Cuadro1.png" alt="Nombre del producto" />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[2].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 0
+                    ? productData[8].name
+                    : "Titulo De Cuadros "}
+                </h3>
+                <p className="price-exclusive-product">Price: $6.99🔥</p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img src="Luminaria1.jpg" alt="Nombre del producto" />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[3].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 0
+                    ? productData[11].name
+                    : "Titulo De Luminarias"}
+                </h3>
+                <p className="price-exclusive-product">Price: $4.99🔥</p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img src="Espejo1.jpg" alt="Nombre del producto" />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[1].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 0
+                    ? productData[3].name
+                    : "Titulo De Espejos "}
+                </h3>
+                <p className="price-exclusive-product">Price: $3.99🔥</p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img src="Mueble1.jpg" alt="Nombre del producto" />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[0].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 0
+                    ? productData[2].name
+                    : "Titulo De Muebles"}
+                </h3>
+                <p className="price-exclusive-product">Price: $2.99🔥</p>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />

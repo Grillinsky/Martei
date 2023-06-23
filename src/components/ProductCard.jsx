@@ -4,10 +4,12 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     listProducts();
   }, []);
@@ -25,7 +27,10 @@ function ProductCard() {
       console.error(error);
     }
   }
-
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log("Added to cart", product);
+  };
   return (
     <div className="m-2 mt-3">
       <div className="row">
@@ -67,6 +72,7 @@ function ProductCard() {
                         color: "var(--black)",
                       }}
                       className="ms-2 rounded"
+                      onClick={() => handleAddToCart(product)}
                     >
                       Al Carrito
                     </Button>
