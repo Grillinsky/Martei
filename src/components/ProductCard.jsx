@@ -42,7 +42,7 @@ function ProductCard() {
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text style={{ color: "black" }}>
+                  <Card.Text style={{ color: "black", height:"16.5r|em" }}>
                     {product.description}
                   </Card.Text>
                   <Link to={`/product/${product.id}`}>
