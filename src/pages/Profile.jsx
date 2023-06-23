@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
 
 function Profile() {
+  const user = useSelector((state) => state.user);
+  const [profileData, setProfileData] = useState(null);
+
+  useEffect(() => {
+    async function getProfileDataUser() {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/users/${user.id}`
+        );
+        const profileData = response.data;
+        setProfileData(profileData);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    if (user) {
+      getProfileDataUser();
+    }
+  }, [user]);
+
   return (
     <>
       <Navbar />
@@ -11,7 +35,7 @@ function Profile() {
         <div className="d-flex my-5">
           <div className="dark-bg-frame"></div>
           <div id="main-frame" className="row">
-            <div id="menu-frame" className=" col-12 col-md-4">
+            <div id="menu-frame" className="col-12 col-md-4">
               <div className="icons-profile">
                 <div className="icon-container">
                   <i className="fa fa-user-circle" aria-hidden="true"></i>
@@ -31,27 +55,21 @@ function Profile() {
               </div>
             </div>
             <div id="show-frame" className="col-12 col-md-8">
-              {" "}
-              {/* <h1 className="">Alex Garcia</h1> */}
-              <div className="d-flex flex-column align-items-center">
-                {/* <img
-                  className="profile-image"
-                  alt="profile picture"
-                  src="./Profilephoto.png"
-                />  POR FUERA DEL MVP*/}
-                <div className="text-container">
-                  <h2>
-                    Hola <span>Alex Garcia</span>!
-                  </h2>
-                  <ul className="p-0">
-                    <li>Av Independencia 1825</li>
-                    <li>Alexgarcia@gmail.com</li>
-                    <li>099299099</li>
-                  </ul>
-                </div>
-                <div></div>
-                <hr className="" />
+              <div className="text-container">
+                {profileData && (
+                  <div>
+                    <h2>
+                      Hola <span>{profileData.firstname}</span>!
+                    </h2>
+                    <ul className="p-0">
+                      <li>{profileData.address}</li>
+                      <li>{profileData.email}</li>
+                      <li>{profileData.phone}</li>
+                    </ul>
+                  </div>
+                )}
               </div>
+              <hr className="" />
             </div>
           </div>
         </div>

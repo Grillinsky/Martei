@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/Login.css";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../../redux/userSlice";
 import axios from "axios";
 
@@ -105,10 +105,10 @@ function Login() {
           </div>
           <p className="signup">
             Don't have an account?
-            <a rel="noopener noreferrer" href="#" className="Sign-Up">
+            <Link rel="noopener noreferrer" to={"/register"} className="Sign-Up">
               {" "}
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
