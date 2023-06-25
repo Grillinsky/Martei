@@ -28,7 +28,7 @@ function NavBar() {
       {" "}
       <header id="header">
         <Navbar
-          style={{ backgroundColor: "var(--black)" }}
+          style={{ backgroundColor: "var(--black)", paddingInline: "10vw" }}
           expand="lg"
           fixed="top"
         >

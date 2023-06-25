@@ -1,26 +1,25 @@
 article {
   background-image: url(/header-banner4.jpg); /*TO DO cambiar por video ? */
   background-size: cover;
+  filter: brightness(0.9);
   /* background-repeat:space; */
   background-position: center;
 }
-main {
-  padding: 3rem 0;
-}
+
 .product-category {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border-top-right-radius: 0%!important;
-  border-bottom-right-radius: 0%!important;
+  border-top-right-radius: 0% !important;
+  border-bottom-right-radius: 0% !important;
 }
 
 .product-category-two {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border-top-left-radius: 0%!important;
-  border-bottom-left-radius: 0%!important;
+  border-top-left-radius: 0% !important;
+  border-bottom-left-radius: 0% !important;
 }
 
 .productCarrousel {
@@ -55,7 +54,7 @@ main {
 .hero-title {
   align-self: flex-start;
   text-align: center;
-  font-size: calc(10rem - 5vw);
+  font-size: calc(10rem - 3vw);
 }
 .hero-title::first-letter {
   font-size: calc(12rem - 3vw);
@@ -71,12 +70,12 @@ article {
   color: var(--white);
 }
 
-nav {
+/* nav {
   background-color: var(--black);
 }
 .nav-link {
   color: var(--white) !important;
-}
+} */
 
 .carousel-item {
   height: 18rem;
@@ -110,6 +109,9 @@ footer i {
 }
 footer a {
   font-size: 1rem;
+}
+#footerContainer {
+  padding-inline: 10vw;
 }
 li {
   list-style: none;

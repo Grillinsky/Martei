@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="container-fluid py-4 mt-5">
-      <div className="row">
+      <div className="row" id="footerContainer">
         <div className="col-lg-6">
           <div className="row">
             <div className="col-4">
@@ -44,7 +44,10 @@ function Footer() {
           {/* <h5>martei.deco</h5> */}
           <ul>
             <li className="footer-name mx-1">
-              <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}> Ciudad Vieja</Link>
+              <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}>
+                {" "}
+                Ciudad Vieja
+              </Link>
             </li>
             <li>Montevideo</li>
             <li>099470542</li>
