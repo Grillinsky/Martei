@@ -9,17 +9,24 @@ function CartModal(props) {
   const [quantity, setQuantity] = useState({})
 
   useEffect(() => {
-    const initialQuantity = {}
-    itemsCarrito.forEach(item => {
-      initialQuantity[item.id] = (initialQuantity[item.id] || 0) + 1
-    })
-    setQuantity(initialQuantity)
+    if (itemsCarrito && itemsCarrito.length > 0) {
+      // Agregar verificación adicional
+      const initialQuantity = {}
+      itemsCarrito.forEach(item => {
+        if (item && item.id) {
+          // Verificar si el item y item.id existen antes de acceder a ellos
+          initialQuantity[item.id] = (initialQuantity[item.id] || 0) + 1
+        }
+      })
+      setQuantity(initialQuantity)
+    }
   }, [itemsCarrito])
 
   const precioFinal = () => {
     try {
-      return itemsCarrito.reduce(
-        (total, item) => total + parseFloat(item.price) * quantity[item.id],
+      return uniqueItemsCarrito.reduce(
+        (total, item) =>
+          total + parseFloat(item.price) * (quantity[item.id] || 0),
         0
       )
     } catch (error) {
@@ -28,24 +35,37 @@ function CartModal(props) {
     }
   }
 
-  const uniqueItemsCarrito = Array.from(
-    new Set(itemsCarrito.map(item => item.id))
-  ).map(id => {
-    return itemsCarrito.find(item => item.id === id)
-  })
+  const uniqueItemsCarrito = itemsCarrito
+    ? Array.from(new Set(itemsCarrito.map(item => item && item.id))).map(id => {
+        return itemsCarrito.find(item => item && item.id === id)
+      })
+    : []
 
   const handleIncrement = productId => {
-    dispatch(addToCart(productId))
+    const product = uniqueItemsCarrito.find(item => item.id === productId)
+    if (product) {
+      dispatch(addToCart(product))
+      setQuantity(prevQuantity => ({
+        ...prevQuantity,
+        [productId]: (prevQuantity[productId] || 0) + 1
+      }))
+    }
   }
 
   const handleDecrement = productId => {
-    if (quantity[productId] === 1) {
-      dispatch(removeFromCart(productId))
-    } else {
-      setQuantity(prevQuantity => ({
-        ...prevQuantity,
-        [productId]: (prevQuantity[productId] || 0) - 1
-      }))
+    if (productId) {
+      if (quantity[productId] === 1) {
+        dispatch(removeFromCart(productId))
+        setQuantity(prevQuantity => {
+          const { [productId]: _, ...rest } = prevQuantity
+          return rest
+        })
+      } else {
+        setQuantity(prevQuantity => ({
+          ...prevQuantity,
+          [productId]: (prevQuantity[productId] || 0) - 1
+        }))
+      }
     }
   }
 
@@ -76,10 +96,11 @@ function CartModal(props) {
           ></i>
         </Modal.Header>
         <Modal.Body className="mi-modal-body">
-          {uniqueItemsCarrito.length > 0 ? (
+          {uniqueItemsCarrito.length > 0 && itemsCarrito ? (
             <ul>
               {uniqueItemsCarrito.map((item, index) => {
-                const productQuantity = quantity[item.id] || 0
+                const productQuantity =
+                  item && quantity[item.id] ? quantity[item.id] : 0
                 if (productQuantity === 0) {
                   return null // No renderizar el producto si la cantidad es 0
                 }
