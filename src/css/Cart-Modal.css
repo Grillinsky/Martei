@@ -1,78 +1,83 @@
-.modal-cart{
-    align-items: center;
-    justify-content: center;
-    display: flex !important;
-    height: 100% !important;
-    width: 100vw;
+.modal-cart {
+  align-items: center;
+  justify-content: center;
+  display: flex !important;
+  height: 100% !important;
+  width: 100vw;
 }
 
 .mi-modal-header {
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 0%;
-    border: none !important;
-  }
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 0%;
+  border: none !important;
+}
 
 .fa-window-close {
-    background: transparent;
-    color: #ffffff;
-    font-size: 25px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 25px;
 }
-  
-  .fa-trash-o {
-    color: rgb(245, 55, 55);
-    font-size: 23px;
-    margin-right: 232px;
-  }
 
-  .success {
-    background-color: rgb(48, 154, 48) !important;
-  }
+.fa-trash-o {
+  color: rgb(245, 55, 55);
+  font-size: 23px;
+  margin-right: 232px;
+}
 
-  .secondary {
-    background-color: rgb(94, 94, 94) !important;
-  }
+.success {
+  background-color: rgb(48, 154, 48) !important;
+}
 
-  .btn {
-    border-radius: 7%;
-  }
+.secondary {
+  background-color: rgb(94, 94, 94) !important;
+}
 
-  .btn-tacho {
-    border-radius: 1%;
-    padding: 0 !important;
-    border: 0 !important;
-    background-color: transparent;
-    display: inline-block;
-    --bs-btn-color: #fff;
-    --bs-btn-bg: trasparent;
-     --bs-btn-border-color: trasparent; 
-     --bs-btn-hover-color: #fff; 
-     --bs-btn-hover-bg: trasparent; 
-     --bs-btn-hover-border-color:trasparent;
-     --bs-btn-active-bg:trasparent; 
-     --bs-btn-active-bg: trasparent;
-    --bs-btn-active-border-color: trasparent;
-  }
+.btn {
+  border-radius: 7%;
+}
 
-  .mi-modal-body {
-    padding: 20px;
-    font-weight: 500;
-    font-size: 22px;
-    background-color: #ffffff;
-    color: #000000;
-  }
-  
-  .mi-modal-footer {
-    border: none;
-    background-color: #f1e7db;
-    padding: 10px 20px;
-  }
+.btn-tacho {
+  border-radius: 1%;
+  padding: 0 !important;
+  border: 0 !important;
+  background-color: transparent;
+  display: inline-block;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: trasparent;
+  --bs-btn-border-color: trasparent;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: trasparent;
+  --bs-btn-hover-border-color: trasparent;
+  --bs-btn-active-bg: trasparent;
+  --bs-btn-active-bg: trasparent;
+  --bs-btn-active-border-color: trasparent;
+}
 
-  .custom-dropdown .dropdown-menu {
-    left: -6.4em !important;
-    right: 0;
-  }
-  
-  .custom-dropdown-menu {
-    margin-right: 0 !important;
-  }
+.mi-modal-body {
+  padding: 20px;
+  font-weight: 500;
+  font-size: 22px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.mi-modal-footer {
+  border: none;
+  background-color: #f1e7db;
+  padding: 10px 20px;
+}
+
+.custom-dropdown .dropdown-menu {
+  left: -6.4em !important;
+  right: 0;
+}
+
+.custom-dropdown-menu {
+  margin-right: 0 !important;
+}
+
+.more-less {
+  text-decoration: none;
+  color: black;
+}

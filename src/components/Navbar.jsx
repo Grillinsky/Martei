@@ -1,34 +1,34 @@
-import React from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { logoutUser } from "../../redux/userSlice";
+import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { logoutUser } from '../../redux/userSlice'
 
-import { Navbar, Nav, Container, NavDropdown, Dropdown } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav, Container, NavDropdown, Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-import "../css/Cart-Modal.css";
-import CartModal from "./CartModal";
+import '../css/Cart-Modal.css'
+import CartModal from './CartModal'
 
 function NavBar() {
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const [cartItemsCount, setCartItemsCount] = useState(0);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const [mostrarCarrito, setMostrarCarrito] = useState(false)
+  const [cartItemsCount, setCartItemsCount] = useState(0)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate("/login");
-  };
+    dispatch(logoutUser())
+    navigate('/login')
+  }
 
   return (
     <div>
-      {" "}
+      {' '}
       <header id="header">
         <Navbar
-          style={{ backgroundColor: "var(--black)" }}
+          style={{ backgroundColor: 'var(--black)' }}
           expand="lg"
           fixed="top"
         >
@@ -41,12 +41,12 @@ function NavBar() {
               />
             </Navbar.Brand>
             <Navbar.Toggle
-              style={{ color: "white !important" }}
+              style={{ color: 'white !important' }}
               aria-controls="navbarToggler"
             >
               <FontAwesomeIcon
                 icon={faBars}
-                style={{ color: "white", fontSize: "2rem" }}
+                style={{ color: 'white', fontSize: '2rem' }}
               />
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
@@ -56,42 +56,42 @@ function NavBar() {
                 </Nav.Link>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
-                  title="Categorias"
+                  title="Categorías"
                   id="navDropdown"
                   className="custom-dropdown"
                 >
                   <NavDropdown.Item
                     href="/category/list/1"
                     className="nav-item"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: '1rem' }}
                   >
                     Muebles
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="/category/list/3"
                     className="nav-item"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: '1rem' }}
                   >
                     Cuadros
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="/category/list/2"
                     className="nav-item"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: '1rem' }}
                   >
                     Espejos
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="/category/list/4"
                     className="nav-item"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: '1rem' }}
                   >
                     Luminaria
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     href="/category/list/5"
                     className="nav-item"
-                    style={{ fontSize: "1rem" }}
+                    style={{ fontSize: '1rem' }}
                   >
                     Tapices
                   </NavDropdown.Item>
@@ -109,7 +109,7 @@ function NavBar() {
                     <span
                       id="badge"
                       className={`position-absolute start-100 translate-middle bg-danger rounded-circle ${
-                        cartItemsCount === 0 ? "d-none" : ""
+                        cartItemsCount === 0 ? 'd-none' : ''
                       }`}
                     >
                       <span>{cartItemsCount}</span>
@@ -135,7 +135,7 @@ function NavBar() {
                   </NavDropdown.Item>
                   <Dropdown.Divider />
                   <NavDropdown.Item className="nav-item">
-                    {" "}
+                    {' '}
                     <Link to="#/profile/pedidos" className="fs-6">
                       Mis Pedidos
                     </Link>
@@ -158,7 +158,7 @@ function NavBar() {
         setMostrarCarrito={setMostrarCarrito}
       />
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

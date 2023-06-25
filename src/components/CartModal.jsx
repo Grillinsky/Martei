@@ -1,30 +1,67 @@
-import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../redux/cartSlice";
+import React, { useState, useEffect } from 'react'
+import { Modal, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart, removeFromCart, clearCart } from '../../redux/cartSlice'
 
 function CartModal(props) {
-  const itemsCarrito = useSelector((state) => state.cart.items);
-  const dispatch = useDispatch();
+  const itemsCarrito = useSelector(state => state.cart.items)
+  const dispatch = useDispatch()
+  const [quantity, setQuantity] = useState({})
+
+  useEffect(() => {
+    const initialQuantity = {}
+    itemsCarrito.forEach(item => {
+      initialQuantity[item.id] = (initialQuantity[item.id] || 0) + 1
+    })
+    setQuantity(initialQuantity)
+  }, [itemsCarrito])
 
   const precioFinal = () => {
     try {
       return itemsCarrito.reduce(
-        (total, item) => total + parseFloat(item.price),
+        (total, item) => total + parseFloat(item.price) * quantity[item.id],
         0
-      );
+      )
     } catch (error) {
-      console.error("Error calculating total price:", error);
-      return 0; // Return a default value in case of an error
+      console.error('Error calculating total price:', error)
+      return 0 // Return a default value in case of an error
     }
-  };
-  const handleClearCart = (product) => {
-    dispatch(clearCart());
-    console.log("Carrito vacio");
-  };
+  }
+
+  const uniqueItemsCarrito = Array.from(
+    new Set(itemsCarrito.map(item => item.id))
+  ).map(id => {
+    return itemsCarrito.find(item => item.id === id)
+  })
+
+  const handleIncrement = productId => {
+    dispatch(addToCart(productId))
+  }
+
+  const handleDecrement = productId => {
+    if (quantity[productId] === 1) {
+      dispatch(removeFromCart(productId))
+    } else {
+      setQuantity(prevQuantity => ({
+        ...prevQuantity,
+        [productId]: (prevQuantity[productId] || 0) - 1
+      }))
+    }
+  }
+
+  const handleClearCart = () => {
+    dispatch(clearCart())
+    console.log('Carrito vacio')
+  }
+
+  const handleRemoveItem = productId => {
+    setQuantity(prevQuantity => {
+      const { [productId]: _, ...rest } = prevQuantity
+      return rest
+    })
+  }
   return (
     <div>
-      {" "}
       <Modal
         className="modal-cart"
         show={props.mostrarCarrito}
@@ -39,14 +76,51 @@ function CartModal(props) {
           ></i>
         </Modal.Header>
         <Modal.Body className="mi-modal-body">
-          {itemsCarrito.length > 0 ? (
+          {uniqueItemsCarrito.length > 0 ? (
             <ul>
-              {itemsCarrito.map((item, index) => (
-                <li key={index} className="d-flex justify-content-between">
-                  <span>{item.name}</span>
-                  <span>${item.price}</span>
-                </li>
-              ))}
+              {uniqueItemsCarrito.map((item, index) => {
+                const productQuantity = quantity[item.id] || 0
+                if (productQuantity === 0) {
+                  return null // No renderizar el producto si la cantidad es 0
+                }
+                return (
+                  <li key={index} className="d-flex justify-content-between">
+                    <span>{item.name}</span>
+                    <span>
+                      <button
+                        className="fs-3 btn btn-link p-0 m-0 more-less"
+                        onClick={() => handleDecrement(item.id)}
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        className="form-control-sm w-25"
+                        value={productQuantity}
+                        onChange={e => {
+                          const value = parseInt(e.target.value)
+                          setQuantity(prevQuantity => ({
+                            ...prevQuantity,
+                            [item.id]: value >= 0 ? value : 0
+                          }))
+                        }}
+                      />
+                      <button
+                        className="fs-3 btn btn-link p-0 m-0 more-less"
+                        onClick={() => handleIncrement(item.id)}
+                      >
+                        +
+                      </button>
+                    </span>
+                    <span>${item.price}</span>
+                    {productQuantity === 0 && (
+                      <button onClick={() => handleRemoveItem(item.id)}>
+                        Eliminar
+                      </button>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
           ) : (
             <p>No hay productos en el carrito...</p>
@@ -59,7 +133,6 @@ function CartModal(props) {
           <Button className="btn-tacho" onClick={handleClearCart}>
             <i className="fa fa-trash-o" aria-hidden="true"></i>
           </Button>
-
           <Button
             variant="outline-secondary"
             onClick={() => props.setMostrarCarrito(false)}
@@ -70,7 +143,7 @@ function CartModal(props) {
         </Modal.Footer>
       </Modal>
     </div>
-  );
+  )
 }
 
-export default CartModal;
+export default CartModal
