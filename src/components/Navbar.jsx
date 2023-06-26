@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logoutUser } from '../../redux/userSlice'
 import axios from 'axios'
@@ -15,10 +15,10 @@ import CartModal from './CartModal'
 
 function NavBar() {
   const [mostrarCarrito, setMostrarCarrito] = useState(false)
-  const [cartItemsCount, setCartItemsCount] = useState(0)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [categories, setCategories] = useState([])
+  const cartItemsCount = useSelector(state => state.cart.items.length)
 
   useEffect(() => {
     fetchCategories()
