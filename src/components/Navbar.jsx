@@ -45,11 +45,7 @@ function NavBar() {
     <div>
       {" "}
       <header id="header">
-        <Navbar
-          style={{ backgroundColor: "var(--black)", paddingInline: "10vw" }}
-          expand="lg"
-          fixed="top"
-        >
+        <Navbar id="navContainer" expand="lg" fixed="top">
           <Container fluid>
             <Navbar.Brand href="/" className="p-2">
               <img

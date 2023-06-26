@@ -43,7 +43,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <article className="container-fluid mt-5">
+      <article className="container-fluid my-5">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
         </h1>{" "}
@@ -628,7 +628,7 @@ function Home() {
                 />
               </div>
               <div className="col-lg-6 px-0">
-                <div className="align-self-center p-lg-3">
+                <div className="p-lg-3">
                   <p id="copy">
                     Soy Camila, una joven apasionada por el diseño y la
                     creatividad. Acabo de inaugurar mi propio emprendimiento de
