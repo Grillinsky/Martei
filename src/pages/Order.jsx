@@ -1,104 +1,104 @@
-import React, { useState } from 'react'
-import '../css/Order.css'
-import VisaLogo from '../../public/visa.png'
-import MastercardLogo from '../../public/mastercard.png'
-import Chip from '../../public/chip-tarjeta.png'
+import React, { useState } from "react";
+import "../css/Order.css";
+import VisaLogo from "../../public/visa.png";
+import MastercardLogo from "../../public/mastercard.png";
+import Chip from "../../public/chip-tarjeta.png";
 
 const FormularioTarjeta = () => {
-  const [numeroTarjeta, setNumeroTarjeta] = useState('#### #### #### ####')
-  const [nombreTarjeta, setNombreTarjeta] = useState('')
-  const [mesExpiracion, setMesExpiracion] = useState('MM')
-  const [yearExpiracion, setYearExpiracion] = useState('AA')
-  const [ccv, setCcv] = useState('***')
+  const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
+  const [nombreTarjeta, setNombreTarjeta] = useState("");
+  const [mesExpiracion, setMesExpiracion] = useState("MM");
+  const [yearExpiracion, setYearExpiracion] = useState("AA");
+  const [ccv, setCcv] = useState("***");
 
-  const [isCardFlipped, setIsCardFlipped] = useState(false)
-  const [isFormOpen, setIsFormOpen] = useState(false)
-  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true)
+  const [isCardFlipped, setIsCardFlipped] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true);
 
   const handleCardFlip = () => {
-    setIsCardFlipped(!isCardFlipped)
-  }
+    setIsCardFlipped(!isCardFlipped);
+  };
 
   const meses = [
-    '01',
-    '02',
-    '03',
-    '04',
-    '05',
-    '06',
-    '07',
-    '08',
-    '09',
-    '10',
-    '11',
-    '12'
-  ]
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
 
-  const years = ['2022', '2023', '2024', '2025', '2026'] // Actualiza los años según tus necesidades
+  const years = ["2022", "2023", "2024", "2025", "2026"]; // Actualiza los años según tus necesidades
 
   const handleFormToggle = () => {
-    setIsFormOpen(!isFormOpen)
-  }
+    setIsFormOpen(!isFormOpen);
+  };
 
-  const handleNumeroTarjetaChange = e => {
-    let valorInput = e.target.value
+  const handleNumeroTarjetaChange = (e) => {
+    let valorInput = e.target.value;
 
     valorInput = valorInput
-      .replace(/\s/g, '')
-      .replace(/\D/g, '')
-      .replace(/([0-9]{4})/g, '$1 ')
-      .trim()
+      .replace(/\s/g, "")
+      .replace(/\D/g, "")
+      .replace(/([0-9]{4})/g, "$1 ")
+      .trim();
 
-    setNumeroTarjeta(valorInput)
+    setNumeroTarjeta(valorInput);
 
-    if (valorInput === '') {
-      setNumeroTarjeta('#### #### #### ####')
+    if (valorInput === "") {
+      setNumeroTarjeta("#### #### #### ####");
     }
-    setIsCardFlipped(false)
-  }
+    setIsCardFlipped(false);
+  };
 
-  const handleNombreTarjetaChange = e => {
-    let valorInput = e.target.value
+  const handleNombreTarjetaChange = (e) => {
+    let valorInput = e.target.value;
 
-    valorInput = valorInput.replace(/[0-9]/g, '')
+    valorInput = valorInput.replace(/[0-9]/g, "");
 
-    setNombreTarjeta(valorInput)
-    setIsCardFlipped(false)
-  }
+    setNombreTarjeta(valorInput);
+    setIsCardFlipped(false);
+  };
 
-  const handleMesExpiracionChange = e => {
-    setMesExpiracion(e.target.value)
-  }
+  const handleMesExpiracionChange = (e) => {
+    setMesExpiracion(e.target.value);
+  };
 
-  const handleYearExpiracionChange = e => {
-    setYearExpiracion(e.target.value.slice(2))
-  }
+  const handleYearExpiracionChange = (e) => {
+    setYearExpiracion(e.target.value.slice(2));
+  };
 
   const handleCcvInputFocus = () => {
-    setIsCardFlipped(true)
-    setIsCCVInputFocused(true)
-  }
+    setIsCardFlipped(true);
+    setIsCCVInputFocused(true);
+  };
 
   const handleCcvInputBlur = () => {
-    setIsCCVInputFocused(false)
-  }
+    setIsCCVInputFocused(false);
+  };
 
-  const handleCcvChange = e => {
-    let valorInput = e.target.value
+  const handleCcvChange = (e) => {
+    let valorInput = e.target.value;
 
-    valorInput = valorInput.replace(/\s/g, '').replace(/\D/g, '')
+    valorInput = valorInput.replace(/\s/g, "").replace(/\D/g, "");
 
-    setCcv(valorInput)
-    setIsCardFlipped(true) // Voltear la tarjeta a la parte delantera
-  }
+    setCcv(valorInput);
+    setIsCardFlipped(true); // Voltear la tarjeta a la parte delantera
+  };
   return (
     <div className="contenedor">
-      <section className={`tarjeta ${isCardFlipped ? 'active' : ''}`}>
+      <section className={`tarjeta ${isCardFlipped ? "active" : ""}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
-            {numeroTarjeta.charAt(0) === '4' ? (
+            {numeroTarjeta.charAt(0) === "4" ? (
               <img src={VisaLogo} alt="Visa" />
-            ) : numeroTarjeta.charAt(0) === '5' ? (
+            ) : numeroTarjeta.charAt(0) === "5" ? (
               <img src={MastercardLogo} alt="Mastercard" />
             ) : null}
           </div>
@@ -117,7 +117,7 @@ const FormularioTarjeta = () => {
               <div className="grupo" id="expiracion">
                 <p className="label">Expiracion</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span> /{' '}
+                  <span className="mes">{mesExpiracion}</span> /{" "}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>
@@ -151,8 +151,9 @@ const FormularioTarjeta = () => {
 
       <div className="contenedor-btn">
         <button
-          className={`btn-abrir-formulario ${isFormOpen ? 'active' : ''}`}
+          className={`btn-abrir-formulario ${isFormOpen ? "active" : ""}`}
           onClick={handleFormToggle}
+          aria-label="Plus Button"
         >
           <i className="fas fa-plus"></i>
         </button>
@@ -161,7 +162,7 @@ const FormularioTarjeta = () => {
       <form
         action=""
         id="formulario-tarjeta"
-        className={`formulario-tarjeta ${isFormOpen ? 'active' : ''}`}
+        className={`formulario-tarjeta ${isFormOpen ? "active" : ""}`}
       >
         <div className="grupo">
           <label htmlFor="inputNumero">Número Tarjeta</label>
@@ -196,7 +197,7 @@ const FormularioTarjeta = () => {
                   <option disabled selected>
                     Mes
                   </option>
-                  {meses.map(mes => (
+                  {meses.map((mes) => (
                     <option key={mes} value={mes}>
                       {mes}
                     </option>
@@ -213,7 +214,7 @@ const FormularioTarjeta = () => {
                   <option disabled selected>
                     Año
                   </option>
-                  {years.map(year => (
+                  {years.map((year) => (
                     <option key={year} value={year}>
                       {year}
                     </option>
@@ -224,7 +225,7 @@ const FormularioTarjeta = () => {
             </div>
           </div>
 
-          <div className={`grupo ccv ${isCCVInputFocused ? 'active' : ''}`}>
+          <div className={`grupo ccv ${isCCVInputFocused ? "active" : ""}`}>
             <label htmlFor="inputCCV">CCV</label>
             <input
               type="text"
@@ -239,6 +240,6 @@ const FormularioTarjeta = () => {
         </button>
       </form>
     </div>
-  )
-}
-export default FormularioTarjeta
+  );
+};
+export default FormularioTarjeta;

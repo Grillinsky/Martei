@@ -10,13 +10,12 @@ header {
 main {
   padding: 3rem 0;
 }
-.product-category {
+/* .product-category {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
+} */
 .hero-title {
-  align-self: flex-start;
   text-align: center;
   font-size: calc(10rem - 5vw);
 }
@@ -64,20 +63,9 @@ nav {
   text-align: center;
   color: var(--white);
 }
-.carousel-item {
-  height: 18rem;
-}
-.carousel-item img {
-  padding: 1rem;
-}
-.row-container {
-  background-color: var(--white) !important;
-  filter: opacity(0.8);
-  border-radius: 0.8rem;
-}
 
 #copy::first-letter {
-  font-size: 250%;
+  font-size: 350%;
   color: rgb(88, 85, 85);
   padding: 0.3rem;
 }
