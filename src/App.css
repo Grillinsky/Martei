@@ -64,11 +64,6 @@ nav {
   color: var(--white);
 }
 
-#copy::first-letter {
-  font-size: 350%;
-  color: rgb(88, 85, 85);
-  padding: 0.3rem;
-}
 footer {
   /* min-height: 25vh !important; */
   background-color: var(--black);
