@@ -91,7 +91,7 @@ function Product() {
                   }}
                   className="ms-2"
                 >
-                  Al Carrito
+                  Al carrito!
                 </Button>
               </ButtonGroup>
             </div>
