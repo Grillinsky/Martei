@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart, clearCart } from '../../redux/cartSlice'
+import { useNavigate } from 'react-router-dom'
 
 function CartModal(props) {
   const itemsCarrito = useSelector(state => state.cart.items)
   const dispatch = useDispatch()
   const [quantity, setQuantity] = useState({})
+  const navigate = useNavigate()
+
+  const handleOrder = () => {
+    navigate(`/order`)
+  }
 
   useEffect(() => {
     if (itemsCarrito && itemsCarrito.length > 0) {
@@ -133,7 +139,7 @@ function CartModal(props) {
                         +
                       </button>
                     </span>
-                    <span>${item.price}</span>
+                    <span>U${item.price}</span>
                     {productQuantity === 0 && (
                       <button onClick={() => handleRemoveItem(item.id)}>
                         Eliminar
@@ -148,7 +154,7 @@ function CartModal(props) {
           )}
         </Modal.Body>
         <div className="text-end p-4 fw-bold">
-          Total a pagar: ${precioFinal().toFixed(2)}
+          Total a pagar: U${precioFinal().toFixed(2)}
         </div>
         <Modal.Footer className="mi-modal-footer">
           <Button className="btn-tacho" onClick={handleClearCart}>
@@ -160,7 +166,9 @@ function CartModal(props) {
           >
             Cerrar
           </Button>
-          <Button variant="success">Comprar</Button>
+          <Button variant="success" onClick={handleOrder}>
+            Comprar
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>

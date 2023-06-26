@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import '../css/Order.css'
-import VisaLogo from '../../public/visa.png'
-import MastercardLogo from '../../public/mastercard.png'
-import Chip from '../../public/chip-tarjeta.png'
+import VisaLogo from '/visa.png'
+import MastercardLogo from '/mastercard.png'
+import Chip from '/chip-tarjeta.png'
 
 const FormularioTarjeta = () => {
   const [numeroTarjeta, setNumeroTarjeta] = useState('#### #### #### ####')
@@ -34,7 +34,7 @@ const FormularioTarjeta = () => {
     '12'
   ]
 
-  const years = ['2022', '2023', '2024', '2025', '2026'] // Actualiza los años según tus necesidades
+  const years = ['2023', '2024', '2025', '2026']
 
   const handleFormToggle = () => {
     setIsFormOpen(!isFormOpen)
@@ -72,15 +72,6 @@ const FormularioTarjeta = () => {
 
   const handleYearExpiracionChange = e => {
     setYearExpiracion(e.target.value.slice(2))
-  }
-
-  const handleCcvInputFocus = () => {
-    setIsCardFlipped(true)
-    setIsCCVInputFocused(true)
-  }
-
-  const handleCcvInputBlur = () => {
-    setIsCCVInputFocused(false)
   }
 
   const handleCcvChange = e => {
@@ -168,7 +159,7 @@ const FormularioTarjeta = () => {
           <input
             type="text"
             id="inputNumero"
-            maxLength="19"
+            maxLength="16"
             autoComplete="off"
             onChange={handleNumeroTarjetaChange}
           />
