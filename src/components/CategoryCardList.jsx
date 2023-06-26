@@ -2,6 +2,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -9,10 +10,16 @@ function CategoryCard() {
   const { categoryId } = useParams();
 
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     categoryList();
   }, []);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log("Added to cart", product);
+  };
 
   async function categoryList() {
     try {
@@ -76,6 +83,7 @@ function CategoryCard() {
                         color: "var(--black)",
                       }}
                       className="ms-2 rounded"
+                      onClick={() => handleAddToCart(product)}
                     >
                       Al carrito!
                     </Button>
