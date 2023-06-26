@@ -178,10 +178,10 @@
     content: '';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
+    background-image: linear-gradient(180deg, #ffffff, #ffffff);
+    height: 200%;
+    animation: rotBGimg 15s linear infinite;
+    transition: all 0.1s linear;
   }
   
   @keyframes rotBGimg {
@@ -219,10 +219,10 @@
     content: '';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
+    background-image: linear-gradient(180deg, #ffffff, #ffffff);
+    height: 200%;
+    animation: rotBGimg 15s linear infinite;
+    transition: all 0.1s linear;
   }
   
   @keyframes rotBGimg {
@@ -261,10 +261,10 @@
     content: '';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
+    background-image: linear-gradient(180deg, #ffffff, #ffffff);
+    height: 200%;
+    animation: rotBGimg 15s linear infinite;
+    transition: all 0.1s linear;
   }
   
   @keyframes rotBGimg {
@@ -303,10 +303,10 @@
     content: '';
     position: absolute;
     width: 100px;
-    background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
+    background-image: linear-gradient(180deg, #ffffff, #ffffff);
+    height: 200%;
+    animation: rotBGimg 15s linear infinite;
+    transition: all 0.1s linear;
   }
   
   @keyframes rotBGimg {
