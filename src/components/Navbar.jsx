@@ -1,8 +1,9 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { logoutUser } from '../../redux/userSlice'
+import axios from 'axios'
 
 import { Navbar, Nav, Container, NavDropdown, Dropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,6 +18,23 @@ function NavBar() {
   const [cartItemsCount, setCartItemsCount] = useState(0)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/category`
+      )
+      const { categories } = response.data
+      setCategories(categories)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   const handleLogout = () => {
     dispatch(logoutUser())
@@ -60,41 +78,16 @@ function NavBar() {
                   id="navDropdown"
                   className="custom-dropdown"
                 >
-                  <NavDropdown.Item
-                    href="/category/list/1"
-                    className="nav-item"
-                    style={{ fontSize: '1rem' }}
-                  >
-                    Muebles
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/category/list/3"
-                    className="nav-item"
-                    style={{ fontSize: '1rem' }}
-                  >
-                    Cuadros
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/category/list/2"
-                    className="nav-item"
-                    style={{ fontSize: '1rem' }}
-                  >
-                    Espejos
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/category/list/4"
-                    className="nav-item"
-                    style={{ fontSize: '1rem' }}
-                  >
-                    Luminaria
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    href="/category/list/5"
-                    className="nav-item"
-                    style={{ fontSize: '1rem' }}
-                  >
-                    Tapices
-                  </NavDropdown.Item>
+                  {categories.map(category => (
+                    <NavDropdown.Item
+                      key={category.id}
+                      href={`/category/list/${category.id}`}
+                      className="nav-item"
+                      style={{ fontSize: '1rem' }}
+                    >
+                      {category.name}
+                    </NavDropdown.Item>
+                  ))}
                 </NavDropdown>
                 <Nav.Link href="/aboutUs" className="nav-item">
                   Nosotros
