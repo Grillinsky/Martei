@@ -9,24 +9,17 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const item = action.payload
       state.items.push(item)
+      state.cartItemsCount += 1
     },
     removeFromCart: (state, action) => {
       const itemId = action.payload
       state.items = state.items.filter(item => item.id !== itemId)
+      state.cartItemsCount -= 1
     },
     clearCart: state => {
       state.items = []
+      state.cartItemsCount = 0
     }
-    // createOrder:
-    /*createOrderRequest: state => {
-      state.order = { loading: true }
-    },
-    createOrderSuccess: (state, action) => {
-      state.order = { success: true, orderData: action.payload }
-    },
-    createOrderFailure: (state, action) => {
-      state.order = { error: action.payload }
-    }*/
   }
 })
 
