@@ -56,7 +56,7 @@ function Home() {
       <main className="container-fluid p-0">
         <section className="py-2 container-fluid" id="exclusiveProduct">
           <div className="d-flex justify-content-around align-items-center mt-2 mb-3">
-            <h2 className="ms-5 mt-3 title-exclusive-product">
+            <h2 className=" mt-3 title-exclusive-product">
               Recién llegados!
             </h2>
             <Link to={"/productsPage"}>

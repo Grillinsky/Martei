@@ -150,7 +150,7 @@ a:hover {
 
 .title-exclusive-product {
   font-weight: 600 !important;
-  /* margin-left: 77px !important; */
+   margin-left: -215px !important; 
   color: var(--white);
 }
 
@@ -162,7 +162,7 @@ a:hover {
   letter-spacing: 1px;
   background-color: var(--white);
   color: var(--black);
-  margin-right: 56px !important;
+  margin-right: -199px !important;
 }
 .btn-dark-product-exclusive:hover {
   transform: translateX(2rem);
