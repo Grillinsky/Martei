@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MyMap from "./Map";
 
 function Footer() {
   return (
-    <footer className="container-fluid py-4 mt-5">
+    <footer className="container-fluid py-4 mt-1">
       <div className="row" id="footerContainer">
         <div className="col-lg-6">
           <div className="row">
@@ -41,22 +42,29 @@ function Footer() {
           </div>
         </div>
         <div className="col-lg-6 text-center">
-          {/* <h5>martei.deco</h5> */}
-          <ul>
-            <li className="footer-name mx-1">
-              <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}>
-                {" "}
-                Ciudad Vieja
-              </Link>
-            </li>
-            <li>Montevideo</li>
-            <li>099470542</li>
-            <li>
-              <a aria-label="Link to Whatsapp" href="https://wa.link/n6nt6k">
-                <i className="fab fa-whatsapp"></i>
-              </a>
-            </li>
-          </ul>
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <ul>
+                <li className="footer-name mx-1">
+                  <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}>
+                    Ciudad Vieja
+                  </Link>
+                </li>
+                <li>Montevideo</li>
+                <li>099470542</li>
+                <li>
+                  <a aria-label="Link to Whatsapp" href="https://wa.link/n6nt6k">
+                    <i className="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-12 col-md-6">
+              <div style={{height: '100px', width: '350px'}}>
+                <MyMap />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

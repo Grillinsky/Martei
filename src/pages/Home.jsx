@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-import '../css/Home.css'
+import "../css/Home.css";
 
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Home() {
-  const [categoryData, setCategories] = useState([])
-  const [productData, setProducts] = useState([])
+  const [categoryData, setCategories] = useState([]);
+  const [productData, setProducts] = useState([]);
 
   useEffect(() => {
-    categoryList()
-    productList()
-  }, [])
+    categoryList();
+    productList();
+  }, []);
 
   async function categoryList() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/category`
-      )
-      const categoryListData = response.data
-      setCategories(categoryListData.categories)
+      );
+      const categoryListData = response.data;
+      setCategories(categoryListData.categories);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -32,32 +32,161 @@ function Home() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/product`
-      )
-      const products = response.data.products
-      setProducts(products)
+      );
+      const products = response.data.products;
+      setProducts(products);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
   return (
     <div>
       <Navbar />
-      <article className="container-fluid mt-5">
+      <article className="container-fluid my-5">
         <h1 className="hero-title fade-in-top">
-          m<span>artei.</span>
-        </h1>{' '}
+          m<span>artei</span>.
+        </h1>{" "}
         {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
           Piezas en materiales nobles y fibras naturales <br />
-          LOCAL Y ARTESANAL🇺🇾❤️
+          LOCAL Y ARTESANAL
         </p>
       </article>
-      <main className="container-fluid p-0 mt-4">
+      <main className="container-fluid p-0">
+        <section className="py-2 container-fluid" id="exclusiveProduct">
+          <div className="d-flex justify-content-around align-items-center mt-2 mb-3">
+            <h2 className="ms-5 mt-3 title-exclusive-product">
+              Recién llegados!
+            </h2>
+            <Link to={"/productsPage"}>
+              <button className="btn-dark-product-exclusive me-5">
+                Todos Los Productos <i className="fas fa-chevron-right"></i>
+              </button>
+            </Link>
+          </div>
+          <div className="container">
+            <div className="row p-4 gap-4">
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img
+                  src={
+                    productData.length > 0 && productData[0].length > 14
+                      ? productData[0][14].image
+                      : "Tapiz1.jpg"
+                  }
+                  alt="Tapiz De Roble Nordico Usado Por Tyr"
+                />
+                <h5 className="category-exclusive-product">
+                  {categoryData[4]?.name || ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData[14]?.name || "Titulo De Tapices"}
+                </h3>
+                <p className="price-exclusive-product">
+                  Price: ${productData[14]?.price || "7.99"}🔥
+                </p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img
+                  src={
+                    productData.length > 0 && productData[0].length > 8
+                      ? productData[0][8].image
+                      : "Cuadro1.png"
+                  }
+                  alt="Cuadro Usado Por Cleopatra"
+                />
+                <h5 className="category-exclusive-product">
+                  {categoryData[2]?.name || ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData[8]?.name || "Titulo De Cuadros"}
+                </h3>
+                <p className="price-exclusive-product">
+                  Price: ${productData[8]?.price || "6.99"}🔥
+                </p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img
+                  src={
+                    productData.length > 11 && productData[0].length > 11
+                      ? productData[0][11].image
+                      : "Luminaria1.jpg"
+                  }
+                  alt="Luminaria Traida De La Epoca Nomada"
+                />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 3 ? categoryData[3].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 11 && productData[0].length > 11
+                    ? productData[0][11].name
+                    : "Titulo De Luminarias"}
+                </h3>
+                <p className="price-exclusive-product">
+                  Price: $
+                  {productData.length > 11 && productData[0].length > 11
+                    ? productData[0][11].price
+                    : "4.99"}
+                  🔥
+                </p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img
+                  src={
+                    productData.length > 8 && productData[0].length > 3
+                      ? productData[0][3].image
+                      : "Espejo1.jpg"
+                  }
+                  alt="Espejo Revelador De Islas Palaos"
+                />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 1 ? categoryData[1].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 3 && productData[0].length > 3
+                    ? productData[0][3].name
+                    : "Titulo De Espejos"}
+                </h3>
+                <p className="price-exclusive-product">
+                  Price: $
+                  {productData.length > 3 && productData[0].length > 3
+                    ? productData[0][3].price
+                    : "3.99"}
+                  🔥
+                </p>
+              </div>
+              <div className="ExclusiveProductColumn card col-12 col-md-3">
+                <img
+                  src={
+                    productData.length > 2 && productData[0].length > 2
+                      ? productData[0][2].image
+                      : "Mueble1.jpg"
+                  }
+                  alt="Mueble De La Antigua Mesopotamia"
+                />
+                <h5 className="category-exclusive-product">
+                  {categoryData.length > 0 ? categoryData[0].name : ""}
+                </h5>
+                <h3 className="name-exclusive-product">
+                  {productData.length > 2 && productData[0].length > 2
+                    ? productData[0][2].name
+                    : "Titulo De Muebles"}
+                </h3>
+                <p className="price-exclusive-product">
+                  Price: $
+                  {productData.length > 2 && productData[0].length > 2
+                    ? productData[0][2].price
+                    : "2.99"}
+                  🔥
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="container-fluid d-grid gap-5" id="productos">
-          <div className="container row-container w-75">
+          <div className="container row-container w-75 category-container">
             <div className="row">
-              <div className="col-lg-8 border rounded p-5 product-category">
+              <div className="col-lg-8 rounded p-5 product-category">
                 <h2>Muebles</h2>
                 <p className="fade-in-left">
                   Un interior práctico y espacioso fue lo que nos pidieron🤎
@@ -67,22 +196,22 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={'/category/list/1'}
+                  to={"/category/list/1"}
                 >
-                  Ver todo en Mueble <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
-              <div className="col-lg-4 border rounded productCarrousel">
+              <div className="col-lg-4 rounded productCarrousel">
                 <div
                   id="mueblesCarrouselFade"
-                  className="carousel slide carousel-fade py-lg-5"
+                  className="carousel slide carousel-fade"
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
                         src="/Mueble1.jpg"
-                        className="d-block w-100"
+                        className="w-100"
                         alt="Colgante de techo, en hilo y madera"
                       />
                     </div>
@@ -143,19 +272,19 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="container row-container w-75">
+          <div className="container row-container w-75 category-container">
             <div className="row">
               <div className="col-lg-4 border rounded productCarrousel-two">
                 <div
                   id="cuadrosCarrouselFade"
-                  className="carousel slide carousel-fade py-lg-5"
+                  className="carousel slide carousel-fade"
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
                         src="/Cuadro1.png"
-                        className="d-block w-100"
+                        className="w-100"
                         alt="Coleccion de cuadros de madera"
                       />
                     </div>
@@ -216,14 +345,14 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={'/category/list/3'}
+                  to={"/category/list/3"}
                 >
-                  Ver todo en Cuadros <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="container row-container w-75">
+          <div className="container row-container w-75 category-container">
             <div className="row">
               <div className="col-lg-8 border rounded p-5 product-category">
                 <h2>Espejos</h2>
@@ -234,22 +363,22 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={'/category/list/2'}
+                  to={"/category/list/2"}
                 >
-                  Ver todo en Espejos <i className="fas fa-chevron-right"></i>
+                  Ver todo<i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">
                 <div
                   id="espejosCarrouselFade"
-                  className="carousel slide carousel-fade py-lg-5"
+                  className="carousel slide carousel-fade "
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
                         src="/Espejo1.jpg"
-                        className="d-block w-100"
+                        className="w-100"
                         alt="Espejo cuadrado con detalle metalico en las esquinas"
                       />
                     </div>
@@ -310,19 +439,19 @@ function Home() {
               </div>
             </div>
           </div>
-          <div className="container row-container w-75">
+          <div className="container row-container w-75 category-container">
             <div className="row">
               <div className="col-lg-4 border rounded productCarrousel-two">
                 <div
                   id="luminariasCarrouselFade"
-                  className="carousel slide carousel-fade py-lg-5"
+                  className="carousel slide carousel-fade"
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
                         src="/Luminaria1.jpg"
-                        className="d-block w-100"
+                        className="w-100"
                         alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                       />
                     </div>
@@ -392,15 +521,15 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={'/category/list/4'}
+                  to={"/category/list/4"}
                 >
-                  Ver todo en Luminarias{' '}
+                  Ver todo
                   <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
             </div>
           </div>
-          <div className="container w-75 row-container">
+          <div className="container w-75 row-container category-container">
             <div className="row">
               <div className="col-lg-8 border rounded p-5 product-category">
                 <h2>Tapices</h2>
@@ -411,7 +540,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={'/category/list/4'}
+                  to={"/category/list/4"}
                 >
                   Ver todo en Tapiceria <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -419,14 +548,14 @@ function Home() {
               <div className="col-lg-4 border rounded productCarrousel">
                 <div
                   id="tapizCarrouselFade"
-                  className="carousel slide carousel-fade py-lg-5"
+                  className="carousel slide carousel-fade"
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
                         src="/Tapiz1.jpg"
-                        className="d-block w-100"
+                        className="w-100"
                         alt="Tapiz blanco patron de rombos"
                       />
                     </div>
@@ -488,132 +617,31 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="py-2 container-fluid pt-2" id="exclusiveProduct">
-          <hr className="my-3 mt-5" />
-          <div className="d-flex justify-content-between align-items-center mt-2 mb-3">
-            <h2 className="ms-5 mt-3 title-exclusive-product">
-              Productos Exclusivos
-            </h2>
-            <Link to={'/productsPage'}>
-              <button className="btn-dark-product-exclusive me-5">
-                Todos Los Productos <i className="fas fa-chevron-right"></i>
-              </button>
-            </Link>
-          </div>
-          <div className="container">
-            <div className="row p-3 gap-3">
-              <div className="ExclusiveProductColumn card col-12 col-md-3">
+        <section className="my-4 p-3" id="presentacion">
+          <div className="row-container container w-50">
+            <div className="row">
+              <div className="col-lg-6 align-self-center justify-content-center d-flex px-0">
                 <img
-                  src={
-                    productData.length > 0 && productData[0].length > 14
-                      ? productData[0][14].image
-                      : 'Tapiz1.jpg'
-                  }
-                  alt="Tapiz De Roble Nordico Usado Por Tyr"
+                  className="fade-in-right"
+                  src="/header-banner-3.jpg"
+                  alt="Foto de la dueña del local, Camila, junto a una coleccion de cuadros"
                 />
-                <h5 className="category-exclusive-product">
-                  {categoryData[4]?.name || ''}
-                </h5>
-                <h3 className="name-exclusive-product">
-                  {productData[14]?.name || 'Titulo De Tapices'}
-                </h3>
-                <p className="price-exclusive-product">
-                  Price: ${productData[14]?.price || '7.99'}🔥
-                </p>
               </div>
-              <div className="ExclusiveProductColumn card col-12 col-md-3">
-                <img
-                  src={
-                    productData.length > 0 && productData[0].length > 8
-                      ? productData[0][8].image
-                      : 'Cuadro1.png'
-                  }
-                  alt="Cuadro Usado Por Cleopatra"
-                />
-                <h5 className="category-exclusive-product">
-                  {categoryData[2]?.name || ''}
-                </h5>
-                <h3 className="name-exclusive-product">
-                  {productData[8]?.name || 'Titulo De Cuadros'}
-                </h3>
-                <p className="price-exclusive-product">
-                  Price: ${productData[8]?.price || '6.99'}🔥
-                </p>
-              </div>
-              <div className="ExclusiveProductColumn card col-12 col-md-3">
-                <img
-                  src={
-                    productData.length > 11 && productData[0].length > 11
-                      ? productData[0][11].image
-                      : 'Luminaria1.jpg'
-                  }
-                  alt="Luminaria Traida De La Epoca Nomada"
-                />
-                <h5 className="category-exclusive-product">
-                  {categoryData.length > 3 ? categoryData[3].name : ''}
-                </h5>
-                <h3 className="name-exclusive-product">
-                  {productData.length > 11 && productData[0].length > 11
-                    ? productData[0][11].name
-                    : 'Titulo De Luminarias'}
-                </h3>
-                <p className="price-exclusive-product">
-                  Price: $
-                  {productData.length > 11 && productData[0].length > 11
-                    ? productData[0][11].price
-                    : '4.99'}
-                  🔥
-                </p>
-              </div>
-              <div className="ExclusiveProductColumn card col-12 col-md-3">
-                <img
-                  src={
-                    productData.length > 8 && productData[0].length > 3
-                      ? productData[0][3].image
-                      : 'Espejo1.jpg'
-                  }
-                  alt="Espejo Revelador De Islas Palaos"
-                />
-                <h5 className="category-exclusive-product">
-                  {categoryData.length > 1 ? categoryData[1].name : ''}
-                </h5>
-                <h3 className="name-exclusive-product">
-                  {productData.length > 3 && productData[0].length > 3
-                    ? productData[0][3].name
-                    : 'Titulo De Espejos'}
-                </h3>
-                <p className="price-exclusive-product">
-                  Price: $
-                  {productData.length > 3 && productData[0].length > 3
-                    ? productData[0][3].price
-                    : '3.99'}
-                  🔥
-                </p>
-              </div>
-              <div className="ExclusiveProductColumn card col-12 col-md-3">
-                <img
-                  src={
-                    productData.length > 2 && productData[0].length > 2
-                      ? productData[0][2].image
-                      : 'Mueble1.jpg'
-                  }
-                  alt="Mueble De La Antigua Mesopotamia"
-                />
-                <h5 className="category-exclusive-product">
-                  {categoryData.length > 0 ? categoryData[0].name : ''}
-                </h5>
-                <h3 className="name-exclusive-product">
-                  {productData.length > 2 && productData[0].length > 2
-                    ? productData[0][2].name
-                    : 'Titulo De Muebles'}
-                </h3>
-                <p className="price-exclusive-product">
-                  Price: $
-                  {productData.length > 2 && productData[0].length > 2
-                    ? productData[0][2].price
-                    : '2.99'}
-                  🔥
-                </p>
+              <div className="col-lg-6 px-0">
+                <div className="p-lg-3">
+                  <p id="copy">
+                    Soy Camila, una joven apasionada por el diseño y la
+                    creatividad. Acabo de inaugurar mi propio emprendimiento de
+                    artículos de diseño, donde puedo plasmar mi talento y mi
+                    visión en cada detalle. Me caracterizo por ser una persona
+                    segura de mí misma y siempre dispuesta a tomar riesgos para
+                    alcanzar mis metas. Me encanta rodearme de cosas hermosas y
+                    cuidadosamente diseñadas, y eso es precisamente lo que busco
+                    ofrecer a través de mi emprendimiento. Me inspira la belleza
+                    que me rodea en mi día a día, desde un paisaje natural hasta
+                    una pieza de arte exquisitamente elaborada.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -621,7 +649,7 @@ function Home() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

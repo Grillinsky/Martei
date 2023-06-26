@@ -3,10 +3,9 @@ import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
-
+import "../css/Home.css";
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
@@ -47,8 +46,11 @@ function ProductCard() {
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text style={{ color: "black", height: "16.5rem" }}>
-                    {product.description.slice(0, 300)}...
+                  <Card.Text
+                    className="card-text"
+                    style={{ color: "black", height: "16.5rem" }}
+                  >
+                    {product.description}
                   </Card.Text>
                   <Card.Link
                     href={`/product/${product.id}`}
@@ -73,7 +75,7 @@ function ProductCard() {
                       className="ms-2 rounded"
                       onClick={() => handleAddToCart(product)}
                     >
-                      Al Carrito
+                      Al carrito!
                     </Button>
                   </ButtonGroup>
                 </Card.Body>

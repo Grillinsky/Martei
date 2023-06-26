@@ -21,13 +21,17 @@ article {
   border-top-left-radius: 0% !important;
   border-bottom-left-radius: 0% !important;
 }
-
+.category-container {
+  box-shadow: 9px 12px 5px 5px rgba(0, 0, 0, 0.1);
+}
 .productCarrousel {
+  padding: 0%;
   border-top-left-radius: 0% !important;
   border-bottom-left-radius: 0% !important;
 }
 
 .productCarrousel-two {
+  padding: 0%;
   border-top-right-radius: 0% !important;
   border-bottom-right-radius: 0% !important;
 }
@@ -49,7 +53,8 @@ article {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 #presentacion img {
-  width: 18rem;
+  width: 100%;
+  border-radius: 12px 0px 0px 12px;
 }
 .hero-title {
   align-self: flex-start;
@@ -69,7 +74,11 @@ article {
   min-height: 55vh;
   color: var(--white);
 }
-
+.card-text {
+  margin-block: 1.5rem;
+  max-height: 16rem;
+  text-overflow: ellipsis;
+}
 /* nav {
   background-color: var(--black);
 }
@@ -81,16 +90,21 @@ article {
   height: 18rem;
 }
 .carousel-item img {
-  padding: 1rem;
+  object-fit: cover;
+  padding: 0%;
 }
 .row-container {
   background-color: var(--white) !important;
-  filter: opacity(0.8);
+  /* filter: opacity(0.8); */
   border-radius: 0.8rem;
 }
 /* #productsButton {
   background-color: var(--primary-color);
 } */
+#copy {
+  height: 100%;
+  padding: 1rem;
+}
 #copy::first-letter {
   font-size: 250%;
   color: rgb(88, 85, 85);
@@ -111,7 +125,7 @@ footer a {
   font-size: 1rem;
 }
 #footerContainer {
-  padding-inline: 10vw;
+  padding-inline: 12.5vw;
 }
 li {
   list-style: none;
@@ -129,12 +143,15 @@ a:hover {
 }
 
 #exclusiveProduct {
-  background-color: transparent !important;
+  background-color: var(--black);
+  background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+  margin-bottom: 3rem;
 }
 
 .title-exclusive-product {
   font-weight: 600 !important;
-  margin-left: 77px !important;
+  /* margin-left: 77px !important; */
+  color: var(--white);
 }
 
 .btn-dark-product-exclusive {
@@ -143,21 +160,25 @@ a:hover {
   border: none;
   font-size: 20px;
   letter-spacing: 1px;
-  background-color: black;
-  color: rgb(255, 255, 255);
+  background-color: var(--white);
+  color: var(--black);
   margin-right: 56px !important;
+}
+.btn-dark-product-exclusive:hover {
+  transform: translateX(2rem);
+  transition: 0.5s;
 }
 
 .ExclusiveProductColumn {
+  padding: 0%;
   width: 232px;
-  /*margin-left: 75px; */
-  align-items: center;
-  background-color: #ffffff !important;
+  background-color: var(--white) !important;
 }
 
 .ExclusiveProductColumn img {
   width: 230px;
   height: 265px;
+  object-fit: cover;
 }
 
 .ExclusiveProductColumn h3 {
@@ -191,7 +212,10 @@ a:hover {
   font-weight: 800;
   color: rgb(214, 214, 1);
 }
-
+#navContainer {
+  background-color: var(--black);
+  padding-inline: 12.5vw;
+}
 /*  ANIMATION */
 
 .fade-in-top {
@@ -342,13 +366,24 @@ a:hover {
 }
 
 /*            MEDIA MEDIA              */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+  #navContainer {
+    background-color: var(--black);
+    padding-inline: 2.5vw;
+  }
   #presentacion,
   .row-container {
-    padding: 0 2rem;
     width: 100% !important;
   }
   #presentacion {
+    padding: 1rem;
+  }
+  #presentacion img {
+    width: 100%;
+    border-radius: 0%;
+  }
+  #copy {
+    height: 100%;
     padding: 1rem;
   }
   .product-category p {
@@ -357,9 +392,7 @@ a:hover {
   .category-link {
     text-align: center;
   }
-  #presentacion img {
-    width: 50vw;
-  }
+
   .hero-title {
     font-size: calc(5rem - 2vw);
   }
@@ -369,5 +402,8 @@ a:hover {
   article {
     height: max-content;
     color: var(--white);
+  }
+  #footerContainer {
+    padding-inline: 2.5vw;
   }
 }

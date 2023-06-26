@@ -99,7 +99,7 @@ function Product() {
                   className="ms-2"
                   onClick={() => handleAddToCart(productIndividualData)}
                 >
-                  Al Carrito
+                  Al carrito!
                 </Button>
               </ButtonGroup>
             </div>
