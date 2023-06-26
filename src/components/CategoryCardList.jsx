@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { addToCart } from "../../redux/cartSlice";
 
 function CategoryCard() {
   const { categoryId } = useParams();
