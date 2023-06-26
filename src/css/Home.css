@@ -369,7 +369,7 @@ a:hover {
 @media screen and (max-width: 800px) {
   #navContainer {
     background-color: var(--black);
-    padding-inline: 2.5vw;
+    padding: 0%;
   }
   #presentacion,
   .row-container {
@@ -404,6 +404,6 @@ a:hover {
     color: var(--white);
   }
   #footerContainer {
-    padding-inline: 2.5vw;
+    padding-inline: 1.5vw;
   }
 }
