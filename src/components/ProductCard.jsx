@@ -6,6 +6,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import "../css/Home.css";
+
+
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
