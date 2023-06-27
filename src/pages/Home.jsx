@@ -43,6 +43,7 @@ function Home() {
   return (
     <div>
       <Navbar />
+
       <article className="container-fluid my-5">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
@@ -56,9 +57,7 @@ function Home() {
       <main className="container-fluid p-0">
         <section className="py-2 container-fluid" id="exclusiveProduct">
           <div className="d-flex justify-content-around align-items-center mt-2 mb-3">
-            <h2 className=" mt-3 title-exclusive-product">
-              Recién llegados!
-            </h2>
+            <h2 className=" mt-3 title-exclusive-product">Recién llegados!</h2>
             <Link to={"/productsPage"}>
               <button className="btn-dark-product-exclusive me-5">
                 Todos Los Productos <i className="fas fa-chevron-right"></i>
@@ -542,7 +541,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/4"}
                 >
-                  Ver todo en Tapiceria <i className="fas fa-chevron-right"></i>
+                  Ver todo<i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">
