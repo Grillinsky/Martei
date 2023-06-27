@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
-//import { useForm } from "react-hook-form";
+/* import { useForm } from "react-hook-form"; */
 import "../css/OffCanvas.css";
 
 function OffCanvas() {
