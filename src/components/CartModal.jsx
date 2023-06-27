@@ -75,7 +75,7 @@ function CartModal(props) {
                         +
                       </button>
                     </span>
-                    <span>U${item.price}</span>
+                    <span>U${item.price * item.qty}</span>
 
                     <button onClick={() => handleRemoveItem(item.id)}>
                       Eliminar
