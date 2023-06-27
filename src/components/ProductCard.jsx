@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import "../css/Home.css";
 
-
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
@@ -48,10 +47,7 @@ function ProductCard() {
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text
-                    className="card-text"
-                    style={{ color: "black", height: "16.5rem" }}
-                  >
+                  <Card.Text className="card-text">
                     {product.description}
                   </Card.Text>
                   <Card.Link

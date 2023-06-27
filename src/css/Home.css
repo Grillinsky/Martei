@@ -71,13 +71,14 @@ article {
   font-weight: 600;
 }
 article {
-  min-height: 55vh;
+  padding: 5rem;
+  min-height: 35vh;
   color: var(--white);
 }
 .card-text {
   margin-block: 1.5rem;
-  max-height: 16rem;
-  text-overflow: ellipsis;
+  height: 16rem;
+  overflow: hidden;
 }
 #navContainer {
   background-color: var(--black);
@@ -147,7 +148,7 @@ a:hover {
 
 .title-exclusive-product {
   font-weight: 600 !important;
-  margin-left: -215px !important;
+  /* margin-left: -215px !important; */
   color: var(--white);
 }
 
@@ -155,11 +156,11 @@ a:hover {
   font-weight: 500;
   padding: 4px 20px 4px 20px;
   border: none;
-  font-size: 20px;
+  font-size: 1rem;
   letter-spacing: 1px;
   background-color: var(--white);
   color: var(--black);
-  margin-right: -199px !important;
+  /* margin-right: -199px !important; */
 }
 .btn-dark-product-exclusive:hover {
   transform: translateX(2rem);

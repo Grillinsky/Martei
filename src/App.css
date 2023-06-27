@@ -30,10 +30,6 @@ main {
   font-size: calc(2.5rem - 1vw);
   font-weight: 600;
 }
-article {
-  min-height: 55vh;
-  color: var(--white);
-}
 
 nav {
   background-color: black !important;
@@ -270,9 +266,5 @@ a:hover {
   }
   .hero-title::first-letter {
     font-size: 6rem;
-  }
-  article {
-    height: max-content;
-    color: var(--white);
   }
 }

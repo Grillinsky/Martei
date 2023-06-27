@@ -85,7 +85,7 @@ function NavBar() {
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
-                <Nav.Link href="/aboutUs" className="nav-item">
+                <Nav.Link href="#presentacion" className="nav-item">
                   Nosotros
                 </Nav.Link>
                 <Nav.Link
