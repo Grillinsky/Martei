@@ -18,7 +18,9 @@ function NavBar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [categories, setCategories] = useState([]);
-  const cartItemsCount = useSelector((state) => state.cart.items.length);
+  const cartItemsCount = useSelector((state) =>
+    state.cart.reduce((acc, p) => acc + p.qty, 0)
+  );
 
   useEffect(() => {
     fetchCategories();

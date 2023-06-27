@@ -4,7 +4,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/cartSlice";
+import { AddOrIncrement } from "../../redux/cartSlice";
 import "../css/Home.css";
 
 function ProductCard() {
@@ -28,7 +28,7 @@ function ProductCard() {
     }
   }
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    dispatch(AddOrIncrement(product));
     console.log("Added to cart", product);
   };
   return (

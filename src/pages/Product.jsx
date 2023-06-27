@@ -6,7 +6,7 @@ import '../css/Product.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../redux/cartSlice'
+import { AddOrIncrement } from '../../redux/cartSlice'
 
 function Product() {
   const { id } = useParams()
@@ -18,7 +18,7 @@ function Product() {
   }, [])
 
   const handleAddToCart = product => {
-    dispatch(addToCart(product))
+    dispatch(AddOrIncrement(product))
     console.log('Added to cart', product)
   }
 

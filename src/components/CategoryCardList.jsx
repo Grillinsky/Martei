@@ -5,7 +5,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { addToCart } from "../../redux/cartSlice";
+import { AddOrIncrement } from "../../redux/cartSlice";
 
 function CategoryCard() {
   const { categoryId } = useParams();
@@ -18,7 +18,7 @@ function CategoryCard() {
   }, []);
 
   const handleAddToCart = (product) => {
-    dispatch(addToCart(product));
+    dispatch(AddOrIncrement(product));
     console.log("Added to cart", product);
   };
 
@@ -54,7 +54,7 @@ function CategoryCard() {
                   <Card.Title style={{ color: "black", fontWeight: "900" }}>
                     {product.name}
                   </Card.Title>
-                  <Card.Text style={{ color: "black", minHeight: "16.5rem" }}>
+                  <Card.Text style={{ color: "black", height: "16.5rem" }}>
                     {product.description}
                   </Card.Text>
                   <Link to={`/product/${product.id}`}>

@@ -2,12 +2,12 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
-// import { useForm } from "react-hook-form";
+//import { useForm } from "react-hook-form";
 import "../css/OffCanvas.css";
 
 function OffCanvas() {
   const [show, setShow] = useState(false);
-  // const { setValue } = useForm();
+  //const { setValue } = useForm();
 
   const handleLogin = () => {
     setValue("username", "pabloperez@gmail.com");
@@ -45,7 +45,9 @@ function OffCanvas() {
           </div>
           <div className="off-canvas-button-div">
             <Link to={"/aboutUs"}>
-              <button className="btn-user-canvas">Sobre Nosotros</button>
+              <button className="btn-user-canvas" onClick={handleLogin}>
+                Sobre Nosotros
+              </button>
             </Link>
           </div>
           <hr className="m-2" />
