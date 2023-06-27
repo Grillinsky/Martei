@@ -13,17 +13,14 @@
   display: block;
   height: 3px;
   width: 150px;
-  margin: 10px auto; 
+  margin: 10px auto;
 }
 
-
 .text-team-about {
-  margin-top: 0;
+  max-width: 75vw;
   font-weight: bolder;
   letter-spacing: 4px;
   color: #474747;
-  padding-left: 300px;
-  padding-right: 300px;
   font-size: 17px;
   font-style: oblique !important;
 }

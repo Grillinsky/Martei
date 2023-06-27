@@ -1,95 +1,103 @@
 .card-tecnology {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card-tecnology-about svg {
+  position: absolute;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 80%;
+  height: 300%;
+  font-size: 50em !important;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card-tecnology .social-link1,
+.card .social-link2,
+.card .social-link3,
+.card .social-link4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 66em !important;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.card-tecnology svg {
+  transform: scale(1);
+}
+
+.card-tecnology .social-link-1:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+
+.card-tecnology .social-link-2:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+
+.card-tecnology .social-link-3:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+
+.card-tecnology .social-link-4:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+.card-tecnology .social-link-5:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+.card-tecnology .social-link-6:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+.card-tecnology .social-link-7:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+.card-tecnology .social-link-8:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+.card-tecnology .social-link-9:hover {
+  background-color: transparent;
+  animation: bounce_613 0.6s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
   }
-  
-  .card-tecnology-about svg {
-    position: absolute;
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 80%;
-    height: 300%;
-    font-size: 50em !important;
-    font-weight: 700;
-    opacity: 1;
-    transition: opacity 0.25s;
-    z-index: 2;
-    cursor: pointer;
+
+  60% {
+    transform: scale(0.8);
   }
-  
-  .card-tecnology .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: whitesmoke;
-    font-size: 66em !important;
-    text-decoration: none;
-    transition: 0.25s;
-    border-radius: 50px;
+
+  80% {
+    transform: scale(1.2);
   }
-  
-  .card-tecnology svg {
+
+  100% {
     transform: scale(1);
   }
-  
-  .card-tecnology .social-link-1:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
+}
+@media screen and (max-width: 800px) {
+  #tecnologiesContainer {
+    transform: scale(0.7);
   }
-  
-  .card-tecnology .social-link-2:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  
-  .card-tecnology .social-link-3:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  
-  .card-tecnology .social-link-4:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  .card-tecnology .social-link-5:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  .card-tecnology .social-link-6:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  .card-tecnology .social-link-7:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  .card-tecnology .social-link-8:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  .card-tecnology .social-link-9:hover {
-    background-color: transparent;
-    animation: bounce_613 0.5s linear;
-  }
-  
-  @keyframes bounce_613 {
-    40% {
-      transform: scale(1.4);
-    }
-  
-    60% {
-      transform: scale(0.8);
-    }
-  
-    80% {
-      transform: scale(1.2);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
+}

@@ -1,4 +1,4 @@
-@import '../node_modules/leaflet/dist/leaflet.css';
+@import "../node_modules/leaflet/dist/leaflet.css";
 
 html {
   min-height: 100% !important;
@@ -120,9 +120,6 @@ a:hover {
   background-size: 100%;
   transition: background 0s;
 }
-
-
-
 #mapContainer {
   height: 400px;
   width: 100%;
