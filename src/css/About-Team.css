@@ -1,74 +1,344 @@
+img {
+  object-fit: contain;
+}
+
 .team {
-    margin: -50px 0;
+  margin: 0;
+  padding: 0;
 }
 
 .img-responsive {
-    object-fit: cover !important;
+  object-fit: cover !important;
 }
 
 .title-team {
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #333;
-    padding-bottom: 10px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #333;
+  padding-bottom: 10px;
 }
 
 .title-team:after {
-    content: "";
-    background-color: #333;
-    display: block;
-    height: 3px;
-    width: 260px;
-    margin: 10px auto; 
+  content: "";
+  background-color: #333;
+  display: block;
+  height: 3px;
+  width: 260px;
+  margin: 10px auto;
 }
 
 .description-all {
-    text-align: center;
-    align-items: center;
-    font-weight: 600;
-    color: #b87444;
-    font-style: oblique;
-    margin-top: 15px !important;
-    font-size: 17px;
-    padding-left: 5px;
-    padding-right: 5px;
+  text-align: center;
+  align-items: center;
+  font-weight: 600;
+  color: #b87444;
+  font-style: oblique;
+  margin-top: 15px !important;
+  font-size: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .profile {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .profile .img-box {
-    opacity: 1;
-    display: block;
-    position: relative;
+  opacity: 1;
+  display: block;
+  position: relative;
 }
 
 .profile h2 {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 .profile h3 {
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 .img-box:after {
+  content: "";
+  opacity: 0;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.img-box ul {
+  margin: 0;
+  padding: 15px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.img-box ul li {
+  width: 50px;
+  height: 50px;
+  border: 0.2px solid #ffffff;
+  border-radius: 30%;
+  margin: 5px;
+  padding: 8px;
+  display: inline-block;
+}
+
+.img-box Link {
+  color: #fff;
+}
+
+.img-box:hover:after {
+  opacity: 1;
+}
+
+.img-box:hover ul {
+  opacity: 1;
+}
+
+.img-box Link:hover li {
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.img-box:after,
+.img-box ul,
+.img-box ul li {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  /* margin: 0 4px; */
+  background-color: black;
+  transition: 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.github {
+  background-color: #000000;
+}
+
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: #000000;
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #000000;
+}
+
+.card-img {
+  width: 300px;
+  height: 300px;
+  background: #00000018;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.card-img::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+.card-img::after {
+  content: "";
+  background-image: url("/Profilephoto.png");
+  background-size: cover;
+  position: absolute;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.card-img-2 {
+  width: 300px;
+  height: 300px;
+  background: #00000018;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-img-2::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-img-2::after {
+  content: "";
+  background-image: url("/GrilloMasVale.jpg");
+  background-size: cover;
+  position: absolute;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.card-img-3 {
+  width: 300px;
+  height: 300px;
+  background: #00000018;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card-img-3::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-img-3::after {
+  content: "";
+  background-image: url("/babykiller.jpg");
+  background-size: cover;
+  position: absolute;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.card-img-4 {
+  width: 300px;
+  height: 300px;
+  background: #00000018;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.card-img-4::after {
+  content: "";
+  background-image: url("/joacoxd.jpg");
+  background-size: cover;
+  position: absolute;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.card-img-4::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 800px) {
+  .profile .img-box {
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    /* position: relative; */
+  }
+
+  .img-box:after {
     content: "";
     opacity: 0;
     background-color: transparent;
-    position: absolute;
+    /* position: absolute;
     right: 0;
     left: 0;
     top: 0;
-    bottom: 0;
-}
+    bottom: 0; */
+  }
 
-.img-box ul{
+  .img-box ul {
     margin: 0;
     padding: 15px 10px;
     position: absolute;
@@ -80,9 +350,9 @@
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-}
+  }
 
-.img-box ul li {
+  .img-box ul li {
     width: 50px;
     height: 50px;
     border: 0.2px solid #ffffff;
@@ -90,240 +360,28 @@
     margin: 5px;
     padding: 8px;
     display: inline-block;
-}
+  }
 
-.img-box Link {
+  .img-box Link {
     color: #fff;
-}
+  }
 
-.img-box:hover:after {
+  .img-box:hover:after {
     opacity: 1;
-}
+  }
 
-.img-box:hover ul {
+  .img-box:hover ul {
     opacity: 1;
-}
+  }
 
-.img-box Link:hover li {
+  .img-box Link:hover li {
     color: #000000;
     border: 1px solid #000000;
-}
+  }
 
-.img-box:after, .img-box ul, .img-box ul li {
+  .img-box:after,
+  .img-box ul,
+  .img-box ul li {
     transition: all 0.5s ease-in-out 0s;
+  }
 }
-  
-  .social-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin: 0 4px;
-    background-color: black;
-    transition: 0.3s;
-  }
-  
-  .social-button:hover {
-    background-color: #f2f2f2;
-    box-shadow: 0px 0px 6px 3px #00000027;
-  }
-  
-  .social-buttons svg {
-    transition: 0.3s;
-    height: 20px;
-  }
-  
-  .github {
-    background-color: #000000;
-  }
-  
-  .github svg {
-    width: 25px;
-    height: 25px;
-    fill: #f2f2f2;
-  }
-  
-  .github:hover svg {
-    fill: #333;
-  }
-  
-  .linkedin {
-    background-color: #000000;
-  }
-  
-  .linkedin svg {
-    fill: #f2f2f2;
-  }
-  
-  .linkedin:hover svg {
-    fill: #000000;
-  }
-  
-  .card-img {
-    width: 300px;
-    height: 300px;
-    background: #00000018;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-  }
-  
-  
-  .card-img::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, #ffffff, #ffffff);
-    height: 200%;
-    animation: rotBGimg 15s linear infinite;
-    transition: all 0.1s linear;
-  }
-  
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .card-img::after {
-    content: '';
-    background-image: url("/public/Profilephoto.png");
-    position: absolute;
-    inset: 5px;
-    border-radius: 15px;
-  }  
-  
-  .card-img-2 {
-    width: 300px;
-    height: 300px;
-    background: #00000018;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-  }
-  
-  
-  .card-img-2::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, #ffffff, #ffffff);
-    height: 200%;
-    animation: rotBGimg 15s linear infinite;
-    transition: all 0.1s linear;
-  }
-  
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .card-img-2::after {
-    content: '';
-    background-image: url("/public/GrilloMasVale.jpg");
-    position: absolute;
-    inset: 5px;
-    border-radius: 15px;
-  }  
-  
-
-  .card-img-3 {
-    width: 300px;
-    height: 300px;
-    background: #00000018;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-  }
-  
-  
-  .card-img-3::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, #ffffff, #ffffff);
-    height: 200%;
-    animation: rotBGimg 15s linear infinite;
-    transition: all 0.1s linear;
-  }
-  
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .card-img-3::after {
-    content: '';
-    object-fit: cover;
-    background-image: url("/public/babykiller.jpg");
-    position: absolute;
-    inset: 5px;
-    border-radius: 15px;
-  }  
-
-  .card-img-4 {
-    width: 300px;
-    height: 300px;
-    background: #00000018;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-  }
-  
-  
-  .card-img-4::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, #ffffff, #ffffff);
-    height: 200%;
-    animation: rotBGimg 15s linear infinite;
-    transition: all 0.1s linear;
-  }
-  
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .card-img-4::after {
-    content: '';
-    background-image: url("/public/joacoxd.jpg");
-    object-fit: cover !important;
-    position: absolute;
-    inset: 5px;
-    border-radius: 15px;
-  }  

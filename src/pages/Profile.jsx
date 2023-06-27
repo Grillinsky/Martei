@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
+import React, {/*  useEffect */ useState } from "react";
+/* import { useSelector } from "react-redux";
+import axios from "axios"; */
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
 
 function Profile() {
-  const user = useSelector((state) => state.user);
-  const [profileData, setProfileData] = useState(null);
+ /*  const user = useSelector((state) => state.user);
+  const [profileData, setProfileData] = useState(null); */
 
-  useEffect(() => {
+ /*  useEffect(() => {
     async function getProfileDataUser() {
       try {
         const response = await axios.get(
@@ -21,62 +21,144 @@ function Profile() {
       } catch (error) {
         console.error(error);
       }
-    }
+    } */
 
-    if (user) {
+    /* if (user) {
       getProfileDataUser();
     }
-  }, [user]);
+  }, [user]); */
 
-  return (
-    <>
-      <Navbar />
-      <div className="container-fluid py-5 p-md-5">
-        <div className="d-flex my-5">
-          <div className="dark-bg-frame"></div>
-          <div id="main-frame" className="row">
-            <div id="menu-frame" className="col-12 col-md-4">
-              <div className="icons-profile">
-                <div className="icon-container">
-                  <i className="fa fa-user-circle" aria-hidden="true"></i>
-                  <p>General</p>
+  const [sliderActive, setSliderActive] = useState(false);
+  const toggleSlider = () => {
+    setSliderActive(!sliderActive);
+  };
+  
+    return (
+      <div>
+        <Navbar/>
+      <div className="wrapper mb-5">
+        <div className="profile_card">
+          <div className="back_btn">
+            <i className="fas fa-long-arrow-alt-left"></i>
+          </div>
+          <div className={`settings_btn${sliderActive ? ' active' : ''}`} onClick={toggleSlider}>
+            <i className="fas fa-cog"></i>
+          </div>
+  
+          <div className="profile_wrap">
+            <div className="profile_img">
+              <img src="Profilephoto.png" alt="profile_pic" />
+              <p className="name">Alex Garcia</p>
+              <p className="place">
+                <span className="icon">
+                  <i className="fas fa-map-pin"></i>
+                </span>
+                <span className="pla|ce_name">Ciudad Vieja, Montevideo</span>
+              </p>
+            </div>
+  
+            <div className="profile_icons">
+              <div className="profile_item">
+                <div className="icon">
+                  <i className="fas fa-shopping-cart"></i>
                 </div>
-                <div className="icon-container">
-                  <i className="fa fa-unlock-alt" aria-hidden="true"></i>
-                  <p>Seguridad</p>
+                <div className="title">Compras</div>
+                <div className="num">6</div>
+              </div>
+              <div className="profile_item">
+                <div className="icon">
+                  <i className="fas fa-clipboard"></i>
                 </div>
-                <div className="icon-container">
-                  <i className="fas fa-envelope"></i> <p>Mensajes</p>
+                <div className="title">Ordenes</div>
+                <div className="num">19</div>
+              </div>
+              <div className="profile_item">
+                <div className="icon">
+                  <i className="fas fa-list"></i>
                 </div>
-                <div className="icon-container">
-                  <i className="fa fa-history" aria-hidden="true"></i>
-                  <p>Historial De Compras</p>
-                </div>
+                <div className="title">Historial</div>
+                <div className="num">3</div>
               </div>
             </div>
-            <div id="show-frame" className="col-12 col-md-8">
-              <div className="text-container">
-                {profileData && (
-                  <div>
-                    <h2>
-                      Hola <span>{profileData.firstname}</span>!
-                    </h2>
-                    <ul className="p-0">
-                      <li>{profileData.address}</li>
-                      <li>{profileData.email}</li>
-                      <li>{profileData.phone}</li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-              <hr className="" />
-            </div>
+  
+           {/*  <div className="profile_btn">Ajustes De Usuario</div> */}
           </div>
         </div>
+        <div className={`profile_slider${sliderActive ? ' active' : ''}`}>
+          <ul>
+            <li>
+              <div className="slider_item">
+                <div className="slider_left">
+                  <div className="item">
+                    <div className="item_name">Historial De Compras</div>
+                  </div>
+                </div>
+                <div className="slider_right">
+                  <i className="fas fa-history fa-2x"></i>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="slider_item">
+                <div className="slider_left">
+               
+                  <div className="item">
+                    <div className="item_name">Medios De Pago</div>
+                  </div>
+                </div>
+                <div className="slider_right">
+                  <i className="fas fa-credit-card fa-2x"></i>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="slider_item">
+                <div className="slider_left">
+                  <div className="item">
+                    <div className="item_name">Ordenes De Compra</div>
+                  </div>
+                </div>
+                <div className="slider_right">
+                  <i className="fas fa-clipboard fa-2x"></i>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="slider_item">
+                <div className="slider_left">
+                  <div className="item">
+                    <div className="item_name">Carrito De Compras</div>
+                  </div>
+                </div>
+                <div className="slider_right">
+                  <i className="fas fa-shopping-cart fa-2x"></i>
+                </div>
+              </div>
+            </li>
+            <li>
+                <div className="slider_right d-flex justify-content-center">
+                  <div className="btn btn-outline-danger btn-logout-profile"> <i className="fas fa-sign-out-alt"></i></div>
+                </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <Footer />
-    </>
-  );
-}
+        <Footer/>
+      </div>
+    );
+  };
+  
+  export default Profile;
 
-export default Profile;
+/* {profileData && (
+  <div>
+    <h2>
+      Hola <span>{profileData.firstname}</span>!
+    </h2>
+    <ul className="p-0">
+      <li>{profileData.address}</li>
+      <li>{profileData.email}</li>
+      <li>{profileData.phone}</li>
+    </ul>
+  </div>
+)} */
