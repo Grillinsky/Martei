@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../css/CarrouselProductExclusive.css"
+
 
 const ExclusiveProductSection = () => {
+  const navigate = useNavigate();
   const [productData, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,10 +23,15 @@ const ExclusiveProductSection = () => {
     }
   }
 
+  const handleViewProduct = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
+
   const carouselSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     responsive: [
       {
@@ -56,9 +64,9 @@ const ExclusiveProductSection = () => {
       <div className="container">
         <Slider {...carouselSettings}>
           {productData.map((product) => (
-            <div key={product.id} className="ExclusiveProductColumn card">
+            <div key={product.id} className="ExclusiveProductColumn card" onClick={() => handleViewProduct(product.id)}>
               {/* Contenido del producto */}
-              <img src={product.image} alt={product.name} />
+              <img src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} alt={product.name} />
               <h5 className="category-exclusive-product">{product.category}</h5>
               <h3 className="name-exclusive-product">{product.name}</h3>
               <p className="price-exclusive-product">Price: ${product.price}🔥</p>

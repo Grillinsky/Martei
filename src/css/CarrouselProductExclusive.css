@@ -1,0 +1,25 @@
+@import '../../node_modules/slick-carousel/slick/slick.css';
+@import '../../node_modules/slick-carousel/slick/slick-theme.css';
+
+.slick-slide {
+  padding: 5px;
+  margin-bottom: 22px;
+}
+
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.ExclusiveProductColumn {
+  text-align: center;
+  padding: 5px;
+  margin-top: 20px;
+  margin-left: 80px;
+  width: auto !important;
+  height: auto !important;
+}
