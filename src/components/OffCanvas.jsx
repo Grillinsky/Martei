@@ -37,9 +37,11 @@ const handleLogin = () => {
             </dd>
           </div>
           <div className="off-canvas-button-div">
-          <button as={Link} to={"/login"} className="btn-user-canvas" onClick={handleLogin}>
+          <Link to={"/aboutUs"}>
+          <button className="btn-user-canvas" onClick={handleLogin}>
             Sobre Nosotros
           </button>
+          </Link>
           </div>
           <hr className="m-2"/>
           <div className="container container-off-canvas">
@@ -53,9 +55,11 @@ const handleLogin = () => {
             </ul>
           </div>
           <div className="off-canvas-button-div">
-          <button as={Link} to={"/login"} className="btn-user-canvas" onClick={handleLogin}>
+          <Link to={"/login"}>
+          <button className="btn-user-canvas" onClick={handleLogin}>
             Login User
           </button>
+          </Link>
           </div>
           <hr className="m-2"/>
           <div className="container container-off-canvas">
@@ -68,9 +72,11 @@ const handleLogin = () => {
             </ul>
           </div>
           <div className="off-canvas-button-div">
-          <button as={Link} to={"/adminLogin"} className="btn-user-canvas" onClick={handleLogin}>
+          <Link to={"/adminLogin"}>
+          <button className="btn-user-canvas" onClick={handleLogin}>
             Login Admin
           </button>
+          </Link>
           </div>
           <hr id="hr-canvas"/>
         </Offcanvas.Body>
