@@ -1,9 +1,9 @@
-import React from "react";
-import "../css/About-Us.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Tecnologies from "../components/Tecnologies";
-import AboutTeam from "../components/AboutTeam";
+import React from 'react'
+import '../css/About-Us.css'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import Tecnologies from '../components/Tecnologies'
+import AboutTeam from '../components/AboutTeam'
 
 function AboutUs() {
   return (
@@ -35,13 +35,13 @@ function AboutUs() {
         </div>
         <AboutTeam />
         <div className="d-flex justify-content-center flex-column align-items-center p-0">
-          <h1 className="title-team">Tecnologias</h1>
+          <h1 className="title-team">Tecnologías</h1>
         </div>
         <Tecnologies />
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default AboutUs;
+export default AboutUs
