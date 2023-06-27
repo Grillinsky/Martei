@@ -1,11 +1,11 @@
-import React from "react";
-import "../css/About-Team.css";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import React from 'react'
+import '../css/About-Team.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom'
 
-library.add(fab, faLinkedin, faGithub);
+library.add(fab, faLinkedin, faGithub)
 
 function AboutTeam() {
   return (
@@ -50,12 +50,14 @@ function AboutTeam() {
               </ul>
             </div>
             <h2 className="fs-3 mb-2">Alex Garcia</h2>
-            <h3 className="fs-6 mt-0 text-muted">Developer Web Jr</h3>
+            <h3 className="fs-6 mt-0 text-muted">
+              Full Stack Developer Web Jr
+            </h3>
             <p className="description-all">
               "Hola, soy Alex Garcia, un chico de 21 años de Canelones, Uruguay.
               Estoy en Hack Academy y me encanta diseñar cosas en Front-end. Soy
               un fanático de las animaciones y siempre trato de agregar un toque
-              de magia a mis proyectos. ¡Vamos a crear cosas increíbles juntos!"{" "}
+              de magia a mis proyectos. ¡Vamos a crear cosas increíbles juntos!"{' '}
             </p>
           </div>
           <div className="col-12 col-md-6 col-lg-3 profile text-center p-0">
@@ -96,7 +98,9 @@ function AboutTeam() {
               </ul>
             </div>
             <h2 className="fs-2 mb-2">Martin Grillo</h2>
-            <h3 className="fs-6 mt-0 text-muted">Developer Web Jr</h3>
+            <h3 className="fs-6 mt-0 text-muted">
+              Full Stack Developer Web Jr
+            </h3>
             <p className="description-all">
               "Soy Martin Grillo, tengo 31 años y originalmente de El Calafate,
               Argentina, actualmente vivo en Montevideo. Me encanta el
@@ -110,7 +114,11 @@ function AboutTeam() {
               <div className="card-img-3"></div>
               <ul>
                 <li>
-                  <a href="#" class="social-button github">
+                  <a
+                    href="https://github.com/MartinPintos677"
+                    target="_blank"
+                    class="social-button github"
+                  >
                     <svg
                       class="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +130,11 @@ function AboutTeam() {
                 </li>
 
                 <li>
-                  <a href="#" class="social-button linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/martin-pintos-borba/"
+                    target="_blank"
+                    class="social-button linkedin"
+                  >
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
@@ -143,14 +155,16 @@ function AboutTeam() {
               </ul>
             </div>
             <h2 className="fs-2 mb-2">Martin Pintos</h2>
-            <h3 className="fs-6 mt-0 text-muted">Developer Web Jr</h3>
+            <h3 className="fs-6 mt-0 text-muted">
+              Full Stack Developer Web Jr
+            </h3>
             <p className="description-all">
-              {" "}
-              "Ey, ¿qué onda? Soy Martin Pintos, tengo 33 años y soy de Rivera,
-              Uruguay. Estoy en Hack Academy y, ¿sabes qué? Me fascinan los
-              datos y el manejo de información. Además, tengo cinco gatos locos
-              que me acompañan en mi aventura de aprendizaje. ¡Vamos a descubrir
-              el poder de los datos juntos!"
+              {' '}
+              "Apasionado por el área de TI y ansioso por comenzar mi carrera
+              profesional en este campo. Mi objetivo es crecer, contribuir con
+              soluciones innovadoras, desarrollar mi talento y conocimientos en
+              el ámbito de la programación y convertirme en un desarrollador
+              altamente competente y exitoso."
             </p>
           </div>
           <div className="col-12 col-md-6 col-lg-3 profile text-center p-0">
@@ -190,9 +204,11 @@ function AboutTeam() {
               </ul>
             </div>
             <h2 className="fs-2 mb-2">Joaquin Brascesco</h2>
-            <h3 className="fs-6 mt-0 text-muted">Developer Web Jr</h3>
+            <h3 className="fs-6 mt-0 text-muted">
+              Full Stack Developer Web Jr
+            </h3>
             <p className="description-all">
-              {" "}
+              {' '}
               "Hey, qué tal, soy Joaquin Brasesco, tengo 36 años y soy profesor
               de matemáticas en Florida, Uruguay. También estoy en Hack Academy,
               ¡porque nunca es tarde para aprender cosas nuevas! Me gusta el
@@ -203,7 +219,7 @@ function AboutTeam() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default AboutTeam;
+export default AboutTeam
