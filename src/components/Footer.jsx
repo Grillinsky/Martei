@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import MyMap from "./Map";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import MyMap from './Map'
 
 function Footer() {
   return (
@@ -12,7 +12,7 @@ function Footer() {
               <img src="/logoFinal.png" alt="Logo Martei" />
             </div>
             <div className="col-4">
-              <dd className="footer-name">Catalogo</dd>
+              <dd className="footer-name">Catálogo</dd>
               <ul>
                 <li>
                   <a href="/#muebles">Muebles</a>
@@ -46,21 +46,24 @@ function Footer() {
             <div className="col-12 col-md-6">
               <ul>
                 <li className="footer-name mx-1">
-                  <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}>
+                  <Link to={'https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9'}>
                     Ciudad Vieja
                   </Link>
                 </li>
                 <li>Montevideo</li>
                 <li>099470542</li>
                 <li>
-                  <a aria-label="Link to Whatsapp" href="https://wa.link/n6nt6k">
+                  <a
+                    aria-label="Link to Whatsapp"
+                    href="https://wa.link/n6nt6k"
+                  >
                     <i className="fab fa-whatsapp"></i>
                   </a>
                 </li>
               </ul>
             </div>
             <div className="col-12 col-md-6">
-              <div style={{height: '100px', width: '350px'}}>
+              <div style={{ height: '100px', width: '350px' }}>
                 <MyMap />
               </div>
             </div>
@@ -68,7 +71,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

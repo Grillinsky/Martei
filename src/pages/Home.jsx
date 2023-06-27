@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-import "../css/Home.css";
+import '../css/Home.css'
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 function Home() {
-  const [categoryData, setCategories] = useState([]);
-  const [productData, setProducts] = useState([]);
+  const [categoryData, setCategories] = useState([])
+  const [productData, setProducts] = useState([])
 
   useEffect(() => {
-    categoryList();
-    productList();
-  }, []);
+    categoryList()
+    productList()
+  }, [])
 
   async function categoryList() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/category`
-      );
-      const categoryListData = response.data;
-      setCategories(categoryListData.categories);
+      )
+      const categoryListData = response.data
+      setCategories(categoryListData.categories)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 
@@ -32,11 +32,11 @@ function Home() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/product`
-      );
-      const products = response.data.products;
-      setProducts(products);
+      )
+      const products = response.data.products
+      setProducts(products)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 
@@ -46,7 +46,7 @@ function Home() {
       <article className="container-fluid my-5">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
-        </h1>{" "}
+        </h1>{' '}
         {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
           Piezas en materiales nobles y fibras naturales <br />
@@ -57,11 +57,11 @@ function Home() {
         <section className="py-2 container-fluid" id="exclusiveProduct">
           <div className="d-flex justify-content-around align-items-center mt-2 mb-3">
             <h2 className=" mt-3 title-exclusive-product">
-              Recién llegados!
+              Productos destacados!
             </h2>
-            <Link to={"/productsPage"}>
+            <Link to={'/productsPage'}>
               <button className="btn-dark-product-exclusive me-5">
-                Todos Los Productos <i className="fas fa-chevron-right"></i>
+                Todos los productos <i className="fas fa-chevron-right"></i>
               </button>
             </Link>
           </div>
@@ -72,18 +72,18 @@ function Home() {
                   src={
                     productData.length > 0 && productData[0].length > 14
                       ? productData[0][14].image
-                      : "Tapiz1.jpg"
+                      : 'Tapiz1.jpg'
                   }
                   alt="Tapiz De Roble Nordico Usado Por Tyr"
                 />
                 <h5 className="category-exclusive-product">
-                  {categoryData[4]?.name || ""}
+                  {categoryData[4]?.name || ''}
                 </h5>
                 <h3 className="name-exclusive-product">
-                  {productData[14]?.name || "Titulo De Tapices"}
+                  {productData[14]?.name || 'Titulo De Tapices'}
                 </h3>
                 <p className="price-exclusive-product">
-                  Price: ${productData[14]?.price || "7.99"}🔥
+                  Price: ${productData[14]?.price || '7.99'}🔥
                 </p>
               </div>
               <div className="ExclusiveProductColumn card col-12 col-md-3">
@@ -91,18 +91,18 @@ function Home() {
                   src={
                     productData.length > 0 && productData[0].length > 8
                       ? productData[0][8].image
-                      : "Cuadro1.png"
+                      : 'Cuadro1.png'
                   }
                   alt="Cuadro Usado Por Cleopatra"
                 />
                 <h5 className="category-exclusive-product">
-                  {categoryData[2]?.name || ""}
+                  {categoryData[2]?.name || ''}
                 </h5>
                 <h3 className="name-exclusive-product">
-                  {productData[8]?.name || "Titulo De Cuadros"}
+                  {productData[8]?.name || 'Titulo De Cuadros'}
                 </h3>
                 <p className="price-exclusive-product">
-                  Price: ${productData[8]?.price || "6.99"}🔥
+                  Price: ${productData[8]?.price || '6.99'}🔥
                 </p>
               </div>
               <div className="ExclusiveProductColumn card col-12 col-md-3">
@@ -110,23 +110,23 @@ function Home() {
                   src={
                     productData.length > 11 && productData[0].length > 11
                       ? productData[0][11].image
-                      : "Luminaria1.jpg"
+                      : 'Luminaria1.jpg'
                   }
                   alt="Luminaria Traida De La Epoca Nomada"
                 />
                 <h5 className="category-exclusive-product">
-                  {categoryData.length > 3 ? categoryData[3].name : ""}
+                  {categoryData.length > 3 ? categoryData[3].name : ''}
                 </h5>
                 <h3 className="name-exclusive-product">
                   {productData.length > 11 && productData[0].length > 11
                     ? productData[0][11].name
-                    : "Titulo De Luminarias"}
+                    : 'Titulo De Luminarias'}
                 </h3>
                 <p className="price-exclusive-product">
                   Price: $
                   {productData.length > 11 && productData[0].length > 11
                     ? productData[0][11].price
-                    : "4.99"}
+                    : '4.99'}
                   🔥
                 </p>
               </div>
@@ -135,23 +135,23 @@ function Home() {
                   src={
                     productData.length > 8 && productData[0].length > 3
                       ? productData[0][3].image
-                      : "Espejo1.jpg"
+                      : 'Espejo1.jpg'
                   }
                   alt="Espejo Revelador De Islas Palaos"
                 />
                 <h5 className="category-exclusive-product">
-                  {categoryData.length > 1 ? categoryData[1].name : ""}
+                  {categoryData.length > 1 ? categoryData[1].name : ''}
                 </h5>
                 <h3 className="name-exclusive-product">
                   {productData.length > 3 && productData[0].length > 3
                     ? productData[0][3].name
-                    : "Titulo De Espejos"}
+                    : 'Titulo De Espejos'}
                 </h3>
                 <p className="price-exclusive-product">
                   Price: $
                   {productData.length > 3 && productData[0].length > 3
                     ? productData[0][3].price
-                    : "3.99"}
+                    : '3.99'}
                   🔥
                 </p>
               </div>
@@ -160,23 +160,23 @@ function Home() {
                   src={
                     productData.length > 2 && productData[0].length > 2
                       ? productData[0][2].image
-                      : "Mueble1.jpg"
+                      : 'Mueble1.jpg'
                   }
                   alt="Mueble De La Antigua Mesopotamia"
                 />
                 <h5 className="category-exclusive-product">
-                  {categoryData.length > 0 ? categoryData[0].name : ""}
+                  {categoryData.length > 0 ? categoryData[0].name : ''}
                 </h5>
                 <h3 className="name-exclusive-product">
                   {productData.length > 2 && productData[0].length > 2
                     ? productData[0][2].name
-                    : "Titulo De Muebles"}
+                    : 'Titulo De Muebles'}
                 </h3>
                 <p className="price-exclusive-product">
                   Price: $
                   {productData.length > 2 && productData[0].length > 2
                     ? productData[0][2].price
-                    : "2.99"}
+                    : '2.99'}
                   🔥
                 </p>
               </div>
@@ -196,7 +196,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/1"}
+                  to={'/category/list/1'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -345,7 +345,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/3"}
+                  to={'/category/list/3'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -363,7 +363,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/2"}
+                  to={'/category/list/2'}
                 >
                   Ver todo<i className="fas fa-chevron-right"></i>
                 </Link>
@@ -521,7 +521,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/4"}
+                  to={'/category/list/4'}
                 >
                   Ver todo
                   <i className="fas fa-chevron-right"></i>
@@ -540,7 +540,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/4"}
+                  to={'/category/list/4'}
                 >
                   Ver todo en Tapiceria <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -649,7 +649,7 @@ function Home() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 function CartModal(props) {
   const itemsCarrito = useSelector(state => state.cart.items)
   const dispatch = useDispatch()
-  const [quantity, setQuantity] = useState({})
+  const [quantity, setQuantity] = useState({}) // no va
   const navigate = useNavigate()
 
   const handleOrder = () => {
@@ -26,7 +26,7 @@ function CartModal(props) {
       })
       setQuantity(initialQuantity)
     }
-  }, [itemsCarrito])
+  }, [itemsCarrito]) // sacar esto
 
   const precioFinal = () => {
     try {
