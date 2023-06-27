@@ -1,0 +1,52 @@
+.off-canvas-header {
+    background-color: rgb(0, 0, 0) !important;
+    color: white;
+    height: 4.8em;
+    margin: 0 !important;
+}
+
+#hr-canvas {
+    margin: 8px 0px 0px 0px !important; 
+}
+
+#offCanvasButton{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#offCanvasButton:active{
+    color: white;
+    background-color: black;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.title-canvas {
+    margin-left: 3em;
+    margin-top: 3px;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.container-off-canvas {
+    font-size: 19px !important;
+    padding-left: 10px !important;
+    padding-right: 10px;
+}
+
+.list-off-canvas li {
+    list-style-type: georgian !important;
+    font-weight: 700;
+ }
+
+.off-canvas-button-div{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.btn-user-canvas {
+    border-radius: 5px;
+    background-color: #c0906d;
+    border: none;
+    padding: 7px 10px;
+    color: white;
+}
