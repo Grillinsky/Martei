@@ -28,11 +28,22 @@ const cartSlice = createSlice({
     clearCart: state => {
       state.items = []
       state.cartItemsCount = 0
+    },
+    calculateTotal: state => {
+      state.totalPrice = state.items.reduce(
+        (total, item) => total + item.price * item.qty,
+        0
+      )
     }
   }
 })
 
-export const { AddOrIncrement, RemoveOrDecrement, clearCart, RemoveFromCart } =
-  cartSlice.actions
+export const {
+  AddOrIncrement,
+  RemoveOrDecrement,
+  clearCart,
+  RemoveFromCart,
+  calculateTotal
+} = cartSlice.actions
 
 export default cartSlice.reducer
