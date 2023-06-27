@@ -231,7 +231,7 @@ img {
 
 .card-img-2::after {
   content: "";
-  background-image: url("/GrilloMasVale.jpg");
+  background-image: url("/Grillo.jpeg");
   background-size: cover;
   position: absolute;
   inset: 5px;

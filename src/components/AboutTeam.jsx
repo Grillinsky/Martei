@@ -1,11 +1,11 @@
-import React from 'react'
-import '../css/About-Team.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "../css/About-Team.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
-library.add(fab, faLinkedin, faGithub)
+library.add(fab, faLinkedin, faGithub);
 
 function AboutTeam() {
   return (
@@ -57,7 +57,7 @@ function AboutTeam() {
               "Hola, soy Alex Garcia, un chico de 21 años de Canelones, Uruguay.
               Estoy en Hack Academy y me encanta diseñar cosas en Front-end. Soy
               un fanático de las animaciones y siempre trato de agregar un toque
-              de magia a mis proyectos. ¡Vamos a crear cosas increíbles juntos!"{' '}
+              de magia a mis proyectos. ¡Vamos a crear cosas increíbles juntos!"{" "}
             </p>
           </div>
           <div className="col-12 col-md-6 col-lg-3 profile text-center p-0">
@@ -102,11 +102,11 @@ function AboutTeam() {
               Full Stack Developer Web Jr
             </h3>
             <p className="description-all">
-              "Soy Martin Grillo, tengo 31 años y originalmente de El Calafate,
-              Argentina, actualmente vivo en Montevideo. Me encanta el
-              desarrollo Front-end y todo lo relacionado con el diseño: desde
-              arquitectura hasta diseño web y textil. ¡Crearemos cosas
-              increíbles juntos y con un toque elegante!"
+              "Tengo 31 años, soy originalmente de El Calafate, Argentina, y
+              actualmente vivo en Montevideo. Me encanta el Front-end y todo lo
+              relacionado con el diseño: desde arquitectura hasta diseño
+              industrial y textil. Soy un apasionado por la tecnologia y estoy
+              hambriento de mi primera experiencia profesional"
             </p>
           </div>
           <div className="col-12 col-md-6 col-lg-3 profile text-center p-0">
@@ -159,7 +159,7 @@ function AboutTeam() {
               Full Stack Developer Web Jr
             </h3>
             <p className="description-all">
-              {' '}
+              {" "}
               "Apasionado por el área de TI y ansioso por comenzar mi carrera
               profesional en este campo. Mi objetivo es crecer, contribuir con
               soluciones innovadoras, desarrollar mi talento y conocimientos en
@@ -208,7 +208,7 @@ function AboutTeam() {
               Full Stack Developer Web Jr
             </h3>
             <p className="description-all">
-              {' '}
+              {" "}
               "Hey, qué tal, soy Joaquin Brasesco, tengo 36 años y soy profesor
               de matemáticas en Florida, Uruguay. También estoy en Hack Academy,
               ¡porque nunca es tarde para aprender cosas nuevas! Me gusta el
@@ -219,7 +219,7 @@ function AboutTeam() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default AboutTeam
+export default AboutTeam;
