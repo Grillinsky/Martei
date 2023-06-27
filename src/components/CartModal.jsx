@@ -16,11 +16,10 @@ function CartModal(props) {
 
   useEffect(() => {
     if (itemsCarrito && itemsCarrito.length > 0) {
-      // Agregar verificación adicional
       const initialQuantity = {}
       itemsCarrito.forEach(item => {
         if (item && item.id) {
-          // Verificar si el item y item.id existen antes de acceder a ellos
+  
           initialQuantity[item.id] = (initialQuantity[item.id] || 0) + 1
         }
       })
@@ -37,7 +36,7 @@ function CartModal(props) {
       )
     } catch (error) {
       console.error('Error calculating total price:', error)
-      return 0 // Return a default value in case of an error
+      return 0 
     }
   }
 
@@ -108,7 +107,7 @@ function CartModal(props) {
                 const productQuantity =
                   item && quantity[item.id] ? quantity[item.id] : 0
                 if (productQuantity === 0) {
-                  return null // No renderizar el producto si la cantidad es 0
+                  return null
                 }
                 return (
                   <li key={index} className="d-flex justify-content-between">
