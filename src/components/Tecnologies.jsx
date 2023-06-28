@@ -3,7 +3,7 @@ import "../css/Tecnologies.css";
 
 function Tecnologies() {
   return (
-    <div id="tecnologiesContainer" className="container mt-0">
+    <div id="tecnologiesContainer" className="mt-0">
       <div className="card-tecnology mb-5 mt-0 ">
         {/* JAVASCRIPT    */}
         <a className="social-link-1 m-2">

@@ -31,9 +31,21 @@ const ExclusiveProductSection = () => {
   const carouselSettings = {
     dots: false,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
       {
         breakpoint: 768,
         settings: {
@@ -61,7 +73,7 @@ const ExclusiveProductSection = () => {
           </button>
         </Link>
       </div>
-      <div className="container">
+      <div className="container d-flex container-cards-product">
         <Slider {...carouselSettings}>
           {productData.map((product) => (
             <div key={product.id} className="ExclusiveProductColumn card" onClick={() => handleViewProduct(product.id)}>

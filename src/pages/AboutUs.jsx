@@ -34,8 +34,8 @@ function AboutUs() {
           </div>
         </div>
         <AboutTeam />
-        <div className="d-flex justify-content-center flex-column align-items-center p-0">
-          <h1 className="title-team">Tecnologías</h1>
+        <div className="d-flex justify-content-center flex-column align-items-center p-0 mt-0">
+          <h1 className="title-team p-0 m-4">Tecnologías</h1>
         </div>
         <Tecnologies />
       </div>

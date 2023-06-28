@@ -1,16 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-
+import { useSelector } from "react-redux";
 import "../css/Home.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ExclusiveProductSection from "../components/CarrouselExclusiveProduct";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
+  const [showToast, setShowToast] = useState(false);
+  const isLoggedIn = useSelector((state) => state.user !== null);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setShowToast(true);
+      toast.success('¡Bienvenido a Martei!');
+    }
+  }, [isLoggedIn]);
+
   return (
     <div>
+       <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
       <Navbar />
       <article className="container-fluid my-5">
         <h1 className="hero-title fade-in-top">

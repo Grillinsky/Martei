@@ -12,7 +12,7 @@ function Footer() {
               <img src="/logoFinal.png" alt="Logo Martei" />
             </div>
             <div className="col-4">
-              <dd className="footer-name">Catálogo</dd>
+              <dd className="footer-name ms-4">Catálogo</dd>
               <ul>
                 <li>
                   <a href="/#muebles">Muebles</a>
@@ -32,7 +32,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-4">
-              <dd className="footer-name">Sobre Martei</dd>
+              <dd className="footer-name ms-4">Sobre Martei</dd>
               <ul>
                 <li>Nosotros</li>
                 <li>Perfil</li>
@@ -52,7 +52,7 @@ function Footer() {
               <ul>
                 <li className="footer-name">
                   <Link to={"https://goo.gl/maps/ELcTZ1L7QwGNi1Lm9"}>
-                    <h4> Ciudad Vieja</h4>
+                    <h4 className=""> Ciudad Vieja</h4>
                   </Link>
                 </li>
                 <li>Montevideo</li>

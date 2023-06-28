@@ -12,8 +12,9 @@ function Login() {
   const [loginError, setLoginError] = useState(false)
 
   const dispatch = useDispatch()
-
   const navigate = useNavigate()
+
+ 
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -39,12 +40,9 @@ function Login() {
     <div className="container-login">
       <div className="d-flex justify-content-center align-items-center div-login">
         <div className="form-container">
-          <p className="title">Login</p>
-          {loginError && (
-            <div className="alert alert-danger">Credenciales incorrectas.</div>
-          )}
+          <p className="title mt-2 mb-3">Iniciar Sesión</p>
           <form className="form" onSubmit={handleSubmit} autoComplete="off">
-            <div className="input-group">
+            <div className="input-group mb-2">
               <label htmlFor="email">Email</label>
               <input
                 type="text"
@@ -56,7 +54,7 @@ function Login() {
               />
             </div>
             <div className="input-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Contraseña</label>
               <input
                 type="password"
                 name="password"
@@ -66,18 +64,21 @@ function Login() {
                 onChange={event => setPasswordValue(event.target.value)}
               />
               <div className="forgot">
-                <a rel="noopener noreferrer" href="#">
-                  Forgot Password ?
+                <a rel="noopener noreferrer" href="#" className='mt-2 mb-2'>
+                  Olvidaste tu contraseña?
                 </a>
               </div>
             </div>
             <button className="sign" type="submit">
-              Sign in
+              Ingresar
             </button>
           </form>
+          {loginError && (
+            <div className="mt-3 text-center alert alert-danger">Credenciales incorrectas.</div>
+          )}
           <div className="social-message">
             <div className="line"></div>
-            <p className="message">Login with social accounts</p>
+            <p className="message">Ingresa con redes sociales</p>
             <div className="line"></div>
           </div>
           <div className="social-icons">
@@ -110,15 +111,16 @@ function Login() {
             </button>
           </div>
           <p className="signup">
-            Don't have an account?
+            No tienes cuenta?
             <Link
               rel="noopener noreferrer"
               to={'/register'}
               className="Sign-Up"
             >
               {' '}
-              Sign up
+              Registrate
             </Link>
+            
           </p>
         </div>
       </div>

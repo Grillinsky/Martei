@@ -254,9 +254,9 @@
   position: relative;
 }
 
-.formulario-tarjeta select {
+/* .formulario-tarjeta select {
   -webkit-appearance: none;
-}
+} */
 
 .formulario-tarjeta .grupo-select i {
   position: absolute;
@@ -282,4 +282,10 @@
 
 .formulario-tarjeta .btn-enviar:hover {
   background: #1850b1;
+}
+
+.price-modal{
+  font-weight: bolder;
+  font-size: 20px;
+  color: rgb(1, 149, 72);
 }
