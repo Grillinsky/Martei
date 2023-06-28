@@ -18,9 +18,9 @@ function AboutTeam() {
               <div className="card-img"></div>
               <ul>
                 <li>
-                  <a href="#" class="social-button github">
+                  <a href="#" className="social-button github">
                     <svg
-                      class="cf-icon-svg"
+                      className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="-2.5 0 19 19"
                     >
@@ -29,7 +29,7 @@ function AboutTeam() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="social-button linkedin">
+                  <a href="#" className="social-button linkedin">
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
@@ -65,9 +65,9 @@ function AboutTeam() {
               <div className="card-img-2"></div>
               <ul>
                 <li>
-                  <a href="#" class="social-button github">
+                  <a href="#" className="social-button github">
                     <svg
-                      class="cf-icon-svg"
+                      className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="-2.5 0 19 19"
                     >
@@ -77,7 +77,7 @@ function AboutTeam() {
                 </li>
 
                 <li>
-                  <a href="#" class="social-button linkedin">
+                  <a href="#" className="social-button linkedin">
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
@@ -117,10 +117,10 @@ function AboutTeam() {
                   <a
                     href="https://github.com/MartinPintos677"
                     target="_blank"
-                    class="social-button github"
+                    className="social-button github"
                   >
                     <svg
-                      class="cf-icon-svg"
+                      className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="-2.5 0 19 19"
                     >
@@ -133,7 +133,7 @@ function AboutTeam() {
                   <a
                     href="https://www.linkedin.com/in/martin-pintos-borba/"
                     target="_blank"
-                    class="social-button linkedin"
+                    className="social-button linkedin"
                   >
                     <svg
                       viewBox="0 -2 44 44"
@@ -172,9 +172,9 @@ function AboutTeam() {
               <div className="card-img-4"></div>
               <ul>
                 <li>
-                  <a href="#" class="social-button github">
+                  <a href="#" className="social-button github">
                     <svg
-                      class="cf-icon-svg"
+                      className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="-2.5 0 19 19"
                     >
@@ -183,7 +183,7 @@ function AboutTeam() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="social-button linkedin">
+                  <a href="#" className="social-button linkedin">
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"

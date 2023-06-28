@@ -7,15 +7,15 @@
 }
 
 .mi-modal-header {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--black);
+  color: var(--white);
   border-radius: 0%;
   border: none !important;
 }
 
 .fa-window-close {
   background: transparent;
-  color: #ffffff;
+  color: var(--white);
   font-size: 25px;
 }
 
@@ -55,16 +55,15 @@
 }
 
 .mi-modal-body {
-  padding: 20px;
   font-weight: 500;
-  font-size: 22px;
-  background-color: #ffffff;
-  color: #000000;
+  font-size: 1.2rem;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 .mi-modal-footer {
   border: none;
-  background-color: #f1e7db;
+  background-color: #eddfcd;
   padding: 10px 20px;
 }
 
@@ -80,4 +79,8 @@
 .more-less {
   text-decoration: none;
   color: black;
+}
+i:hover {
+  cursor: pointer !important ;
+  color: red;
 }

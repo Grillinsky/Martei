@@ -50,35 +50,39 @@ function CartModal(props) {
         </Modal.Header>
         <Modal.Body className="mi-modal-body">
           {itemsCarrito.length > 0 ? (
-            <ul>
+            <ul className="p-0">
               {itemsCarrito.map((item, index) => {
                 return (
-                  <li key={index} className="d-flex justify-content-between">
-                    <span>{item.name}</span>
-                    <span>
+                  <li key={index} className="row">
+                    <span className="col-4">{item.name}</span>
+                    <span className="col-4">
                       <button
                         className="fs-3 btn btn-link p-0 m-0 more-less"
                         onClick={() => handleDecrement(item.id)}
+                        aria-label="Minus Button"
                       >
-                        -
+                        <i className="fas fa-minus-circle"></i>
                       </button>
                       <input
                         type="text"
-                        className="form-control-sm w-25"
+                        className="form-control-sm w-25 text-center"
                         value={item.qty}
                       />
                       <button
                         className="fs-3 btn btn-link p-0 m-0 more-less"
                         onClick={() => handleIncrement(item)}
+                        aria-label="Add Button"
                       >
-                        +
+                        <i className="fas fa-plus-circle"></i>
                       </button>
                     </span>
-                    <span>U${item.price * item.qty}</span>
-
-                    <button onClick={() => handleRemoveItem(item.id)}>
-                      Eliminar
-                    </button>
+                    <span className="col-4">
+                      U${item.price * item.qty}{" "}
+                      <i
+                        className="far fa-times-circle"
+                        onClick={() => handleRemoveItem(item.id)}
+                      ></i>
+                    </span>
                   </li>
                 );
               })}
