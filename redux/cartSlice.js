@@ -25,10 +25,7 @@ const cartSlice = createSlice({
     RemoveFromCart: (state, action) => {
       return state.filter(item => item.id !== action.payload)
     },
-    clearCart: state => {
-      state.items = []
-      state.cartItemsCount = 0
-    },
+    clearCart: () => [],
     calculateTotal: state => {
       state.totalPrice = state.items.reduce(
         (total, item) => total + item.price * item.qty,
