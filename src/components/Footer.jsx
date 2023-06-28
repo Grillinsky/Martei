@@ -15,28 +15,31 @@ function Footer() {
               <dd className="footer-name ms-4">Catálogo</dd>
               <ul>
                 <li>
-                  <a href="/#muebles">Muebles</a>
+                  <a href="/category/list/1">Muebles</a>
                 </li>
                 <li>
-                  <a href="/#cuadros">Cuadros</a>
+                  <a href="/category/list/3">Cuadros</a>
                 </li>
                 <li>
-                  <a href="/#espejos">Espejos</a>
+                  <a href="/category/list/2">Espejos</a>
                 </li>
                 <li>
-                  <a href="/#luminarias">Luminarias</a>
+                  <a href="/category/list/4">Luminarias</a>
                 </li>
                 <li>
-                  <a href="/#Tapices">Tapices</a>
+                  <a href="/category/list/5">Tapices</a>
                 </li>
               </ul>
             </div>
             <div className="col-4">
               <dd className="footer-name ms-4">Sobre Martei</dd>
               <ul>
+                <Link to={"/aboutUs"}>
                 <li>Nosotros</li>
+                </Link>
+                <Link to={"/profile"}>
                 <li>Perfil</li>
-                <li>Carrito</li>
+                </Link>
               </ul>
             </div>
           </div>
