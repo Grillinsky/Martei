@@ -72,20 +72,9 @@ function Product() {
                   {productIndividualData.description}
                 </p>
               </div>
-              <hr className="dividor-black" style={{ margin: '0' }} />
-              <div className="div-text-caracterics">
-                <dd className="dd-caracterics-style">Caracteristicas:</dd>
-                <ul className="li-caracterics-product">
-                  <li className="ul-caracterics">
-                    · Estructura: Metal Pintado
-                  </li>
-                  <li className="ul-caracterics">· Asiento: Cuero Natural</li>
-                  <li className="ul-caracterics">· Uso: Residencial</li>
-                  <li className="ul-caracterics">· Medidas: 70x70cm</li>
-                </ul>
-              </div>
-              <hr className="dividor-black" style={{ margin: '0' }} />
+              <hr className="dividor-black mb-3" style={{ margin: '0' }} />
               <p className="price-product"> Precio: 9.99 $USD</p>
+              <hr className="dividor-black mt-4" style={{ margin: '0' }} />
               <ButtonGroup className="d-flex justify-content-around my-3">
                 <Button className="me-2 btn-buy-product" variant="success">
                   Comprar
@@ -94,7 +83,7 @@ function Product() {
                   style={{
                     backgroundColor: 'var(--primary-color)',
                     border: '0',
-                    color: 'var(--black)'
+                    color: 'var(--black)',
                   }}
                   className="ms-2 btn-buy-cart"
                   onClick={() => handleAddToCart(productIndividualData)}
