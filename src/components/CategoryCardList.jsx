@@ -51,7 +51,7 @@ function CategoryCard() {
                   style={{ height: '18rem', objectFit: 'fill' }}
                 />
                 <Card.Body style={{ backgroundColor: 'white' }}>
-                  <Card.Title style={{ color: 'black', fontWeight: '900' }}>
+                  <Card.Title className="title-product-exclusive" style={{ color: 'black', fontWeight: '900' }}>
                     {product.name}
                   </Card.Title>
                   <Card.Text style={{ color: 'black', height: '16.5rem' }}>

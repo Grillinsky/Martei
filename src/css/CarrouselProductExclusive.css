@@ -1,6 +1,7 @@
 @import '../../node_modules/slick-carousel/slick/slick.css';
 @import '../../node_modules/slick-carousel/slick/slick-theme.css';
 
+
 .slick-slide {
   padding: 5px;
   margin-bottom: 23px;
@@ -38,4 +39,21 @@
 
 .title-exclusive-product {
   margin-left: 12px;
+}
+
+
+
+.price-exclusive-product {
+  font-weight: bolder !important;
+  font-size: 18px !important;
+  color: #A7846B !important;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.name-exclusive-product {
+  font-weight: bolder !important;
+  font-size: 17px !important;
+  font-style: italic;
+  font-family: 'Montserrat', sans-serif !important;
 }
