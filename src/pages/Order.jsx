@@ -3,6 +3,8 @@ import "../css/Order.css";
 import VisaLogo from "/visa.png";
 import MastercardLogo from "/mastercard.png";
 import Chip from "/chip-tarjeta.png";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const FormularioTarjeta = () => {
   const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
@@ -14,6 +16,35 @@ const FormularioTarjeta = () => {
   const [isCardFlipped, setIsCardFlipped] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isCCVInputFocused, setIsCCVInputFocused] = useState(true);
+
+  //Para llevar los datos de la compra
+  const itemsCarrito = useSelector((state) => state.cart);
+  const total = itemsCarrito.reduce(
+    (acc, item) => acc + item.price * item.qty,
+    0
+  );
+  // Para llevar los datos del usuario
+  const user = useSelector((state) => state.user);
+
+  const handleFinalizarCompra = async (e) => {
+    e.preventDefault();
+
+    const orderData = {
+      products: itemsCarrito,
+      address: user.address,
+      userId: user.id,
+      state: "pago",
+    };
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/order`,
+        orderData
+      );
+    } catch (error) {
+      console.error("Error al enviar la orden");
+    }
+  };
 
   const handleCardFlip = () => {
     setIsCardFlipped(!isCardFlipped);
@@ -226,8 +257,40 @@ const FormularioTarjeta = () => {
             />
           </div>
         </div>
-        <button type="submit" className="btn-enviar">
-          Enviar
+
+        <div className="border-top">
+          {user && (
+            <div>
+              <h3>Datos del Usuario</h3>
+              <p>
+                {" "}
+                Nombre: {user.firstname} {user.lastname}
+              </p>
+              <p>Email: {user.email} </p>
+              <p>Dirección de envío: {user.address}</p>
+            </div>
+          )}
+        </div>
+
+        <div className="border-top">
+          <h3>Detalles de la compra</h3>
+          {itemsCarrito.map((item) => (
+            <div key={item.id}>
+              <h5>{item.name}</h5>
+              <p>Precio unitario: U${item.price}</p>
+              <p>Cantidad: {item.qty}</p>
+              <p>Subtotal: U${item.price * item.qty}</p>
+            </div>
+          ))}
+          <h3>Total a pagar: U${total}</h3>
+        </div>
+
+        <button
+          type="submit"
+          className="btn-enviar"
+          onClick={handleFinalizarCompra}
+        >
+          Finalizar compra
         </button>
       </form>
     </div>
