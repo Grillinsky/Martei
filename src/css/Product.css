@@ -15,12 +15,12 @@
   font-size: 1rem;
   margin-right: 10px;
   color: black !important;
-  font-weight: bolder;
+  font-weight: 600 !important;
 }
 
 .dividor-black {
   background-color: black !important;
-  padding: 0.2%;
+  padding: 0.25%;
 }
 
 .div-text-description {
@@ -29,7 +29,7 @@
 }
 
 .text-description {
-  font-weight: bold;
+  font-weight: 100;
   text-align: justify;
   padding: 0.25rem;
   margin: 1px;
@@ -69,12 +69,20 @@
 
 .price-product {
   text-align: start !important;
-  font-size: 0.875rem !important;
-  color: #03357c !important;
+  font-size: 1.3em !important;
+  color: #02be89 !important;
   letter-spacing: 2px !important;
   font-weight: bolder !important;
-  margin-top: 3px;
-  margin-left: 16%;
+  margin-top: 10px;
+  margin-left: 24%;
   margin-bottom: 0% !important;
   margin-right: 0% !important;
+}
+
+.btn-buy-product {
+  border-radius: 7px !important;
+}
+
+.btn-buy-cart {
+  border-radius: 7px !important; 
 }

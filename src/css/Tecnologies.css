@@ -1,9 +1,14 @@
+#tecnologiesContainer {
+  margin-top: 0px !important;
+}
+
 .card-tecnology {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 100%;
+  margin-top: -15px !important;
 }
 
 .card-tecnology-about svg {

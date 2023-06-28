@@ -82,12 +82,12 @@ function Product() {
                   <li className="ul-caracterics">· Asiento: Cuero Natural</li>
                   <li className="ul-caracterics">· Uso: Residencial</li>
                   <li className="ul-caracterics">· Medidas: 70x70cm</li>
-                  <li className="price-product"> Precio: 9.99 $USD</li>
                 </ul>
               </div>
               <hr className="dividor-black" style={{ margin: '0' }} />
+              <p className="price-product"> Precio: 9.99 $USD</p>
               <ButtonGroup className="d-flex justify-content-around my-3">
-                <Button className="me-2" variant="success">
+                <Button className="me-2 btn-buy-product" variant="success">
                   Comprar
                 </Button>
                 <Button
@@ -96,7 +96,7 @@ function Product() {
                     border: '0',
                     color: 'var(--black)'
                   }}
-                  className="ms-2"
+                  className="ms-2 btn-buy-cart"
                   onClick={() => handleAddToCart(productIndividualData)}
                 >
                   Al carrito!

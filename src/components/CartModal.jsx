@@ -7,6 +7,7 @@ import {
   RemoveFromCart,
 } from "../../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
+import "../css/Order.css";
 
 function CartModal(props) {
   const itemsCarrito = useSelector((state) => state.cart);
@@ -87,7 +88,7 @@ function CartModal(props) {
             <p>No hay productos en el carrito...</p>
           )}
         </Modal.Body>
-        <div className="text-end p-4 fw-bold">
+        <div className="text-end p-4 fw-bold price-modal">
           Total a pagar: U$
           {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
         </div>
