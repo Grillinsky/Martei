@@ -113,6 +113,7 @@ footer {
   min-height: 15vh;
   background-color: var(--black);
   color: var(--white);
+  z-index: 80;
 }
 footer img {
   max-width: 50%;

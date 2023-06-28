@@ -116,7 +116,7 @@ function Tecnologies() {
         {/* BOOSTRAP */}
         <a className="social-link-7 m-2">
           <svg
-            class="bi bi-bootstrap"
+            className="bi bi-bootstrap"
             fill="black"
             height="70"
             viewBox="0 0 16 16"
