@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
+import NavBar from "../components/Navbar";
 
 const FormularioTarjeta = () => {
   const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
