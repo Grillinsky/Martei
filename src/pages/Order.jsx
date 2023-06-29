@@ -136,7 +136,8 @@ const FormularioTarjeta = () => {
   }, [user]);
 
   return (
-    <div className="contenedor">
+    <div className="contenedor mt-5">
+      <NavBar />
       <section className={`tarjeta ${isCardFlipped ? "active" : ""}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
