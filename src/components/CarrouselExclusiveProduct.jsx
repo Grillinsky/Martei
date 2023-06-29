@@ -76,7 +76,7 @@ const ExclusiveProductSection = () => {
           {productData.map((product) => (
             <div
               key={product.id}
-              className="ExclusiveProductColumn card"
+              className="ExclusiveProductColumn"
               onClick={() => handleViewProduct(product.id)}
             >
               {/* Contenido del producto */}
@@ -86,7 +86,9 @@ const ExclusiveProductSection = () => {
               />
               <h5 className="category-exclusive-product">{product.category}</h5>
               <h3 className="name-exclusive-product">{product.name}</h3>
-              <p className="price-exclusive-product text-warning">Us${product.price}🔥</p>
+              <p className="price-exclusive-product text-warning">
+                Us${product.price}🔥
+              </p>
             </div>
           ))}
         </Slider>
