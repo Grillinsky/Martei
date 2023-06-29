@@ -6,11 +6,13 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AddOrIncrement } from "../../redux/cartSlice";
 import "../css/Home.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     listProducts();
   }, []);
@@ -32,6 +34,11 @@ function ProductCard() {
     dispatch(AddOrIncrement(product));
     console.log("Added to cart", product);
   };
+
+  const handleBuy = (product) => {
+    dispatch(AddOrIncrement(product));
+    navigate("/order");
+  };
   return (
     <div className="m-2 mt-3 p-5">
       <div className="row">
@@ -42,14 +49,14 @@ function ProductCard() {
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
-                  style={{ height: '18rem', objectFit: 'cover' }}
+                  style={{ height: "18rem", objectFit: "cover" }}
                 />
                 <Card.Body style={{ backgroundColor: 'white', borderEndEndRadius:"22px", borderEndStartRadius:"22px" }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div className="mb-2 fw-normal" style={{ color: 'black', fontWeight: '900', fontSize:"20px" }}>
                       {product.name}
                     </div>
-                    <div className='fw-bolder fs-5 text-warning'>
+                    <div className="fw-bolder fs-5 text-warning">
                       ${product.price}
                     </div>
                   </div>
@@ -64,7 +71,11 @@ function ProductCard() {
                     Ver Producto
                   </button></Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
-                    <Button className="me-2 rounded" variant="success">
+                    <Button
+                      className="me-2 rounded"
+                      variant="success"
+                      onClick={() => handleBuy(product)}
+                    >
                       Comprar
                     </Button>
                     <Button
