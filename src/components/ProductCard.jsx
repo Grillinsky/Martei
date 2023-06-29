@@ -1,59 +1,61 @@
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-import ButtonGroup from 'react-bootstrap/ButtonGroup'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { AddOrIncrement } from '../../redux/cartSlice'
-import '../css/Home.css'
-import { Link } from 'react-router-dom'
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { AddOrIncrement } from "../../redux/cartSlice";
+import "../css/Home.css";
+import { Link } from "react-router-dom";
 
 function ProductCard() {
-  const [products, setProducts] = useState([])
-  const dispatch = useDispatch()
+  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
-    listProducts()
-  }, [])
+    listProducts();
+  }, []);
 
   async function listProducts() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/product`
-      )
+      );
       const productList = Array.isArray(response.data.products)
         ? response.data.products
-        : []
-      setProducts(productList)
+        : [];
+      setProducts(productList);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
-  const handleAddToCart = product => {
-    dispatch(AddOrIncrement(product))
-    console.log('Added to cart', product)
-  }
+  const handleAddToCart = (product) => {
+    dispatch(AddOrIncrement(product));
+    console.log("Added to cart", product);
+  };
   return (
     <div className="m-2 mt-3">
       <div className="row">
         {Array.isArray(products) ? (
-          products.map(product => (
+          products.map((product) => (
             <div key={product.id} className="col-12 col-md-4 col-lg-3 my-3">
               <Card>
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
-                  style={{ height: '18rem', objectFit: 'fill' }}
+                  style={{ height: '18rem', objectFit: 'cover' }}
                 />
                 <Card.Body style={{ backgroundColor: 'white', borderEndEndRadius:"22px", borderEndStartRadius:"22px" }}>
-                  <Card.Title style={{ color: 'black', fontWeight: '900' }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text className="card-text">
-                    {product.description}
-                  </Card.Text>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="mb-2" style={{ color: 'black', fontWeight: '900', fontSize:"20px" }}>
+                      {product.name}
+                    </div>
+                    <div className='fw-bolder fs-5 text-warning'>
+                      ${product.price}
+                    </div>
+                  </div>
                   <Link to={`/product/${product.id}`}>
                   <button
-                    className='btn btn-outline-dark text-black'
+                    className='mt-2 btn btn-outline-dark text-black'
                     style={{
                       color: 'white',
                       borderRadius:"7px" 
@@ -67,9 +69,9 @@ function ProductCard() {
                     </Button>
                     <Button
                       style={{
-                        backgroundColor: 'var(--primary-color)',
-                        border: '0',
-                        color: 'var(--black)'
+                        backgroundColor: "var(--primary-color)",
+                        border: "0",
+                        color: "var(--black)",
                       }}
                       className="ms-2 rounded"
                       onClick={() => handleAddToCart(product)}
@@ -86,7 +88,7 @@ function ProductCard() {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;

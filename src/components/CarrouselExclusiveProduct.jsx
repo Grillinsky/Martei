@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../css/CarrouselProductExclusive.css"
-
+import "../css/CarrouselProductExclusive.css";
 
 const ExclusiveProductSection = () => {
   const navigate = useNavigate();
@@ -15,7 +14,9 @@ const ExclusiveProductSection = () => {
 
   async function productList() {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/product`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/product`
+      );
       const products = response.data.products;
       setProducts(products);
     } catch (error) {
@@ -26,7 +27,6 @@ const ExclusiveProductSection = () => {
   const handleViewProduct = (productId) => {
     navigate(`/product/${productId}`);
   };
-
 
   const carouselSettings = {
     dots: false,
@@ -63,25 +63,30 @@ const ExclusiveProductSection = () => {
 
   return (
     <section className="py-2 container-fluid" id="exclusiveProduct">
-      <div className="d-flex justify-content-around align-items-center mt-2 mb-3">
-        <h2 className="mt-3 title-exclusive-product">
-          Productos destacados!
-        </h2>
+      <div className="container w-75 d-flex justify-content-between align-items-center mt-2 mb-3">
+        <h2 className="mt-3 title-exclusive-product">Productos destacados!</h2>
         <Link to={"/productsPage"}>
-          <button className="btn-dark-product-exclusive me-5">
+          <button className="btn-dark-product-exclusive">
             Todos los productos <i className="fas fa-chevron-right"></i>
           </button>
         </Link>
       </div>
-      <div className="container d-flex container-cards-product">
-        <Slider {...carouselSettings}>
+      <div className="container d-flex">
+        <Slider {...carouselSettings} id="slider">
           {productData.map((product) => (
-            <div key={product.id} className="ExclusiveProductColumn card" onClick={() => handleViewProduct(product.id)}>
+            <div
+              key={product.id}
+              className="ExclusiveProductColumn card"
+              onClick={() => handleViewProduct(product.id)}
+            >
               {/* Contenido del producto */}
-              <img src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} alt={product.name} />
+              <img
+                src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
+                alt={product.name}
+              />
               <h5 className="category-exclusive-product">{product.category}</h5>
               <h3 className="name-exclusive-product">{product.name}</h3>
-              <p className="price-exclusive-product">Price: ${product.price}🔥</p>
+              <p className="price-exclusive-product">Us${product.price}🔥</p>
             </div>
           ))}
         </Slider>
