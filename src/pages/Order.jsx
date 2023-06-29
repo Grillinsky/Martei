@@ -305,9 +305,9 @@ const FormularioTarjeta = () => {
             </div>
           ) : (
             <div>
-              <p className="alert alert-info">
-                ¡Recuerda que debes loguearte para finalizar la compra!
-                <Link className="btn" to="/login">
+              <p className="alert alert-info text-danger">
+                ¡Recuerda que debes loguearte para finalizar la compra!{" "}
+                <Link className="text-primary" to="/login">
                   Iniciar Sesión
                 </Link>
               </p>
@@ -319,14 +319,14 @@ const FormularioTarjeta = () => {
           <h3>Detalles de la compra</h3>
           {itemsCarrito.map((item) => (
             <div key={item.id}>
-              <h5>{item.name}</h5>
-              <p>
-                Precio unitario: U${item.price} - Cantidad: {item.qty}
+              <h6 className="bg-light-subtle"> {item.name}</h6>
+              <p className="m-0">
+                Precio unitario: U${item.price} - Cantidad: {item.qty} - U$
+                {item.price * item.qty}
               </p>
-              <p>Subtotal: U${item.price * item.qty}</p>
             </div>
           ))}
-          <h3>Total a pagar: U${total}</h3>
+          <h3 className="text-end">Total a pagar: U${total}</h3>
         </div>
 
         <button

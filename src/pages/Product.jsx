@@ -1,37 +1,42 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Button, ButtonGroup } from 'react-bootstrap'
-import axios from 'axios'
-import '../css/Product.css'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { useDispatch } from 'react-redux'
-import { AddOrIncrement } from '../../redux/cartSlice'
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Button, ButtonGroup } from "react-bootstrap";
+import axios from "axios";
+import "../css/Product.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { useDispatch } from "react-redux";
+import { AddOrIncrement } from "../../redux/cartSlice";
 
 function Product() {
-  const { id } = useParams()
-  const [productIndividualData, setProductIndividualData] = useState(null)
-  const dispatch = useDispatch()
+  const { id } = useParams();
+  const [productIndividualData, setProductIndividualData] = useState(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getProductIndividual()
-  }, [])
+    getProductIndividual();
+  }, []);
 
-  const handleAddToCart = product => {
-    dispatch(AddOrIncrement(product))
-    console.log('Added to cart', product)
-  }
+  const handleAddToCart = (product) => {
+    dispatch(AddOrIncrement(product));
+    console.log("Added to cart", product);
+  };
+  const handleBuy = (product) => {
+    dispatch(AddOrIncrement(product));
+    navigate("/order");
+  };
 
   async function getProductIndividual() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/product/${id}`
-      )
-      const productIndividualData = response.data
+      );
+      const productIndividualData = response.data;
 
-      setProductIndividualData(productIndividualData)
+      setProductIndividualData(productIndividualData);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -40,10 +45,10 @@ function Product() {
       <Navbar />
       {productIndividualData && (
         <div className="container-fluid d-flex justify-content-center align-items-center py-5">
-          <div id="ItemContainer" className="row" style={{ marginTop: '3rem' }}>
+          <div id="ItemContainer" className="row" style={{ marginTop: "3rem" }}>
             <div
               className="col-12 col-md-6 col-lg-8 text-dark d-flex p-0 align-items-center justify-content-center"
-              style={{ backgroundColor: 'transparent' }}
+              style={{ backgroundColor: "transparent" }}
             >
               <img
                 className="Item img-fluid"
@@ -55,35 +60,39 @@ function Product() {
             </div>
             <div
               className="col-12 col-lg-4 col-md-6 text-white d-flex flex-column align-content-between"
-              style={{ backgroundColor: 'var(--white)' }}
+              style={{ backgroundColor: "var(--white)" }}
             >
               <div className="d-flex justify-content-between align-items-end">
                 <img
                   src="/logoFinal.png"
                   alt="Logo de Martei"
                   className="logo"
-                />{' '}
+                />{" "}
                 <h1 className="fs-6 text-product">Martei - Ecommerce</h1>
               </div>
 
-              <hr className="dividor-black" style={{ margin: '0' }} />
+              <hr className="dividor-black" style={{ margin: "0" }} />
               <div className="div-text-description">
                 <p className="text-description">
                   {productIndividualData.description}
                 </p>
               </div>
-              <hr className="dividor-black mb-3" style={{ margin: '0' }} />
+              <hr className="dividor-black mb-3" style={{ margin: "0" }} />
               <p className="price-product"> Precio: 9.99 $USD</p>
-              <hr className="dividor-black mt-4" style={{ margin: '0' }} />
+              <hr className="dividor-black mt-4" style={{ margin: "0" }} />
               <ButtonGroup className="d-flex justify-content-around my-3">
-                <Button className="me-2 btn-buy-product" variant="success">
+                <Button
+                  className="me-2 btn-buy-product"
+                  variant="success"
+                  onClick={() => handleBuy(productIndividualData)}
+                >
                   Comprar
                 </Button>
                 <Button
                   style={{
-                    backgroundColor: 'var(--primary-color)',
-                    border: '0',
-                    color: 'var(--black)',
+                    backgroundColor: "var(--primary-color)",
+                    border: "0",
+                    color: "var(--black)",
                   }}
                   className="ms-2 btn-buy-cart"
                   onClick={() => handleAddToCart(productIndividualData)}
@@ -97,7 +106,7 @@ function Product() {
       )}
       <Footer />
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
