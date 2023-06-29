@@ -35,6 +35,14 @@ const FormularioTarjeta = () => {
     (acc, item) => acc + item.price * item.qty,
     0
   )
+  const [errorTwoToast, setTwoErrorToast] = useState(itemsCarrito.length === 0)
+
+  useEffect(() => {
+    if (errorTwoToast) {
+      setTwoErrorToast(true)
+      toast.error('Debes agregar al menos un producto para finalizar la compra')
+    }
+  }, [errorTwoToast, itemsCarrito.length])
 
   useEffect(() => {
     if (showToast) {
@@ -73,7 +81,6 @@ const FormularioTarjeta = () => {
       if (user) {
         if (itemsCarrito.length === 0) {
           setErrorToast(true)
-          //return
 
           const timer = setTimeout(() => {
             window.location.href = '/productsPage'

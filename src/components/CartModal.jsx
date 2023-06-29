@@ -93,10 +93,12 @@ function CartModal(props) {
             <p>No hay productos en el carrito...</p>
           )}
         </Modal.Body>
-        <div className="text-end p-4 fw-bold price-modal">
-          Total a pagar: U$
-          {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
-        </div>
+        {itemsCarrito.length > 0 && (
+          <div className="text-end p-4 fw-bold price-modal">
+            Total a pagar: U$
+            {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
+          </div>
+        )}
         <Modal.Footer className="mi-modal-footer">
           <Button className="btn-tacho" onClick={handleClearCart}>
             <i className="fa fa-trash-o" aria-hidden="true"></i>
