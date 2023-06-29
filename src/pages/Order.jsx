@@ -36,11 +36,11 @@ const FormularioTarjeta = () => {
     if (user) {
       const orderData = {
         products: itemsCarrito,
-        address: user.address,
+        address: address,
         userId: user.id,
         state: "pago",
       };
-
+      console.log(address);
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/order`,
