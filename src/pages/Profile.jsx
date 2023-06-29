@@ -19,7 +19,6 @@ function Profile() {
           `${import.meta.env.VITE_API_URL}/users/${user.id}`
         );
         const profileData = response.data;
-        console.log(profileData)
         setProfileData(profileData);
       } catch (error) {
         console.error(error);

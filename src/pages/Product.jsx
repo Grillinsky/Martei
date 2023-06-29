@@ -78,7 +78,10 @@ function Product() {
                 </p>
               </div>
               <hr className="dividor-black mb-3" style={{ margin: "0" }} />
-              <p className="price-product"> Precio: 9.99 $USD</p>
+              <p className="price-product text-warning">
+                {" "}
+                Precio: {productIndividualData.price} $USD
+              </p>
               <hr className="dividor-black mt-4" style={{ margin: "0" }} />
               <ButtonGroup className="d-flex justify-content-around my-3">
                 <Button

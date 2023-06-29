@@ -56,13 +56,13 @@ function CartModal(props) {
                 return (
                   <li key={index} className="row">
                     <span className="col-4">{item.name}</span>
-                    <span className="col-4">
+                    <span className="col-4 card-modal-increment-decrement">
                       <button
                         className="fs-3 btn btn-link p-0 m-0 more-less"
                         onClick={() => handleDecrement(item.id)}
                         aria-label="Minus Button"
                       >
-                        <i className="fas fa-minus-circle"></i>
+                        <i className="fas fa-minus-circle fs-4 mx-2"></i>
                       </button>
                       <input
                         type="text"
@@ -75,7 +75,7 @@ function CartModal(props) {
                         onClick={() => handleIncrement(item)}
                         aria-label="Add Button"
                       >
-                        <i className="fas fa-plus-circle"></i>
+                        <i className="fas fa-plus-circle fs-4 ms-2"></i>
                       </button>
                     </span>
                     <span className="col-4">
