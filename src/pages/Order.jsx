@@ -23,7 +23,6 @@ const FormularioTarjeta = () => {
   const [address, setAddress] = useState("");
   const dispatch = useDispatch();
 
-  //Para llevar los datos de la compra
   const itemsCarrito = useSelector((state) => state.cart);
   const total = itemsCarrito.reduce(
     (acc, item) => acc + item.price * item.qty,
@@ -137,7 +136,7 @@ const FormularioTarjeta = () => {
 
   return (
     <div className="contenedor">
-      <section className={`tarjeta ${isCardFlipped} ? "active" : ""}`}>
+      <section className={`tarjeta ${isCardFlipped ? "active" : ""}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
             {numeroTarjeta.charAt(0) === "4" ? (
@@ -161,7 +160,7 @@ const FormularioTarjeta = () => {
               <div className="grupo" id="expiracion">
                 <p className="label">Expiracion</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span>{" "}
+                  <span className="mes">{mesExpiracion}</span>/{" "}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>

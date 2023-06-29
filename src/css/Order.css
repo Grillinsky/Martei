@@ -119,14 +119,13 @@
   background: repeating-linear-gradient(
     skyblue 0,
     skyblue 5px,
-    orange 5px,
-    orange 10px
+    white 5px,
+    white 10px
   );
 }
 
 .trasera .datos #firma .firma p {
   line-height: 40px;
-  font-family: 'Liu Jian Mao Cao', cursive;
   color: #000;
   font-size: 30px;
   padding: 0 10px;
@@ -275,7 +274,7 @@
   padding: 10px;
   font-size: 22px;
   color: #fff;
-  background: #d8931c;
+  background: #d48f17;
   box-shadow: 2px 2px 10px 0px rgba(244, 107, 2, 0.4);
   cursor: pointer;
 }
