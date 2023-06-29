@@ -77,7 +77,7 @@ function CategoryCard() {
                       {product.name}
                     </div>
                     <div className="fw-bolder fs-5 text-warning">
-                      ${product.price}
+                      Us${product.price}
                     </div>
                   </div>
                   <Link to={`/product/${product.id}`}>
