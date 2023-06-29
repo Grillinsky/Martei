@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ExclusiveProductSection from "../components/CarrouselExclusiveProduct";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 function Home() {
   const [showToast, setShowToast] = useState(false);
@@ -16,13 +16,13 @@ function Home() {
   useEffect(() => {
     if (isLoggedIn) {
       setShowToast(true);
-      toast.success('¡Bienvenido a Martei!');
+      toast.success("¡Bienvenido a Martei!");
     }
   }, [isLoggedIn]);
 
   return (
     <div>
-       <ToastContainer
+      <ToastContainer
         position="top-right"
         autoClose={2000}
         hideProgressBar={false}
@@ -35,7 +35,7 @@ function Home() {
         theme="light"
       />
       <Navbar />
-      <article className="container-fluid my-5">
+      <article className="container-fluid mt-5">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
         </h1>{" "}
@@ -74,7 +74,7 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Mueble1.jpg"
+                        src="/MueblesFinal3.jpeg"
                         className="w-100"
                         alt="Colgante de techo, en hilo y madera"
                       />
@@ -108,7 +108,7 @@ function Home() {
                       />
                     </div> */}
                   </div>
-                  <button
+                  {/* <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#mueblesCarrouselFade"
@@ -131,7 +131,7 @@ function Home() {
                       aria-hidden="true"
                     ></span>
                     <span className="visually-hidden">Next</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ function Home() {
                       />
                     </div> */}
                   </div>
-                  <button
+                  {/* <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#cuadrosCarrouselFade"
@@ -197,7 +197,7 @@ function Home() {
                       aria-hidden="true"
                     ></span>
                     <span className="visually-hidden">Next</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="col-lg-8 border rounded p-5 product-category-two">
@@ -241,9 +241,9 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Espejo1.jpg"
+                        src="/EspejosFinal5.jpeg"
                         className="w-100"
-                        alt="Espejo cuadrado con detalle metalico en las esquinas"
+                        alt="Espejo cuadrado con cuadro clasico en madera"
                       />
                     </div>
                     {/* <div className="carousel-item">
@@ -275,7 +275,7 @@ function Home() {
                       />
                     </div> */}
                   </div>
-                  <button
+                  {/* <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#espejosCarrouselFade"
@@ -298,7 +298,7 @@ function Home() {
                       aria-hidden="true"
                     ></span>
                     <span className="visually-hidden">Next</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -314,7 +314,7 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Luminaria1.jpg"
+                        src="/LuminariasFinal6.jpeg"
                         className="w-100"
                         alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                       />
@@ -348,7 +348,7 @@ function Home() {
                       />
                     </div> */}
                   </div>
-                  <button
+                  {/* <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#luminariasCarrouselFade"
@@ -371,7 +371,7 @@ function Home() {
                       aria-hidden="true"
                     ></span>
                     <span className="visually-hidden">Next</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="col-lg-8 border rounded p-5 product-category-two">
@@ -418,7 +418,7 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/Tapiz1.jpg"
+                        src="/TapizFinal2.jpeg"
                         className="w-100"
                         alt="Tapiz blanco patron de rombos"
                       />
@@ -452,7 +452,7 @@ function Home() {
                       />
                     </div> */}
                   </div>
-                  <button
+                  {/* <button
                     className="carousel-control-prev"
                     type="button"
                     data-bs-target="#tapizCarrouselFade"
@@ -475,7 +475,7 @@ function Home() {
                       aria-hidden="true"
                     ></span>
                     <span className="visually-hidden">Next</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

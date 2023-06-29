@@ -49,7 +49,7 @@ function NavBar() {
       <header id="header">
         <Navbar id="navContainer" expand="lg" fixed="top">
           <Container fluid>
-            <Navbar.Brand href="/" className="p-2">
+            <Navbar.Brand href="/" className="p-0">
               <img
                 src="/logoFinal.png"
                 alt="Logo"

@@ -1,5 +1,5 @@
-@import '../../node_modules/slick-carousel/slick/slick.css';
-@import '../../node_modules/slick-carousel/slick/slick-theme.css';
+@import "../../node_modules/slick-carousel/slick/slick.css";
+@import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 .slick-slide {
   padding: 5px;
@@ -15,7 +15,7 @@
 
 .slick-list {
   overflow: hidden;
-  width: 1283px !important;
+  width: 80vw !important;
 }
 
 .ExclusiveProductColumn {
@@ -25,17 +25,12 @@
   margin-left: 44px;
   width: 232px !important;
   height: auto !important;
-  box-shadow: 4px 4px 10px -6px rgba(255,255,255,255);
+  box-shadow: 4px 4px 10px -6px rgba(255, 255, 255, 255);
 }
 
-.btn-dark-product-exclusive{
+.btn-dark-product-exclusive {
   padding: 7px 16px 7px 16px;
   border-radius: 7px !important;
   font-weight: bolder;
   margin-left: 250px;
-}
-
-
-.title-exclusive-product {
-  margin-left: 12px;
 }
