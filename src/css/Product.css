@@ -1,11 +1,13 @@
 #ItemContainer {
-  max-width: 70%;
+  max-width: 60%;
+  max-height: 80dvh;
+  overflow: hidden;
   background-color: var(--white);
 }
 .Item {
   background-color: rgb(0, 0, 0) !important;
   max-width: 100%;
-  padding: 0% !important;
+  padding-bottom: 0% !important;
 }
 
 .Item img {
@@ -88,4 +90,30 @@
 
 .btn-buy-cart {
   border-radius: 7px !important;
+}
+@media screen and (max-width: 1200px) {
+  #ItemContainer {
+    max-width: 80%;
+    max-height: 80dvh;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+  .Item {
+    background-color: rgb(0, 0, 0) !important;
+    max-width: 100%;
+    padding-bottom: 0% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  #ItemContainer {
+    max-width: 80%;
+    max-height: 100dvh;
+    overflow: hidden;
+    background-color: var(--white);
+  }
+  .Item {
+    background-color: rgb(0, 0, 0) !important;
+    max-width: 100%;
+    padding-bottom: 0% !important;
+  }
 }
