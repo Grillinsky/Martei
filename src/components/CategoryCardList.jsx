@@ -82,7 +82,7 @@ function CategoryCard() {
                   </div>
                   <Link to={`/product/${product.id}`}>
                     <button
-                      className="btn btn-outline-dark text-black"
+                      className="mt-2 mb-1 btn btn-outline-dark text-black"
                       style={{
                         color: "white",
                         borderRadius: "7px",
