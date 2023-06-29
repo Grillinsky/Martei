@@ -1,148 +1,148 @@
-import React, { useEffect, useState } from "react";
-import "../css/Order.css";
-import VisaLogo from "/visa.png";
-import MastercardLogo from "/mastercard.png";
-import Chip from "/chip-tarjeta.png";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { clearCart } from "../../redux/cartSlice";
+import React, { useEffect, useState } from 'react'
+import '../css/Order.css'
+import VisaLogo from '/visa.png'
+import MastercardLogo from '/mastercard.png'
+import Chip from '/chip-tarjeta.png'
+import { useSelector, useDispatch } from 'react-redux'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { clearCart } from '../../redux/cartSlice'
 
 const FormularioTarjeta = () => {
-  const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
-  const [nombreTarjeta, setNombreTarjeta] = useState("");
-  const [mesExpiracion, setMesExpiracion] = useState("MM");
-  const [yearExpiracion, setYearExpiracion] = useState("AA");
-  const [ccv, setCcv] = useState("***");
+  const [numeroTarjeta, setNumeroTarjeta] = useState('#### #### #### ####')
+  const [nombreTarjeta, setNombreTarjeta] = useState('')
+  const [mesExpiracion, setMesExpiracion] = useState('MM')
+  const [yearExpiracion, setYearExpiracion] = useState('AA')
+  const [ccv, setCcv] = useState('***')
 
-  const [isCardFlipped, setIsCardFlipped] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true);
+  const [isCardFlipped, setIsCardFlipped] = useState(false)
+  const [isFormOpen, setIsFormOpen] = useState(false)
+  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true)
 
-  const user = useSelector((state) => state.user);
-  const [address, setAddress] = useState("");
-  const dispatch = useDispatch();
+  const user = useSelector(state => state.user)
+  const [address, setAddress] = useState('')
+  const dispatch = useDispatch()
 
   //Para llevar los datos de la compra
-  const itemsCarrito = useSelector((state) => state.cart);
+  const itemsCarrito = useSelector(state => state.cart)
   const total = itemsCarrito.reduce(
     (acc, item) => acc + item.price * item.qty,
     0
-  );
+  )
 
-  const handleFinalizarCompra = async (e) => {
-    e.preventDefault();
+  const handleFinalizarCompra = async e => {
+    e.preventDefault()
 
     if (user) {
       const orderData = {
         products: itemsCarrito,
         address: address,
         userId: user.id,
-        state: "pago",
-      };
-      console.log(address);
+        state: 'pago'
+      }
+      console.log(address)
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/order`,
           orderData
-        );
-        dispatch(clearCart());
+        )
+        dispatch(clearCart())
       } catch (error) {
-        console.error("Error al enviar la orden");
+        console.error('Error al enviar la orden')
       }
 
-      window.location.href = "/";
+      window.location.href = '/'
     } else {
-      window.location.href = "/login";
+      window.location.href = '/login'
     }
-  };
+  }
 
-  const handleAddressChange = (event) => {
-    setAddress(event.target.value);
-  };
+  const handleAddressChange = event => {
+    setAddress(event.target.value)
+  }
 
   const handleCardFlip = () => {
-    setIsCardFlipped(!isCardFlipped);
-  };
+    setIsCardFlipped(!isCardFlipped)
+  }
 
   const meses = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-  ];
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12'
+  ]
 
-  const years = ["2023", "2024", "2025", "2026"];
+  const years = ['2023', '2024', '2025', '2026']
 
   const handleFormToggle = () => {
-    setIsFormOpen(!isFormOpen);
-  };
+    setIsFormOpen(!isFormOpen)
+  }
 
-  const handleNumeroTarjetaChange = (e) => {
-    let valorInput = e.target.value;
+  const handleNumeroTarjetaChange = e => {
+    let valorInput = e.target.value
 
     valorInput = valorInput
-      .replace(/\s/g, "")
-      .replace(/\D/g, "")
-      .replace(/([0-9]{4})/g, "$1 ")
-      .trim();
+      .replace(/\s/g, '')
+      .replace(/\D/g, '')
+      .replace(/([0-9]{4})/g, '$1 ')
+      .trim()
 
-    setNumeroTarjeta(valorInput);
+    setNumeroTarjeta(valorInput)
 
-    if (valorInput === "") {
-      setNumeroTarjeta("#### #### #### ####");
+    if (valorInput === '') {
+      setNumeroTarjeta('#### #### #### ####')
     }
-    setIsCardFlipped(false);
-  };
+    setIsCardFlipped(false)
+  }
 
-  const handleNombreTarjetaChange = (e) => {
-    let valorInput = e.target.value;
+  const handleNombreTarjetaChange = e => {
+    let valorInput = e.target.value
 
-    valorInput = valorInput.replace(/[0-9]/g, "");
+    valorInput = valorInput.replace(/[0-9]/g, '')
 
-    setNombreTarjeta(valorInput);
-    setIsCardFlipped(false);
-  };
+    setNombreTarjeta(valorInput)
+    setIsCardFlipped(false)
+  }
 
-  const handleMesExpiracionChange = (e) => {
-    setMesExpiracion(e.target.value);
-  };
+  const handleMesExpiracionChange = e => {
+    setMesExpiracion(e.target.value)
+  }
 
-  const handleYearExpiracionChange = (e) => {
-    setYearExpiracion(e.target.value.slice(2));
-  };
+  const handleYearExpiracionChange = e => {
+    setYearExpiracion(e.target.value.slice(2))
+  }
 
-  const handleCcvChange = (e) => {
-    let valorInput = e.target.value;
+  const handleCcvChange = e => {
+    let valorInput = e.target.value
 
-    valorInput = valorInput.replace(/\s/g, "").replace(/\D/g, "");
+    valorInput = valorInput.replace(/\s/g, '').replace(/\D/g, '')
 
-    setCcv(valorInput);
-    setIsCardFlipped(true); // Voltear la tarjeta a la parte delantera
-  };
+    setCcv(valorInput)
+    setIsCardFlipped(true) // Voltear la tarjeta a la parte delantera
+  }
 
   useEffect(() => {
     if (user) {
-      setAddress(user.address);
+      setAddress(user.address)
     }
-  }, [user]);
+  }, [user])
 
   return (
     <div className="contenedor">
-      <section className={`tarjeta ${isCardFlipped} ? "active" : ""}`}>
+      <section className={`tarjeta ${isCardFlipped ? 'active' : ''}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
-            {numeroTarjeta.charAt(0) === "4" ? (
+            {numeroTarjeta.charAt(0) === '4' ? (
               <img src={VisaLogo} alt="Visa" />
-            ) : numeroTarjeta.charAt(0) === "5" ? (
+            ) : numeroTarjeta.charAt(0) === '5' ? (
               <img src={MastercardLogo} alt="Mastercard" />
             ) : null}
           </div>
@@ -159,9 +159,9 @@ const FormularioTarjeta = () => {
               </div>
 
               <div className="grupo" id="expiracion">
-                <p className="label">Expiracion</p>
+                <p className="label">Expiración</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span>{" "}
+                  <span className="mes">{mesExpiracion}</span>{' '}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>
@@ -195,7 +195,7 @@ const FormularioTarjeta = () => {
 
       <div className="contenedor-btn">
         <button
-          className={`btn-abrir-formulario ${isFormOpen ? "active" : ""}`}
+          className={`btn-abrir-formulario ${isFormOpen ? 'active' : ''}`}
           onClick={handleFormToggle}
           aria-label="Plus Button"
         >
@@ -206,7 +206,7 @@ const FormularioTarjeta = () => {
       <form
         action=""
         id="formulario-tarjeta"
-        className={`formulario-tarjeta ${isFormOpen ? "active" : ""}`}
+        className={`formulario-tarjeta ${isFormOpen ? 'active' : ''}`}
       >
         <div className="grupo">
           <label htmlFor="inputNumero">Número Tarjeta</label>
@@ -241,7 +241,7 @@ const FormularioTarjeta = () => {
                   <option disabled selected>
                     Mes
                   </option>
-                  {meses.map((mes) => (
+                  {meses.map(mes => (
                     <option key={mes} value={mes}>
                       {mes}
                     </option>
@@ -258,7 +258,7 @@ const FormularioTarjeta = () => {
                   <option disabled selected>
                     Año
                   </option>
-                  {years.map((year) => (
+                  {years.map(year => (
                     <option key={year} value={year}>
                       {year}
                     </option>
@@ -269,7 +269,7 @@ const FormularioTarjeta = () => {
             </div>
           </div>
 
-          <div className={`grupo ccv ${isCCVInputFocused ? "active" : ""}`}>
+          <div className={`grupo ccv ${isCCVInputFocused ? 'active' : ''}`}>
             <label htmlFor="inputCCV">CCV</label>
             <input
               type="text"
@@ -306,7 +306,7 @@ const FormularioTarjeta = () => {
           ) : (
             <div>
               <p className="alert alert-info text-danger">
-                ¡Recuerda que debes loguearte para finalizar la compra!{" "}
+                ¡Recuerda que debes loguearte para finalizar la compra!{' '}
                 <Link className="text-primary" to="/login">
                   Iniciar Sesión
                 </Link>
@@ -317,7 +317,7 @@ const FormularioTarjeta = () => {
 
         <div className="border-top mt-3">
           <h3>Detalles de la compra</h3>
-          {itemsCarrito.map((item) => (
+          {itemsCarrito.map(item => (
             <div key={item.id}>
               <h6 className="bg-light-subtle"> {item.name}</h6>
               <p className="m-0">
@@ -338,6 +338,6 @@ const FormularioTarjeta = () => {
         </button>
       </form>
     </div>
-  );
-};
-export default FormularioTarjeta;
+  )
+}
+export default FormularioTarjeta
