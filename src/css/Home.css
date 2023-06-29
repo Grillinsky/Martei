@@ -164,7 +164,7 @@ a:hover {
   /* margin-right: -199px !important; */
 }
 .btn-dark-product-exclusive:hover {
-  transform: translateX(2rem);
+  transform: scale(1.04);
   transition: 0.5s;
 }
 
