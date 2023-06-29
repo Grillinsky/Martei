@@ -68,6 +68,7 @@ function CartModal(props) {
                         type="text"
                         className="form-control-sm w-25 text-center"
                         value={item.qty}
+                        readOnly
                       />
                       <button
                         className="fs-3 btn btn-link p-0 m-0 more-less"
