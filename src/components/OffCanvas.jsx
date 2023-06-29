@@ -56,27 +56,23 @@ function OffCanvas() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="container container-off-canvas">
-            <h1 className="fs-3">Sobre Este Proyecto:</h1>
+            <h1 className="fs-4 mb-1">Sobre Este Proyecto:</h1>
             <dd className="fs-6 fw-normal">
-              Martei es un e-commerce creado como proyecto final del Bootcamp de
-              HackAcademy Fue desarrolado durante 3 semanas por 4 estudiantes.
-              Haz click para más información!
+            Martei es un e-commerce creado como proyecto final del Bootcamp de HackAcademy. Fue desarrollado durante 3 semanas por 4 estudiantes. ¡Haz clic para obtener más información!
             </dd>
           </div>
           <div className="off-canvas-button-div">
             <Link to={"/aboutUs"}>
-              <button className="btn-user-canvas">
-                Sobre Nosotros
+              <button className="m-0 btn-user-canvas">
+                Sobre nosotros
               </button>
             </Link>
           </div>
           <hr className="m-1" />
           <div className="container container-off-canvas">
-            <h1 className="fs-3" id="text-guia-class">Guia De Navegacion:</h1>
+            <h1 className="fs-4" id="text-guia-class">Guia De Navegacion:</h1>
             <dd className="fs-6">
-              Sientete libre de navegar por este sitio, agrega productos a tu
-              carrito, y finaliza tu compra logeandote con las credenciales de
-              usuario:
+            Siéntete libre de navegar por este sitio, agregar productos a tu carrito y finalizar tu compra iniciando sesión con las credenciales de usuario:
             </dd>
             <ul className="list-off-canvas">
               <li className="fw-normal">Usuario: User@user.com</li>
@@ -85,15 +81,13 @@ function OffCanvas() {
           </div>
           <div className="off-canvas-button-div">
               <button className="btn-user-canvas" onClick={handleLogin}>
-                Login User
+                Loguear como User
               </button>
           </div>
           <hr className="m-1" />
           <div className="container container-off-canvas">
             <dd className="fs-6">
-              Si quieres probar las funcionalidades de Admin, como crear, aditar
-              o borrar ya sea categorias, productos, usuarios u ordenes puedes
-              acceder con las siguientes credenciales:
+            Si quieres probar las funcionalidades de administrador, como crear, editar o borrar categorías, productos, usuarios u órdenes, puedes acceder con las siguientes credenciales:
             </dd>
             <ul className="list-off-canvas">
               <li className="fw-normal">Usuario: Admin@admin.com</li>
@@ -103,11 +97,10 @@ function OffCanvas() {
           <div className="off-canvas-button-div">
             <Link to={`${import.meta.env.VITE_ADMIN_URL}/login`}>
               <button className="btn-user-canvas">
-                Login Admin
+                Loguearte como Admin
               </button>
             </Link>
           </div>
-          <hr id="hr-canvas" />
         </Offcanvas.Body>
       </Offcanvas>
     </>

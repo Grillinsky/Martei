@@ -61,16 +61,17 @@ article {
 .hero-title {
   align-self: flex-start;
   text-align: center;
+  font-weight: 400 !important;
   font-size: calc(10rem - 3vw);
 }
 .hero-title::first-letter {
   font-size: calc(12rem - 3vw);
-  font-weight: 100;
+  font-weight: 400 !important;
 }
 .hero-paragraph {
   text-align: center;
   font-size: calc(2.5rem - 1vw);
-  font-weight: 600;
+  font-weight: 400;
 }
 article {
   padding: 5rem;
