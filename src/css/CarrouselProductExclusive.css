@@ -34,3 +34,18 @@
   font-weight: bolder;
   margin-left: 250px;
 }
+
+.price-exclusive-product {
+  font-weight: bolder !important;
+  font-size: 18px !important;
+  color: #a7846b !important;
+  font-style: italic;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.name-exclusive-product {
+  font-weight: bolder !important;
+  font-size: 17px !important;
+  font-style: italic;
+  font-family: "Montserrat", sans-serif !important;
+}

@@ -1,37 +1,46 @@
-import React, {/*  useEffect */ useState } from "react";
-/* import { useSelector } from "react-redux";
-import axios from "axios"; */
+import React, {  useEffect, useState } from "react";
+ import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
+import { logoutUser } from "../../redux/userSlice";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
 
 function Profile() {
- /*  const user = useSelector((state) => state.user);
-  const [profileData, setProfileData] = useState(null); */
+  const dispatch = useDispatch();
+   const user = useSelector((state) => state.user);
+  const [profileData, setProfileData] = useState(null); 
 
- /*  useEffect(() => {
+  useEffect(() => {
     async function getProfileDataUser() {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_API_URL}/users/${user.id}`
         );
         const profileData = response.data;
+        console.log(profileData)
         setProfileData(profileData);
       } catch (error) {
         console.error(error);
       }
-    } */
+    } 
 
-    /* if (user) {
+    if (user) {
       getProfileDataUser();
     }
-  }, [user]); */
+  }, [user]); 
 
   const [sliderActive, setSliderActive] = useState(false);
   const toggleSlider = () => {
     setSliderActive(!sliderActive);
   };
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
+
   
     return (
       <div>
@@ -48,12 +57,12 @@ function Profile() {
           <div className="profile_wrap">
             <div className="profile_img">
               <img src="Profilephoto.png" alt="profile_pic" />
-              <p className="name">Alex Garcia</p>
+              <p className="name">{profileData.firstname} {profileData.lastname}</p>
               <p className="place">
                 <span className="icon">
                   <i className="fas fa-map-pin"></i>
                 </span>
-                <span className="pla|ce_name">Ciudad Vieja, Montevideo</span>
+                <span className="place_name">{profileData.address}</span>
               </p>
             </div>
   
@@ -137,7 +146,7 @@ function Profile() {
             </li>
             <li>
                 <div className="slider_right d-flex justify-content-center">
-                  <div className="btn btn-outline-danger btn-logout-profile"> <i className="fas fa-sign-out-alt"></i></div>
+                  <div onClick={handleLogout} className="btn btn-outline-danger btn-logout-profile"> <i className="fas fa-sign-out-alt"></i></div>
                 </div>
             </li>
           </ul>

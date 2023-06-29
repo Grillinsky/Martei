@@ -227,6 +227,26 @@ a:hover {
   border: none;
 }
 
+
+.btn-outline-dark {
+  width: 100%;
+}
+.btn-outline-dark:active {
+  background-color: rgb(103, 103, 103) !important;
+  color: white !important;
+  border: 0 !important;
+  margin: 0 !important;
+}
+
+.btn-outline-dark:hover {
+  background-color: rgb(103, 103, 103) !important;
+  color: white !important;
+  margin: 0 !important;
+  border: 0 !important;
+  padding: 7px;
+}
+
+
 /*  ANIMATION */
 
 .fade-in-top {
