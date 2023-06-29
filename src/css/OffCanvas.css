@@ -1,12 +1,12 @@
 .off-canvas-header {
     background-color: rgb(0, 0, 0) !important;
     color: white;
-    height: 4.8em;
+    height: 3.8em;
     margin: 0 !important;
 }
 
 #hr-canvas {
-    margin: 8px 0px 0px 0px !important; 
+    margin: 9px 5px 0px 5px !important; 
 }
 
 #offCanvasButton{
@@ -21,10 +21,13 @@
 }
 
 .title-canvas {
-    margin-left: 3em;
+    margin-left: 2.6em;
     margin-top: 3px;
     font-size: 23px;
-    font-weight: bold;
+}
+
+#text-guia-class{
+    font-weight: normal !important;
 }
 
 .container-off-canvas {
@@ -47,6 +50,6 @@
     border-radius: 5px;
     background-color: #c0906d;
     border: none;
-    padding: 7px 10px;
+    padding: 6px 9px;
     color: white;
 }

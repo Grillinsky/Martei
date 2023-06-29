@@ -68,7 +68,7 @@ function Product() {
                   alt="Logo de Martei"
                   className="logo"
                 />{" "}
-                <h1 className="fs-6 text-product">Martei - Ecommerce</h1>
+                <h1 className="fs-6 text-product">Martei</h1>
               </div>
 
               <hr className="dividor-black" style={{ margin: "0" }} />

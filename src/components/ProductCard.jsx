@@ -40,7 +40,7 @@ function ProductCard() {
     navigate("/order");
   };
   return (
-    <div className="m-2 mt-3">
+    <div className="m-2 mt-3 p-5">
       <div className="row">
         {Array.isArray(products) ? (
           products.map((product) => (
@@ -51,24 +51,9 @@ function ProductCard() {
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
                   style={{ height: "18rem", objectFit: "cover" }}
                 />
-                <Card.Body
-                  style={{
-                    backgroundColor: "white",
-                    borderEndEndRadius: "22px",
-                    borderEndStartRadius: "22px",
-                  }}
-                >
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <div
-                      className="mb-2"
-                      style={{
-                        color: "black",
-                        fontWeight: "900",
-                        fontSize: "20px",
-                      }}
-                    >
+                <Card.Body style={{ backgroundColor: 'white', borderEndEndRadius:"22px", borderEndStartRadius:"22px" }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="mb-2 fw-normal" style={{ color: 'black', fontWeight: '900', fontSize:"20px" }}>
                       {product.name}
                     </div>
                     <div className="fw-bolder fs-5 text-warning">
@@ -76,16 +61,15 @@ function ProductCard() {
                     </div>
                   </div>
                   <Link to={`/product/${product.id}`}>
-                    <button
-                      className="mt-2 btn btn-outline-dark text-black"
-                      style={{
-                        color: "white",
-                        borderRadius: "7px",
-                      }}
-                    >
-                      Ver Producto
-                    </button>
-                  </Link>
+                  <button
+                    className='mt-2 mb-1 btn btn-outline-dark text-black'
+                    style={{
+                      color: 'white',
+                      borderRadius:"7px" 
+                    }}
+                  >
+                    Ver Producto
+                  </button></Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
                     <Button
                       className="me-2 rounded"

@@ -40,7 +40,7 @@ function CategoryCard() {
   }
 
   return (
-    <div className="m-2 mt-3 d-flex justify-content-center">
+    <div className=" mt-3 py-5 d-flex justify-content-center">
       <div className="row w-75">
         {Array.isArray(products) ? (
           products.map((product) => (

@@ -161,7 +161,7 @@ const FormularioTarjeta = () => {
               <div className="grupo" id="expiracion">
                 <p className="label">Expiracion</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span> /{" "}
+                  <span className="mes">{mesExpiracion}</span>{" "}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>
