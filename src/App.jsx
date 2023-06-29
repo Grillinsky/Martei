@@ -14,6 +14,7 @@ import Register from "./pages/Register";
 import CategoryList from "./pages/CategoryList";
 import Order from "./pages/Order";
 import OffCanvas from "./components/OffCanvas";
+import OrdersProfile from "./pages/ProfileOrders";
 
 function App() {
   const store = useSelector((state) => state);
@@ -25,6 +26,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} redirectTo="/login" />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/admin" element={<Dashboard />} />
+          <Route path="/history" element={<OrdersProfile />} />
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
