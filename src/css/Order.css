@@ -255,7 +255,7 @@
 
 .formulario-tarjeta select {
   -webkit-appearance: none;
-} 
+}
 
 .formulario-tarjeta .grupo-select i {
   position: absolute;
@@ -283,7 +283,7 @@
   background: #f87d01;
 }
 
-.price-modal{
+.price-modal {
   font-weight: bolder;
   font-size: 20px;
   color: rgb(1, 149, 72);
@@ -291,4 +291,4 @@
 
 .card-modal-increment-decrement {
   margin-top: -8px !important;
-} 
+}
