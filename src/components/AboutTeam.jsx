@@ -10,7 +10,7 @@ library.add(fab, faLinkedin, faGithub);
 function AboutTeam() {
   return (
     <div className="team p-0 m-0 mb-4">
-      <div className="container p-0">
+      <div className="container p-5">
         <h1 className="title-team">Nuestro Equipo</h1>
         <div className="row p-0">
           <div className="col-12 col-md-6 col-lg-3 profile text-center p-0">

@@ -56,8 +56,8 @@ function OffCanvas() {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="container container-off-canvas">
-            <h1 className="fs-2">Sobre Este Proyecto:</h1>
-            <dd className="fs-6">
+            <h1 className="fs-3">Sobre Este Proyecto:</h1>
+            <dd className="fs-6 fw-normal">
               Martei es un e-commerce creado como proyecto final del Bootcamp de
               HackAcademy Fue desarrolado durante 3 semanas por 4 estudiantes.
               Haz click para más información!
@@ -70,17 +70,17 @@ function OffCanvas() {
               </button>
             </Link>
           </div>
-          <hr className="m-2" />
+          <hr className="m-1" />
           <div className="container container-off-canvas">
-            <h1 className="fs-2">Guia De Navegacion:</h1>
+            <h1 className="fs-3" id="text-guia-class">Guia De Navegacion:</h1>
             <dd className="fs-6">
               Sientete libre de navegar por este sitio, agrega productos a tu
               carrito, y finaliza tu compra logeandote con las credenciales de
               usuario:
             </dd>
             <ul className="list-off-canvas">
-              <li>Usuario: User@user.com</li>
-              <li>Contraseña: 123</li>
+              <li className="fw-normal">Usuario: User@user.com</li>
+              <li className="fw-normal">Contraseña: 123</li>
             </ul>
           </div>
           <div className="off-canvas-button-div">
@@ -88,7 +88,7 @@ function OffCanvas() {
                 Login User
               </button>
           </div>
-          <hr className="m-2" />
+          <hr className="m-1" />
           <div className="container container-off-canvas">
             <dd className="fs-6">
               Si quieres probar las funcionalidades de Admin, como crear, aditar
@@ -96,8 +96,8 @@ function OffCanvas() {
               acceder con las siguientes credenciales:
             </dd>
             <ul className="list-off-canvas">
-              <li>Usuario: Admin@admin.com</li>
-              <li>Contraseña: 123</li>
+              <li className="fw-normal">Usuario: Admin@admin.com</li>
+              <li className="fw-normal" >Contraseña: 123</li>
             </ul>
           </div>
           <div className="off-canvas-button-div">

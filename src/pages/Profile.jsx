@@ -52,7 +52,8 @@ function Profile() {
           <div className={`settings_btn${sliderActive ? ' active' : ''}`} onClick={toggleSlider}>
             <i className="fas fa-cog"></i>
           </div>
-  
+
+          {profileData && (
           <div className="profile_wrap">
             <div className="profile_img">
               <img src="Profilephoto.png" alt="profile_pic" />
@@ -88,9 +89,8 @@ function Profile() {
                 <div className="num">3</div>
               </div>
             </div>
-  
-           {/*  <div className="profile_btn">Ajustes De Usuario</div> */}
           </div>
+        )} 
         </div>
         <div className={`profile_slider${sliderActive ? ' active' : ''}`}>
           <ul>
@@ -157,16 +157,3 @@ function Profile() {
   };
   
   export default Profile;
-
-/* {profileData && (
-  <div>
-    <h2>
-      Hola <span>{profileData.firstname}</span>!
-    </h2>
-    <ul className="p-0">
-      <li>{profileData.address}</li>
-      <li>{profileData.email}</li>
-      <li>{profileData.phone}</li>
-    </ul>
-  </div>
-)} */

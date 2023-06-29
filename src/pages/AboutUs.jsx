@@ -8,7 +8,7 @@ import AboutTeam from '../components/AboutTeam'
 function AboutUs() {
   return (
     <div>
-      <div className="col-12 row p-0 m-0">
+      <div className="col-12 row p-4 m-0">
         <Navbar />
         <div className="container p-0">
           <div className="d-flex justify-content-center flex-column align-items-center">
