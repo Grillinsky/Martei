@@ -230,20 +230,25 @@ a:hover {
 
 .btn-outline-dark {
   width: 100%;
+  transition: none !important;
+  transform: none !important;
 }
 .btn-outline-dark:active {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
   border: 0 !important;
-  margin: 0 !important;
+  margin-top: 0.650rem !important;
+  transition: none !important;
+  transform: none !important;
 }
 
 .btn-outline-dark:hover {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
-  margin: 0 !important;
+  margin-top: 0.650rem !important;
   border: 0 !important;
-  padding: 7px;
+  transform: none !important;
+  transition: none !important; 
 }
 
 

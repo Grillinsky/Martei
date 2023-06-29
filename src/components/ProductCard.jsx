@@ -42,18 +42,20 @@ function ProductCard() {
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
-                  style={{ height: '18rem', objectFit: 'fill' }}
+                  style={{ height: '18rem', objectFit: 'cover' }}
                 />
                 <Card.Body style={{ backgroundColor: 'white', borderEndEndRadius:"22px", borderEndStartRadius:"22px" }}>
-                  <Card.Title style={{ color: 'black', fontWeight: '900' }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text className="card-text">
-                    {product.description}
-                  </Card.Text>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="mb-2" style={{ color: 'black', fontWeight: '900', fontSize:"20px" }}>
+                      {product.name}
+                    </div>
+                    <div className='fw-bolder fs-5 text-warning'>
+                      ${product.price}
+                    </div>
+                  </div>
                   <Link to={`/product/${product.id}`}>
                   <button
-                    className='btn btn-outline-dark text-black'
+                    className='mt-2 btn btn-outline-dark text-black'
                     style={{
                       color: 'white',
                       borderRadius:"7px" 
