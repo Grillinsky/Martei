@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
+import NavBar from "../components/Navbar";
 
 const FormularioTarjeta = () => {
   const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
@@ -137,7 +138,8 @@ const FormularioTarjeta = () => {
 
   return (
     <div className="contenedor">
-      <section className={`tarjeta ${isCardFlipped} ? "active" : ""}`}>
+      <NavBar />
+      <section className={`tarjeta ${isCardFlipped} ? "active" : ""}, my-5`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
             {numeroTarjeta.charAt(0) === "4" ? (
