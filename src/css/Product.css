@@ -1,6 +1,5 @@
 #ItemContainer {
   max-width: 60%;
-  max-height: 80dvh;
   overflow: hidden;
   background-color: var(--white);
 }
