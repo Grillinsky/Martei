@@ -73,7 +73,7 @@ function Product() {
                 </p>
               </div>
               <hr className="dividor-black mb-3" style={{ margin: '0' }} />
-              <p className="price-product">
+              <p className="price-product text-warning">
                 {' '}
                 Precio: {productIndividualData.price} $USD
               </p>
