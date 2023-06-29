@@ -261,7 +261,7 @@ const FormularioTarjeta = () => {
           <input
             type="text"
             id="inputNumero"
-            maxLength="16"
+            maxLength="19"
             autoComplete="off"
             onChange={handleNumeroTarjetaChange}
             value={numeroTarjeta}
