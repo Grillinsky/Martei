@@ -7,8 +7,11 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FormularioTarjeta = () => {
+  const [showToast, setShowToast] = useState(false);
   const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
   const [nombreTarjeta, setNombreTarjeta] = useState("");
   const [mesExpiracion, setMesExpiracion] = useState("MM");
@@ -23,6 +26,7 @@ const FormularioTarjeta = () => {
   const [address, setAddress] = useState("");
   const dispatch = useDispatch();
 
+  //Para llevar los datos de la compra
   const itemsCarrito = useSelector((state) => state.cart);
   const total = itemsCarrito.reduce(
     (acc, item) => acc + item.price * item.qty,
@@ -183,9 +187,9 @@ const FormularioTarjeta = () => {
               </div>
 
               <div className="grupo" id="expiracion">
-                <p className="label">Expiración</p>
+                <p className="label">Expiracion</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span>/{" "}
+                  <span className="mes">{mesExpiracion}</span>{" "}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>
