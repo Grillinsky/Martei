@@ -101,7 +101,7 @@ function OffCanvas() {
             </ul>
           </div>
           <div className="off-canvas-button-div">
-            <Link to={"/adminLogin"}>
+            <Link to={`${import.meta.env.VITE_ADMIN_URL}/login`}>
               <button className="btn-user-canvas">
                 Login Admin
               </button>
