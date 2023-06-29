@@ -40,17 +40,14 @@ function CategoryCard() {
   }
 
   return (
-    <div className=" mt-3 py-5 d-flex justify-content-center">
+    <div className="container mt-3 py-5 d-flex justify-content-center">
       <div className="row w-75">
         {Array.isArray(products) ? (
           products.map((product) => (
             <div key={product.id} className="col-12 col-md-6 col-lg-4 my-3">
               <Card
-                className="card-category-product-all"
                 style={{
-                  minWidth: "24rem",
-                  marginRight: "400px",
-                  marginLeft: "0px",
+                  marginBlock: "1rem",
                 }}
               >
                 <Card.Img

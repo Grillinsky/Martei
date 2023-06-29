@@ -59,7 +59,7 @@ function Product() {
               />
             </div>
             <div
-              className="col-12 col-lg-4 col-md-6 text-white d-flex flex-column align-content-between"
+              className="col-12 col-lg-4 col-md-6 text-white d-flex flex-column align-content-between position-relative"
               style={{ backgroundColor: "var(--white)" }}
             >
               <div className="d-flex justify-content-between align-items-end">
@@ -83,7 +83,7 @@ function Product() {
                 Precio: {productIndividualData.price} $USD
               </p>
               <hr className="dividor-black mt-4" style={{ margin: "0" }} />
-              <ButtonGroup className="d-flex justify-content-around my-3">
+              <ButtonGroup className="d-flex justify-content-around mx-5 py-3 position-absolute bottom-0">
                 <Button
                   className="me-2 btn-buy-product"
                   variant="success"

@@ -6,11 +6,8 @@ function CategoryList() {
   return (
     <div>
       <Navbar />
-      <div
-        className="container-fluid my-5 py-5 d-flex flex-wrap justify-content-around"
-         style={{ display: "flex", flexWrap: "wrap" }}
-      >
-        <CategoryCard/>
+      <div className="container-fluid my-5 py-5 d-flex flex-wrap justify-content-around">
+        <CategoryCard />
       </div>
       <Footer />
     </div>
