@@ -161,13 +161,13 @@
   height: 50px;
   font-size: 20px;
   line-height: 20px;
-  background: #2364d2;
+  background: #e87400;
   color: #fff;
   position: relative;
   top: -25px;
   z-index: 3;
   border-radius: 100%;
-  box-shadow: -5px 4px 8px rgba(24, 56, 182, 0.4);
+  box-shadow: -5px 4px 8px rgba(244, 114, 0, 0.4);
   padding: 5px;
   transition: all 0.2s ease;
   border: none;
@@ -175,7 +175,7 @@
 }
 
 .contenedor-btn .btn-abrir-formulario:hover {
-  background: #1850b1;
+  background: #d65109;
 }
 
 .contenedor-btn .btn-abrir-formulario.active {
@@ -275,13 +275,13 @@
   padding: 10px;
   font-size: 22px;
   color: #fff;
-  background: #2364d2;
-  box-shadow: 2px 2px 10px 0px rgba(0, 85, 212, 0.4);
+  background: #d8931c;
+  box-shadow: 2px 2px 10px 0px rgba(244, 107, 2, 0.4);
   cursor: pointer;
 }
 
 .formulario-tarjeta .btn-enviar:hover {
-  background: #1850b1;
+  background: #f87d01;
 }
 
 .price-modal{
@@ -289,3 +289,7 @@
   font-size: 20px;
   color: rgb(1, 149, 72);
 }
+
+.card-modal-increment-decrement {
+  margin-top: -8px !important;
+} 

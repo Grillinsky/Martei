@@ -18,34 +18,33 @@
   width: 80vw !important;
 }
 
+.title-exclusive-product {
+  font-weight: normal !important;
+}
+
 .ExclusiveProductColumn {
   text-align: center;
-  padding: 0px !important;
+  padding: 9px !important;
   margin-top: 20px;
-  margin-left: 44px;
-  width: 232px !important;
+  margin-left: 35px;
+  width: 250px !important;
   height: auto !important;
-  box-shadow: 4px 4px 10px -6px rgba(255, 255, 255, 255);
 }
 
 .btn-dark-product-exclusive {
   padding: 5px 20px 5px 20px;
   border-radius: 7px !important;
-  font-weight: bolder;
   margin-left: 250px;
 }
 
 .price-exclusive-product {
   font-weight: bolder !important;
-  font-size: 18px !important;
-  color: #a7846b !important;
-  font-style: italic;
-  font-family: "Montserrat", sans-serif !important;
+  font-size: 18px !important; 
+  letter-spacing: 3px;
 }
 
 .name-exclusive-product {
-  font-weight: bolder !important;
-  font-size: 17px !important;
-  font-style: italic;
-  font-family: "Montserrat", sans-serif !important;
+  letter-spacing: 1px;
+  font-weight: normal !important;
+  font-size: 20px !important;
 }

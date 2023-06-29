@@ -48,6 +48,8 @@ article {
   transition-duration: 0.5s;
 }
 #presentacion {
+  margin: 0 !important;
+  padding: 100px 0 !important;
   background-color: var(--black);
   background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -145,6 +147,7 @@ a:hover {
   background-color: var(--black);
   background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
   margin-bottom: 3rem;
+  padding: 70px 0 !important;
 }
 
 .title-exclusive-product {
@@ -164,7 +167,7 @@ a:hover {
   /* margin-right: -199px !important; */
 }
 .btn-dark-product-exclusive:hover {
-  transform: translateX(2rem);
+  transform: scale(1.04);
   transition: 0.5s;
 }
 
@@ -207,10 +210,11 @@ a:hover {
 
 .price-exclusive-product {
   margin: 10px 0px 15px 15px !important ;
-  font-size: 16px !important;
-  font-weight: 800;
+  font-size: 18px !important;
+  font-weight: 700 !important;
   color: rgb(214, 214, 1);
 }
+
 #navContainer {
   background-color: var(--black);
   padding-inline: 12.5vw;
@@ -230,20 +234,30 @@ a:hover {
 
 .btn-outline-dark {
   width: 100%;
+  padding:  10px;
+  transition: none !important;
+  transform: none !important;
 }
 .btn-outline-dark:active {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
   border: 0 !important;
-  margin: 0 !important;
+  margin-top: 0.650rem !important;
+  transition: none !important;
+  transform: none !important;
 }
 
 .btn-outline-dark:hover {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
-  margin: 0 !important;
+  margin-top: 0.650rem !important;
   border: 0 !important;
-  padding: 7px;
+  transform: none !important;
+  transition: none !important; 
+}
+
+#productos {
+  padding: 70px 0 90px !important;
 }
 
 

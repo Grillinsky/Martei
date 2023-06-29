@@ -18,10 +18,13 @@
 
 .text-team-about {
   max-width: 75vw;
-  font-weight: bolder;
-  letter-spacing: 4px;
+  font-weight: normal;
+  letter-spacing: 0px;
   color: #474747;
-  font-size: 17px;
+  font-size: 19px;
+  padding-left: 22px ;
+  padding-right: 22px ;
+  text-align: center !important;
   font-style: oblique !important;
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Button, ButtonGroup } from "react-bootstrap";
 import axios from "axios";
 import "../css/Product.css";
@@ -12,6 +12,7 @@ function Product() {
   const { id } = useParams();
   const [productIndividualData, setProductIndividualData] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getProductIndividual();
@@ -20,6 +21,10 @@ function Product() {
   const handleAddToCart = (product) => {
     dispatch(AddOrIncrement(product));
     console.log("Added to cart", product);
+  };
+  const handleBuy = (product) => {
+    dispatch(AddOrIncrement(product));
+    navigate("/order");
   };
 
   async function getProductIndividual() {
@@ -73,10 +78,17 @@ function Product() {
                 </p>
               </div>
               <hr className="dividor-black mb-3" style={{ margin: "0" }} />
-              <p className="price-product"> Precio: 9.99 $USD</p>
+              <p className="price-product text-warning">
+                {" "}
+                Precio: {productIndividualData.price} $USD
+              </p>
               <hr className="dividor-black mt-4" style={{ margin: "0" }} />
               <ButtonGroup className="d-flex justify-content-around my-3">
-                <Button className="me-2 btn-buy-product" variant="success">
+                <Button
+                  className="me-2 btn-buy-product"
+                  variant="success"
+                  onClick={() => handleBuy(productIndividualData)}
+                >
                   Comprar
                 </Button>
                 <Button

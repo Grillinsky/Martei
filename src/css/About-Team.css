@@ -1,4 +1,4 @@
-img {
+|img {
   object-fit: contain;
 }
 
@@ -12,7 +12,7 @@ img {
 }
 
 .title-team {
-  text-align: center;
+  text-align: center !important;
   font-weight: bold;
   letter-spacing: 2px;
   color: #333;
@@ -29,15 +29,15 @@ img {
 }
 
 .description-all {
-  text-align: start;
+  text-align: center;
   align-items: center;
   font-weight: 600;
   color: #b87444;
   font-style: oblique;
   margin-top: 15px !important;
   font-size: 17px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 .profile {
@@ -169,8 +169,8 @@ img {
 }
 
 .card-img {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background: #ffc3c318;
   position: relative;
   display: flex;
@@ -199,8 +199,8 @@ img {
 }
 
 .card-img-2 {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background: #00000018;
   position: relative;
   display: flex;
@@ -240,8 +240,8 @@ img {
 }
 
 .card-img-3 {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background: #00000018;
   position: relative;
   display: flex;
@@ -281,8 +281,8 @@ img {
 }
 
 .card-img-4 {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   background: #00000018;
   position: relative;
   display: flex;

@@ -86,7 +86,7 @@ const ExclusiveProductSection = () => {
               />
               <h5 className="category-exclusive-product">{product.category}</h5>
               <h3 className="name-exclusive-product">{product.name}</h3>
-              <p className="price-exclusive-product">Us${product.price}🔥</p>
+              <p className="price-exclusive-product text-warning">Us${product.price}🔥</p>
             </div>
           ))}
         </Slider>
