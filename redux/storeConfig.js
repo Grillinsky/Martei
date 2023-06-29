@@ -14,9 +14,12 @@ import storage from "redux-persist/lib/storage";
 
 import userReducer from "./userSlice";
 import cartReducer from "./cartSlice";
+import loginValuesReducer from "./loginValuesSlice";
+
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
+  loginValues: loginValuesReducer,
 });
 
 const persistConfig = {
