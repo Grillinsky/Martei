@@ -35,7 +35,6 @@ function Login() {
           password: passwordValue
         }
       });
-      console.log(response.data);
       dispatch(setUser(response.data));
       navigate('/');
     } catch (error) {

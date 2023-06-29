@@ -191,7 +191,7 @@
 
 .card-img::after {
   content: "";
-  background-image: url("/Profilephoto.png");
+  background-image: url("/AlexProfile.jpg");
   background-size: cover;
   position: absolute;
   inset: 5px;
