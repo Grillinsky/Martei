@@ -7,8 +7,11 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const FormularioTarjeta = () => {
+  const [showToast, setShowToast] = useState(false);
   const [numeroTarjeta, setNumeroTarjeta] = useState("#### #### #### ####");
   const [nombreTarjeta, setNombreTarjeta] = useState("");
   const [mesExpiracion, setMesExpiracion] = useState("MM");
@@ -30,6 +33,13 @@ const FormularioTarjeta = () => {
     0
   );
 
+  useEffect(() => {
+    if (showToast) {
+      setShowToast(true);
+      toast.success(`¡GRACIAS POR ELEGIR MARTEI! `);
+    }
+  }, [showToast]);
+
   const handleFinalizarCompra = async (e) => {
     e.preventDefault();
 
@@ -40,18 +50,23 @@ const FormularioTarjeta = () => {
         userId: user.id,
         state: "pago",
       };
-      console.log(address);
+
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/order`,
           orderData
         );
         dispatch(clearCart());
+        setShowToast(true);
       } catch (error) {
         console.error("Error al enviar la orden");
       }
 
-      window.location.href = "/";
+      const timer = setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
+
+      return () => clearTimeout(timer);
     } else {
       window.location.href = "/login";
     }
@@ -137,6 +152,19 @@ const FormularioTarjeta = () => {
 
   return (
     <div className="contenedor">
+      <ToastContainer
+        position="top-right"
+        autoClose={2900}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
+
       <section className={`tarjeta ${isCardFlipped} ? "active" : ""}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
