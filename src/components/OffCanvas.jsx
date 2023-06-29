@@ -26,7 +26,7 @@ function OffCanvas() {
 
   const handleLogin = () => {
     const loginData = {
-      user: "User@User.com",
+      user: "User@user.com",
       password: "123",
     };
 
@@ -79,7 +79,7 @@ function OffCanvas() {
               usuario:
             </dd>
             <ul className="list-off-canvas">
-              <li>Usuario: User@User.com</li>
+              <li>Usuario: User@user.com</li>
               <li>Contraseña: 123</li>
             </ul>
           </div>
@@ -96,7 +96,7 @@ function OffCanvas() {
               acceder con las siguientes credenciales:
             </dd>
             <ul className="list-off-canvas">
-              <li>Usuario: Admin@Admin.com</li>
+              <li>Usuario: Admin@admin.com</li>
               <li>Contraseña: 123</li>
             </ul>
           </div>
