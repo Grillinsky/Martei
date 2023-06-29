@@ -40,23 +40,27 @@ function CategoryCard() {
         {Array.isArray(products) ? (
           products.map(product => (
             <div key={product.id} className="col-12 col-md-6 col-lg-4 my-3">
-              <Card
+              <Card className='card-category-product-all'
                 style={{
-                  minWidth: '20.5rem'
+                  minWidth: '24rem',
+                  marginRight:"400px",
+                  marginLeft:"0px",
                 }}
               >
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
-                  style={{ height: '18rem', objectFit: 'fill' }}
+                  style={{ height: '18rem', objectFit: 'cover' }}
                 />
-                <Card.Body style={{ backgroundColor: 'white' }}>
-                  <Card.Title className="title-product-exclusive" style={{ color: 'black', fontWeight: '900' }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text style={{ color: 'black', height: '16.5rem' }}>
-                    {product.description}
-                  </Card.Text>
+                <Card.Body className='' style={{ backgroundColor: 'white', borderEndEndRadius:"22px", borderEndStartRadius:"22px" }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="mb-2" style={{ color: 'black', fontWeight: '900', fontSize:"20px" }}>
+                      {product.name}
+                    </div>
+                    <div className='fw-bolder fs-5 text-warning'>
+                      ${product.price}
+                    </div>
+                  </div>
                   <Link to={`/product/${product.id}`}>
                   <button
                     className='btn btn-outline-dark text-black'
