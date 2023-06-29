@@ -1,21 +1,41 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link } from "react-router-dom";
-/* import { useForm } from "react-hook-form"; */
+import { Link, useNavigate } from "react-router-dom";
 import "../css/OffCanvas.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setLoginValues, toggleOffCanvas } from "../../redux/loginValuesSlice";
 
 function OffCanvas() {
+ 
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
-  //const { setValue } = useForm();
+  const dispatch = useDispatch();
+  const loginValues = useSelector((state) => state.loginValues);
+  const { isOffCanvasOpen } = loginValues;
 
-  const handleLogin = () => {
-    setValue("username", "pabloperez@gmail.com");
-    setValue("password", "123");
+  const handleClose = () => {
+    setShow(false);
+    dispatch(toggleOffCanvas(false));
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    dispatch(toggleOffCanvas(true));
+  };
+
+  const handleLogin = () => {
+    const loginData = {
+      user: "User@User.com",
+      password: "123",
+    };
+
+    const query = new URLSearchParams(loginData).toString();
+    const loginUrl = `/login?${query}`;
+
+    dispatch(setLoginValues(loginData));
+    navigate(loginUrl);
+  };
 
   return (
     <>
@@ -23,7 +43,7 @@ function OffCanvas() {
         Sobre el proyecto
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement="end">
+      <Offcanvas show={isOffCanvasOpen} onHide={handleClose} placement="end">
         <Offcanvas.Header className="off-canvas-header">
           <Offcanvas.Title className="title-canvas">
             Proyecto final Martei.
@@ -45,7 +65,7 @@ function OffCanvas() {
           </div>
           <div className="off-canvas-button-div">
             <Link to={"/aboutUs"}>
-              <button className="btn-user-canvas" onClick={handleLogin}>
+              <button className="btn-user-canvas">
                 Sobre Nosotros
               </button>
             </Link>
@@ -64,11 +84,9 @@ function OffCanvas() {
             </ul>
           </div>
           <div className="off-canvas-button-div">
-            <Link to={"/login"}>
               <button className="btn-user-canvas" onClick={handleLogin}>
                 Login User
               </button>
-            </Link>
           </div>
           <hr className="m-2" />
           <div className="container container-off-canvas">
@@ -84,7 +102,7 @@ function OffCanvas() {
           </div>
           <div className="off-canvas-button-div">
             <Link to={"/adminLogin"}>
-              <button className="btn-user-canvas" onClick={handleLogin}>
+              <button className="btn-user-canvas">
                 Login Admin
               </button>
             </Link>

@@ -58,18 +58,15 @@ function CategoryCard() {
                     {product.description}
                   </Card.Text>
                   <Link to={`/product/${product.id}`}>
-                    <Button
-                      style={{
-                        backgroundColor: 'transparent',
-                        border: '0',
-                        color: 'black',
-                        fontSize: '1rem',
-                        fontWeight: '600'
-                      }}
-                    >
-                      → Ver producto ←
-                    </Button>
-                  </Link>
+                  <button
+                    className='btn btn-outline-dark text-black'
+                    style={{
+                      color: 'white',
+                      borderRadius:"7px" 
+                    }}
+                  >
+                    Ver Producto
+                  </button></Link>
                   <ButtonGroup className="d-flex justify-content-around mt-2">
                     <Button className="me-2 rounded" variant="success">
                       Comprar
