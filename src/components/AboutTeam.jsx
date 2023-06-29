@@ -18,7 +18,10 @@ function AboutTeam() {
               <div className="card-img"></div>
               <ul>
                 <li>
-                  <a href="https://github.com/AlexTGarcia020" className="social-button github">
+                  <a
+                    href="https://github.com/AlexTGarcia020"
+                    className="social-button github"
+                  >
                     <svg
                       className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +32,10 @@ function AboutTeam() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/alex-garcia20/" className="social-button linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/alex-garcia20/"
+                    className="social-button linkedin"
+                  >
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
@@ -65,7 +71,10 @@ function AboutTeam() {
               <div className="card-img-2"></div>
               <ul>
                 <li>
-                  <a href="#" className="social-button github">
+                  <a
+                    href="https://github.com/Grillinsky"
+                    className="social-button github"
+                  >
                     <svg
                       className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +86,10 @@ function AboutTeam() {
                 </li>
 
                 <li>
-                  <a href="#" className="social-button linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/martinegrillo/"
+                    className="social-button linkedin"
+                  >
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
