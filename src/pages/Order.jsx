@@ -137,7 +137,7 @@ const FormularioTarjeta = () => {
 
   return (
     <div className="contenedor">
-      <section className={`tarjeta ${isCardFlipped ? 'active' : ''}`}>
+      <section className={`tarjeta ${isCardFlipped} ? "active" : ""}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
             {numeroTarjeta.charAt(0) === '4' ? (

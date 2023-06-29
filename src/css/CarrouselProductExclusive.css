@@ -23,6 +23,7 @@
 }
 
 .ExclusiveProductColumn {
+  cursor: pointer;
   text-align: center;
   padding: 9px !important;
   margin-top: 20px;
@@ -39,7 +40,7 @@
 
 .price-exclusive-product {
   font-weight: bolder !important;
-  font-size: 18px !important; 
+  font-size: 18px !important;
   letter-spacing: 3px;
 }
 
