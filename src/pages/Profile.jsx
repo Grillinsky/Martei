@@ -56,7 +56,7 @@ function Profile() {
           {profileData && (
           <div className="profile_wrap">
             <div className="profile_img">
-              <img src="Profilephoto.png" alt="profile_pic" />
+              <img  src="profilephoto1.webp" alt="profile_pic" />
               <p className="name">{profileData.firstname} {profileData.lastname}</p>
               <p className="place">
                 <span className="icon">
