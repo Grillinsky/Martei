@@ -184,7 +184,10 @@ function AboutTeam() {
               <div className="card-img-4"></div>
               <ul>
                 <li>
-                  <a href="#" className="social-button github">
+                  <a
+                    href="https://github.com/JoaquinBras/"
+                    className="social-button github"
+                  >
                     <svg
                       className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
@@ -195,7 +198,10 @@ function AboutTeam() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="social-button linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/joaquin-brascesco/"
+                    className="social-button linkedin"
+                  >
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
