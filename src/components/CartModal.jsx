@@ -1,39 +1,39 @@
-import { Modal, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { Modal, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   AddOrIncrement,
   RemoveOrDecrement,
   clearCart,
-  RemoveFromCart,
-} from "../../redux/cartSlice";
-import { useNavigate } from "react-router-dom";
-import "../css/Order.css";
+  RemoveFromCart
+} from '../../redux/cartSlice'
+import { useNavigate } from 'react-router-dom'
+import '../css/Order.css'
 
 function CartModal(props) {
-  const itemsCarrito = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const itemsCarrito = useSelector(state => state.cart)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleOrder = () => {
-    navigate(`/order`);
-  };
+    navigate(`/order`)
+  }
 
-  const handleIncrement = (product) => {
-    dispatch(AddOrIncrement(product));
-  };
+  const handleIncrement = product => {
+    dispatch(AddOrIncrement(product))
+  }
 
-  const handleDecrement = (productId) => {
-    dispatch(RemoveOrDecrement(productId));
-  };
+  const handleDecrement = productId => {
+    dispatch(RemoveOrDecrement(productId))
+  }
 
   const handleClearCart = () => {
-    dispatch(clearCart());
-    console.log("Carrito vacio");
-  };
+    dispatch(clearCart())
+    console.log('Carrito vacio')
+  }
 
-  const handleRemoveItem = (productId) => {
-    dispatch(RemoveFromCart(productId));
-  };
+  const handleRemoveItem = productId => {
+    dispatch(RemoveFromCart(productId))
+  }
   return (
     <div>
       <Modal
@@ -79,24 +79,26 @@ function CartModal(props) {
                       </button>
                     </span>
                     <span className="col-4">
-                      U${item.price * item.qty}{" "}
+                      U${item.price * item.qty}{' '}
                       <i
                         className="far fa-times-circle"
                         onClick={() => handleRemoveItem(item.id)}
                       ></i>
                     </span>
                   </li>
-                );
+                )
               })}
             </ul>
           ) : (
             <p>No hay productos en el carrito...</p>
           )}
         </Modal.Body>
-        <div className="text-end p-4 fw-bold price-modal">
-          Total a pagar: U$
-          {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
-        </div>
+        {itemsCarrito.length > 0 && (
+          <div className="text-end p-4 fw-bold price-modal">
+            Total a pagar: U$
+            {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
+          </div>
+        )}
         <Modal.Footer className="mi-modal-footer">
           <Button className="btn-tacho" onClick={handleClearCart}>
             <i className="fa fa-trash-o" aria-hidden="true"></i>
@@ -107,13 +109,15 @@ function CartModal(props) {
           >
             Cerrar
           </Button>
-          <Button variant="success" onClick={handleOrder}>
-            Comprar
-          </Button>
+          {itemsCarrito.length > 0 && (
+            <Button variant="success" onClick={handleOrder}>
+              Comprar
+            </Button>
+          )}
         </Modal.Footer>
       </Modal>
     </div>
-  );
+  )
 }
 
-export default CartModal;
+export default CartModal

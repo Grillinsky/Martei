@@ -232,10 +232,9 @@ a:hover {
   border: none;
 }
 
-
 .btn-outline-dark {
   width: 100%;
-  padding:  10px;
+  padding: 10px;
   transition: none !important;
   transform: none !important;
 }
@@ -243,7 +242,7 @@ a:hover {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
   border: 0 !important;
-  margin-top: 0.650rem !important;
+  margin-top: 0.65rem !important;
   transition: none !important;
   transform: none !important;
 }
@@ -251,16 +250,15 @@ a:hover {
 .btn-outline-dark:hover {
   background-color: rgb(103, 103, 103) !important;
   color: white !important;
-  margin-top: 0.650rem !important;
+  margin-top: 0.65rem !important;
   border: 0 !important;
   transform: none !important;
-  transition: none !important; 
+  transition: none !important;
 }
 
 #productos {
   padding: 70px 0 90px !important;
 }
-
 
 /*  ANIMATION */
 

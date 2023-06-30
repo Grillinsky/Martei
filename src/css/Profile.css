@@ -218,3 +218,49 @@
   color:  #ffffff !important;
 	transform: rotate(360deg);
 }
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 20px;
+	border: 1px solid #ddd;
+  }
+  
+  th, td {
+	padding: 8px;
+	text-align: left;
+  }
+  
+  th {
+	background-color: #c0906d;
+	color: white;
+	margin-left: 4px !important;
+  }
+  
+  tr:nth-child(odd) {
+	background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+	background-color: #ddd;
+  }
+  
+  .img-orden-buy {
+	margin-left: 0px;
+	width: 100px !important;
+	height: 120px !important;
+  }
+
+  .price-td {
+	text-align: center;
+	vertical-align: middle;
+  }
+  
+
+#container-product-order {
+	padding: 90px 0;
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-right: 10%;
+	min-height: 40em !important;
+ }

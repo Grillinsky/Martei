@@ -80,7 +80,11 @@
   text-decoration: none;
   color: black;
 }
-i:hover {
+.fa-minus-circle:hover {
   cursor: pointer !important ;
-  color: red;
+  color: rgb(222, 4, 4);
+}
+.fa-plus-circle:hover {
+  cursor: pointer !important ;
+  color: rgb(3, 172, 3);
 }

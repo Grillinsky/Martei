@@ -9,10 +9,12 @@ import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from "../components/Navbar";
 
 const FormularioTarjeta = () => {
   const [showToast, setShowToast] = useState(false);
   const [cardToast, setCardToast] = useState(false);
+  const [errorToast, setErrorToast] = useState(false);
 
   const [numeroTarjeta, setNumeroTarjeta] = useState("");
   const [nombreTarjeta, setNombreTarjeta] = useState("");
@@ -34,6 +36,16 @@ const FormularioTarjeta = () => {
     (acc, item) => acc + item.price * item.qty,
     0
   );
+  const [errorTwoToast, setTwoErrorToast] = useState(itemsCarrito.length === 0);
+
+  useEffect(() => {
+    if (errorTwoToast) {
+      setTwoErrorToast(true);
+      toast.error(
+        "Debes agregar al menos un producto para finalizar la compra"
+      );
+    }
+  }, [errorTwoToast, itemsCarrito.length]);
 
   useEffect(() => {
     if (showToast) {
@@ -49,6 +61,15 @@ const FormularioTarjeta = () => {
     }
   }, [cardToast]);
 
+  useEffect(() => {
+    if (errorToast) {
+      setErrorToast(true);
+      toast.error(
+        "Debes agregar al menos un producto para finalizar la compra"
+      );
+    }
+  }, [errorToast]);
+
   const handleFinalizarCompra = async (e) => {
     e.preventDefault();
 
@@ -63,6 +84,15 @@ const FormularioTarjeta = () => {
       return;
     } else {
       if (user) {
+        if (itemsCarrito.length === 0) {
+          setErrorToast(true);
+
+          const timer = setTimeout(() => {
+            window.location.href = "/productsPage";
+          }, 3000);
+
+          return () => clearTimeout(timer);
+        }
         const orderData = {
           products: itemsCarrito,
           address: address,
@@ -171,7 +201,8 @@ const FormularioTarjeta = () => {
   }, [user]);
 
   return (
-    <div className="contenedor">
+    <div className="contenedor py-5 my-5">
+      <NavBar />
       <ToastContainer
         position="top-right"
         autoClose={2900}
@@ -261,7 +292,7 @@ const FormularioTarjeta = () => {
           <input
             type="text"
             id="inputNumero"
-            maxLength="16"
+            maxLength="19"
             autoComplete="off"
             onChange={handleNumeroTarjetaChange}
             value={numeroTarjeta}
@@ -286,10 +317,9 @@ const FormularioTarjeta = () => {
                   name="mes"
                   id="selectMes"
                   onChange={handleMesExpiracionChange}
+                  defaultValue={"Mes"}
                 >
-                  <option disabled selected>
-                    Mes
-                  </option>
+                  <option>Mes</option>
                   {meses.map((mes) => (
                     <option key={mes} value={mes}>
                       {mes}
@@ -303,10 +333,9 @@ const FormularioTarjeta = () => {
                   name="year"
                   id="selectYear"
                   onChange={handleYearExpiracionChange}
+                  defaultValue={"Año"}
                 >
-                  <option disabled selected>
-                    Año
-                  </option>
+                  <option>Año</option>
                   {years.map((year) => (
                     <option key={year} value={year}>
                       {year}
