@@ -52,7 +52,7 @@ function CategoryCard() {
               >
                 <Card.Img
                   variant="top"
-                  src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
+                  src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`}
                   style={{ height: "18rem", objectFit: "cover" }}
                 />
                 <Card.Body

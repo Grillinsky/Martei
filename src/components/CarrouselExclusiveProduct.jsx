@@ -81,7 +81,7 @@ const ExclusiveProductSection = () => {
             >
               {/* Contenido del producto */}
               <img
-                src={`${import.meta.env.VITE_API_URL}/img/${product.image}`}
+                src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`}
                 alt={product.name}
               />
               <h5 className="category-exclusive-product">{product.category}</h5>
