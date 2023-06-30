@@ -6,6 +6,7 @@ import { logoutUser } from "../../redux/userSlice";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ function Profile() {
           {profileData && (
           <div className="profile_wrap">
             <div className="profile_img">
-              <img  src="profilephoto1.webp" alt="profile_pic" />
+              <img  src="Profilephoto2.jpg" alt="profile_pic" />
               <p className="name">{profileData.firstname} {profileData.lastname}</p>
               <p className="place">
                 <span className="icon">
@@ -66,6 +67,7 @@ function Profile() {
               </p>
             </div>
   
+                <Link to={"/history"}>
             <div className="profile_icons">
               <div className="profile_item">
                 <div className="icon">
@@ -89,6 +91,7 @@ function Profile() {
                 <div className="num">3</div>
               </div>
             </div>
+                </Link>
           </div>
         )} 
         </div>
@@ -102,7 +105,9 @@ function Profile() {
                   </div>
                 </div>
                 <div className="slider_right">
+                <Link to={"/history"} style={{color:"lightgrey"}}>
                   <i className="fas fa-history fa-2x"></i>
+                </Link>
                 </div>
               </div>
             </li>
@@ -115,7 +120,9 @@ function Profile() {
                   </div>
                 </div>
                 <div className="slider_right">
+                <Link to={"/history"} style={{color:"lightgrey"}}>
                   <i className="fas fa-credit-card fa-2x"></i>
+              </Link>
                 </div>
               </div>
             </li>
@@ -127,7 +134,9 @@ function Profile() {
                   </div>
                 </div>
                 <div className="slider_right">
+                <Link to={"/history"} style={{color:"lightgrey"}}>
                   <i className="fas fa-clipboard fa-2x"></i>
+                  </Link>
                 </div>
               </div>
             </li>
@@ -139,7 +148,9 @@ function Profile() {
                   </div>
                 </div>
                 <div className="slider_right">
+                <Link to={"/history"} style={{color:"lightgrey"}}>
                   <i className="fas fa-shopping-cart fa-2x"></i>
+                  </Link>
                 </div>
               </div>
             </li>
