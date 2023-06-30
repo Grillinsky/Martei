@@ -67,9 +67,9 @@ function NavBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
               <Nav className="ms-auto">
-                <Nav.Link className="nav-item" href="/productsPage">
+                <NavLink className="nav-item" href="/productsPage">
                   Productos
-                </Nav.Link>
+                </NavLink>
                 {/* DROPDOWN MENU */}
                 <NavDropdown
                   title="Categorías"
@@ -87,10 +87,10 @@ function NavBar() {
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
-                <Nav.Link href="/#presentacion" className="nav-item">
+                <NavLink href="/#presentacion" className="nav-item">
                   Nosotros
-                </Nav.Link>
-                <Nav.Link
+                </NavLink>
+                <NavLink
                   className="nav-item"
                   href="#header"
                   aria-label="shopping cart"
@@ -106,7 +106,7 @@ function NavBar() {
                       <span>{cartItemsCount}</span>
                     </span>
                   </i>
-                </Nav.Link>
+                </NavLink>
                 <NavDropdown
                   title={<FontAwesomeIcon icon={faUser} />}
                   id="profile-dropdown"
