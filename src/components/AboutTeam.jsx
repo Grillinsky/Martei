@@ -18,7 +18,10 @@ function AboutTeam() {
               <div className="card-img"></div>
               <ul>
                 <li>
-                  <a href="https://github.com/AlexTGarcia020" className="social-button github">
+                  <a
+                    href="https://github.com/AlexTGarcia020"
+                    className="social-button github"
+                  >
                     <svg
                       className="cf-icon-svg"
                       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +32,10 @@ function AboutTeam() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/alex-garcia20/" className="social-button linkedin">
+                  <a
+                    href="https://www.linkedin.com/in/alex-garcia20/"
+                    className="social-button linkedin"
+                  >
                     <svg
                       viewBox="0 -2 44 44"
                       version="1.1"
@@ -209,11 +215,12 @@ function AboutTeam() {
             </h3>
             <p className="description-all">
               {" "}
-              "Hey, qué tal, soy Joaquin Brasesco, tengo 36 años y soy profesor
-              de matemáticas en Florida, Uruguay. También estoy en Hack Academy,
-              ¡porque nunca es tarde para aprender cosas nuevas! Me gusta el
-              deporte y tengo una habilidad especial para los números. Hagamos
-              juntos que las matemáticas sean divertidas y emocionantes."
+              "Apasionado por las matemáticas y la lógica, con 10 años como
+              profesor en este campo. Ahora, descubro una nueva pasión en el
+              mundo de la tecnología de la información (TI). A mis 33 años,
+              resido en Montevideo desde hace 15 años. Me entusiasma embarcarme
+              en un crecimiento profesional en el emocionante ámbito del
+              desarrollo de software."
             </p>
           </div>
         </div>
