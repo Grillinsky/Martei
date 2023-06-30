@@ -293,7 +293,7 @@
 }
 .card-img-4::after {
   content: "";
-  background-image: url("/joacoxd.jpg");
+  background-image: url("/foto.jpg");
   background-size: cover;
   position: absolute;
   inset: 5px;
