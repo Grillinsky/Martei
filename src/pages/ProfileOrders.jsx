@@ -74,7 +74,7 @@ function OrdersProfile() {
                 <td>
                   {order.products.map(product => (
                     <div key={product.id}>
-                      <img className="img-orden-buy" src={`${import.meta.env.VITE_API_URL}/img/${product.image}`} alt={product.name} />
+                      <img className="img-orden-buy" src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`} alt={product.name} />
                     </div>
                   ))}
                 </td>
