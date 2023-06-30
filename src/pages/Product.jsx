@@ -52,7 +52,7 @@ function Product() {
             >
               <img
                 className="Item img-fluid"
-                src={`${import.meta.env.VITE_IMAGE_URL}/${
+                src={`${import.meta.env.VITE_IMAGE_URL}${
                   productIndividualData.image
                 }`}
                 alt="Items"
