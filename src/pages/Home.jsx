@@ -75,7 +75,7 @@ function Home() {
                     <div className="carousel-item active">
                       <img
                         src="/MueblesFinal3.jpeg"
-                        className="w-100"
+                        className="w-100 rounded-img-class"
                         alt="Colgante de techo, en hilo y madera"
                       />
                     </div>
@@ -148,7 +148,7 @@ function Home() {
                     <div className="carousel-item active">
                       <img
                         src="/Cuadro1.png"
-                        className="w-100"
+                        className="w-100 rounded-img-class-2"
                         alt="Coleccion de cuadros de madera"
                       />
                     </div>
@@ -229,7 +229,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/2"}
                 >
-                  Ver todo<i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">
@@ -242,7 +242,7 @@ function Home() {
                     <div className="carousel-item active">
                       <img
                         src="/EspejosFinal5.jpeg"
-                        className="w-100"
+                        className="w-100 rounded-img-class"
                         alt="Espejo cuadrado con cuadro clasico en madera"
                       />
                     </div>
@@ -315,7 +315,7 @@ function Home() {
                     <div className="carousel-item active">
                       <img
                         src="/LuminariasFinal6.jpeg"
-                        className="w-100"
+                        className="w-100 rounded-img-class-2"
                         alt="Campana de mimbre para decoracion luminaria, vista desde abajo"
                       />
                     </div>
@@ -387,8 +387,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/4"}
                 >
-                  Ver todo
-                  <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
             </div>
@@ -397,7 +396,7 @@ function Home() {
             <div className="row">
               <div className="col-lg-8 border rounded p-5 product-category">
                 <h2>Tapices</h2>
-                <p className="fade-in-left">
+                <p className="ms-2 fade-in-left">
                   Nuestra tapiceria demuestra que la combinación entre elementos
                   nobles y naturales nunca puede resultar mal, en este caso,
                   madera y algodón 🤎
@@ -406,7 +405,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/4"}
                 >
-                  Ver todo<i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">
@@ -418,7 +417,7 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/TapizFinal2.jpeg"
+                        src="/Tapiz1.jpg rounded-img-class"
                         className="w-100"
                         alt="Tapiz blanco patron de rombos"
                       />

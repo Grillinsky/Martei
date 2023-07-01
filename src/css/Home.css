@@ -1,4 +1,4 @@
-article {
+darticle {
   background-image: url(/header-banner4.jpg); /*TO DO cambiar por video ? */
   background-size: cover;
   filter: brightness(0.9);
@@ -22,13 +22,28 @@ article {
   border-bottom-left-radius: 0% !important;
 }
 .category-container {
-  box-shadow: 9px 12px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
 }
 .productCarrousel {
   padding: 0%;
   border-top-left-radius: 0% !important;
   border-bottom-left-radius: 0% !important;
 }
+
+.rounded-img-class {
+  border-bottom-right-radius: 17px !important;
+  border-top-right-radius: 10px !important;
+  height: 292px;
+  display: inline-block !important;
+}
+
+.rounded-img-class-2 {
+  border-bottom-left-radius: 17px !important;
+  border-top-left-radius: 10px !important;
+  height: 292px;
+  display: inline-block !important;
+}
+
 
 .productCarrousel-two {
   padding: 0%;

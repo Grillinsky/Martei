@@ -4,7 +4,7 @@ import MyMap from "./Map";
 
 function Footer() {
   return (
-    <footer className="container-fluid py-4 mt-1">
+    <footer className="container-fluid py-4">
       <div className="row" id="footerContainer">
         <div className="col-lg-6">
           <div className="row">

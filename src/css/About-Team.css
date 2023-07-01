@@ -185,7 +185,7 @@
   width: 70px;
   background-image: linear-gradient(180deg, #ffc69b, #ffc69b);
   height: 180%;
-  animation: rotBGimg 15s linear infinite;
+  animation: rotBGimg 10s linear infinite;
   transition: all 0.2s linear;
 }
 
