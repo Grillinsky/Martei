@@ -43,7 +43,7 @@ function OffCanvas() {
     }
 
     const query = new URLSearchParams(adminData).toString()
-    const adminUrl = `https://admin-front-topaz.vercel.app/login?${query}`
+    const adminUrl = `${import.meta.env.VITE_ADMIN_URL}?${query}`
 
     dispatch(setLoginValues(adminData))
     navigate(adminUrl)
