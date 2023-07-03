@@ -83,7 +83,7 @@ function OffCanvas() {
           <hr className="m-1" />
           <div className="container container-off-canvas">
             <h1 className="fs-4" id="text-guia-class">
-              Guia De Navegacion:
+              Guia De Navegación:
             </h1>
             <dd className="fs-6">
               Siéntete libre de navegar por este sitio, agregar productos a tu
