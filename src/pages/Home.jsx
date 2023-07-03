@@ -482,7 +482,7 @@ function Home() {
         </section>
         <section className="my-4 p-3" id="presentacion">
           <div className="row-container container w-50">
-            <div className="row">
+            <div className="row bg-black">
               <div className="col-lg-6 align-self-center justify-content-center d-flex px-0">
                 <img
                   className="fade-in-right"
@@ -491,8 +491,8 @@ function Home() {
                 />
               </div>
               <div className="col-lg-6 px-0">
-                <div className="p-lg-3">
-                  <p id="copy">
+                <div id="copy" className="p-lg-3">
+                  <p>
                     Soy Camila, una joven apasionada por el diseño y la
                     creatividad. Acabo de inaugurar mi propio emprendimiento de
                     artículos de diseño, donde puedo plasmar mi talento y mi

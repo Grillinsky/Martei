@@ -68,8 +68,10 @@ article {
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 #presentacion img {
+  background-color: var(--black);
   width: 100%;
   border-radius: 12px 0px 0px 12px;
+  object-fit: cover;
 }
 .hero-title {
   align-self: flex-start;
@@ -119,8 +121,8 @@ article {
   background-color: var(--primary-color);
 } */
 #copy {
+  background-color: var(--white);
   height: 100%;
-  padding: 50px 0px 0px 0px !important;
 }
 #copy::first-letter {
   font-size: 250%;
@@ -420,6 +422,7 @@ a:hover {
 }
 
 /*            MEDIA MEDIA              */
+
 @media screen and (max-width: 800px) {
   #navContainer {
     background-color: var(--black);
@@ -430,7 +433,7 @@ a:hover {
     width: 100% !important;
   }
   #presentacion {
-    padding: 1rem;
+    padding: 0rem 1rem;
   }
   #presentacion img {
     width: 100%;

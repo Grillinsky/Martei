@@ -49,6 +49,17 @@
   font-weight: normal !important;
   font-size: 20px !important;
 }
+@media screen and (max-width: 1400px) {
+  .slick-slide {
+    padding-inline: 3rem;
+    margin-bottom: 23px;
+  }
+  .slick-list {
+    overflow: hidden;
+    width: 100vw !important;
+    margin-left: 3rem;
+  }
+}
 @media screen and (max-width: 800px) {
   .btn-dark-product-exclusive {
     padding: 5px 20px 5px 20px;
