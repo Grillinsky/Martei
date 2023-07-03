@@ -37,6 +37,19 @@ function OffCanvas() {
     navigate(loginUrl);
   };
 
+  const handleAdmin = () => {
+    const adminData = {
+      admin: "Admin@admin.com",
+      password: "123",
+    };
+
+    const query = new URLSearchParams(adminData).toString();
+    const adminUrl = `${import.meta.env.VITE_ADMIN_URL}?${query}`;
+
+    dispatch(setLoginValues(adminData));
+    navigate(adminUrl);
+  };
+
   return (
     <>
       <Button id="offCanvasButton" onClick={handleShow}>
@@ -96,7 +109,7 @@ function OffCanvas() {
           </div>
           <div className="off-canvas-button-div">
             <Link to={`${import.meta.env.VITE_ADMIN_URL}/login`}>
-              <button className="btn-user-canvas">
+              <button className="btn-user-canvas" onClick={handleAdmin}>
                 Loguearte como Admin
               </button>
             </Link>

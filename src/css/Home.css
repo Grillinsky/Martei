@@ -33,14 +33,12 @@ article {
 .rounded-img-class {
   border-bottom-right-radius: 17px !important;
   border-top-right-radius: 10px !important;
-  height: 292px;
   display: inline-block !important;
 }
 
 .rounded-img-class-2 {
   border-bottom-left-radius: 17px !important;
   border-top-left-radius: 10px !important;
-  height: 292px;
   display: inline-block !important;
 }
 
@@ -120,7 +118,7 @@ article {
 } */
 #copy {
   height: 100%;
-  padding: 1rem;
+  padding: 50px 0px 0px 0px !important;
 }
 #copy::first-letter {
   font-size: 250%;
