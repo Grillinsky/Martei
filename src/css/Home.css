@@ -42,7 +42,6 @@ article {
   display: inline-block !important;
 }
 
-
 .productCarrousel-two {
   padding: 0%;
   border-top-right-radius: 0% !important;
@@ -99,6 +98,8 @@ article {
 #navContainer {
   background-color: var(--black);
   padding-inline: 12.5vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .carousel-item {
@@ -227,11 +228,6 @@ a:hover {
   font-size: 18px !important;
   font-weight: 700 !important;
   color: rgb(214, 214, 1);
-}
-
-#navContainer {
-  background-color: var(--black);
-  padding-inline: 12.5vw;
 }
 #offCanvasButton {
   position: fixed;

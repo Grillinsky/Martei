@@ -66,8 +66,8 @@ function NavBar() {
               />
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
-              <Nav className="ms-auto">
-                <NavLink className="nav-item" to="/productsPage">
+              <Nav className="ms-auto py-2">
+                <NavLink className="nav-item p-2" to="/productsPage">
                   Productos
                 </NavLink>
                 {/* DROPDOWN MENU */}
@@ -87,11 +87,11 @@ function NavBar() {
                     </NavLink>
                   ))}
                 </NavDropdown>
-                <NavLink to="/#presentacion" className="nav-item">
+                <NavLink to="/#presentacion" className="nav-item p-2">
                   Nosotros
                 </NavLink>
                 <NavLink
-                  className="nav-item"
+                  className="nav-item p-2"
                   to="#header"
                   aria-label="shopping cart"
                   onClick={() => setMostrarCarrito(true)}
