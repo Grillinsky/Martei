@@ -31,9 +31,10 @@ article {
 }
 
 .rounded-img-class {
-  border-bottom-right-radius: 17px !important;
+  border-bottom-right-radius: 10px !important;
   border-top-right-radius: 10px !important;
   display: inline-block !important;
+  height: 110% !important;
 }
 
 .rounded-img-class-2 {

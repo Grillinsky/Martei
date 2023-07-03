@@ -417,8 +417,8 @@ function Home() {
                   <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img
-                        src="/TapizFinal1.jpeg rounded-img-class"
-                        className="w-100"
+                        src="/TapizFinal3.jpeg"
+                        className="w-100 rounded-img-class"
                         alt="Tapiz blanco patron de rombos"
                       />
                     </div>
