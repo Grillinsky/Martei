@@ -97,7 +97,7 @@ const FormularioTarjeta = () => {
           products: itemsCarrito,
           address: address,
           userId: user.id,
-          state: "pago",
+          state: "Pago",
         };
 
         try {
