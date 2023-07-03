@@ -56,7 +56,7 @@ function NavBar() {
       <header id="header">
         <Navbar id="navContainer" expand="lg" fixed="top">
           <Container fluid>
-            <Navbar.Brand href="/" className="p-0">
+            <Navbar.Brand to="/" className="p-0">
               <img
                 src="/logoFinal.png"
                 alt="Logo"
@@ -74,7 +74,7 @@ function NavBar() {
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
               <Nav className="ms-auto">
-                <NavLink className="nav-item" href="/productsPage">
+                <NavLink className="nav-item" to="/productsPage">
                   Productos
                 </NavLink>
                 {/* DROPDOWN MENU */}
@@ -84,22 +84,22 @@ function NavBar() {
                   className="custom-dropdown"
                 >
                   {categories.map((category) => (
-                    <NavDropdown.Item
+                    <NavLink
                       key={category.id}
-                      href={`/category/list/${category.id}`}
-                      className="nav-item"
+                      to={`/category/list/${category.id}`}
+                      className="nav-item dropdown-item"
                       style={{ fontSize: "1rem" }}
                     >
                       {category.name}
-                    </NavDropdown.Item>
+                    </NavLink>
                   ))}
                 </NavDropdown>
-                <NavLink href="/#presentacion" className="nav-item">
+                <NavLink to="/#presentacion" className="nav-item">
                   Nosotros
                 </NavLink>
                 <NavLink
                   className="nav-item"
-                  href="#header"
+                  to="#header"
                   aria-label="shopping cart"
                   onClick={() => setMostrarCarrito(true)}
                 >
