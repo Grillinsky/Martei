@@ -5,14 +5,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import { logoutUser } from "../../redux/userSlice";
 import axios from "axios";
 
-import {
-  Navbar,
-  Nav,
-  Container,
-  NavDropdown,
-  Dropdown,
-  NavLink,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -56,13 +49,13 @@ function NavBar() {
       <header id="header">
         <Navbar id="navContainer" expand="lg" fixed="top">
           <Container fluid>
-            <Navbar.Brand to="/" className="p-0">
+            <NavLink to="/" className="p-0">
               <img
                 src="/logoFinal.png"
                 alt="Logo"
                 className="d-inline-block align-text-top w-25"
               />
-            </Navbar.Brand>
+            </NavLink>
             <Navbar.Toggle
               style={{ color: "white !important" }}
               aria-controls="navbarToggler"
