@@ -24,10 +24,10 @@ function App() {
       <OffCanvas />
       <Routes>
         <Route element={<ProtectedRoute user={user} redirectTo="/login" />}>
+        </Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/admin" element={<Dashboard />} />
-          <Route path="/history" element={<OrdersProfile />} />
-        </Route>
+          <Route path="/history" element={<OrdersProfile />} />          
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<Product />} />

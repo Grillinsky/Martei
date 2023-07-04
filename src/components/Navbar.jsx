@@ -127,7 +127,7 @@ function NavBar() {
                   <Dropdown.Divider />
                   <NavDropdown.Item className="nav-item">
                     {" "}
-                    <Link to="#/profile/pedidos" className="fs-6">
+                    <Link to="/history" className="fs-6">
                       Mis Pedidos
                     </Link>
                   </NavDropdown.Item>

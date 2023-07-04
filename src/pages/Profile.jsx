@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { logoutUser } from "../../redux/userSlice";
-import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
+import { Link } from "react-router-dom";
 
 function Profile() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [profileData, setProfileData] = useState(null);
-  const [sliderActive, setSliderActive] = useState(false);
 
   useEffect(() => {
     async function getProfileDataUser() {
@@ -32,6 +31,7 @@ function Profile() {
     }
   }, [user]);
 
+  const [sliderActive, setSliderActive] = useState(false);
   const toggleSlider = () => {
     setSliderActive(!sliderActive);
   };

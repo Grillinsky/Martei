@@ -45,8 +45,8 @@ function Footer() {
                   <li>Perfil</li>
                 </Link>
               </ul>
-            </div>
-          </div>
+
+          </div>            </div>
         </div>
         <div className="col-12 col-lg-6">
           <div className="row">

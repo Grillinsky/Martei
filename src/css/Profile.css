@@ -265,15 +265,32 @@ table {
 	min-height: 40em !important;
  }
 
- @media (min-width: 768px) {
-	.slider_container {
-	  flex-direction: row;
-	  align-items: flex-start;
-	  top: 0;
-	  left: auto;
-	  right: auto;
-	  box-shadow: none;
-	}
+ .table-responsive {
+	overflow-x: auto;
   }
-
   
+
+ @media (max-width: 767px) {
+	.profile_slider {
+	  width: 100%;
+	  height: auto;
+	  background: #ffffff;
+	  color: #7b7a82;
+	  position:static;
+	  top: 0;
+	  left: 0;
+	  font-size: 14px;
+	  transition: top 0.2s ease;
+	}
+  
+	.profile_slider.active {
+	  top: calc(100% - 400px);
+	  transition: top 0.2s ease;
+	}
+  
+	.profile_card {
+	  margin-bottom: 0 !important;
+	}
+
+	
+  }
