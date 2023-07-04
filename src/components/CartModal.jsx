@@ -79,7 +79,7 @@ function CartModal(props) {
                       </button>
                     </span>
                     <span className="col-4">
-                      U${item.price * item.qty}{' '}
+                      U${(item.price * item.qty).toFixed(2)}{' '}
                       <i
                         className="far fa-times-circle"
                         onClick={() => handleRemoveItem(item.id)}
