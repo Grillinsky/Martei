@@ -96,7 +96,9 @@ function CartModal(props) {
         {itemsCarrito.length > 0 && (
           <div className="text-end p-4 fw-bold price-modal">
             Total a pagar: U$
-            {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
+            {itemsCarrito
+              .reduce((acc, p) => acc + p.qty * p.price, 0)
+              .toFixed(2)}
           </div>
         )}
         <Modal.Footer className="mi-modal-footer">
