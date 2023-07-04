@@ -35,7 +35,7 @@ function Home() {
         theme="light"
       />
       <Navbar />
-      <article className="container-fluid mt-5">
+      <article className="container-fluid mt-2">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
         </h1>{" "}
