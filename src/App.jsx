@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
-import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import ProductsPage from "./pages/ProductsPage";
 import Register from "./pages/Register";
@@ -26,7 +25,6 @@ function App() {
         <Route element={<ProtectedRoute user={user} redirectTo="/login" />}>
         </Route>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/admin" element={<Dashboard />} />
           <Route path="/history" element={<OrdersProfile />} />          
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
