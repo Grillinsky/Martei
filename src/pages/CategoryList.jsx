@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import CategoryCard from "../components/CategoryCardList";
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import CategoryCard from '../components/CategoryCardList'
 
 function CategoryList() {
   return (
@@ -11,7 +11,7 @@ function CategoryList() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default CategoryList;
+export default CategoryList
