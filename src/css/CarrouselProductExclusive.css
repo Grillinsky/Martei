@@ -9,13 +9,14 @@
 .slick-track {
   display: inline-block !important;
   align-items: center;
-  margin: 0;
   padding: 0;
 }
 
 .slick-list {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  width: 80vw !important;
+  /* width: 80vw !important; */
 }
 
 .title-exclusive-product {
@@ -25,13 +26,14 @@
 .ExclusiveProductColumn {
   cursor: pointer;
   text-align: center;
-  padding: 9px !important;
-  margin-top: 20px;
-  margin-left: 35px;
-  width: 250px !important;
-  height: auto !important;
+  width: 17rem !important;
+  display: flex;
+  justify-content: center;
 }
-
+.ExclusiveProductColumn img {
+  margin-inline: auto;
+  margin-block: 1rem;
+}
 .btn-dark-product-exclusive {
   padding: 5px 20px 5px 20px;
   border-radius: 7px !important;
@@ -60,7 +62,16 @@
     margin-left: 3rem;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
+  .ExclusiveProductColumn {
+    max-width: 17rem !important;
+    display: flex;
+    justify-content: center;
+  }
+  .ExclusiveProductColumn img {
+    margin-inline: auto;
+    margin-block: 1rem;
+  }
   .btn-dark-product-exclusive {
     padding: 5px 20px 5px 20px;
     border-radius: 7px !important;
@@ -72,7 +83,7 @@
   }
   .slick-list {
     overflow: hidden;
-    width: 80vw !important;
-    margin-left: 3rem;
+    width: 75vw !important;
+    margin-inline: 5vw;
   }
 }

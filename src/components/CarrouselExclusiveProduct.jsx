@@ -37,7 +37,7 @@ const ExclusiveProductSection = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
@@ -71,7 +71,7 @@ const ExclusiveProductSection = () => {
           </button>
         </Link>
       </div>
-      <div className="container d-flex">
+      <div className="container">
         <Slider {...carouselSettings} id="slider">
           {productData.map((product) => (
             <div
@@ -82,7 +82,7 @@ const ExclusiveProductSection = () => {
               {/* Contenido del producto */}
               <img
                 src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`}
-                alt={product.name}
+                alt={`Foto de ${product.name}`}
               />
               <h5 className="category-exclusive-product">{product.category}</h5>
               <h3 className="name-exclusive-product">{product.name}</h3>
