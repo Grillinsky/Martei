@@ -428,12 +428,23 @@ a:hover {
     background-color: var(--black);
     padding: 0%;
   }
+
+  #productos {
+    margin-left: 10px;
+    margin-right: 20px !important;
+    padding-right: 1.3rem !important;
+  }
+
   #presentacion,
   .row-container {
     width: 100% !important;
   }
   #presentacion {
-    padding: 0rem 1rem;
+    padding: 0rem 5rem !important;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
   }
   #presentacion img {
     width: 100%;

@@ -86,4 +86,10 @@
     width: 75vw !important;
     margin-inline: 5vw;
   }
+
+  .btn-dark-product-exclusive {
+    font-size: 15px;
+    letter-spacing: 3px;
+    padding: 2px 22px 2px 22px;
+  }
 }
