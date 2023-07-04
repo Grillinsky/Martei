@@ -1,77 +1,97 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { AddOrIncrement } from "../../redux/cartSlice";
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import { AddOrIncrement } from '../../redux/cartSlice'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function CategoryCard() {
-  const { categoryId } = useParams();
+  const { categoryId } = useParams()
 
-  const [products, setProducts] = useState([]);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const [products, setProducts] = useState([])
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const [cartToast, setCartToast] = useState(false)
 
   useEffect(() => {
-    categoryList();
-  }, []);
+    categoryList()
+  }, [])
 
-  const handleAddToCart = (product) => {
-    dispatch(AddOrIncrement(product));
-    console.log("Added to cart", product);
-  };
-  const handleBuy = (product) => {
-    dispatch(AddOrIncrement(product));
-    navigate("/order");
-  };
+  const handleAddToCart = product => {
+    dispatch(AddOrIncrement(product))
+
+    setCartToast(true)
+    toast.success(`¡Se agregó ${product.name} al carrito!`)
+
+    console.log('Added to cart', product)
+  }
+  const handleBuy = product => {
+    dispatch(AddOrIncrement(product))
+    navigate('/order')
+  }
 
   async function categoryList() {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/category/list/${categoryId}`
-      );
-      const productList = Array.isArray(response.data) ? response.data : [];
-      setProducts(productList);
+      )
+      const productList = Array.isArray(response.data) ? response.data : []
+      setProducts(productList)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
   }
 
   return (
     <div className="container mt-3 py-5 d-flex justify-content-center">
+      <ToastContainer
+        position="top-right"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="light"
+      />
       <div className="row w-75">
         {Array.isArray(products) ? (
-          products.map((product) => (
+          products.map(product => (
             <div key={product.id} className="col-12 col-md-6 col-lg-4 my-3">
               <Card
                 style={{
-                  marginBlock: "1rem",
+                  marginBlock: '1rem'
                 }}
               >
                 <Card.Img
                   variant="top"
                   src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`}
-                  style={{ height: "18rem", objectFit: "cover" }}
+                  style={{ height: '18rem', objectFit: 'cover' }}
                 />
                 <Card.Body
                   className=""
                   style={{
-                    backgroundColor: "white",
-                    borderEndEndRadius: "22px",
-                    borderEndStartRadius: "22px",
+                    backgroundColor: 'white',
+                    borderEndEndRadius: '22px',
+                    borderEndStartRadius: '22px'
                   }}
                 >
                   <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
+                    style={{ display: 'flex', justifyContent: 'space-between' }}
                   >
                     <div
                       className="mb-2"
                       style={{
-                        color: "black",
-                        fontWeight: "900",
-                        fontSize: "20px",
+                        color: 'black',
+                        fontWeight: '900',
+                        fontSize: '20px'
                       }}
                     >
                       {product.name}
@@ -84,8 +104,8 @@ function CategoryCard() {
                     <button
                       className="mt-2 mb-1 btn btn-outline-dark text-black"
                       style={{
-                        color: "white",
-                        borderRadius: "7px",
+                        color: 'white',
+                        borderRadius: '7px'
                       }}
                     >
                       Ver Producto
@@ -101,9 +121,9 @@ function CategoryCard() {
                     </Button>
                     <Button
                       style={{
-                        backgroundColor: "var(--primary-color)",
-                        border: "0",
-                        color: "var(--black)",
+                        backgroundColor: 'var(--primary-color)',
+                        border: '0',
+                        color: 'var(--black)'
                       }}
                       className="ms-2 rounded"
                       onClick={() => handleAddToCart(product)}
@@ -120,7 +140,7 @@ function CategoryCard() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default CategoryCard;
+export default CategoryCard
