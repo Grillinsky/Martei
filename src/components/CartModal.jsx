@@ -79,7 +79,7 @@ function CartModal(props) {
                       </button>
                     </span>
                     <span className="col-4">
-                      U${item.price * item.qty}{' '}
+                      U${(item.price * item.qty).toFixed(2)}{' '}
                       <i
                         className="far fa-times-circle"
                         onClick={() => handleRemoveItem(item.id)}
@@ -96,7 +96,9 @@ function CartModal(props) {
         {itemsCarrito.length > 0 && (
           <div className="text-end p-4 fw-bold price-modal">
             Total a pagar: U$
-            {itemsCarrito.reduce((acc, p) => acc + p.qty * p.price, 0)}
+            {itemsCarrito
+              .reduce((acc, p) => acc + p.qty * p.price, 0)
+              .toFixed(2)}
           </div>
         )}
         <Modal.Footer className="mi-modal-footer">
