@@ -20,10 +20,6 @@ function CategoryCard() {
 
   useEffect(() => {
     categoryList()
-  }, [])
-
-  useEffect(() => {
-    categoryList()
   }, [categoryId])
 
   const handleAddToCart = product => {
