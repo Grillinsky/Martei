@@ -22,6 +22,10 @@ function CategoryCard() {
     categoryList()
   }, [])
 
+  useEffect(() => {
+    categoryList()
+  }, [categoryId])
+
   const handleAddToCart = product => {
     dispatch(AddOrIncrement(product))
 
