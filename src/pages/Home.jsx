@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import "../css/Home.css";
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import '../css/Home.css'
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ExclusiveProductSection from "../components/CarrouselExclusiveProduct";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import ExclusiveProductSection from '../components/CarrouselExclusiveProduct'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Home() {
-  const [showToast, setShowToast] = useState(false);
-  const isLoggedIn = useSelector((state) => state.user !== null);
+  const [showToast, setShowToast] = useState(false)
+  const isLoggedIn = useSelector(state => state.user !== null)
 
   useEffect(() => {
     if (isLoggedIn) {
-      setShowToast(true);
-      toast.success("¡Bienvenido a Martei!");
+      setShowToast(true)
+      toast.success('¡Bienvenido a Martei!')
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn])
 
   return (
     <div>
@@ -38,7 +38,7 @@ function Home() {
       <article className="container-fluid mt-2">
         <h1 className="hero-title fade-in-top">
           m<span>artei</span>.
-        </h1>{" "}
+        </h1>{' '}
         {/* TO DO agregar animacion */}
         <p className="hero-paragraph">
           Piezas en materiales nobles y fibras naturales <br />
@@ -60,7 +60,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/1"}
+                  to={'/category/list/1'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -209,7 +209,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/3"}
+                  to={'/category/list/3'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -227,7 +227,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/2"}
+                  to={'/category/list/2'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -385,7 +385,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/4"}
+                  to={'/category/list/4'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -403,7 +403,7 @@ function Home() {
                 </p>
                 <Link
                   className="text-dark category-link"
-                  to={"/category/list/4"}
+                  to={'/category/list/5'}
                 >
                   Ver todo <i className="fas fa-chevron-right"></i>
                 </Link>
@@ -512,7 +512,7 @@ function Home() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
