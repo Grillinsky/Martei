@@ -34,15 +34,9 @@ function NavBar() {
 
   const handleNavClick = () => {
     if (location.pathname === '/') {
-      setTimeout(handleScroll, 0)
+      handleScroll()
     }
   }
-
-  useEffect(() => {
-    if (location.hash === '#presentacion') {
-      setTimeout(handleScroll, 0)
-    }
-  }, [location])
 
   useEffect(() => {
     fetchCategories()
