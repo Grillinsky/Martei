@@ -1,51 +1,67 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, NavLink } from "react-router-dom";
-import { logoutUser } from "../../redux/userSlice";
-import axios from "axios";
+import React from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate, NavLink, useLocation } from 'react-router-dom'
+import { logoutUser } from '../../redux/userSlice'
+import axios from 'axios'
 
-import { Navbar, Nav, Container, NavDropdown, Dropdown } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Navbar, Nav, Container, NavDropdown, Dropdown } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-import "../css/Cart-Modal.css";
-import CartModal from "./CartModal";
+import '../css/Cart-Modal.css'
+import CartModal from './CartModal'
 
 function NavBar() {
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [categories, setCategories] = useState([]);
-  const cartItemsCount = useSelector((state) =>
+  const [mostrarCarrito, setMostrarCarrito] = useState(false)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const [categories, setCategories] = useState([])
+  const cartItemsCount = useSelector(state =>
     state.cart.reduce((acc, p) => acc + p.qty, 0)
-  );
+  )
+
+  const presentacionRef = useRef(null)
+  const location = useLocation()
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: presentacionRef.current.offsetTop,
+      behavior: 'smooth'
+    })
+  }
+
+  const handleNavClick = () => {
+    if (location.pathname === '/') {
+      handleScroll()
+    }
+  }
 
   useEffect(() => {
-    fetchCategories();
-  }, []);
+    fetchCategories()
+  }, [])
 
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
         `${import.meta.env.VITE_API_URL}/category`
-      );
-      const { categories } = response.data;
-      setCategories(categories);
+      )
+      const { categories } = response.data
+      setCategories(categories)
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   const handleLogout = () => {
-    dispatch(logoutUser());
-    navigate("/login");
-  };
+    dispatch(logoutUser())
+    navigate('/login')
+  }
 
   return (
     <div>
-      {" "}
+      {' '}
       <header id="header">
         <Navbar id="navContainer" expand="lg" fixed="top">
           <Container fluid>
@@ -57,12 +73,12 @@ function NavBar() {
               />
             </NavLink>
             <Navbar.Toggle
-              style={{ color: "white !important" }}
+              style={{ color: 'white !important' }}
               aria-controls="navbarToggler"
             >
               <FontAwesomeIcon
                 icon={faBars}
-                style={{ color: "white", fontSize: "2rem" }}
+                style={{ color: 'white', fontSize: '2rem' }}
               />
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
@@ -76,18 +92,22 @@ function NavBar() {
                   id="navDropdown"
                   className="custom-dropdown"
                 >
-                  {categories.map((category) => (
+                  {categories.map(category => (
                     <NavLink
                       key={category.id}
                       to={`/category/list/${category.id}`}
                       className="nav-item dropdown-item"
-                      style={{ fontSize: "1rem" }}
+                      style={{ fontSize: '1rem' }}
                     >
                       {category.name}
                     </NavLink>
                   ))}
                 </NavDropdown>
-                <NavLink to="/#presentacion" className="nav-item p-2">
+                <NavLink
+                  to="/#presentacion"
+                  className="nav-item p-2"
+                  onClick={handleNavClick}
+                >
                   Nosotros
                 </NavLink>
                 <NavLink
@@ -100,7 +120,7 @@ function NavBar() {
                     <span
                       id="badge"
                       className={`position-absolute start-100 translate-middle bg-danger rounded-circle ${
-                        cartItemsCount === 0 ? "d-none" : ""
+                        cartItemsCount === 0 ? 'd-none' : ''
                       }`}
                     >
                       <span>{cartItemsCount}</span>
@@ -114,7 +134,7 @@ function NavBar() {
                   menuclassname="custom-dropdown-menu"
                 >
                   <NavDropdown.Item className="nav-item">
-                    <Link to={"/profile"} className="fs-6">
+                    <Link to={'/profile'} className="fs-6">
                       Profile
                     </Link>
                   </NavDropdown.Item>
@@ -126,7 +146,7 @@ function NavBar() {
                   </NavDropdown.Item>
                   <Dropdown.Divider />
                   <NavDropdown.Item className="nav-item">
-                    {" "}
+                    {' '}
                     <Link to="/history" className="fs-6">
                       Mis Pedidos
                     </Link>
@@ -149,7 +169,7 @@ function NavBar() {
         setMostrarCarrito={setMostrarCarrito}
       />
     </div>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

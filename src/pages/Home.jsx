@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import '../css/Home.css'
@@ -13,12 +13,27 @@ function Home() {
   const [showToast, setShowToast] = useState(false)
   const isLoggedIn = useSelector(state => state.user !== null)
 
+  const presentacionRef = useRef(null)
+
   useEffect(() => {
     if (isLoggedIn) {
       setShowToast(true)
       toast.success('¡Bienvenido a Martei!')
     }
   }, [isLoggedIn])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollTo({
+        top: presentacionRef.current.offsetTop,
+        behavior: 'smooth'
+      })
+    }
+
+    if (window.location.hash === '#presentacion') {
+      handleScroll()
+    }
+  }, [])
 
   return (
     <div>
@@ -480,7 +495,7 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="my-4 p-3" id="presentacion">
+        <section className="my-4 p-3" id="presentacion" ref={presentacionRef}>
           <div className="row-container container w-50">
             <div className="row bg-black">
               <div className="col-lg-6 align-self-center justify-content-center d-flex px-0">
