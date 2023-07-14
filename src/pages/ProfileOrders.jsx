@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/Profile.css";
+import FloatingBackBtn from "../components/FloatingBackBtn";
 
 function OrdersProfile() {
   const user = useSelector((state) => state.user);
@@ -76,7 +77,9 @@ function OrdersProfile() {
                       <div key={product.id}>
                         <img
                           className="img-orden-buy"
-                          src={`${import.meta.env.VITE_IMAGES_URL}${product.image}`}
+                          src={`${import.meta.env.VITE_IMAGES_URL}${
+                            product.image
+                          }`}
                           alt={product.name}
                         />
                       </div>
@@ -92,6 +95,7 @@ function OrdersProfile() {
           </table>
         </div>
       </div>
+      <FloatingBackBtn />
       <Footer />
     </div>
   );

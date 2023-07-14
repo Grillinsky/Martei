@@ -1,39 +1,38 @@
-import { Modal, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
+import { Modal, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AddOrIncrement,
   RemoveOrDecrement,
   clearCart,
-  RemoveFromCart
-} from '../../redux/cartSlice'
-import { useNavigate } from 'react-router-dom'
-import '../css/Order.css'
+  RemoveFromCart,
+} from "../../redux/cartSlice";
+import { useNavigate } from "react-router-dom";
+import "../css/Order.css";
 
 function CartModal(props) {
-  const itemsCarrito = useSelector(state => state.cart)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const itemsCarrito = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleOrder = () => {
-    navigate(`/order`)
-  }
+    navigate(`/order`);
+  };
 
-  const handleIncrement = product => {
-    dispatch(AddOrIncrement(product))
-  }
+  const handleIncrement = (product) => {
+    dispatch(AddOrIncrement(product));
+  };
 
-  const handleDecrement = productId => {
-    dispatch(RemoveOrDecrement(productId))
-  }
+  const handleDecrement = (productId) => {
+    dispatch(RemoveOrDecrement(productId));
+  };
 
   const handleClearCart = () => {
-    dispatch(clearCart())
-    console.log('Carrito vacio')
-  }
+    dispatch(clearCart());
+  };
 
-  const handleRemoveItem = productId => {
-    dispatch(RemoveFromCart(productId))
-  }
+  const handleRemoveItem = (productId) => {
+    dispatch(RemoveFromCart(productId));
+  };
   return (
     <div>
       <Modal
@@ -79,14 +78,14 @@ function CartModal(props) {
                       </button>
                     </span>
                     <span className="col-4">
-                      U${(item.price * item.qty).toFixed(2)}{' '}
+                      U${(item.price * item.qty).toFixed(2)}{" "}
                       <i
                         className="far fa-times-circle"
                         onClick={() => handleRemoveItem(item.id)}
                       ></i>
                     </span>
                   </li>
-                )
+                );
               })}
             </ul>
           ) : (
@@ -119,7 +118,7 @@ function CartModal(props) {
         </Modal.Footer>
       </Modal>
     </div>
-  )
+  );
 }
 
-export default CartModal
+export default CartModal;

@@ -211,7 +211,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/3"}
                 >
-                  Ver todo <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right mx-2"></i>
                 </Link>
               </div>
             </div>
@@ -229,7 +229,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/2"}
                 >
-                  Ver todo <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right mx-2"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">
@@ -387,7 +387,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/4"}
                 >
-                  Ver todo <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right mx-2"></i>
                 </Link>
               </div>
             </div>
@@ -405,7 +405,7 @@ function Home() {
                   className="text-dark category-link"
                   to={"/category/list/4"}
                 >
-                  Ver todo <i className="fas fa-chevron-right"></i>
+                  Ver todo <i className="fas fa-chevron-right mx-2"></i>
                 </Link>
               </div>
               <div className="col-lg-4 border rounded productCarrousel">

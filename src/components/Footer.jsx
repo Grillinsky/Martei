@@ -45,8 +45,8 @@ function Footer() {
                   <li>Perfil</li>
                 </Link>
               </ul>
-
-          </div>            </div>
+            </div>{" "}
+          </div>
         </div>
         <div className="col-12 col-lg-6">
           <div className="row">
@@ -75,7 +75,9 @@ function Footer() {
                     className="fas fa-phone-alt fs-6"
                     style={{ marginRight: "8px" }}
                   ></i>
-                  <span className="fw-normal ms-1">099470542</span>
+                  <a href="tel:099470542" className="fw-normal ms-1">
+                    099470542
+                  </a>
                 </li>
                 <li className="mt-3">
                   <a

@@ -10,6 +10,8 @@ import { clearCart } from "../../redux/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NavBar from "../components/Navbar";
+import FloatingBackBtn from "../components/FloatingBackBtn";
+import Footer from "../components/Footer";
 
 const FormularioTarjeta = () => {
   const [showToast, setShowToast] = useState(false);
@@ -415,6 +417,7 @@ const FormularioTarjeta = () => {
           Finalizar compra
         </button>
       </form>
+      <FloatingBackBtn />
     </div>
   );
 };

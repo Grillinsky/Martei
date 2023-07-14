@@ -129,6 +129,16 @@ article {
   color: rgb(88, 85, 85);
   padding: 0.3rem;
 }
+#FloatingBackBtn {
+  height: 5rem;
+  width: 5rem;
+  padding: 1.5rem;
+  margin-top: -10rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  border: 3px solid var(--black);
+  z-index: 10;
+}
 footer {
   min-height: 15vh;
   background-color: var(--black);
@@ -476,5 +486,14 @@ a:hover {
   }
   #navContainer {
     padding-inline: 1.5vw;
+  }
+  #FloatingBackBtn {
+    height: 5rem;
+    width: 5rem;
+    padding: 1.5rem;
+    margin-inline: auto;
+    margin-block: 4rem;
+    border: 3px solid var(--black);
+    z-index: 10;
   }
 }
