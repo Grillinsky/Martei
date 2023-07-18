@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import '../css/Profile.css'
 import FloatingBackBtn from '../components/FloatingBackBtn'
 
-import moment from 'moment' // Importa la librería moment.js
+import moment from 'moment'
 
 function OrdersProfile() {
   const user = useSelector(state => state.user)
@@ -38,9 +38,11 @@ function OrdersProfile() {
   }
 
   function calculateOrderTotal(order) {
-    return order.products.reduce((total, product) => {
-      return total + product.price * product.qty
-    }, 0)
+    return order.products
+      .reduce((total, product) => {
+        return total + product.price * product.qty
+      }, 0)
+      .toFixed(2)
   }
 
   return (
