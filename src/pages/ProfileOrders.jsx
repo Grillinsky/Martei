@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import "../css/Profile.css";
-import FloatingBackBtn from "../components/FloatingBackBtn";
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import axios from 'axios'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import '../css/Profile.css'
+import FloatingBackBtn from '../components/FloatingBackBtn'
+
+import moment from 'moment' // Importa la librería moment.js
 
 function OrdersProfile() {
-  const user = useSelector((state) => state.user);
-  const [orders, setOrders] = useState([]);
+  const user = useSelector(state => state.user)
+  const [orders, setOrders] = useState([])
 
   useEffect(() => {
     if (user) {
-      fetchOrders();
+      fetchOrders()
     }
-  }, [user]);
+  }, [user])
 
   const fetchOrders = async () => {
     try {
@@ -22,23 +24,23 @@ function OrdersProfile() {
         `${import.meta.env.VITE_API_URL}/order/${user.id}`,
         {
           headers: {
-            Authorization: `Bearer ${user.accessToken}`,
-          },
+            Authorization: `Bearer ${user.accessToken}`
+          }
         }
-      );
-      const ordersData = response.data.orders;
+      )
+      const ordersData = response.data.orders
 
-      setOrders(ordersData);
-      console.log();
+      setOrders(ordersData)
+      console.log()
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   function calculateOrderTotal(order) {
     return order.products.reduce((total, product) => {
-      return total + product.price * product.qty;
-    }, 0);
+      return total + product.price * product.qty
+    }, 0)
   }
 
   return (
@@ -59,12 +61,15 @@ function OrdersProfile() {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {orders.map(order => (
                 <tr key={order.id}>
                   <td className="">{order.id}</td>
-                  <td>{order.createdAt}</td>
                   <td>
-                    {order.products.map((product) => (
+                    {moment(order.createdAt).format('DD-MM-YYYY HH:mm')}
+                  </td>{' '}
+                  // Arreglo fecha
+                  <td>
+                    {order.products.map(product => (
                       <div className="" key={product.id}>
                         <p className="mt-2 fw-bold">{product.name}</p>
                         <p>Cantidad: {product.qty}</p>
@@ -73,7 +78,7 @@ function OrdersProfile() {
                     ))}
                   </td>
                   <td>
-                    {order.products.map((product) => (
+                    {order.products.map(product => (
                       <div key={product.id}>
                         <img
                           className="img-orden-buy"
@@ -98,7 +103,7 @@ function OrdersProfile() {
       <FloatingBackBtn />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default OrdersProfile;
+export default OrdersProfile
