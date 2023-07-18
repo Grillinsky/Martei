@@ -54,7 +54,7 @@ function OrdersProfile() {
           <table>
             <thead>
               <tr>
-                <th>Orden de Compra</th>
+                <th>Orden número</th>
                 <th>Fecha</th>
                 <th>Producto</th>
                 <th>Imagen</th>

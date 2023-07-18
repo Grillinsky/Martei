@@ -394,15 +394,15 @@ const FormularioTarjeta = () => {
         <div className="border-top mt-3">
           <h3>Detalles de la compra</h3>
           {itemsCarrito.map(item => (
-            <div key={item.id}>
-              <h6 className="bg-light-subtle"> {item.name}</h6>
+            <div key={item.id} className="item">
+              <h6 className="bg-light-subtle fw-bold">{item.name}</h6>
               <p className="m-0">
                 Precio unitario: U${item.price} - Cantidad: {item.qty} - U$
                 {item.price * item.qty}
               </p>
             </div>
           ))}
-          <h3 className="text-end">Total a pagar: U${total}</h3>
+          <h3 className="border-top mt-3 text-end">Total a pagar: U${total}</h3>
         </div>
 
         <button
