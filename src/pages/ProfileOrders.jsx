@@ -67,7 +67,6 @@ function OrdersProfile() {
                   <td>
                     {moment(order.createdAt).format('DD-MM-YYYY HH:mm')}
                   </td>{' '}
-                  // Arreglo fecha
                   <td>
                     {order.products.map(product => (
                       <div className="" key={product.id}>
