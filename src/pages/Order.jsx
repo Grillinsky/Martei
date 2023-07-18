@@ -402,7 +402,9 @@ const FormularioTarjeta = () => {
               </p>
             </div>
           ))}
-          <h3 className="border-top mt-3 text-end">Total a pagar: U${total}</h3>
+          <h3 className="border-top mt-3 mb-2 text-end">
+            Total a pagar: U${total}
+          </h3>
         </div>
 
         <button
