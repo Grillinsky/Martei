@@ -49,7 +49,7 @@ function OrdersProfile() {
     <div>
       <Navbar />
       <div id="container-product-order">
-        <h1>Órdenes de Compra</h1>
+        <h1>Órdenes de compra</h1>
         <div className="table-responsive">
           <table>
             <thead>
