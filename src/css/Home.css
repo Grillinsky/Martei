@@ -132,11 +132,11 @@ article {
 #FloatingBackBtn {
   height: 5rem;
   width: 5rem;
+  background-color: rgb(157, 142, 142, 0.31);
   padding: 1.5rem;
   margin-top: -10rem;
   margin-bottom: 2rem;
   margin-left: 2rem;
-  border: 3px solid var(--black);
   z-index: 10;
 }
 footer {
@@ -450,9 +450,10 @@ a:hover {
     width: 100% !important;
   }
   #presentacion {
-    padding: 0rem 5rem !important;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    width: 100vw;
+    padding: 0rem 1rem !important;
+    margin-left: 0rem;
+    margin-right: 0rem;
     padding-bottom: 1rem !important;
     padding-top: 1rem !important;
   }

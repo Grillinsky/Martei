@@ -256,6 +256,7 @@
 
 .formulario-tarjeta select {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .formulario-tarjeta .grupo-select i {
