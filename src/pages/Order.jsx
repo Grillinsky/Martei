@@ -1,206 +1,202 @@
-import React, { useEffect, useState } from "react";
-import "../css/Order.css";
-import VisaLogo from "/visa.png";
-import MastercardLogo from "/mastercard.png";
-import Chip from "/chip-tarjeta.png";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { clearCart } from "../../redux/cartSlice";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import NavBar from "../components/Navbar";
-import FloatingBackBtn from "../components/FloatingBackBtn";
-import Footer from "../components/Footer";
+import React, { useEffect, useState } from 'react'
+import '../css/Order.css'
+import VisaLogo from '/visa.png'
+import MastercardLogo from '/mastercard.png'
+import Chip from '/chip-tarjeta.png'
+import { useSelector, useDispatch } from 'react-redux'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
+import { clearCart } from '../../redux/cartSlice'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import NavBar from '../components/Navbar'
+import FloatingBackBtn from '../components/FloatingBackBtn'
+import Footer from '../components/Footer'
 
 const FormularioTarjeta = () => {
-  const [showToast, setShowToast] = useState(false);
-  const [cardToast, setCardToast] = useState(false);
-  const [errorToast, setErrorToast] = useState(false);
+  const [showToast, setShowToast] = useState(false)
+  const [cardToast, setCardToast] = useState(false)
+  const [errorToast, setErrorToast] = useState(false)
 
-  const [numeroTarjeta, setNumeroTarjeta] = useState("");
-  const [nombreTarjeta, setNombreTarjeta] = useState("");
-  const [mesExpiracion, setMesExpiracion] = useState("MM");
-  const [yearExpiracion, setYearExpiracion] = useState("AA");
-  const [ccv, setCcv] = useState("***");
+  const [numeroTarjeta, setNumeroTarjeta] = useState('')
+  const [nombreTarjeta, setNombreTarjeta] = useState('')
+  const [mesExpiracion, setMesExpiracion] = useState('MM')
+  const [yearExpiracion, setYearExpiracion] = useState('AA')
+  const [ccv, setCcv] = useState('***')
 
-  const [isCardFlipped, setIsCardFlipped] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true);
+  const [isCardFlipped, setIsCardFlipped] = useState(false)
+  const [isFormOpen, setIsFormOpen] = useState(false)
+  const [isCCVInputFocused, setIsCCVInputFocused] = useState(true)
 
-  const user = useSelector((state) => state.user);
-  const [address, setAddress] = useState("");
-  const dispatch = useDispatch();
+  const user = useSelector(state => state.user)
+  const [address, setAddress] = useState('')
+  const dispatch = useDispatch()
 
   //Para llevar los datos de la compra
-  const itemsCarrito = useSelector((state) => state.cart);
-  const total = itemsCarrito.reduce(
-    (acc, item) => acc + item.price * item.qty,
-    0
-  );
-  const [errorTwoToast, setTwoErrorToast] = useState(itemsCarrito.length === 0);
+  const itemsCarrito = useSelector(state => state.cart)
+  const total = itemsCarrito
+    .reduce((acc, item) => acc + item.price * item.qty, 0)
+    .toFixed(2)
+
+  const [errorTwoToast, setTwoErrorToast] = useState(itemsCarrito.length === 0)
 
   useEffect(() => {
     if (errorTwoToast) {
-      setTwoErrorToast(true);
-      toast.error(
-        "Debes agregar al menos un producto para finalizar la compra"
-      );
+      setTwoErrorToast(true)
+      toast.error('Debes agregar al menos un producto para finalizar la compra')
     }
-  }, [errorTwoToast, itemsCarrito.length]);
+  }, [errorTwoToast, itemsCarrito.length])
 
   useEffect(() => {
     if (showToast) {
-      setShowToast(true);
-      toast.success(`¡GRACIAS POR ELEGIR MARTEI! `);
+      setShowToast(true)
+      toast.success(`¡GRACIAS POR ELEGIR MARTEI! `)
     }
-  }, [showToast]);
+  }, [showToast])
 
   useEffect(() => {
     if (cardToast) {
-      setCardToast(true);
-      toast.error("Debes ingresar correctamente los datos de la tarjeta");
+      setCardToast(true)
+      toast.error('Debes ingresar correctamente los datos de la tarjeta')
     }
-  }, [cardToast]);
+  }, [cardToast])
 
   useEffect(() => {
     if (errorToast) {
-      setErrorToast(true);
-      toast.error(
-        "Debes agregar al menos un producto para finalizar la compra"
-      );
+      setErrorToast(true)
+      toast.error('Debes agregar al menos un producto para finalizar la compra')
     }
-  }, [errorToast]);
+  }, [errorToast])
 
-  const handleFinalizarCompra = async (e) => {
-    e.preventDefault();
+  const handleFinalizarCompra = async e => {
+    e.preventDefault()
 
     if (
-      numeroTarjeta.trim() === "" ||
-      nombreTarjeta.trim() === "" ||
-      mesExpiracion.trim() === "" ||
-      yearExpiracion.trim() === "" ||
-      ccv.trim() === ""
+      numeroTarjeta.trim() === '' ||
+      nombreTarjeta.trim() === '' ||
+      mesExpiracion.trim() === '' ||
+      yearExpiracion.trim() === '' ||
+      ccv.trim() === ''
     ) {
-      setCardToast(true);
-      return;
+      setCardToast(true)
+      return
     } else {
       if (user) {
         if (itemsCarrito.length === 0) {
-          setErrorToast(true);
+          setErrorToast(true)
 
           const timer = setTimeout(() => {
-            window.location.href = "/productsPage";
-          }, 3000);
+            window.location.href = '/productsPage'
+          }, 3000)
 
-          return () => clearTimeout(timer);
+          return () => clearTimeout(timer)
         }
         const orderData = {
           products: itemsCarrito,
           address: address,
           userId: user.id,
-          state: "Pago",
-        };
+          state: 'Pago'
+        }
 
         try {
           const response = await axios.post(
             `${import.meta.env.VITE_API_URL}/order`,
             orderData
-          );
-          dispatch(clearCart());
-          setShowToast(true);
+          )
+          dispatch(clearCart())
+          setShowToast(true)
         } catch (error) {
-          console.error("Error al enviar la orden");
+          console.error('Error al enviar la orden')
         }
 
         const timer = setTimeout(() => {
-          window.location.href = "/";
-        }, 3000);
+          window.location.href = '/'
+        }, 3000)
 
-        return () => clearTimeout(timer);
+        return () => clearTimeout(timer)
       } else {
-        window.location.href = "/login";
+        window.location.href = '/login'
       }
     }
-  };
+  }
 
-  const handleAddressChange = (event) => {
-    setAddress(event.target.value);
-  };
+  const handleAddressChange = event => {
+    setAddress(event.target.value)
+  }
 
   const handleCardFlip = () => {
-    setIsCardFlipped(!isCardFlipped);
-  };
+    setIsCardFlipped(!isCardFlipped)
+  }
 
   const meses = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-  ];
+    '01',
+    '02',
+    '03',
+    '04',
+    '05',
+    '06',
+    '07',
+    '08',
+    '09',
+    '10',
+    '11',
+    '12'
+  ]
 
-  const years = ["2023", "2024", "2025", "2026"];
+  const years = ['2023', '2024', '2025', '2026']
 
   const handleFormToggle = () => {
-    setIsFormOpen(!isFormOpen);
-  };
+    setIsFormOpen(!isFormOpen)
+  }
 
-  const handleNumeroTarjetaChange = (e) => {
-    let valorInput = e.target.value;
+  const handleNumeroTarjetaChange = e => {
+    let valorInput = e.target.value
 
     valorInput = valorInput
-      .replace(/\s/g, "")
-      .replace(/\D/g, "")
-      .replace(/([0-9]{4})/g, "$1 ")
-      .trim();
+      .replace(/\s/g, '')
+      .replace(/\D/g, '')
+      .replace(/([0-9]{4})/g, '$1 ')
+      .trim()
 
-    setNumeroTarjeta(valorInput);
+    setNumeroTarjeta(valorInput)
 
-    if (valorInput === "") {
-      setNumeroTarjeta("#### #### #### ####");
+    if (valorInput === '') {
+      setNumeroTarjeta('#### #### #### ####')
     }
-    setIsCardFlipped(false);
-  };
+    setIsCardFlipped(false)
+  }
 
-  const handleNombreTarjetaChange = (e) => {
-    let valorInput = e.target.value;
+  const handleNombreTarjetaChange = e => {
+    let valorInput = e.target.value
 
-    valorInput = valorInput.replace(/[0-9]/g, "");
+    valorInput = valorInput.replace(/[0-9]/g, '')
 
-    setNombreTarjeta(valorInput);
-    setIsCardFlipped(false);
-  };
+    setNombreTarjeta(valorInput)
+    setIsCardFlipped(false)
+  }
 
-  const handleMesExpiracionChange = (e) => {
-    setMesExpiracion(e.target.value);
-  };
+  const handleMesExpiracionChange = e => {
+    setMesExpiracion(e.target.value)
+  }
 
-  const handleYearExpiracionChange = (e) => {
-    setYearExpiracion(e.target.value.slice(2));
-  };
+  const handleYearExpiracionChange = e => {
+    setYearExpiracion(e.target.value.slice(2))
+  }
 
-  const handleCcvChange = (e) => {
-    let valorInput = e.target.value;
+  const handleCcvChange = e => {
+    let valorInput = e.target.value
 
-    valorInput = valorInput.replace(/\s/g, "").replace(/\D/g, "");
+    valorInput = valorInput.replace(/\s/g, '').replace(/\D/g, '')
 
-    setCcv(valorInput);
-    setIsCardFlipped(true); // Voltear la tarjeta a la parte delantera
-  };
+    setCcv(valorInput)
+    setIsCardFlipped(true) // Voltear la tarjeta a la parte delantera
+  }
 
   useEffect(() => {
     if (user) {
-      setAddress(user.address);
+      setAddress(user.address)
     }
-  }, [user]);
+  }, [user])
 
   return (
     <div className="contenedor py-5 my-5">
@@ -218,12 +214,12 @@ const FormularioTarjeta = () => {
         theme="light"
       />
 
-      <section className={`tarjeta ${isCardFlipped ? "active" : ""}`}>
+      <section className={`tarjeta ${isCardFlipped ? 'active' : ''}`}>
         <div className="delantera" onClick={handleCardFlip}>
           <div className="logo-marca" id="logo-marca">
-            {numeroTarjeta.charAt(0) === "4" ? (
+            {numeroTarjeta.charAt(0) === '4' ? (
               <img src={VisaLogo} alt="Visa" />
-            ) : numeroTarjeta.charAt(0) === "5" ? (
+            ) : numeroTarjeta.charAt(0) === '5' ? (
               <img src={MastercardLogo} alt="Mastercard" />
             ) : null}
           </div>
@@ -242,7 +238,7 @@ const FormularioTarjeta = () => {
               <div className="grupo" id="expiracion">
                 <p className="label">Expiracion</p>
                 <p className="expiracion">
-                  <span className="mes">{mesExpiracion}</span>{" "}
+                  <span className="mes">{mesExpiracion}</span>{' '}
                   <span className="year">{yearExpiracion}</span>
                 </p>
               </div>
@@ -276,7 +272,7 @@ const FormularioTarjeta = () => {
 
       <div className="contenedor-btn">
         <button
-          className={`btn-abrir-formulario ${isFormOpen ? "active" : ""}`}
+          className={`btn-abrir-formulario ${isFormOpen ? 'active' : ''}`}
           onClick={handleFormToggle}
           aria-label="Plus Button"
         >
@@ -287,7 +283,7 @@ const FormularioTarjeta = () => {
       <form
         action=""
         id="formulario-tarjeta"
-        className={`formulario-tarjeta ${isFormOpen ? "active" : ""}`}
+        className={`formulario-tarjeta ${isFormOpen ? 'active' : ''}`}
       >
         <div className="grupo">
           <label htmlFor="inputNumero">Número Tarjeta</label>
@@ -319,10 +315,10 @@ const FormularioTarjeta = () => {
                   name="mes"
                   id="selectMes"
                   onChange={handleMesExpiracionChange}
-                  defaultValue={"Mes"}
+                  defaultValue={'Mes'}
                 >
                   <option>Mes</option>
-                  {meses.map((mes) => (
+                  {meses.map(mes => (
                     <option key={mes} value={mes}>
                       {mes}
                     </option>
@@ -335,10 +331,10 @@ const FormularioTarjeta = () => {
                   name="year"
                   id="selectYear"
                   onChange={handleYearExpiracionChange}
-                  defaultValue={"Año"}
+                  defaultValue={'Año'}
                 >
                   <option>Año</option>
-                  {years.map((year) => (
+                  {years.map(year => (
                     <option key={year} value={year}>
                       {year}
                     </option>
@@ -349,7 +345,7 @@ const FormularioTarjeta = () => {
             </div>
           </div>
 
-          <div className={`grupo ccv ${isCCVInputFocused ? "active" : ""}`}>
+          <div className={`grupo ccv ${isCCVInputFocused ? 'active' : ''}`}>
             <label htmlFor="inputCCV">CCV</label>
             <input
               type="text"
@@ -386,7 +382,7 @@ const FormularioTarjeta = () => {
           ) : (
             <div>
               <p className="alert alert-info text-danger">
-                ¡Recuerda que debes loguearte para finalizar la compra!{" "}
+                ¡Recuerda que debes loguearte para finalizar la compra!{' '}
                 <Link className="text-primary" to="/login">
                   Iniciar Sesión
                 </Link>
@@ -397,16 +393,18 @@ const FormularioTarjeta = () => {
 
         <div className="border-top mt-3">
           <h3>Detalles de la compra</h3>
-          {itemsCarrito.map((item) => (
-            <div key={item.id}>
-              <h6 className="bg-light-subtle"> {item.name}</h6>
+          {itemsCarrito.map(item => (
+            <div key={item.id} className="item">
+              <h6 className="bg-light-subtle fw-bold">{item.name}</h6>
               <p className="m-0">
                 Precio unitario: U${item.price} - Cantidad: {item.qty} - U$
                 {item.price * item.qty}
               </p>
             </div>
           ))}
-          <h3 className="text-end">Total a pagar: U${total}</h3>
+          <h3 className="border-top mt-3 mb-2 text-end">
+            Total a pagar: U${total}
+          </h3>
         </div>
 
         <button
@@ -419,6 +417,6 @@ const FormularioTarjeta = () => {
       </form>
       <FloatingBackBtn />
     </div>
-  );
-};
-export default FormularioTarjeta;
+  )
+}
+export default FormularioTarjeta

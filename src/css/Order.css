@@ -294,3 +294,11 @@
 .card-modal-increment-decrement {
   margin-top: -8px !important;
 }
+
+h6 {
+  margin-bottom: 0px;
+}
+
+.item {
+  margin-bottom: 0.5rem;
+}
