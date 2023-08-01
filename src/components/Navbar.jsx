@@ -82,7 +82,7 @@ function NavBar() {
               />
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarToggler">
-              <Nav className="ms-auto py-2">
+              <Nav className="ms-auto py-2 align-items-center">
                 <NavLink className="nav-item p-2" to="/productsPage">
                   Productos
                 </NavLink>
